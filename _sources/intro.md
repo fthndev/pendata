@@ -1,11 +1,12 @@
 # Welcome to Webiste Penambangan Data
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Halo... Perkenalkan nama saya Muhammad Fathan Alizain dengan NIM (230411100181) merupakan mahasiswa aktif Teknik Informatika dari Universitas Trunojoyo Madura.   
 
-Check out the content pages bundled with this sample book to see more.
+Pada Website ini berisi content terkait dengan mata kuliah Penambangan Data.
+Penambangan Data atau Data Mining merupakan sebuah proses mengumpulkan sebuah informasi pada suatu data yang besar untuk menentukan pola,
+hubungan, dan tren tersembunyi yang digunakan untuk pengambilan keputusan.
+
+Silahkan klik dibawah ini untuk mendapatkan informasi lebih lanjut!
 
 ```{tableofcontents}
 ```
