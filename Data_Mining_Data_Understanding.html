@@ -352,7 +352,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -368,6 +370,43 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-package-untuk-mysql-dan-posgresql">Install Package untuk MySQL dan PosgreSQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql-dan-posgresql-melalui-aiven-io">Koneksi ke Database MySQL dan PosgreSQL melalui aiven.io</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-posgresql">Koneksi ke PosgreSQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql">Koneksi ke database MySQL</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggabungkan-kolom-pada-database-mysql-dan-posgresql">Menggabungkan kolom pada database MySQL dan PosgreSQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-statistik-deskriptif-data">Eksplorasi data / Statistik deskriptif data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-distribusi-setiap-kolom">Visualisasi Data Distribusi Setiap Kolom</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-sepal-length">Distribusi Sepal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-sepal-width">Distribusi Sepal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-petal-length">Distribusi Petal length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-petal-width">Distribusi Petal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-sepal-length">Box Plot Sepal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-sepal-width">Box Plot Sepal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-petal-length">Box Plot Petal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-petal-width">Box Plot Petal Width</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-grafik">Visualisasi Grafik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-barplot-sepal-length">Plotting Barplot Sepal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-barplot-sepal-width">Plotting Barplot Sepal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-barplot-petal-length">Plotting Barplot Petal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-barplot-petal-width">Plotting Barplot Petal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-scatter-plot-setal-length">Plotting Scatter Plot Setal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-scatter-plot-petal-width">Plotting Scatter Plot Petal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-scatter-plot-petal-length">Plotting Scatter Plot Petal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Plotting Scatter Plot Petal Length</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -386,7 +425,8 @@ document.write(`
 <li><p>Menilai Kualitas suatu Data</p></li>
 <li><p>Menentukan Arah Analisis</p></li>
 </ul>
-<p>##Install Package untuk MySQL dan PosgreSQL</p>
+<section id="install-package-untuk-mysql-dan-posgresql">
+<h2>Install Package untuk MySQL dan PosgreSQL<a class="headerlink" href="#install-package-untuk-mysql-dan-posgresql" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pymysql
@@ -398,7 +438,7 @@ document.write(`
   Downloading PyMySQL-1.1.1-py3-none-any.whl.metadata (4.4 kB)
 Downloading PyMySQL-1.1.1-py3-none-any.whl (44 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/45.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">45.0/45.0 kB</span> <span class=" -Color -Color-Red">3.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">45.0/45.0 kB</span> <span class=" -Color -Color-Red">2.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -419,8 +459,11 @@ Successfully installed pymysql-1.1.1
   Downloading psycopg2_binary-2.9.10-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
 Downloading psycopg2_binary-2.9.10-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">115.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">56.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+   ━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.1/3.0 MB</span> <span class=" -Color -Color-Red">4.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.2/3.0 MB</span> <span class=" -Color -Color-Red">17.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">30.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -458,8 +501,11 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 </div>
 </div>
-<p>##Koneksi ke Database MySQL dan PosgreSQL melalui <a class="reference external" href="http://aiven.io">aiven.io</a></p>
-<p>###Koneksi ke PosgreSQL</p>
+</section>
+<section id="koneksi-ke-database-mysql-dan-posgresql-melalui-aiven-io">
+<h2>Koneksi ke Database MySQL dan PosgreSQL melalui <a class="reference external" href="http://aiven.io">aiven.io</a><a class="headerlink" href="#koneksi-ke-database-mysql-dan-posgresql-melalui-aiven-io" title="Link to this heading">#</a></h2>
+<section id="koneksi-ke-posgresql">
+<h3>Koneksi ke PosgreSQL<a class="headerlink" href="#koneksi-ke-posgresql" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psycopg2</span>
@@ -509,7 +555,9 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 </div>
 </div>
-<p>###Koneksi ke database MySQL</p>
+</section>
+<section id="koneksi-ke-database-mysql">
+<h3>Koneksi ke database MySQL<a class="headerlink" href="#koneksi-ke-database-mysql" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
@@ -558,7 +606,10 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 </div>
 </div>
-<p>##Menggabungkan kolom pada database MySQL dan PosgreSQL</p>
+</section>
+</section>
+<section id="menggabungkan-kolom-pada-database-mysql-dan-posgresql">
+<h2>Menggabungkan kolom pada database MySQL dan PosgreSQL<a class="headerlink" href="#menggabungkan-kolom-pada-database-mysql-dan-posgresql" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># koneksi ke PosgreSQL</span>
@@ -577,7 +628,9 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 </div>
 </div>
-<p>##Eksplorasi data / Statistik deskriptif data</p>
+</section>
+<section id="eksplorasi-data-statistik-deskriptif-data">
+<h2>Eksplorasi data / Statistik deskriptif data<a class="headerlink" href="#eksplorasi-data-statistik-deskriptif-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_column</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[[</span><span class="s1">&#39;sepal length&#39;</span><span class="p">,</span> <span class="s1">&#39;sepal width&#39;</span><span class="p">,</span> <span class="s1">&#39;petal length&#39;</span><span class="p">,</span> <span class="s1">&#39;petal width&#39;</span><span class="p">]]</span>
@@ -605,8 +658,11 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 </div>
 </div>
-<p>##Visualisasi Data Distribusi Setiap Kolom</p>
-<p>###Distribusi Sepal Length</p>
+</section>
+<section id="visualisasi-data-distribusi-setiap-kolom">
+<h2>Visualisasi Data Distribusi Setiap Kolom<a class="headerlink" href="#visualisasi-data-distribusi-setiap-kolom" title="Link to this heading">#</a></h2>
+<section id="distribusi-sepal-length">
+<h3>Distribusi Sepal Length<a class="headerlink" href="#distribusi-sepal-length" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -627,7 +683,9 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 <img alt="_images/99731ba9c7fb2a71651612cc481177e31379fa1eab9a16104c19220718a7eeec.png" src="_images/99731ba9c7fb2a71651612cc481177e31379fa1eab9a16104c19220718a7eeec.png" />
 </div>
 </div>
-<p>###Distribusi Sepal Width</p>
+</section>
+<section id="distribusi-sepal-width">
+<h3>Distribusi Sepal Width<a class="headerlink" href="#distribusi-sepal-width" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -648,7 +706,9 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 <img alt="_images/d0a60a7584545ce92472a9bd8eadfad6d4c519681808369635797cfa9ffcbc3b.png" src="_images/d0a60a7584545ce92472a9bd8eadfad6d4c519681808369635797cfa9ffcbc3b.png" />
 </div>
 </div>
-<p>###Distribusi Petal length</p>
+</section>
+<section id="distribusi-petal-length">
+<h3>Distribusi Petal length<a class="headerlink" href="#distribusi-petal-length" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -668,7 +728,9 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 <img alt="_images/8174ce2f6c7b5520aec38f8ad281eebcfe2fc7e99bae4e36559f8d8456cc53b1.png" src="_images/8174ce2f6c7b5520aec38f8ad281eebcfe2fc7e99bae4e36559f8d8456cc53b1.png" />
 </div>
 </div>
-<p>###Distribusi Petal Width</p>
+</section>
+<section id="distribusi-petal-width">
+<h3>Distribusi Petal Width<a class="headerlink" href="#distribusi-petal-width" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -689,7 +751,9 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 <img alt="_images/6625fc223de1ec2b32c07a569f008bc2cbdb079dc29b6dc735516c363734a752.png" src="_images/6625fc223de1ec2b32c07a569f008bc2cbdb079dc29b6dc735516c363734a752.png" />
 </div>
 </div>
-<p>###Box Plot Sepal Length</p>
+</section>
+<section id="box-plot-sepal-length">
+<h3>Box Plot Sepal Length<a class="headerlink" href="#box-plot-sepal-length" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;sepal length&quot;</span>
@@ -720,7 +784,9 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <img alt="_images/b1189442f4a48825c7a04eb8fd38ae35270f0efafd36224c365bcafc4c7e96d0.png" src="_images/b1189442f4a48825c7a04eb8fd38ae35270f0efafd36224c365bcafc4c7e96d0.png" />
 </div>
 </div>
-<p>###Box Plot Sepal Width</p>
+</section>
+<section id="box-plot-sepal-width">
+<h3>Box Plot Sepal Width<a class="headerlink" href="#box-plot-sepal-width" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;sepal width&quot;</span>
@@ -751,7 +817,9 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <img alt="_images/90406d89115153d6bf31f390d7d06cb29cf256c23b65a9d709c0dd6749fe6d39.png" src="_images/90406d89115153d6bf31f390d7d06cb29cf256c23b65a9d709c0dd6749fe6d39.png" />
 </div>
 </div>
-<p>###Box Plot Petal Length</p>
+</section>
+<section id="box-plot-petal-length">
+<h3>Box Plot Petal Length<a class="headerlink" href="#box-plot-petal-length" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;petal length&quot;</span>
@@ -782,7 +850,9 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <img alt="_images/3a682246b9a35f65173cd215e3a62c9af7cce0444ae3e3cc04466fd3ef40df2c.png" src="_images/3a682246b9a35f65173cd215e3a62c9af7cce0444ae3e3cc04466fd3ef40df2c.png" />
 </div>
 </div>
-<p>###Box Plot Petal Width</p>
+</section>
+<section id="box-plot-petal-width">
+<h3>Box Plot Petal Width<a class="headerlink" href="#box-plot-petal-width" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;petal width&quot;</span>
@@ -813,8 +883,12 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <img alt="_images/675a3e2fa281f753fccc54ec4fdb30b46ae94f8ae7b19ad9be67bcce7aa75eef.png" src="_images/675a3e2fa281f753fccc54ec4fdb30b46ae94f8ae7b19ad9be67bcce7aa75eef.png" />
 </div>
 </div>
-<p>##Visualisasi Grafik</p>
-<p>###Plotting Barplot Sepal Length</p>
+</section>
+</section>
+<section id="visualisasi-grafik">
+<h2>Visualisasi Grafik<a class="headerlink" href="#visualisasi-grafik" title="Link to this heading">#</a></h2>
+<section id="plotting-barplot-sepal-length">
+<h3>Plotting Barplot Sepal Length<a class="headerlink" href="#plotting-barplot-sepal-length" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;sepal length&quot;</span>
@@ -842,7 +916,9 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <img alt="_images/7ff04d8d6efc2b2cb6da0041fd428cf4ba8f0556558892130df40da1d48f0f45.png" src="_images/7ff04d8d6efc2b2cb6da0041fd428cf4ba8f0556558892130df40da1d48f0f45.png" />
 </div>
 </div>
-<p>###Plotting Barplot Sepal Width</p>
+</section>
+<section id="plotting-barplot-sepal-width">
+<h3>Plotting Barplot Sepal Width<a class="headerlink" href="#plotting-barplot-sepal-width" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;sepal width&quot;</span>
@@ -870,7 +946,9 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <img alt="_images/8de779dc4ad09eea4d6fd3ddcce4db81be2c4a53655007b16cfcbb325ac67736.png" src="_images/8de779dc4ad09eea4d6fd3ddcce4db81be2c4a53655007b16cfcbb325ac67736.png" />
 </div>
 </div>
-<p>###Plotting Barplot Petal Length</p>
+</section>
+<section id="plotting-barplot-petal-length">
+<h3>Plotting Barplot Petal Length<a class="headerlink" href="#plotting-barplot-petal-length" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;petal length&quot;</span>
@@ -898,7 +976,9 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <img alt="_images/d0b91ea29c6e399ab4fed0fcd6b5dc252db58b90c560cc687e20844d5646e1d0.png" src="_images/d0b91ea29c6e399ab4fed0fcd6b5dc252db58b90c560cc687e20844d5646e1d0.png" />
 </div>
 </div>
-<p>###Plotting Barplot Petal Width</p>
+</section>
+<section id="plotting-barplot-petal-width">
+<h3>Plotting Barplot Petal Width<a class="headerlink" href="#plotting-barplot-petal-width" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;petal width&quot;</span>
@@ -926,10 +1006,13 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <img alt="_images/57f47ec1a076f4a603694746878044f424f9f8c85175d1630797232e87bf3579.png" src="_images/57f47ec1a076f4a603694746878044f424f9f8c85175d1630797232e87bf3579.png" />
 </div>
 </div>
-<p>###Plotting Scatter Plot Setal Length</p>
+</section>
+<section id="plotting-scatter-plot-setal-length">
+<h3>Plotting Scatter Plot Setal Length<a class="headerlink" href="#plotting-scatter-plot-setal-length" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;sepal length&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;sepal length&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;sepal width&quot;</span>
 <span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
 
 <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
@@ -938,24 +1021,18 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 
 <span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal Length by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal Length vs Sepal Width by Class&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/d66d6fe85480b5b894b0c2be54abcae09a33229d611bc06e1aba9f03b46d1be3.png" src="_images/d66d6fe85480b5b894b0c2be54abcae09a33229d611bc06e1aba9f03b46d1be3.png" />
-</div>
-</div>
-<p>###Plotting Scatter Plot Petal Width</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;sepal width&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;sepal length&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;petal length&quot;</span>
 <span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
 
 <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
@@ -964,24 +1041,18 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 
 <span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal Width by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal Length vs Petal Length by Class&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/2955e810028510ffc2dbea3d9b94438376a2d021eab1c5669f01510bc5f63b42.png" src="_images/2955e810028510ffc2dbea3d9b94438376a2d021eab1c5669f01510bc5f63b42.png" />
-</div>
-</div>
-<p>###Plotting Scatter Plot Petal Length</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;petal length&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;sepal length&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;petal width&quot;</span>
 <span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
 
 <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
@@ -990,24 +1061,35 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 
 <span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Petal Length by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal Length vs Petal Width by Class&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8a67de34083e5b18342703b3986197f6183254cb28c8f18920cdd34e13e8844d.png" src="_images/8a67de34083e5b18342703b3986197f6183254cb28c8f18920cdd34e13e8844d.png" />
+<img alt="_images/e319f46961e35eb2b0c683420751509082e7b99b003085d51e05d9204e9deb9b.png" src="_images/e319f46961e35eb2b0c683420751509082e7b99b003085d51e05d9204e9deb9b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="_images/34176e9af4913965ea2469d064b680d0e400ab3210ef9a63f5481ec9b26aca7d.png" src="_images/34176e9af4913965ea2469d064b680d0e400ab3210ef9a63f5481ec9b26aca7d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="_images/0eee0829b5cc67399116b580622775ae22a3a459b80ce08179d75a75e89bae69.png" src="_images/0eee0829b5cc67399116b580622775ae22a3a459b80ce08179d75a75e89bae69.png" />
 </div>
 </div>
-<p>###Plotting Scatter Plot Petal Length</p>
+</section>
+<section id="plotting-scatter-plot-petal-width">
+<h3>Plotting Scatter Plot Petal Width<a class="headerlink" href="#plotting-scatter-plot-petal-width" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom</span> <span class="o">=</span> <span class="s2">&quot;petal width&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;sepal width&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;sepal length&quot;</span>
 <span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
 
 <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
@@ -1016,20 +1098,224 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 
 <span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Petal Width by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal width vs Sepal Length by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;sepal width&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;petal length&quot;</span>
+<span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal Width vs Petal Length by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;sepal width&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;petal width&quot;</span>
+<span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal width vs Petal Width by Class&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/42eb6ccdc0e06d26f986a1d13b2034ee0a980263cea32c7d12dde4b19e0c42cc.png" src="_images/42eb6ccdc0e06d26f986a1d13b2034ee0a980263cea32c7d12dde4b19e0c42cc.png" />
+<img alt="_images/1b7977321aa333f45669d8762a8851ad509d845c37fc6ff38b805b72ad29a9ce.png" src="_images/1b7977321aa333f45669d8762a8851ad509d845c37fc6ff38b805b72ad29a9ce.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="_images/f80436a06d73374de5796f136efc09b4987239dcb8dcdb3d1897b74d9127d0c8.png" src="_images/f80436a06d73374de5796f136efc09b4987239dcb8dcdb3d1897b74d9127d0c8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="_images/f8a08c9b3d4de71bc7b97c65517e36fdb5ef745bacf318fd546a14e009a6c858.png" src="_images/f8a08c9b3d4de71bc7b97c65517e36fdb5ef745bacf318fd546a14e009a6c858.png" />
 </div>
 </div>
+</section>
+<section id="plotting-scatter-plot-petal-length">
+<h3>Plotting Scatter Plot Petal Length<a class="headerlink" href="#plotting-scatter-plot-petal-length" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;petal length&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;sepal length&quot;</span>
+<span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal Length vs Sepal Width by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;petal length&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;sepal width&quot;</span>
+<span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal Length vs Petal Length by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;petal length&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;petal width&quot;</span>
+<span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal Length vs Petal Width by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6035b221bc4704356853e22f13e89805df683ed6518e37737d3e048e6a65dc69.png" src="_images/6035b221bc4704356853e22f13e89805df683ed6518e37737d3e048e6a65dc69.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="_images/2b81f13fe697f3ab0301f9c8ef573fbee07d15a0a2824c7e1a06394fb41b85d3.png" src="_images/2b81f13fe697f3ab0301f9c8ef573fbee07d15a0a2824c7e1a06394fb41b85d3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="_images/cdbb925c39b4ceec1d81b857e37869085d502cc8f2bc2ef00323966f535db3fe.png" src="_images/cdbb925c39b4ceec1d81b857e37869085d502cc8f2bc2ef00323966f535db3fe.png" />
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Plotting Scatter Plot Petal Length<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;petal width&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;sepal length&quot;</span>
+<span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal width vs Sepal Length by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;petal width&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;sepal length&quot;</span>
+<span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal Width vs Petal Length by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">kolom_1</span> <span class="o">=</span> <span class="s2">&quot;petal width&quot;</span>
+<span class="n">kolom_2</span> <span class="o">=</span> <span class="s2">&quot;petal length&quot;</span>
+<span class="n">class_col</span> <span class="o">=</span> <span class="s2">&quot;Class&quot;</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">species</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">merged_db</span><span class="p">[</span><span class="n">merged_db</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subset</span><span class="p">[</span><span class="n">kolom_1</span><span class="p">],</span> <span class="n">subset</span><span class="p">[</span><span class="n">kolom_2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">kolom</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot of Sepal width vs Petal Width by Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d246c0ff7f62de5bbc2d7728133fbf064de1f172d65244171d026a3ce332608f.png" src="_images/d246c0ff7f62de5bbc2d7728133fbf064de1f172d65244171d026a3ce332608f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="_images/793eea6dc76b3b1ed10595886064aeca5b2de190a3b05aacd281b2bfd0e0be60.png" src="_images/793eea6dc76b3b1ed10595886064aeca5b2de190a3b05aacd281b2bfd0e0be60.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="_images/d826ee3f780f7a01cf0ad1e44e33c6b6168bcc8ca35e62bd9f12af5883775c6b.png" src="_images/d826ee3f780f7a01cf0ad1e44e33c6b6168bcc8ca35e62bd9f12af5883775c6b.png" />
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1077,6 +1363,50 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-package-untuk-mysql-dan-posgresql">Install Package untuk MySQL dan PosgreSQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql-dan-posgresql-melalui-aiven-io">Koneksi ke Database MySQL dan PosgreSQL melalui aiven.io</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-posgresql">Koneksi ke PosgreSQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql">Koneksi ke database MySQL</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggabungkan-kolom-pada-database-mysql-dan-posgresql">Menggabungkan kolom pada database MySQL dan PosgreSQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-statistik-deskriptif-data">Eksplorasi data / Statistik deskriptif data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-distribusi-setiap-kolom">Visualisasi Data Distribusi Setiap Kolom</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-sepal-length">Distribusi Sepal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-sepal-width">Distribusi Sepal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-petal-length">Distribusi Petal length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-petal-width">Distribusi Petal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-sepal-length">Box Plot Sepal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-sepal-width">Box Plot Sepal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-petal-length">Box Plot Petal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-petal-width">Box Plot Petal Width</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-grafik">Visualisasi Grafik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-barplot-sepal-length">Plotting Barplot Sepal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-barplot-sepal-width">Plotting Barplot Sepal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-barplot-petal-length">Plotting Barplot Petal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-barplot-petal-width">Plotting Barplot Petal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-scatter-plot-setal-length">Plotting Scatter Plot Setal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-scatter-plot-petal-width">Plotting Scatter Plot Petal Width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-scatter-plot-petal-length">Plotting Scatter Plot Petal Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Plotting Scatter Plot Petal Length</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
