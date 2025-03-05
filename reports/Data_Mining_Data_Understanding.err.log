@@ -1,0 +1,160 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.11/dist-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.11/dist-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.11/dist-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+kolom = "petal length"
+class_col = "Class"
+
+plt.figure(figsize=(6, 3))
+
+
+color = {"Iris-setosa": "blue", "Iris-versicolor": "red", "Iris-virginica": "green"}
+sns.boxplot(data=merged_db, x=class_col, y=kolom, palette=color)
+
+plt.xlabel("Class")
+plt.ylabel(kolom)
+plt.title("Box Plot of Petal Length by Class")
+
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyboardInterrupt[0m                         Traceback (most recent call last)
+[0;32m<ipython-input-15-e5833332c9e3>[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m      6[0m [0;34m[0m[0m
+[1;32m      7[0m [0mcolor[0m [0;34m=[0m [0;34m{[0m[0;34m"Iris-setosa"[0m[0;34m:[0m [0;34m"blue"[0m[0;34m,[0m [0;34m"Iris-versicolor"[0m[0;34m:[0m [0;34m"red"[0m[0;34m,[0m [0;34m"Iris-virginica"[0m[0;34m:[0m [0;34m"green"[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 8[0;31m [0msns[0m[0;34m.[0m[0mboxplot[0m[0;34m([0m[0mdata[0m[0;34m=[0m[0mmerged_db[0m[0;34m,[0m [0mx[0m[0;34m=[0m[0mclass_col[0m[0;34m,[0m [0my[0m[0;34m=[0m[0mkolom[0m[0;34m,[0m [0mpalette[0m[0;34m=[0m[0mcolor[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      9[0m [0;34m[0m[0m
+[1;32m     10[0m [0mplt[0m[0;34m.[0m[0mxlabel[0m[0;34m([0m[0;34m"Class"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/seaborn/categorical.py[0m in [0;36mboxplot[0;34m(data, x, y, hue, order, hue_order, orient, color, palette, saturation, fill, dodge, width, gap, whis, linecolor, linewidth, fliersize, hue_norm, native_scale, log_scale, formatter, legend, ax, **kwargs)[0m
+[1;32m   1605[0m [0;34m[0m[0m
+[1;32m   1606[0m     [0;32mif[0m [0max[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1607[0;31m         [0max[0m [0;34m=[0m [0mplt[0m[0;34m.[0m[0mgca[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1608[0m [0;34m[0m[0m
+[1;32m   1609[0m     [0;32mif[0m [0mp[0m[0;34m.[0m[0mplot_data[0m[0;34m.[0m[0mempty[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/pyplot.py[0m in [0;36mgca[0;34m()[0m
+[1;32m   2774[0m [0;34m@[0m[0m_copy_docstring_and_deprecators[0m[0;34m([0m[0mFigure[0m[0;34m.[0m[0mgca[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2775[0m [0;32mdef[0m [0mgca[0m[0;34m([0m[0;34m)[0m [0;34m->[0m [0mAxes[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 2776[0;31m     [0;32mreturn[0m [0mgcf[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mgca[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   2777[0m [0;34m[0m[0m
+[1;32m   2778[0m [0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/figure.py[0m in [0;36mgca[0;34m(self)[0m
+[1;32m   1717[0m         """
+[1;32m   1718[0m         [0max[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_axstack[0m[0;34m.[0m[0mcurrent[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1719[0;31m         [0;32mreturn[0m [0max[0m [0;32mif[0m [0max[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m [0;32melse[0m [0mself[0m[0;34m.[0m[0madd_subplot[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1720[0m [0;34m[0m[0m
+[1;32m   1721[0m     [0;32mdef[0m [0m_gci[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/figure.py[0m in [0;36madd_subplot[0;34m(self, *args, **kwargs)[0m
+[1;32m    766[0m                 [0margs[0m [0;34m=[0m [0mtuple[0m[0;34m([0m[0mmap[0m[0;34m([0m[0mint[0m[0;34m,[0m [0mstr[0m[0;34m([0m[0margs[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m)[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    767[0m             [0mprojection_class[0m[0;34m,[0m [0mpkw[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_process_projection_requirements[0m[0;34m([0m[0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 768[0;31m             [0max[0m [0;34m=[0m [0mprojection_class[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mpkw[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    769[0m             [0mkey[0m [0;34m=[0m [0;34m([0m[0mprojection_class[0m[0;34m,[0m [0mpkw[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    770[0m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_add_axes_internal[0m[0;34m([0m[0max[0m[0;34m,[0m [0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/axes/_base.py[0m in [0;36m__init__[0;34m(self, fig, facecolor, frameon, sharex, sharey, label, xscale, yscale, box_aspect, forward_navigation_events, *args, **kwargs)[0m
+[1;32m    694[0m [0;34m[0m[0m
+[1;32m    695[0m         [0mself[0m[0;34m.[0m[0m_rasterization_zorder[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 696[0;31m         [0mself[0m[0;34m.[0m[0mclear[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    697[0m [0;34m[0m[0m
+[1;32m    698[0m         [0;31m# funcs used to format x and y - fall back on major formatters[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/axes/_base.py[0m in [0;36mclear[0;34m(self)[0m
+[1;32m   1414[0m             [0mself[0m[0;34m.[0m[0mcla[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1415[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1416[0;31m             [0mself[0m[0;34m.[0m[0m__clear[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1417[0m [0;34m[0m[0m
+[1;32m   1418[0m     [0;32mdef[0m [0mcla[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/axes/_base.py[0m in [0;36m__clear[0;34m(self)[0m
+[1;32m   1381[0m         [0mself[0m[0;34m.[0m[0mset_axis_on[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1382[0m [0;34m[0m[0m
+[0;32m-> 1383[0;31m         [0mself[0m[0;34m.[0m[0mxaxis[0m[0;34m.[0m[0mset_clip_path[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mpatch[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1384[0m         [0mself[0m[0;34m.[0m[0myaxis[0m[0;34m.[0m[0mset_clip_path[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mpatch[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1385[0m [0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py[0m in [0;36mset_clip_path[0;34m(self, path, transform)[0m
+[1;32m   1126[0m     [0;32mdef[0m [0mset_clip_path[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mpath[0m[0;34m,[0m [0mtransform[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1127[0m         [0msuper[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mset_clip_path[0m[0;34m([0m[0mpath[0m[0;34m,[0m [0mtransform[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1128[0;31m         [0;32mfor[0m [0mchild[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mmajorTicks[0m [0;34m+[0m [0mself[0m[0;34m.[0m[0mminorTicks[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1129[0m             [0mchild[0m[0;34m.[0m[0mset_clip_path[0m[0;34m([0m[0mpath[0m[0;34m,[0m [0mtransform[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1130[0m         [0mself[0m[0;34m.[0m[0mstale[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py[0m in [0;36m__get__[0;34m(self, instance, owner)[0m
+[1;32m    550[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    551[0m                 [0minstance[0m[0;34m.[0m[0mminorTicks[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 552[0;31m                 [0mtick[0m [0;34m=[0m [0minstance[0m[0;34m.[0m[0m_get_tick[0m[0;34m([0m[0mmajor[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    553[0m                 [0minstance[0m[0;34m.[0m[0mminorTicks[0m [0;34m=[0m [0;34m[[0m[0mtick[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m    554[0m                 [0;32mreturn[0m [0minstance[0m[0;34m.[0m[0mminorTicks[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py[0m in [0;36m_get_tick[0;34m(self, major)[0m
+[1;32m   1601[0m                 "_tick_class or reimplement _get_tick()")
+[1;32m   1602[0m         [0mtick_kw[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_major_tick_kw[0m [0;32mif[0m [0mmajor[0m [0;32melse[0m [0mself[0m[0;34m.[0m[0m_minor_tick_kw[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1603[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_tick_class[0m[0;34m([0m[0mself[0m[0;34m.[0m[0maxes[0m[0;34m,[0m [0;36m0[0m[0;34m,[0m [0mmajor[0m[0;34m=[0m[0mmajor[0m[0;34m,[0m [0;34m**[0m[0mtick_kw[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1604[0m [0;34m[0m[0m
+[1;32m   1605[0m     [0;32mdef[0m [0m_get_tick_label_size[0m[0;34m([0m[0mself[0m[0;34m,[0m [0maxis_name[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py[0m in [0;36m__init__[0;34m(self, *args, **kwargs)[0m
+[1;32m    366[0m [0;34m[0m[0m
+[1;32m    367[0m     [0;32mdef[0m [0m__init__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 368[0;31m         [0msuper[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0m__init__[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    369[0m         [0;31m# x in data coords, y in axes coords[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    370[0m         [0max[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0maxes[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py[0m in [0;36m__init__[0;34m(self, axes, loc, size, width, color, tickdir, pad, labelsize, labelcolor, labelfontfamily, zorder, gridOn, tick1On, tick2On, label1On, label2On, major, labelrotation, grid_color, grid_linestyle, grid_linewidth, grid_alpha, **kwargs)[0m
+[1;32m    170[0m         [0mself[0m[0;34m.[0m[0mgridline[0m[0;34m.[0m[0mget_path[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0m_interpolation_steps[0m [0;34m=[0m[0;31m [0m[0;31m\[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    171[0m             [0mGRIDLINE_INTERPOLATION_STEPS[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 172[0;31m         self.label1 = mtext.Text(
+[0m[1;32m    173[0m             [0mnp[0m[0;34m.[0m[0mnan[0m[0;34m,[0m [0mnp[0m[0;34m.[0m[0mnan[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    174[0m             [0mfontsize[0m[0;34m=[0m[0mlabelsize[0m[0;34m,[0m [0mcolor[0m[0;34m=[0m[0mlabelcolor[0m[0;34m,[0m [0mvisible[0m[0;34m=[0m[0mlabel1On[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/text.py[0m in [0;36m__init__[0;34m(self, x, y, text, color, verticalalignment, horizontalalignment, multialignment, fontproperties, rotation, linespacing, rotation_mode, usetex, wrap, transform_rotates_text, parse_math, antialiased, **kwargs)[0m
+[1;32m    153[0m             [0mantialiased[0m[0;34m=[0m[0mantialiased[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    154[0m         )
+[0;32m--> 155[0;31m         [0mself[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    156[0m [0;34m[0m[0m
+[1;32m    157[0m     def _reset_visual_defaults(
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/text.py[0m in [0;36mupdate[0;34m(self, kwargs)[0m
+[1;32m    195[0m         [0;31m# docstring inherited[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    196[0m         [0mret[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 197[0;31m         [0mkwargs[0m [0;34m=[0m [0mcbook[0m[0;34m.[0m[0mnormalize_kwargs[0m[0;34m([0m[0mkwargs[0m[0;34m,[0m [0mText[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    198[0m         [0msentinel[0m [0;34m=[0m [0mobject[0m[0;34m([0m[0;34m)[0m  [0;31m# bbox can be None, so use another sentinel.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    199[0m         [0;31m# Update fontproperties first, as it has lowest priority.[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/cbook.py[0m in [0;36mnormalize_kwargs[0;34m(kw, alias_mapping)[0m
+[1;32m   1779[0m         [0malias_mapping[0m [0;34m=[0m [0mgetattr[0m[0;34m([0m[0malias_mapping[0m[0;34m,[0m [0;34m"_alias_map"[0m[0;34m,[0m [0;34m{[0m[0;34m}[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1780[0m [0;34m[0m[0m
+[0;32m-> 1781[0;31m     to_canonical = {alias: canonical
+[0m[1;32m   1782[0m                     [0;32mfor[0m [0mcanonical[0m[0;34m,[0m [0malias_list[0m [0;32min[0m [0malias_mapping[0m[0;34m.[0m[0mitems[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1783[0m                     for alias in alias_list}
+
+[0;32m/usr/local/lib/python3.11/dist-packages/matplotlib/cbook.py[0m in [0;36m<dictcomp>[0;34m(.0)[0m
+[1;32m   1779[0m         [0malias_mapping[0m [0;34m=[0m [0mgetattr[0m[0;34m([0m[0malias_mapping[0m[0;34m,[0m [0;34m"_alias_map"[0m[0;34m,[0m [0;34m{[0m[0;34m}[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1780[0m [0;34m[0m[0m
+[0;32m-> 1781[0;31m     to_canonical = {alias: canonical
+[0m[1;32m   1782[0m                     [0;32mfor[0m [0mcanonical[0m[0;34m,[0m [0malias_list[0m [0;32min[0m [0malias_mapping[0m[0;34m.[0m[0mitems[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1783[0m                     for alias in alias_list}
+
+[0;31mKeyboardInterrupt[0m: 
+

@@ -375,6 +375,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macam-macam-tipe-data-pada-setiap-kolom-data-mining">Macam-Macam tipe data pada setiap kolom Data Mining</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-package-untuk-mysql-dan-posgresql">Install Package untuk MySQL dan PosgreSQL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql-dan-posgresql-melalui-aiven-io">Koneksi ke Database MySQL dan PosgreSQL melalui aiven.io</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-posgresql">Koneksi ke PosgreSQL</a></li>
@@ -425,6 +426,42 @@ document.write(`
 <li><p>Menilai Kualitas suatu Data</p></li>
 <li><p>Menentukan Arah Analisis</p></li>
 </ul>
+<section id="macam-macam-tipe-data-pada-setiap-kolom-data-mining">
+<h2>Macam-Macam tipe data pada setiap kolom Data Mining<a class="headerlink" href="#macam-macam-tipe-data-pada-setiap-kolom-data-mining" title="Link to this heading">#</a></h2>
+<p>Tipe data adalah sebuah konsep dalam pemrograman yang digunakan untuk mengklasifikasikan dan menentukan jenis nilai yang dapat digunakan dalam suatu program. Setiap tipe data memiliki karakteristik unik yang mempengaruhi cara penyimpanan di memori serta operasi yang bisa dilakukan terhadapnya. Dalam Data Mining tipe datanya terdiri dari Kategorikal dan Numerik. Dari masing-masing tipe data tNomindibagi menjadi beberapa tipe data yakni Nominal, Biner, Ordinal, Interval, dan Rasio.</p>
+<ul>
+<li><p><strong>Tipe Data Kategorikal</strong></p>
+<p>Merupakan jenis data yang merepresentasikan kategori atau label. Data ini sering digunakan dalam klasifikasi, clustering, dan analisis statistik lainnya.Tipe data Kategorikal terdiri dari Nominal, Biner, Ordinal. Terdapat ciri-ciri data Kategorikal seperti:</p>
+<ul class="simple">
+<li><p>Tidak bisa dihitung atau dioperasikan secara matematis seperti angka.</p></li>
+<li><p>Bisa berbentuk teks atau angka yang hanya berfungsi sebagai label.</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple">
+<li><p>Tipe Data Nominal</p></li>
+</ol>
+<p>Tipe Data Nominal merupakan tipe data yang paling sederhana dimana nilai yang diberikan atau record hanya berupa label atau sekedar penamaan saja, tidak memiliki ukuran dan ukuran. Contoh tipe data ini seperti nama, kelas, teks, tanggal, waktu, mata uang. Meskipun tidak ada ukuran ataupun urutan, kita perlu untuk menghitug frekuensi dari data nominal tersebut. Ukuran yang digunakan untuk data ini adalah modus.</p>
+<ol class="arabic simple" start="2">
+<li><p>Tipe Data Biner</p></li>
+</ol>
+<p>Tipe data Biner hanya menggunakan 2 kategori. data nominal dapat dituliskan secara nominal yakni “ya” atau “tidak”. Representasi angka dalam tipe data ini adalah 1 dan 0. Pada data biner, angka 1 merujuk pada ya dan angka 0 berarti tidak. Seperti data nominal kita menggunkaan frekuensi dan modus dari data Biner.</p>
+<ol class="arabic simple" start="3">
+<li><p>Tipe Data Ordinal
+Data Ordinal merupakan suatu data yang dapat diurutkan dari yang paling rendah sampai yang paling tinggi. Namun, jarak antara tingkatan tidak dapat diukur dan dibandingkan secara numerik. Selain modus, ukuran statistik median dapat digunakan untuk mencari nilai tengah di dalam data.</p></li>
+</ol>
+<ul>
+<li><p><strong>Tipe data Numerik</strong></p>
+<p>Merupakan tipe data yang digunkan untuk data yang dapat diukur secara kuantitatif, sehingga dapat menerapkan operasi matematika. Tipe data ini terdiri dari Interval dan Rasio.</p>
+</li>
+</ul>
+<ol class="arabic simple">
+<li><p>Tipe Data Interval
+Tipe data Interval memiliki jarak tiap tingkatan sehingga operasi matematika yang dapat digunakan yakni penjumlahan dan pengurangan. Namun, nilai nol belum didefinisikan pada data Interval sehinga operasi perkalian dan pembagian belum bisa untuk digunakan. Modus, median, rata-rata sudah dapat digunakan untuk data ini.</p></li>
+<li><p>Tipe Data Rasio
+Tipe data Rasio merupakan data numerik yang lengkap dengan nilai nol. jadi, untuk operasi matematika seperti penjumlahan, pengurangan, perjalian, dan pembagian sudah bisa digunakan dalam tipe data ini.</p></li>
+</ol>
+</section>
 <section id="install-package-untuk-mysql-dan-posgresql">
 <h2>Install Package untuk MySQL dan PosgreSQL<a class="headerlink" href="#install-package-untuk-mysql-dan-posgresql" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -434,16 +471,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pymysql
-  Downloading PyMySQL-1.1.1-py3-none-any.whl.metadata (4.4 kB)
-Downloading PyMySQL-1.1.1-py3-none-any.whl (44 kB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/45.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">45.0/45.0 kB</span> <span class=" -Color -Color-Red">2.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: pymysql
-Successfully installed pymysql-1.1.1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pymysql in /usr/local/lib/python3.11/dist-packages (1.1.1)
 </pre></div>
 </div>
 </div>
@@ -455,20 +483,7 @@ Successfully installed pymysql-1.1.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary
-  Downloading psycopg2_binary-2.9.10-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
-Downloading psycopg2_binary-2.9.10-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.1/3.0 MB</span> <span class=" -Color -Color-Red">4.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.2/3.0 MB</span> <span class=" -Color -Color-Red">17.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">30.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: psycopg2-binary
-Successfully installed psycopg2-binary-2.9.10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: psycopg2-binary in /usr/local/lib/python3.11/dist-packages (2.9.10)
 </pre></div>
 </div>
 </div>
@@ -530,7 +545,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 
 <span class="c1"># akses ke data di database</span>
 
-<span class="n">data_posgre</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM irisposgre.data_irisposgresql LIMIT 10;&quot;</span><span class="p">)</span>
+<span class="n">data_posgre</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM irisposgre.data_irisposgresql ORDER BY id ASC LIMIT 10;&quot;</span><span class="p">)</span>
 <span class="n">data_db</span> <span class="o">=</span> <span class="n">data_posgre</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10 Data dalam tabel data_irisposgresql:&quot;</span><span class="p">)</span>
@@ -541,7 +556,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 Data dalam tabel data_irisposgresql:
-(1, &#39;Iris-setosa&#39;, 5.1, 3.5)
+(1, &#39;Iris-setosa&#39;, 20.1, 30.5)
 (2, &#39;Iris-setosa&#39;, 4.9, 3.0)
 (3, &#39;Iris-setosa&#39;, 4.7, 3.2)
 (4, &#39;Iris-setosa&#39;, 4.6, 3.1)
@@ -584,6 +599,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 <span class="n">data_mysql</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM irismysql.iris_databasesql LIMIT 10;&quot;</span><span class="p">)</span>
 <span class="n">data_db_sql</span> <span class="o">=</span> <span class="n">data_mysql</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
 
+
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10 data dalam tabel iris_databasesql&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">data2</span> <span class="ow">in</span> <span class="n">data_db_sql</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
@@ -592,7 +608,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 data dalam tabel iris_databasesql
-(1, &#39;Iris-setosa&#39;, 1.4, 0.2)
+(1, &#39;Iris-setosa&#39;, 86.4, 70.0)
 (2, &#39;Iris-setosa&#39;, 1.4, 0.2)
 (3, &#39;Iris-setosa&#39;, 1.3, 0.2)
 (4, &#39;Iris-setosa&#39;, 1.5, 0.2)
@@ -644,16 +660,16 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+--------+--------------------+--------------------+--------------------+--------------------+
-|        |    sepal length    |    sepal width     |    petal length    |    petal width     |
-+--------+--------------------+--------------------+--------------------+--------------------+
-|  mean  | 5.843333333333334  | 3.0540000000000003 | 3.758666666666666  | 1.1986666666666668 |
-| modus  |        5.0         |        3.0         |        1.5         |        0.2         |
-| median |        5.8         |        3.0         |        4.35        |        1.3         |
-|  std   | 0.8280661279778629 | 0.4335943113621737 | 1.7644204199522617 | 0.7631607417008414 |
-|  min   |        4.3         |        2.0         |        1.0         |        0.1         |
-|  max   |        7.9         |        4.4         |        6.9         |        2.5         |
-+--------+--------------------+--------------------+--------------------+--------------------+
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+--------+--------------------+-------------------+-------------------+--------------------+
+|        |    sepal length    |    sepal width    |   petal length    |    petal width     |
++--------+--------------------+-------------------+-------------------+--------------------+
+|  mean  | 5.943333333333333  |       3.234       | 4.325333333333333 | 1.6640000000000001 |
+| modus  |        5.0         |        3.0        |        1.5        |        0.2         |
+| median |        5.8         |        3.0        |        4.4        |        1.3         |
+|  std   | 1.4268949095059695 | 2.282463934159367 | 6.970563096920017 |  5.66806999336321  |
+|  min   |        4.3         |        2.0        |        1.0        |        0.1         |
+|  max   |        20.1        |       30.5        |       86.4        |        70.0        |
++--------+--------------------+-------------------+-------------------+--------------------+
 </pre></div>
 </div>
 </div>
@@ -680,7 +696,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/99731ba9c7fb2a71651612cc481177e31379fa1eab9a16104c19220718a7eeec.png" src="_images/99731ba9c7fb2a71651612cc481177e31379fa1eab9a16104c19220718a7eeec.png" />
+<img alt="_images/c2e28fd55608b34efbd039d9a809192bde656ef0bd4f7093384b6de96b15416e.png" src="_images/c2e28fd55608b34efbd039d9a809192bde656ef0bd4f7093384b6de96b15416e.png" />
 </div>
 </div>
 </section>
@@ -703,7 +719,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d0a60a7584545ce92472a9bd8eadfad6d4c519681808369635797cfa9ffcbc3b.png" src="_images/d0a60a7584545ce92472a9bd8eadfad6d4c519681808369635797cfa9ffcbc3b.png" />
+<img alt="_images/de3de88433f0a82d188fe316d1f9e38406571d3005cbca3001032298e7d50edb.png" src="_images/de3de88433f0a82d188fe316d1f9e38406571d3005cbca3001032298e7d50edb.png" />
 </div>
 </div>
 </section>
@@ -725,7 +741,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8174ce2f6c7b5520aec38f8ad281eebcfe2fc7e99bae4e36559f8d8456cc53b1.png" src="_images/8174ce2f6c7b5520aec38f8ad281eebcfe2fc7e99bae4e36559f8d8456cc53b1.png" />
+<img alt="_images/a8f019f9aa4cca13725228ba6a55ed0b52b5a123448d879f378efb0d4b297d0e.png" src="_images/a8f019f9aa4cca13725228ba6a55ed0b52b5a123448d879f378efb0d4b297d0e.png" />
 </div>
 </div>
 </section>
@@ -748,7 +764,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6625fc223de1ec2b32c07a569f008bc2cbdb079dc29b6dc735516c363734a752.png" src="_images/6625fc223de1ec2b32c07a569f008bc2cbdb079dc29b6dc735516c363734a752.png" />
+<img alt="_images/f1163b0ca0d52a4c27423c891f916b0a22e094479852d113a07cb501c2b4213f.png" src="_images/f1163b0ca0d52a4c27423c891f916b0a22e094479852d113a07cb501c2b4213f.png" />
 </div>
 </div>
 </section>
@@ -781,7 +797,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
   sns.boxplot(data=merged_db, x=class_col, y=kolom, palette=color)
 </pre></div>
 </div>
-<img alt="_images/b1189442f4a48825c7a04eb8fd38ae35270f0efafd36224c365bcafc4c7e96d0.png" src="_images/b1189442f4a48825c7a04eb8fd38ae35270f0efafd36224c365bcafc4c7e96d0.png" />
+<img alt="_images/b5f8dc73c32c2a6588618e145c41c5e3631dcaa739069bf660195f17e183d6d4.png" src="_images/b5f8dc73c32c2a6588618e145c41c5e3631dcaa739069bf660195f17e183d6d4.png" />
 </div>
 </div>
 </section>
@@ -814,7 +830,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
   sns.boxplot(data=merged_db, x=class_col, y=kolom, palette=color)
 </pre></div>
 </div>
-<img alt="_images/90406d89115153d6bf31f390d7d06cb29cf256c23b65a9d709c0dd6749fe6d39.png" src="_images/90406d89115153d6bf31f390d7d06cb29cf256c23b65a9d709c0dd6749fe6d39.png" />
+<img alt="_images/4f4584e49c77f9c29afeb7a59d126637bcf21bba02f174ff182ceae002b13a3b.png" src="_images/4f4584e49c77f9c29afeb7a59d126637bcf21bba02f174ff182ceae002b13a3b.png" />
 </div>
 </div>
 </section>
@@ -840,14 +856,133 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-15-e5833332c9e3&gt;:8: FutureWarning: 
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-15-e5833332c9e3&gt;</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">color</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">merged_db</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">class_col</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">kolom</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Class&quot;</span><span class="p">)</span>
 
-Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+<span class="nn">/usr/local/lib/python3.11/dist-packages/seaborn/categorical.py</span> in <span class="ni">boxplot</span><span class="nt">(data, x, y, hue, order, hue_order, orient, color, palette, saturation, fill, dodge, width, gap, whis, linecolor, linewidth, fliersize, hue_norm, native_scale, log_scale, formatter, legend, ax, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1605</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1606</span>     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1607</span>         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1608</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1609</span>     <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">plot_data</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
 
-  sns.boxplot(data=merged_db, x=class_col, y=kolom, palette=color)
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/pyplot.py</span> in <span class="ni">gca</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2774</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">Figure</span><span class="o">.</span><span class="n">gca</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2775</span> <span class="k">def</span> <span class="nf">gca</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Axes</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2776</span>     <span class="k">return</span> <span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2777</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2778</span> 
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/figure.py</span> in <span class="ni">gca</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1717</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1718</span><span class="s2">         ax = self._axstack.current()</span>
+<span class="ne">-&gt; </span><span class="mi">1719</span><span class="s2">         return ax if ax is not None else self.add_subplot()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1720</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1721</span><span class="s2">     def _gci(self):</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/figure.py</span> in <span class="ni">add_subplot</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">766</span><span class="s2">                 args = tuple(map(int, str(args[0])))</span>
+<span class="g g-Whitespace">    </span><span class="mi">767</span><span class="s2">             projection_class, pkw = self._process_projection_requirements(**kwargs)</span>
+<span class="ne">--&gt; </span><span class="mi">768</span><span class="s2">             ax = projection_class(self, *args, **pkw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">769</span><span class="s2">             key = (projection_class, pkw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">770</span><span class="s2">         return self._add_axes_internal(ax, key)</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, fig, facecolor, frameon, sharex, sharey, label, xscale, yscale, box_aspect, forward_navigation_events, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">694</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">695</span><span class="s2">         self._rasterization_zorder = None</span>
+<span class="ne">--&gt; </span><span class="mi">696</span><span class="s2">         self.clear()</span>
+<span class="g g-Whitespace">    </span><span class="mi">697</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">698</span><span class="s2">         # funcs used to format x and y - fall back on major formatters</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">clear</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1414</span><span class="s2">             self.cla()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1415</span><span class="s2">         else:</span>
+<span class="ne">-&gt; </span><span class="mi">1416</span><span class="s2">             self.__clear()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1417</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1418</span><span class="s2">     def cla(self):</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">__clear</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1381</span><span class="s2">         self.set_axis_on()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1382</span><span class="s2"> </span>
+<span class="ne">-&gt; </span><span class="mi">1383</span><span class="s2">         self.xaxis.set_clip_path(self.patch)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1384</span><span class="s2">         self.yaxis.set_clip_path(self.patch)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1385</span><span class="s2"> </span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py</span> in <span class="ni">set_clip_path</span><span class="nt">(self, path, transform)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1126</span><span class="s2">     def set_clip_path(self, path, transform=None):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1127</span><span class="s2">         super().set_clip_path(path, transform)</span>
+<span class="ne">-&gt; </span><span class="mi">1128</span><span class="s2">         for child in self.majorTicks + self.minorTicks:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span><span class="s2">             child.set_clip_path(path, transform)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1130</span><span class="s2">         self.stale = True</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py</span> in <span class="ni">__get__</span><span class="nt">(self, instance, owner)</span>
+<span class="g g-Whitespace">    </span><span class="mi">550</span><span class="s2">             else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">551</span><span class="s2">                 instance.minorTicks = []</span>
+<span class="ne">--&gt; </span><span class="mi">552</span><span class="s2">                 tick = instance._get_tick(major=False)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span><span class="s2">                 instance.minorTicks = [tick]</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span><span class="s2">                 return instance.minorTicks</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py</span> in <span class="ni">_get_tick</span><span class="nt">(self, major)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1601</span><span class="s2">                 &quot;_tick_class or reimplement _get_tick()&quot;)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1602</span><span class="s2">         tick_kw = self._major_tick_kw if major else self._minor_tick_kw</span>
+<span class="ne">-&gt; </span><span class="mi">1603</span><span class="s2">         return self._tick_class(self.axes, 0, major=major, **tick_kw)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1604</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1605</span><span class="s2">     def _get_tick_label_size(self, axis_name):</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py</span> in <span class="ni">__init__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span><span class="s2">     def __init__(self, *args, **kwargs):</span>
+<span class="ne">--&gt; </span><span class="mi">368</span><span class="s2">         super().__init__(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span><span class="s2">         # x in data coords, y in axes coords</span>
+<span class="g g-Whitespace">    </span><span class="mi">370</span><span class="s2">         ax = self.axes</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py</span> in <span class="ni">__init__</span><span class="nt">(self, axes, loc, size, width, color, tickdir, pad, labelsize, labelcolor, labelfontfamily, zorder, gridOn, tick1On, tick2On, label1On, label2On, major, labelrotation, grid_color, grid_linestyle, grid_linewidth, grid_alpha, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span><span class="s2">         self.gridline.get_path()._interpolation_steps = </span><span class="se">\</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span><span class="s2">             GRIDLINE_INTERPOLATION_STEPS</span>
+<span class="ne">--&gt; </span><span class="mi">172</span><span class="s2">         self.label1 = mtext.Text(</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span><span class="s2">             np.nan, np.nan,</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span><span class="s2">             fontsize=labelsize, color=labelcolor, visible=label1On,</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/text.py</span> in <span class="ni">__init__</span><span class="nt">(self, x, y, text, color, verticalalignment, horizontalalignment, multialignment, fontproperties, rotation, linespacing, rotation_mode, usetex, wrap, transform_rotates_text, parse_math, antialiased, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span><span class="s2">             antialiased=antialiased</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span><span class="s2">         )</span>
+<span class="ne">--&gt; </span><span class="mi">155</span><span class="s2">         self.update(kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="s2">     def _reset_visual_defaults(</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/text.py</span> in <span class="ni">update</span><span class="nt">(self, kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="s2">         # docstring inherited</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span><span class="s2">         ret = []</span>
+<span class="ne">--&gt; </span><span class="mi">197</span><span class="s2">         kwargs = cbook.normalize_kwargs(kwargs, Text)</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="s2">         sentinel = object()  # bbox can be None, so use another sentinel.</span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span><span class="s2">         # Update fontproperties first, as it has lowest priority.</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/cbook.py</span> in <span class="ni">normalize_kwargs</span><span class="nt">(kw, alias_mapping)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1779</span><span class="s2">         alias_mapping = getattr(alias_mapping, &quot;_alias_map&quot;, </span><span class="si">{}</span><span class="s2">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1780</span><span class="s2"> </span>
+<span class="ne">-&gt; </span><span class="mi">1781</span><span class="s2">     to_canonical = {alias: canonical</span>
+<span class="nn">   1782                     for canonical, alias_list</span> in <span class="ni">alias_mapping.items</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1783</span><span class="s2">                     for alias in alias_list}</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/cbook.py</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1779</span><span class="s2">         alias_mapping = getattr(alias_mapping, &quot;_alias_map&quot;, </span><span class="si">{}</span><span class="s2">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1780</span><span class="s2"> </span>
+<span class="ne">-&gt; </span><span class="mi">1781</span><span class="s2">     to_canonical = {alias: canonical</span>
+<span class="nn">   1782                     for canonical, alias_list</span> in <span class="ni">alias_mapping.items</span><span class="nt">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1783</span><span class="s2">                     for alias in alias_list}</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
-<img alt="_images/3a682246b9a35f65173cd215e3a62c9af7cce0444ae3e3cc04466fd3ef40df2c.png" src="_images/3a682246b9a35f65173cd215e3a62c9af7cce0444ae3e3cc04466fd3ef40df2c.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 600x300 with 0 Axes&gt;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -880,7 +1015,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
   sns.boxplot(data=merged_db, x=class_col, y=kolom, palette=color)
 </pre></div>
 </div>
-<img alt="_images/675a3e2fa281f753fccc54ec4fdb30b46ae94f8ae7b19ad9be67bcce7aa75eef.png" src="_images/675a3e2fa281f753fccc54ec4fdb30b46ae94f8ae7b19ad9be67bcce7aa75eef.png" />
+<img alt="_images/778e2048a9818777060c381276aa806e78d9e42ba57913d0f4f259434f90c03c.png" src="_images/778e2048a9818777060c381276aa806e78d9e42ba57913d0f4f259434f90c03c.png" />
 </div>
 </div>
 </section>
@@ -913,7 +1048,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7ff04d8d6efc2b2cb6da0041fd428cf4ba8f0556558892130df40da1d48f0f45.png" src="_images/7ff04d8d6efc2b2cb6da0041fd428cf4ba8f0556558892130df40da1d48f0f45.png" />
+<img alt="_images/ad10dd964ce528564cab619cc27bc94e0af5128772aee817d45c35811a90a9ba.png" src="_images/ad10dd964ce528564cab619cc27bc94e0af5128772aee817d45c35811a90a9ba.png" />
 </div>
 </div>
 </section>
@@ -943,7 +1078,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8de779dc4ad09eea4d6fd3ddcce4db81be2c4a53655007b16cfcbb325ac67736.png" src="_images/8de779dc4ad09eea4d6fd3ddcce4db81be2c4a53655007b16cfcbb325ac67736.png" />
+<img alt="_images/8a400e1ce0994e585f7a73b6664c2ff22078f70a1720227f11e102e014e8f307.png" src="_images/8a400e1ce0994e585f7a73b6664c2ff22078f70a1720227f11e102e014e8f307.png" />
 </div>
 </div>
 </section>
@@ -973,7 +1108,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d0b91ea29c6e399ab4fed0fcd6b5dc252db58b90c560cc687e20844d5646e1d0.png" src="_images/d0b91ea29c6e399ab4fed0fcd6b5dc252db58b90c560cc687e20844d5646e1d0.png" />
+<img alt="_images/ad55778ef9d1f138b68bff83478183b22fa78b9956e495edc7b9d1c11bca9ea4.png" src="_images/ad55778ef9d1f138b68bff83478183b22fa78b9956e495edc7b9d1c11bca9ea4.png" />
 </div>
 </div>
 </section>
@@ -1003,7 +1138,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/57f47ec1a076f4a603694746878044f424f9f8c85175d1630797232e87bf3579.png" src="_images/57f47ec1a076f4a603694746878044f424f9f8c85175d1630797232e87bf3579.png" />
+<img alt="_images/c77e58b586da6c78e67971880a3120cafc3969f239c88709d78039c2ba3062d5.png" src="_images/c77e58b586da6c78e67971880a3120cafc3969f239c88709d78039c2ba3062d5.png" />
 </div>
 </div>
 </section>
@@ -1072,15 +1207,15 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e319f46961e35eb2b0c683420751509082e7b99b003085d51e05d9204e9deb9b.png" src="_images/e319f46961e35eb2b0c683420751509082e7b99b003085d51e05d9204e9deb9b.png" />
+<img alt="_images/5485cddb5324518a868cbebad935f8dd0124dcefd2a3b62c5bdc5a553df8f359.png" src="_images/5485cddb5324518a868cbebad935f8dd0124dcefd2a3b62c5bdc5a553df8f359.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="_images/34176e9af4913965ea2469d064b680d0e400ab3210ef9a63f5481ec9b26aca7d.png" src="_images/34176e9af4913965ea2469d064b680d0e400ab3210ef9a63f5481ec9b26aca7d.png" />
+<img alt="_images/fe90ff243332fefa73b7606f0e3416713a5e428279b8d0e1b90a3a9c1f8838bd.png" src="_images/fe90ff243332fefa73b7606f0e3416713a5e428279b8d0e1b90a3a9c1f8838bd.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="_images/0eee0829b5cc67399116b580622775ae22a3a459b80ce08179d75a75e89bae69.png" src="_images/0eee0829b5cc67399116b580622775ae22a3a459b80ce08179d75a75e89bae69.png" />
+<img alt="_images/907285ea94a9757e5023dd092250561a25f55698ab47e0b7b47e5fb1a02a0f44.png" src="_images/907285ea94a9757e5023dd092250561a25f55698ab47e0b7b47e5fb1a02a0f44.png" />
 </div>
 </div>
 </section>
@@ -1149,15 +1284,15 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1b7977321aa333f45669d8762a8851ad509d845c37fc6ff38b805b72ad29a9ce.png" src="_images/1b7977321aa333f45669d8762a8851ad509d845c37fc6ff38b805b72ad29a9ce.png" />
+<img alt="_images/395097868e26140561e3d4fc12de79bec5040ad8845e52def48d2e1c857b9193.png" src="_images/395097868e26140561e3d4fc12de79bec5040ad8845e52def48d2e1c857b9193.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="_images/f80436a06d73374de5796f136efc09b4987239dcb8dcdb3d1897b74d9127d0c8.png" src="_images/f80436a06d73374de5796f136efc09b4987239dcb8dcdb3d1897b74d9127d0c8.png" />
+<img alt="_images/a4937d896a267f0e05a5bee8aae100bc8dcb6ba13efc3026f3fbcba639827e6f.png" src="_images/a4937d896a267f0e05a5bee8aae100bc8dcb6ba13efc3026f3fbcba639827e6f.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="_images/f8a08c9b3d4de71bc7b97c65517e36fdb5ef745bacf318fd546a14e009a6c858.png" src="_images/f8a08c9b3d4de71bc7b97c65517e36fdb5ef745bacf318fd546a14e009a6c858.png" />
+<img alt="_images/29f47288c391e2c9c9d57a5e8e0f074862cf3360f2d4e51303cf30b200a4ceb9.png" src="_images/29f47288c391e2c9c9d57a5e8e0f074862cf3360f2d4e51303cf30b200a4ceb9.png" />
 </div>
 </div>
 </section>
@@ -1226,15 +1361,15 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6035b221bc4704356853e22f13e89805df683ed6518e37737d3e048e6a65dc69.png" src="_images/6035b221bc4704356853e22f13e89805df683ed6518e37737d3e048e6a65dc69.png" />
+<img alt="_images/0e94caa95646f5ec9011a2aaca08d9a153e10fd79c6818c166435c41a6ee7520.png" src="_images/0e94caa95646f5ec9011a2aaca08d9a153e10fd79c6818c166435c41a6ee7520.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="_images/2b81f13fe697f3ab0301f9c8ef573fbee07d15a0a2824c7e1a06394fb41b85d3.png" src="_images/2b81f13fe697f3ab0301f9c8ef573fbee07d15a0a2824c7e1a06394fb41b85d3.png" />
+<img alt="_images/f00b0fec49d4768ecb663c25b14163e65c95ff112fb9e7288d5459004f1cd54f.png" src="_images/f00b0fec49d4768ecb663c25b14163e65c95ff112fb9e7288d5459004f1cd54f.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="_images/cdbb925c39b4ceec1d81b857e37869085d502cc8f2bc2ef00323966f535db3fe.png" src="_images/cdbb925c39b4ceec1d81b857e37869085d502cc8f2bc2ef00323966f535db3fe.png" />
+<img alt="_images/72d21879478bba6d292d7cc196d1fc3b1bddc48590042944887a781d5e421218.png" src="_images/72d21879478bba6d292d7cc196d1fc3b1bddc48590042944887a781d5e421218.png" />
 </div>
 </div>
 </section>
@@ -1303,15 +1438,15 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d246c0ff7f62de5bbc2d7728133fbf064de1f172d65244171d026a3ce332608f.png" src="_images/d246c0ff7f62de5bbc2d7728133fbf064de1f172d65244171d026a3ce332608f.png" />
+<img alt="_images/4feb8e9c21e4eedc7a70320ad3074eb8154d746c1cfd49393bc69c524172f084.png" src="_images/4feb8e9c21e4eedc7a70320ad3074eb8154d746c1cfd49393bc69c524172f084.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="_images/793eea6dc76b3b1ed10595886064aeca5b2de190a3b05aacd281b2bfd0e0be60.png" src="_images/793eea6dc76b3b1ed10595886064aeca5b2de190a3b05aacd281b2bfd0e0be60.png" />
+<img alt="_images/0b1fc07ebea15c76ed0da1cfabdf8c2d9a8274d40474046eea0b9888d137d8b7.png" src="_images/0b1fc07ebea15c76ed0da1cfabdf8c2d9a8274d40474046eea0b9888d137d8b7.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="_images/d826ee3f780f7a01cf0ad1e44e33c6b6168bcc8ca35e62bd9f12af5883775c6b.png" src="_images/d826ee3f780f7a01cf0ad1e44e33c6b6168bcc8ca35e62bd9f12af5883775c6b.png" />
+<img alt="_images/54ffdba9e300a521b3d715e16aaa6d8f37cedf1669eca9cdfda89b6355fad6f4.png" src="_images/54ffdba9e300a521b3d715e16aaa6d8f37cedf1669eca9cdfda89b6355fad6f4.png" />
 </div>
 </div>
 </section>
@@ -1373,6 +1508,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macam-macam-tipe-data-pada-setiap-kolom-data-mining">Macam-Macam tipe data pada setiap kolom Data Mining</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-package-untuk-mysql-dan-posgresql">Install Package untuk MySQL dan PosgreSQL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql-dan-posgresql-melalui-aiven-io">Koneksi ke Database MySQL dan PosgreSQL melalui aiven.io</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-posgresql">Koneksi ke PosgreSQL</a></li>
