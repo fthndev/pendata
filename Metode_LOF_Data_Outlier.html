@@ -1,0 +1,1488 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Deteksi Oulier Menggunakan Metode LOF &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Metode_LOF_Data_Outlier';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Data Understanding" href="Data_Mining_Data_Understanding.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Website Penambangan Data
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Data_Mining_Data_Understanding.html">Data Understanding</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Deteksi Oulier Menggunakan Metode LOF</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FMetode_LOF_Data_Outlier.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Metode_LOF_Data_Outlier.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Deteksi Oulier Menggunakan Metode LOF</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-local-outlier-factor-lof"><strong>1. Apa itu Local Outlier Factor (LOF)?</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-dasar-lof"><strong>2. Konsep Dasar LOF</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-menentukan-tetangga-terdekat-k-nearest-neighbors"><strong>a. Menentukan Tetangga Terdekat (<em>k-nearest neighbors</em>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-menghitung-jarak-jangkauan-reachability-distance"><strong>b. Menghitung Jarak Jangkauan (<em>Reachability Distance</em>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-menghitung-kepadatan-lokal-local-reachability-density-lrd"><strong>c. Menghitung Kepadatan Lokal (<em>Local Reachability Density - LRD</em>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-menghitung-lof-score"><strong>d. Menghitung LOF Score</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mendeteksi-data-secara-manual">Mendeteksi Data Secara Manual</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-dari-local-enviroment">Mengambil data dari Local Enviroment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-jarak-menggunakan-encludian-distance">Menghitung Jarak Menggunakan Encludian Distance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-reachable-distance-rd">Menghitung Nilai Reachable Distance (RD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-local-reachbility-density-lrd">Menghitung Nilai Local Reachbility Density (LRD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-local-outlier-factor-lof">Menghitung Nilai Local Outlier Factor (LOF)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mendeteksi-data-outlier-menggunakan-library-sklearn-neighbors">Mendeteksi Data Outlier Menggunakan Library sklearn.neighbors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-menggunakan-scatter-plot">Visualisasi Data Menggunakan Scatter Plot</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="deteksi-oulier-menggunakan-metode-lof">
+<h1>Deteksi Oulier Menggunakan Metode LOF<a class="headerlink" href="#deteksi-oulier-menggunakan-metode-lof" title="Link to this heading">#</a></h1>
+<section id="apa-itu-local-outlier-factor-lof">
+<h2><strong>1. Apa itu Local Outlier Factor (LOF)?</strong><a class="headerlink" href="#apa-itu-local-outlier-factor-lof" title="Link to this heading">#</a></h2>
+<p>Local Outlier Factor (LOF) adalah algoritma berbasis kepadatan (<em>density-based</em>) yang digunakan untuk mendeteksi <strong>outlier</strong> dalam suatu dataset. Algoritma ini membandingkan <strong>kepadatan lokal</strong> suatu titik data dengan kepadatan lokal tetangganya. Jika suatu titik memiliki kepadatan yang jauh lebih rendah dibandingkan dengan tetangganya, maka titik tersebut dianggap sebagai <strong>outlier</strong>.</p>
+<p>LOF diperkenalkan oleh <strong>Breunig dkk. (2000)</strong> dan sering digunakan dalam deteksi anomali karena mampu menangani distribusi data yang kompleks tanpa asumsi bahwa data harus mengikuti distribusi normal.</p>
+</section>
+<hr class="docutils" />
+<section id="konsep-dasar-lof">
+<h2><strong>2. Konsep Dasar LOF</strong><a class="headerlink" href="#konsep-dasar-lof" title="Link to this heading">#</a></h2>
+<p>LOF bekerja dengan membandingkan kepadatan lokal suatu titik dengan kepadatan lokal dari titik-titik terdekatnya. Berikut adalah langkah-langkah utama dalam LOF:</p>
+<section id="a-menentukan-tetangga-terdekat-k-nearest-neighbors">
+<h3><strong>a. Menentukan Tetangga Terdekat (<em>k-nearest neighbors</em>)</strong><a class="headerlink" href="#a-menentukan-tetangga-terdekat-k-nearest-neighbors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Untuk setiap titik dalam dataset, cari <strong>k tetangga terdekat</strong> berdasarkan jarak (misalnya, Euclidean distance).</p></li>
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">$n\_neighbors$</span></code> menentukan jumlah tetangga yang digunakan dalam perhitungan.</p></li>
+</ul>
+</section>
+<section id="b-menghitung-jarak-jangkauan-reachability-distance">
+<h3><strong>b. Menghitung Jarak Jangkauan (<em>Reachability Distance</em>)</strong><a class="headerlink" href="#b-menghitung-jarak-jangkauan-reachability-distance" title="Link to this heading">#</a></h3>
+<p>Jarak jangkauan dari titik <span class="math notranslate nohighlight">\(A\)</span> ke titik <span class="math notranslate nohighlight">\(B\)</span> didefinisikan sebagai:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{reachability\_distance}(A, B) = \max(d_k(B), d(A, B))
+\]</div>
+<p>di mana:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(d_k(B)\)</span> adalah jarak dari titik <span class="math notranslate nohighlight">\(B\)</span> ke tetangga ke-<span class="math notranslate nohighlight">\(k\)</span> terdekatnya.</p></li>
+<li><p><span class="math notranslate nohighlight">\(d(A, B)\)</span> adalah jarak langsung dari <span class="math notranslate nohighlight">\(A\)</span> ke <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+</ul>
+<p>Jarak ini digunakan untuk menghindari efek titik-titik yang terlalu dekat dengan satu sama lain.</p>
+</section>
+<section id="c-menghitung-kepadatan-lokal-local-reachability-density-lrd">
+<h3><strong>c. Menghitung Kepadatan Lokal (<em>Local Reachability Density - LRD</em>)</strong><a class="headerlink" href="#c-menghitung-kepadatan-lokal-local-reachability-density-lrd" title="Link to this heading">#</a></h3>
+<p>Kepadatan jangkauan lokal (<em>Local Reachability Density - LRD</em>) dari suatu titik <span class="math notranslate nohighlight">\(A\)</span> dihitung sebagai kebalikan dari rata-rata jarak jangkauan dari titik <span class="math notranslate nohighlight">\(A\)</span> ke semua tetangganya:</p>
+<div class="math notranslate nohighlight">
+\[
+LRD(A) = \frac{1}{\frac{1}{|kNN(A)|} \sum_{B \in kNN(A)} \text{reachability\_distance}(A, B)}
+\]</div>
+<p>Semakin kecil nilai <strong>LRD</strong>, semakin jarang titik itu berada dalam suatu kelompok.</p>
+</section>
+<section id="d-menghitung-lof-score">
+<h3><strong>d. Menghitung LOF Score</strong><a class="headerlink" href="#d-menghitung-lof-score" title="Link to this heading">#</a></h3>
+<p>Local Outlier Factor (LOF) dihitung sebagai rasio rata-rata kepadatan tetangga dengan kepadatan titik itu sendiri:</p>
+<div class="math notranslate nohighlight">
+\[
+LOF(A) = \frac{1}{|kNN(A)|} \sum_{B \in kNN(A)} \frac{LRD(B)}{LRD(A)}
+\]</div>
+<p>di mana:</p>
+<ul class="simple">
+<li><p>Jika <span class="math notranslate nohighlight">\(LOF \approx 1\)</span>, maka titik tersebut memiliki kepadatan yang mirip dengan tetangganya (<strong>bukan outlier</strong>).</p></li>
+<li><p>Jika <span class="math notranslate nohighlight">\(LOF \gg 1\)</span>, maka titik tersebut memiliki kepadatan jauh lebih rendah dibandingkan dengan tetangganya (<strong>outlier</strong>).</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="mendeteksi-data-secara-manual">
+<h2>Mendeteksi Data Secara Manual<a class="headerlink" href="#mendeteksi-data-secara-manual" title="Link to this heading">#</a></h2>
+<section id="import-library">
+<h3>Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mengambil-data-dari-local-enviroment">
+<h3>Mengambil data dari Local Enviroment<a class="headerlink" href="#mengambil-data-dari-local-enviroment" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+
+<span class="c1"># Upload file secara manual</span>
+<span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+     <input type="file" id="files-682dc7ab-d7d0-454a-8b11-19edc1cb31bc" name="files[]" multiple disabled
+        style="border:none" />
+     <output id="result-682dc7ab-d7d0-454a-8b11-19edc1cb31bc">
+      Upload widget is only available when the cell has been executed in the
+      current browser session. Please rerun this cell to enable.
+      </output>
+      <script>// Copyright 2017 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * @fileoverview Helpers for google.colab Python module.
+ */
+(function(scope) {
+function span(text, styleAttributes = {}) {
+  const element = document.createElement('span');
+  element.textContent = text;
+  for (const key of Object.keys(styleAttributes)) {
+    element.style[key] = styleAttributes[key];
+  }
+  return element;
+}
+
+// Max number of bytes which will be uploaded at a time.
+const MAX_PAYLOAD_SIZE = 100 * 1024;
+
+function _uploadFiles(inputId, outputId) {
+  const steps = uploadFilesStep(inputId, outputId);
+  const outputElement = document.getElementById(outputId);
+  // Cache steps on the outputElement to make it available for the next call
+  // to uploadFilesContinue from Python.
+  outputElement.steps = steps;
+
+  return _uploadFilesContinue(outputId);
+}
+
+// This is roughly an async generator (not supported in the browser yet),
+// where there are multiple asynchronous steps and the Python side is going
+// to poll for completion of each step.
+// This uses a Promise to block the python side on completion of each step,
+// then passes the result of the previous step as the input to the next step.
+function _uploadFilesContinue(outputId) {
+  const outputElement = document.getElementById(outputId);
+  const steps = outputElement.steps;
+
+  const next = steps.next(outputElement.lastPromiseValue);
+  return Promise.resolve(next.value.promise).then((value) => {
+    // Cache the last promise value to make it available to the next
+    // step of the generator.
+    outputElement.lastPromiseValue = value;
+    return next.value.response;
+  });
+}
+
+/**
+ * Generator function which is called between each async step of the upload
+ * process.
+ * @param {string} inputId Element ID of the input file picker element.
+ * @param {string} outputId Element ID of the output display.
+ * @return {!Iterable<!Object>} Iterable of next steps.
+ */
+function* uploadFilesStep(inputId, outputId) {
+  const inputElement = document.getElementById(inputId);
+  inputElement.disabled = false;
+
+  const outputElement = document.getElementById(outputId);
+  outputElement.innerHTML = '';
+
+  const pickedPromise = new Promise((resolve) => {
+    inputElement.addEventListener('change', (e) => {
+      resolve(e.target.files);
+    });
+  });
+
+  const cancel = document.createElement('button');
+  inputElement.parentElement.appendChild(cancel);
+  cancel.textContent = 'Cancel upload';
+  const cancelPromise = new Promise((resolve) => {
+    cancel.onclick = () => {
+      resolve(null);
+    };
+  });
+
+  // Wait for the user to pick the files.
+  const files = yield {
+    promise: Promise.race([pickedPromise, cancelPromise]),
+    response: {
+      action: 'starting',
+    }
+  };
+
+  cancel.remove();
+
+  // Disable the input element since further picks are not allowed.
+  inputElement.disabled = true;
+
+  if (!files) {
+    return {
+      response: {
+        action: 'complete',
+      }
+    };
+  }
+
+  for (const file of files) {
+    const li = document.createElement('li');
+    li.append(span(file.name, {fontWeight: 'bold'}));
+    li.append(span(
+        `(${file.type || 'n/a'}) - ${file.size} bytes, ` +
+        `last modified: ${
+            file.lastModifiedDate ? file.lastModifiedDate.toLocaleDateString() :
+                                    'n/a'} - `));
+    const percent = span('0% done');
+    li.appendChild(percent);
+
+    outputElement.appendChild(li);
+
+    const fileDataPromise = new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        resolve(e.target.result);
+      };
+      reader.readAsArrayBuffer(file);
+    });
+    // Wait for the data to be ready.
+    let fileData = yield {
+      promise: fileDataPromise,
+      response: {
+        action: 'continue',
+      }
+    };
+
+    // Use a chunked sending to avoid message size limits. See b/62115660.
+    let position = 0;
+    do {
+      const length = Math.min(fileData.byteLength - position, MAX_PAYLOAD_SIZE);
+      const chunk = new Uint8Array(fileData, position, length);
+      position += length;
+
+      const base64 = btoa(String.fromCharCode.apply(null, chunk));
+      yield {
+        response: {
+          action: 'append',
+          file: file.name,
+          data: base64,
+        },
+      };
+
+      let percentDone = fileData.byteLength === 0 ?
+          100 :
+          Math.round((position / fileData.byteLength) * 100);
+      percent.textContent = `${percentDone}% done`;
+
+    } while (position < fileData.byteLength);
+  }
+
+  // All done.
+  yield {
+    response: {
+      action: 'complete',
+    }
+  };
+}
+
+scope.google = scope.google || {};
+scope.google.colab = scope.google.colab || {};
+scope.google.colab._files = {
+  _uploadFiles,
+  _uploadFilesContinue,
+};
+})(self);
+</script> </div><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-2-b3b439e801e6&gt;</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Upload file secara manual</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/google/colab/files.py</span> in <span class="ni">upload</span><span class="nt">(target_dir)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>   <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="s2"> </span>
+<span class="ne">---&gt; </span><span class="mi">72</span><span class="s2">   uploaded_files = _upload_files(multiple=True)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="s2">   # Mapping from original filename to filename as saved locally.</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2">   local_filenames = dict()</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/google/colab/files.py</span> in <span class="ni">_upload_files</span><span class="nt">(multiple)</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span><span class="s2">   # First result is always an indication that the file picker has completed.</span>
+<span class="ne">--&gt; </span><span class="mi">164</span><span class="s2">   result = _output.eval_js(</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span><span class="s2">       &#39;google.colab._files._uploadFiles(&quot;</span><span class="si">{input_id}</span><span class="s2">&quot;, &quot;</span><span class="si">{output_id}</span><span class="s2">&quot;)&#39;.format(</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span><span class="s2">           input_id=input_id, output_id=output_id</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/google/colab/output/_js.py</span> in <span class="ni">eval_js</span><span class="nt">(script, ignore_result, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span><span class="s2">   if ignore_result:</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span><span class="s2">     return</span>
+<span class="ne">---&gt; </span><span class="mi">40</span><span class="s2">   return _message.read_reply_from_input(request_id, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span><span class="s2"> </span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span><span class="s2">     reply = _read_next_input_message()</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span><span class="s2">     if reply == _NOT_READY or not isinstance(reply, dict):</span>
+<span class="ne">---&gt; </span><span class="mi">96</span><span class="s2">       time.sleep(0.025)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span><span class="s2">       continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span><span class="s2">     if (</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;deteksi_outlier.xlsx&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Data&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;grid&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----+-------+------------+------+------+
+|    |   No. | Variabel   |   X1 |   X2 |
++====+=======+============+======+======+
+|  0 |     1 | A          |    1 |    4 |
++----+-------+------------+------+------+
+|  1 |     2 | B          |    3 |    4 |
++----+-------+------------+------+------+
+|  2 |     3 | C          |    2 |    3 |
++----+-------+------------+------+------+
+|  3 |     4 | D          |    4 |    5 |
++----+-------+------------+------+------+
+|  4 |     5 | E          |   20 |   29 |
++----+-------+------------+------+------+
+|  5 |     6 | F          |    3 |    7 |
++----+-------+------------+------+------+
+|  6 |     7 | G          |    1 |    3 |
++----+-------+------------+------+------+
+|  7 |     8 | H          |    2 |    5 |
++----+-------+------------+------+------+
+|  8 |     9 | I          |    6 |    8 |
++----+-------+------------+------+------+
+|  9 |    10 | J          |   50 |   69 |
++----+-------+------------+------+------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menghitung-jarak-menggunakan-encludian-distance">
+<h3>Menghitung Jarak Menggunakan Encludian Distance<a class="headerlink" href="#menghitung-jarak-menggunakan-encludian-distance" title="Link to this heading">#</a></h3>
+<p>Hitung jarak setiap titik dengan titik lainnya yang nantinya digunakan untuk menghitung RD (Reachable Distance).</p>
+<p><strong>Rumus Euclidean Distance</strong></p>
+<p>Jarak Euclidean antara dua titik ( (x_1, y_1) ) dan ( (x_2, y_2) ) dihitung dengan rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A, B) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;deteksi_outlier.xlsx&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Encludian Distance&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;grid&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----+---------+----------+----------+----------+----------+---------+----------+----------+----------+----------+---------+
+|    | Titik   |        A |        B |        C |        D |       E |        F |        G |        H |        I |       J |
++====+=========+==========+==========+==========+==========+=========+==========+==========+==========+==========+=========+
+|  0 | A       |  0       |  2       |  1.41421 |  3.16228 | 31.4006 |  3.60555 |  1       |  1.41421 |  6.40312 | 81.4002 |
++----+---------+----------+----------+----------+----------+---------+----------+----------+----------+----------+---------+
+|  1 | B       |  2       |  0       |  1.41421 |  1.41421 | 30.2324 |  3       |  2.23607 |  1.41421 |  5       | 80.2122 |
++----+---------+----------+----------+----------+----------+---------+----------+----------+----------+----------+---------+
+|  2 | C       |  1.41421 |  1.41421 |  0       |  2.82843 | 31.6228 |  4.12311 |  1       |  2       |  6.40312 | 81.6088 |
++----+---------+----------+----------+----------+----------+---------+----------+----------+----------+----------+---------+
+|  3 | D       |  3.16228 |  1.41421 |  2.82843 |  0       | 28.8444 |  2.23607 |  3.60555 |  2       |  3.60555 | 78.8162 |
++----+---------+----------+----------+----------+----------+---------+----------+----------+----------+----------+---------+
+|  4 | E       | 31.4006  | 30.2324  | 31.6228  | 28.8444  |  0      | 27.8029  | 32.2025  | 30       | 25.2389  | 50      |
++----+---------+----------+----------+----------+----------+---------+----------+----------+----------+----------+---------+
+|  5 | F       |  3.60555 |  3       |  4.12311 |  2.23607 | 27.8029 |  0       |  4.47214 |  2.23607 |  3.16228 | 77.801  |
++----+---------+----------+----------+----------+----------+---------+----------+----------+----------+----------+---------+
+|  6 | G       |  1       |  2.23607 |  1       |  3.60555 | 32.2025 |  4.47214 |  0       |  2.23607 |  7.07107 | 82.201  |
++----+---------+----------+----------+----------+----------+---------+----------+----------+----------+----------+---------+
+|  7 | H       |  1.41421 |  1.41421 |  2       |  2       | 30      |  2.23607 |  2.23607 |  0       |  5       | 80      |
++----+---------+----------+----------+----------+----------+---------+----------+----------+----------+----------+---------+
+|  8 | I       |  6.40312 |  5       |  6.40312 |  3.60555 | 25.2389 |  3.16228 |  7.07107 |  5       |  0       | 75.213  |
++----+---------+----------+----------+----------+----------+---------+----------+----------+----------+----------+---------+
+|  9 | J       | 81.4002  | 80.2122  | 81.6088  | 78.8162  | 50      | 77.801   | 82.201   | 80       | 75.213   |  0      |
++----+---------+----------+----------+----------+----------+---------+----------+----------+----------+----------+---------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kemudian kelompokkan masing-masing titik dan urutkan dari terkecil ke terbesar sebelum sampling menggunakan k-terdekat.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;deteksi_outlier.xlsx&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Sort Jarak&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;grid&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----+----------------+-------------+
+|    | Hasil Sort A   | Encludian   |
++====+================+=============+
+|  0 | (A,G)          | 1           |
++----+----------------+-------------+
+|  1 | (A,C)          | 1.41        |
++----+----------------+-------------+
+|  2 | (A,H)          | 1.41        |
++----+----------------+-------------+
+|  3 | (A,B)          | 2           |
++----+----------------+-------------+
+|  4 | (A,D)          | 3.16        |
++----+----------------+-------------+
+|  5 | (A,F)          | 3.61        |
++----+----------------+-------------+
+|  6 | (A,I)          | 6.4         |
++----+----------------+-------------+
+|  7 | (A,E)          | 31.4        |
++----+----------------+-------------+
+|  8 | (A,J)          | 81.4        |
++----+----------------+-------------+
+|  9 | Hasil Sort B   | Encludian   |
++----+----------------+-------------+
+| 10 | (B,C)          | 1.41        |
++----+----------------+-------------+
+| 11 | (B,D)          | 1.41        |
++----+----------------+-------------+
+| 12 | (B,H)          | 1.41        |
++----+----------------+-------------+
+| 13 | (B,A)          | 2           |
++----+----------------+-------------+
+| 14 | (B,G)          | 2.24        |
++----+----------------+-------------+
+| 15 | (B,F)          | 3           |
++----+----------------+-------------+
+| 16 | (B,I)          | 5           |
++----+----------------+-------------+
+| 17 | (B,E)          | 30.32       |
++----+----------------+-------------+
+| 18 | (B,J)          | 80.21       |
++----+----------------+-------------+
+| 19 | Hasil Sort C   | Encludian   |
++----+----------------+-------------+
+| 20 | (C,G)          | 1           |
++----+----------------+-------------+
+| 21 | (C,A)          | 1.41        |
++----+----------------+-------------+
+| 22 | (C,B)          | 1.41        |
++----+----------------+-------------+
+| 23 | (C,H)          | 2           |
++----+----------------+-------------+
+| 24 | (C,D)          | 2.83        |
++----+----------------+-------------+
+| 25 | (C,F)          | 4.12        |
++----+----------------+-------------+
+| 26 | (C,I)          | 6.4         |
++----+----------------+-------------+
+| 27 | (C,E)          | 31.62       |
++----+----------------+-------------+
+| 28 | (C,J)          | 81.61       |
++----+----------------+-------------+
+| 29 | Hasil Sort D   | Encludian   |
++----+----------------+-------------+
+| 30 | (D,B)          | 1.41        |
++----+----------------+-------------+
+| 31 | (D,H)          | 2           |
++----+----------------+-------------+
+| 32 | (D,F)          | 2.24        |
++----+----------------+-------------+
+| 33 | (D,C)          | 2.83        |
++----+----------------+-------------+
+| 34 | (D,A)          | 3.16        |
++----+----------------+-------------+
+| 35 | (D,G)          | 3.61        |
++----+----------------+-------------+
+| 36 | (D,I)          | 3.61        |
++----+----------------+-------------+
+| 37 | (D,E)          | 28.84       |
++----+----------------+-------------+
+| 38 | (D,J)          | 78.82       |
++----+----------------+-------------+
+| 39 | Hasil Sort E   | Encludian   |
++----+----------------+-------------+
+| 40 | (E,I)          | 25.24       |
++----+----------------+-------------+
+| 41 | (E,F)          | 27.8        |
++----+----------------+-------------+
+| 42 | (E,D)          | 28.84       |
++----+----------------+-------------+
+| 43 | (E,H)          | 30          |
++----+----------------+-------------+
+| 44 | (E,B)          | 30.23       |
++----+----------------+-------------+
+| 45 | (E,A)          | 31.4        |
++----+----------------+-------------+
+| 46 | (E,C)          | 31.62       |
++----+----------------+-------------+
+| 47 | (E,G)          | 32.2        |
++----+----------------+-------------+
+| 48 | (E,J)          | 50          |
++----+----------------+-------------+
+| 49 | Hasil Sort F   | Encludian   |
++----+----------------+-------------+
+| 50 | (F,D)          | 2.24        |
++----+----------------+-------------+
+| 51 | (F,H)          | 2.24        |
++----+----------------+-------------+
+| 52 | (F,B)          | 3           |
++----+----------------+-------------+
+| 53 | (F,I)          | 3.16        |
++----+----------------+-------------+
+| 54 | (F,A)          | 3.61        |
++----+----------------+-------------+
+| 55 | (F,C)          | 4.12        |
++----+----------------+-------------+
+| 56 | (F,G)          | 4.47        |
++----+----------------+-------------+
+| 57 | (F,E)          | 27.8        |
++----+----------------+-------------+
+| 58 | (F,J)          | 77.8        |
++----+----------------+-------------+
+| 59 | Hasil Sort G   | Encludian   |
++----+----------------+-------------+
+| 60 | (G,A)          | 1           |
++----+----------------+-------------+
+| 61 | (G,C)          | 1           |
++----+----------------+-------------+
+| 62 | (G,B)          | 2.24        |
++----+----------------+-------------+
+| 63 | (G,H)          | 2.24        |
++----+----------------+-------------+
+| 64 | (G,D)          | 3.61        |
++----+----------------+-------------+
+| 65 | (G,F)          | 4.47        |
++----+----------------+-------------+
+| 66 | (G,I)          | 7.07        |
++----+----------------+-------------+
+| 67 | (G,E)          | 32.2        |
++----+----------------+-------------+
+| 68 | (G,J)          | 82.2        |
++----+----------------+-------------+
+| 69 | Hasil Sort H   | Encludian   |
++----+----------------+-------------+
+| 70 | (H,A)          | 1.41        |
++----+----------------+-------------+
+| 71 | (H,B)          | 1.41        |
++----+----------------+-------------+
+| 72 | (H,C)          | 2           |
++----+----------------+-------------+
+| 73 | (H,D)          | 2           |
++----+----------------+-------------+
+| 74 | (H,F)          | 2.24        |
++----+----------------+-------------+
+| 75 | (H,G)          | 2.24        |
++----+----------------+-------------+
+| 76 | (H,I)          | 5           |
++----+----------------+-------------+
+| 77 | (H,E)          | 30          |
++----+----------------+-------------+
+| 78 | (H,J)          | 80          |
++----+----------------+-------------+
+| 79 | Hasil Sort I   | Encludian   |
++----+----------------+-------------+
+| 80 | (I,F)          | 3.16        |
++----+----------------+-------------+
+| 81 | (I,D)          | 3.61        |
++----+----------------+-------------+
+| 82 | (I,B)          | 5           |
++----+----------------+-------------+
+| 83 | (I,H)          | 5           |
++----+----------------+-------------+
+| 84 | (I,A)          | 6.4         |
++----+----------------+-------------+
+| 85 | (I,C)          | 6.4         |
++----+----------------+-------------+
+| 86 | (I,G)          | 7.07        |
++----+----------------+-------------+
+| 87 | (I,E)          | 25.24       |
++----+----------------+-------------+
+| 88 | (I,J)          | 75.21       |
++----+----------------+-------------+
+| 89 | Hasil Sort J   | Encludian   |
++----+----------------+-------------+
+| 90 | (J,E)          | 50          |
++----+----------------+-------------+
+| 91 | (J,I)          | 75.21       |
++----+----------------+-------------+
+| 92 | (J,F)          | 77.8        |
++----+----------------+-------------+
+| 93 | (J,D)          | 78.82       |
++----+----------------+-------------+
+| 94 | (J,H)          | 80          |
++----+----------------+-------------+
+| 95 | (J,B)          | 80.21       |
++----+----------------+-------------+
+| 96 | (J,A)          | 81.4        |
++----+----------------+-------------+
+| 97 | (J,C)          | 81.61       |
++----+----------------+-------------+
+| 98 | (J,G)          | 82.2        |
++----+----------------+-------------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ambil data yang telah diurutkan pada setiap kelompok titik berdasarkan nilai k-nya yakni 3 data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;deteksi_outlier.xlsx&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;grid&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----+------------------------+-------------+
+|    | Hasil Sampling k=3 A   | Encludian   |
++====+========================+=============+
+|  0 | (A,G)                  | 1           |
++----+------------------------+-------------+
+|  1 | (A,C)                  | 1.41        |
++----+------------------------+-------------+
+|  2 | (A,H)                  | 1.41        |
++----+------------------------+-------------+
+|  3 | Hasil Sampling k=3  B  | Encludian   |
++----+------------------------+-------------+
+|  4 | (B,C)                  | 1.41        |
++----+------------------------+-------------+
+|  5 | (B,D)                  | 1.41        |
++----+------------------------+-------------+
+|  6 | (B,H)                  | 1.41        |
++----+------------------------+-------------+
+|  7 | Hasil Sampling k=3  C  | Encludian   |
++----+------------------------+-------------+
+|  8 | (C,G)                  | 1           |
++----+------------------------+-------------+
+|  9 | (C,A)                  | 1.41        |
++----+------------------------+-------------+
+| 10 | (C,B)                  | 1.41        |
++----+------------------------+-------------+
+| 11 | Hasil Sampling k=3 D   | Encludian   |
++----+------------------------+-------------+
+| 12 | (D,B)                  | 1.41        |
++----+------------------------+-------------+
+| 13 | (D,H)                  | 2           |
++----+------------------------+-------------+
+| 14 | (D,F)                  | 2.24        |
++----+------------------------+-------------+
+| 15 | Hasil Sampling k=3 E   | Encludian   |
++----+------------------------+-------------+
+| 16 | (E,I)                  | 25.24       |
++----+------------------------+-------------+
+| 17 | (E,F)                  | 27.8        |
++----+------------------------+-------------+
+| 18 | (E,D)                  | 28.84       |
++----+------------------------+-------------+
+| 19 | Hasil Sampling k=3 F   | Encludian   |
++----+------------------------+-------------+
+| 20 | (F,D)                  | 2.24        |
++----+------------------------+-------------+
+| 21 | (F,H)                  | 2.24        |
++----+------------------------+-------------+
+| 22 | (F,B)                  | 3           |
++----+------------------------+-------------+
+| 23 | Hasil Sampling k=3 G   | Encludian   |
++----+------------------------+-------------+
+| 24 | (G,A)                  | 1           |
++----+------------------------+-------------+
+| 25 | (G,C)                  | 1           |
++----+------------------------+-------------+
+| 26 | (G,B)                  | 2.24        |
++----+------------------------+-------------+
+| 27 | Hasil Sampling k=3 H   | Encludian   |
++----+------------------------+-------------+
+| 28 | (H,A)                  | 1.41        |
++----+------------------------+-------------+
+| 29 | (H,B)                  | 1.41        |
++----+------------------------+-------------+
+| 30 | (H,C)                  | 2           |
++----+------------------------+-------------+
+| 31 | Hasil Sampling k=3 I   | Encludian   |
++----+------------------------+-------------+
+| 32 | (I,F)                  | 3.16        |
++----+------------------------+-------------+
+| 33 | (I,D)                  | 3.61        |
++----+------------------------+-------------+
+| 34 | (I,B)                  | 5           |
++----+------------------------+-------------+
+| 35 | Hasil Sampling k=3  J  | Encludian   |
++----+------------------------+-------------+
+| 36 | (J,E)                  | 50          |
++----+------------------------+-------------+
+| 37 | (J,I)                  | 75.21       |
++----+------------------------+-------------+
+| 38 | (J,F)                  | 77.8        |
++----+------------------------+-------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="menghitung-nilai-reachable-distance-rd">
+<h3>Menghitung Nilai Reachable Distance (RD)<a class="headerlink" href="#menghitung-nilai-reachable-distance-rd" title="Link to this heading">#</a></h3>
+<p>Untuk mencari nilai RD, bandingkan nilai terbesar dari k-distance dengan distance. Nilai k-distance didapat dari nilai urutan ke-k dari titik tetangga. Sedangkan nilai distance didapat dari nilai jarak dari titik ke tetangga. Kemudian cari nilai yang paling maksimal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;deteksi_outlier.xlsx&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;RD&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;grid&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----+-------------+--------------+------------+------------+
+|    | tetangga    |   k-distance |   distance |   RD = max |
++====+=============+==============+============+============+
+|  0 | (A,G)       |         2.24 |       1    |       2.24 |
++----+-------------+--------------+------------+------------+
+|  1 | (A,C)       |         1.41 |       1.41 |       1.41 |
++----+-------------+--------------+------------+------------+
+|  2 | (A,H)       |         2    |       1.41 |       2    |
++----+-------------+--------------+------------+------------+
+|  3 | (B,C)       |         1.41 |       1.41 |       1.41 |
++----+-------------+--------------+------------+------------+
+|  4 | (B,D)       |         2.24 |       1.41 |       2.24 |
++----+-------------+--------------+------------+------------+
+|  5 | (B,H)       |         2    |       1.41 |       2    |
++----+-------------+--------------+------------+------------+
+|  6 | (C,G)       |         2.24 |       1    |       2.24 |
++----+-------------+--------------+------------+------------+
+|  7 | (C,A)       |         1.41 |       1.41 |       1.41 |
++----+-------------+--------------+------------+------------+
+|  8 | (C,B)       |         1.41 |       1.41 |       1.41 |
++----+-------------+--------------+------------+------------+
+|  9 | (D,B)       |         1.41 |       1.41 |       1.41 |
++----+-------------+--------------+------------+------------+
+| 10 | (D,H)       |         2    |       2    |       2    |
++----+-------------+--------------+------------+------------+
+| 11 | (D,F)       |         3    |       2.24 |       3    |
++----+-------------+--------------+------------+------------+
+| 12 | (E,I)       |         5    |      25.24 |      25.24 |
++----+-------------+--------------+------------+------------+
+| 13 | (E,F)       |         3    |      27.8  |      27.8  |
++----+-------------+--------------+------------+------------+
+| 14 | (E,D)       |         2.24 |      28.84 |      28.84 |
++----+-------------+--------------+------------+------------+
+| 15 | (F,D)       |         2.24 |       2.24 |       2.24 |
++----+-------------+--------------+------------+------------+
+| 16 | (F,H)       |         2    |       2.24 |       2.24 |
++----+-------------+--------------+------------+------------+
+| 17 | (F,B)       |         1.41 |       3    |       3    |
++----+-------------+--------------+------------+------------+
+| 18 | (G,A)       |         1.41 |       1    |       1.41 |
++----+-------------+--------------+------------+------------+
+| 19 | (G,C)       |         1.41 |       1    |       1.41 |
++----+-------------+--------------+------------+------------+
+| 20 | (G,B)       |         1.41 |       2.24 |       2.24 |
++----+-------------+--------------+------------+------------+
+| 21 | (H,A)       |         1.41 |       1.41 |       1.41 |
++----+-------------+--------------+------------+------------+
+| 22 | (H,B)       |         1.41 |       1.41 |       1.41 |
++----+-------------+--------------+------------+------------+
+| 23 | (H,C)       |         1.41 |       2    |       2    |
++----+-------------+--------------+------------+------------+
+| 24 | (I,F)       |         3    |       3.16 |       3.16 |
++----+-------------+--------------+------------+------------+
+| 25 | (I,D)       |         2.24 |       3.61 |       3.61 |
++----+-------------+--------------+------------+------------+
+| 26 | (I,B)       |         1.41 |       5    |       5    |
++----+-------------+--------------+------------+------------+
+| 27 | (J,E)       |        28.84 |      50    |      50    |
++----+-------------+--------------+------------+------------+
+| 28 | (J,I)       |         5    |      75.21 |      75.21 |
++----+-------------+--------------+------------+------------+
+| 29 | (J,F)       |         3    |      77.8  |      77.8  |
++----+-------------+--------------+------------+------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menghitung-nilai-local-reachbility-density-lrd">
+<h3>Menghitung Nilai Local Reachbility Density (LRD)<a class="headerlink" href="#menghitung-nilai-local-reachbility-density-lrd" title="Link to this heading">#</a></h3>
+<p>Jumlahkan nilai RD pada setiap tetangga titik kemudian bagi dengan nilai k-nya yakni 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;deteksi_outlier.xlsx&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;LRD&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;grid&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----+---------+------------+--------------------------------+--------------------+
+|    | titik   | tetangga   | Σ RD_k(P, O)                   | LRD(P)             |
++====+=========+============+================================+====================+
+|  0 | A       | G,C,H      | 2,24 + 1,41+ 2,00 = 5,65       | 3 / 5,65 = 0.53    |
++----+---------+------------+--------------------------------+--------------------+
+|  1 | B       | C,D,H      | 1,41 + 2,24 + 2,00 = 5,65      | 3 / 5,65 = 0.53    |
++----+---------+------------+--------------------------------+--------------------+
+|  2 | C       | G,A,B      | 2,24 + 1,41 + 1,41 = 5.06      | 3 / 5.06 = 0.6     |
++----+---------+------------+--------------------------------+--------------------+
+|  3 | D       | B,H,F      | 1,41 + 2,00 + 3,00 = 6,41      | 3 / 6,41 = 0,46    |
++----+---------+------------+--------------------------------+--------------------+
+|  4 | E       | I,F,D      | 25,24 + 27,80 + 28,84 = 81,88  | 3 / 81,88 = 0.036  |
++----+---------+------------+--------------------------------+--------------------+
+|  5 | F       | D,H,B      | 2,24 + 2,24 + 3.00 = 7,48      | 3 / 7,48 = 0,40    |
++----+---------+------------+--------------------------------+--------------------+
+|  6 | G       | A,C,B      | 1,41 + 1,41 + 2,24 = 5.06      | 3 / 5.06 = 0.6     |
++----+---------+------------+--------------------------------+--------------------+
+|  7 | H       | A,B,C      | 1,41 + 1,41 + 2,00 = 4.82      | 3 / 4.82 = 0.62    |
++----+---------+------------+--------------------------------+--------------------+
+|  8 | I       | F,D,B      | 3,16 + 3,61 + 5,00 = 11.77     | 3 / 11.77 = 0.25   |
++----+---------+------------+--------------------------------+--------------------+
+|  9 | J       | E,I,F      | 50,00 + 75.21 + 77.80 = 203.01 | 3 / 203.01 = 0.014 |
++----+---------+------------+--------------------------------+--------------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menghitung-nilai-local-outlier-factor-lof">
+<h3>Menghitung Nilai Local Outlier Factor (LOF)<a class="headerlink" href="#menghitung-nilai-local-outlier-factor-lof" title="Link to this heading">#</a></h3>
+<p>Mencari nilai LOF dengan cara mengambil nilai LRD pada setiap tetangga yang dibagi dengan nilai LRD titik, kemudian jumlahkan setelah proses bagi. Langkah selanjutnya bagi dengan nilai k yakni 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;deteksi_outlier.xlsx&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;LOF&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;grid&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----+---------+------------+-------------------------------------------------+------------------------------------+
+|    | titik   | tetangga   | rumus                                           | LOF                                |
++====+=========+============+=================================================+====================================+
+|  0 | A       | G,C,H      | (0,6/0,53) + (0,6/0,53) + (0,62/0,53) /3        | (1,13 + 1,13 + 1,16) / 3 = 1.14    |
++----+---------+------------+-------------------------------------------------+------------------------------------+
+|  1 | B       | C,D,H      | (0,6/0,53) + (0,46/0,53) + (0,62/0,53) /3       | (1,13 + 0.86 + 1,16) / 3 = 1.05    |
++----+---------+------------+-------------------------------------------------+------------------------------------+
+|  2 | C       | G,A,B      | (0,6/0,6) + (0,53/0,6) + (0,53/0,6) /3          | (1 + 0,88 + 0,88) / 3 = 0.92       |
++----+---------+------------+-------------------------------------------------+------------------------------------+
+|  3 | D       | B,H,F      | (0,53/0,46) + (0,62/0,46) + (0,40/0,46) /3      | (1,15 + 1,34 + 0,86) / 3 = 1,11    |
++----+---------+------------+-------------------------------------------------+------------------------------------+
+|  4 | E       | I,F,D      | (0,25/0,036) + (0,40/0,036) + (0,46/0,036) /3   | (6,94 + 11.11 + 12,77) / 3 = 10.27 |
++----+---------+------------+-------------------------------------------------+------------------------------------+
+|  5 | F       | D,H,B      | (0,46/0,40) + (0,62/0,40) + (0,53/0,40) /3      | (1.15 + 1,55 + 1,32) / 3 = 1.34    |
++----+---------+------------+-------------------------------------------------+------------------------------------+
+|  6 | G       | A,C,B      | (0,53/0,6) + (0,6/0,6) + (0,53/0,6) /3          | (0,88 + 1 + 0,88) / 3 = 0.92       |
++----+---------+------------+-------------------------------------------------+------------------------------------+
+|  7 | H       | A,B,C      | (0,53/0,62) + (0,53/0,62) + (0,6/0,62) /3       | (0,85 + 0,85 + 0,96) / 3 = 0.88    |
++----+---------+------------+-------------------------------------------------+------------------------------------+
+|  8 | I       | F,D,B      | (0,40/0,25) + (0,46/0,25) + (0,53/0,25) /3      | (1,6 + 1,84 + 2.12) / 3 = 1,85     |
++----+---------+------------+-------------------------------------------------+------------------------------------+
+|  9 | J       | E,I,F      | (0,036/0,0,14) + (0,25/0,014) + (0,40/0,014) /3 | (2.57 + 17,85 + 28,57) / 3 = 16,33 |
++----+---------+------------+-------------------------------------------------+------------------------------------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>Berdasarkan perhitungan di atas ditemukan dua titik yang Oulier yakni titik E dan J karena berada jauh dengan nilai 1 yang merepresentasikan nilai normal.</p>
+</section>
+</section>
+<section id="mendeteksi-data-outlier-menggunakan-library-sklearn-neighbors">
+<h2>Mendeteksi Data Outlier Menggunakan Library sklearn.neighbors<a class="headerlink" href="#mendeteksi-data-outlier-menggunakan-library-sklearn-neighbors" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;deteksi_outlier.xlsx&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Data&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+
+<span class="n">feature_column</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">]</span>
+<span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">feature_column</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">feature_column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Kolom &#39;X1&#39; atau &#39;X2&#39; tidak ditemukan dalam dataset!&quot;</span><span class="p">)</span>
+
+<span class="n">n_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">ground_truth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">contamination</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X_scores</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">negative_outlier_factor_</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prediksi Outlier:&quot;</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Perhitungan Outlier:&quot;</span><span class="p">,</span> <span class="n">X_scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prediksi Outlier: [ 1  1  1  1 -1  1  1  1  1 -1]
+Hasil Perhitungan Outlier: [ -1.13384742  -1.05559236  -0.9308841   -1.10734909 -10.22790021
+  -1.34496671  -0.9308841   -0.88749341  -1.83074716 -15.63344011]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dari perhitungan menggunakan library tersebut dapat disimpulkan bahwa nilai -1 merepresentasikan data outliernya. Kemudian untuk nilai outliernya sebesar -10.22790021 dan -15.63344011 yakni pada titik E dan J.</p>
+<section id="visualisasi-data-menggunakan-scatter-plot">
+<h3>Visualisasi Data Menggunakan Scatter Plot<a class="headerlink" href="#visualisasi-data-menggunakan-scatter-plot" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">max_radius</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">min_radius</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="n">radius</span> <span class="o">=</span> <span class="n">min_radius</span> <span class="o">+</span> <span class="p">(</span><span class="n">max_radius</span> <span class="o">-</span> <span class="n">min_radius</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">X_scores</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">X_scores</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">X_scores</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">X_scores</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Data points&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)):</span>
+    <span class="n">circle</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span> <span class="n">radius</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+
+<span class="c1"># Konfigurasi plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;X2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Deteksi Outlier dengan LOF&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Deteksi Outlier dengan LOF&#39;)
+</pre></div>
+</div>
+<img alt="_images/b27e207222dfed8be87f0c1c13fc65f60c13f226580610e9c98438fece50b500.png" src="_images/b27e207222dfed8be87f0c1c13fc65f60c13f226580610e9c98438fece50b500.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Data_Mining_Data_Understanding.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Data Understanding</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-local-outlier-factor-lof"><strong>1. Apa itu Local Outlier Factor (LOF)?</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-dasar-lof"><strong>2. Konsep Dasar LOF</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-menentukan-tetangga-terdekat-k-nearest-neighbors"><strong>a. Menentukan Tetangga Terdekat (<em>k-nearest neighbors</em>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-menghitung-jarak-jangkauan-reachability-distance"><strong>b. Menghitung Jarak Jangkauan (<em>Reachability Distance</em>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-menghitung-kepadatan-lokal-local-reachability-density-lrd"><strong>c. Menghitung Kepadatan Lokal (<em>Local Reachability Density - LRD</em>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-menghitung-lof-score"><strong>d. Menghitung LOF Score</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mendeteksi-data-secara-manual">Mendeteksi Data Secara Manual</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-dari-local-enviroment">Mengambil data dari Local Enviroment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-jarak-menggunakan-encludian-distance">Menghitung Jarak Menggunakan Encludian Distance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-reachable-distance-rd">Menghitung Nilai Reachable Distance (RD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-local-reachbility-density-lrd">Menghitung Nilai Local Reachbility Density (LRD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-local-outlier-factor-lof">Menghitung Nilai Local Outlier Factor (LOF)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mendeteksi-data-outlier-menggunakan-library-sklearn-neighbors">Mendeteksi Data Outlier Menggunakan Library sklearn.neighbors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-menggunakan-scatter-plot">Visualisasi Data Menggunakan Scatter Plot</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Muhammad Fathan Alizain
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
