@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -187,6 +187,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Deteksi Oulier Menggunakan Metode LOF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Naive%20Bayes.html">Klasifikasi menggunakan Naive Bayes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Proyek_UTS_Penambangan_Data.html">Project Model Klasifikasi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="k-means.html">K-Means Clustering</a></li>
 </ul>
 
     </div>
@@ -479,8 +480,8 @@ LOF(A) = \frac{1}{|kNN(A)|} \sum_{B \in kNN(A)} \frac{LRD(B)}{LRD(A)}
 <h3>Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tabulate</span><span class="w"> </span><span class="kn">import</span> <span class="n">tabulate</span>
 </pre></div>
 </div>
 </div>
@@ -490,7 +491,7 @@ LOF(A) = \frac{1}{|kNN(A)|} \sum_{B \in kNN(A)} \frac{LRD(B)}{LRD(A)}
 <h3>Mengambil data dari Local Enviroment<a class="headerlink" href="#mengambil-data-dari-local-enviroment" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
 
 <span class="c1"># Upload file secara manual</span>
 <span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
@@ -1282,9 +1283,9 @@ d(A, B) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 <h2>Mendeteksi Data Outlier Menggunakan Library sklearn.neighbors<a class="headerlink" href="#mendeteksi-data-outlier-menggunakan-library-sklearn-neighbors" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 
@@ -1322,7 +1323,7 @@ Hasil Perhitungan Outlier: [ -1.13384742  -1.05559236  -0.9308841   -1.10734909 
 <h3>Visualisasi Data Menggunakan Scatter Plot<a class="headerlink" href="#visualisasi-data-menggunakan-scatter-plot" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">max_radius</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">min_radius</span> <span class="o">=</span> <span class="mf">0.5</span>

@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -187,6 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Metode_LOF_Data_Outlier.html">Deteksi Oulier Menggunakan Metode LOF</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Klasifikasi menggunakan Naive Bayes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Proyek_UTS_Penambangan_Data.html">Project Model Klasifikasi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="k-means.html">K-Means Clustering</a></li>
 </ul>
 
     </div>
@@ -602,10 +603,10 @@ Successfully installed psycopg2-binary-2.9.10
 <h3>Import library yang akan digunakan<a class="headerlink" href="#import-library-yang-akan-digunakan" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tabulate</span><span class="w"> </span><span class="kn">import</span> <span class="n">tabulate</span>
 </pre></div>
 </div>
 </div>
@@ -615,7 +616,7 @@ Successfully installed psycopg2-binary-2.9.10
 <h3>Koneksikan ke Database PostgreSQL di <a class="reference external" href="http://aiven.io">aiven.io</a><a class="headerlink" href="#koneksikan-ke-database-postgresql-di-aiven-io" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psycopg2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">psycopg2</span>
 
 <span class="c1"># koneksi ke database mysql melalui aiven.io</span>
 <span class="n">DB_HOST</span> <span class="o">=</span> <span class="s2">&quot;pg-38d2eca9-irisposgresql.g.aivencloud.com&quot;</span>
@@ -667,7 +668,7 @@ Successfully installed psycopg2-binary-2.9.10
 <h3>Koneksikan ke Database MySQL di <a class="reference external" href="http://aiven.io">aiven.io</a><a class="headerlink" href="#koneksikan-ke-database-mysql-di-aiven-io" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pymysql</span>
 
 <span class="c1"># koneksi ke database mysql melalui aiven.io</span>
 <span class="n">DB_HOST</span> <span class="o">=</span> <span class="s2">&quot;mysql-385e0f60-irismysql.g.aivencloud.com&quot;</span>
@@ -1049,14 +1050,14 @@ Successfully installed psycopg2-binary-2.9.10
 <p>Class Naive Bayes ini berisi code untuk menghitung probabilitas setiap lagkah-langkahnya menggunakan metode naive bayes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NaiveBayes</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">NaiveBayes</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">separated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">separate_by_class</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">summaries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean_std_by_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">separated</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">priors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prior_probabilities</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">separate_by_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">separate_by_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
         <span class="n">separated</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
             <span class="n">class_value</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -1065,22 +1066,22 @@ Successfully installed psycopg2-binary-2.9.10
             <span class="n">separated</span><span class="p">[</span><span class="n">class_value</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
         <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">separated</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 
-    <span class="k">def</span> <span class="nf">mean_std_by_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">separated</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mean_std_by_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">separated</span><span class="p">):</span>
         <span class="n">summaries</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">class_value</span><span class="p">,</span> <span class="n">instances</span> <span class="ow">in</span> <span class="n">separated</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="n">summaries</span><span class="p">[</span><span class="n">class_value</span><span class="p">]</span> <span class="o">=</span> <span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">col</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">1e-6</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">instances</span><span class="o">.</span><span class="n">T</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">summaries</span>
 
-    <span class="k">def</span> <span class="nf">prior_probabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">prior_probabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
         <span class="n">total_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
         <span class="n">class_counts</span> <span class="o">=</span> <span class="p">{</span><span class="n">label</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dataset</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">label</span><span class="p">)</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">dataset</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])}</span>
         <span class="k">return</span> <span class="p">{</span><span class="n">label</span><span class="p">:</span> <span class="n">class_counts</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">/</span> <span class="n">total_count</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">class_counts</span><span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">gaussian_probability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gaussian_probability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">):</span>
         <span class="n">exponent</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">std</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)))</span>
         <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">std</span><span class="p">))</span> <span class="o">*</span> <span class="n">exponent</span>
 
-    <span class="k">def</span> <span class="nf">calculate_likelihoods</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_features</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_likelihoods</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_features</span><span class="p">):</span>
         <span class="n">likelihoods</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">class_value</span><span class="p">,</span> <span class="n">class_summaries</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">summaries</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="n">likelihoods</span><span class="p">[</span><span class="n">class_value</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1090,7 +1091,7 @@ Successfully installed psycopg2-binary-2.9.10
                 <span class="n">likelihoods</span><span class="p">[</span><span class="n">class_value</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">likelihoods</span>
 
-    <span class="k">def</span> <span class="nf">calculate_posterior</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_features</span><span class="p">,</span> <span class="n">likelihoods</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_posterior</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_features</span><span class="p">,</span> <span class="n">likelihoods</span><span class="p">):</span>
         <span class="n">probabilities</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">class_value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">summaries</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
             <span class="n">probabilities</span><span class="p">[</span><span class="n">class_value</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">priors</span><span class="p">[</span><span class="n">class_value</span><span class="p">]</span>
@@ -1098,15 +1099,15 @@ Successfully installed psycopg2-binary-2.9.10
                 <span class="n">probabilities</span><span class="p">[</span><span class="n">class_value</span><span class="p">]</span> <span class="o">*=</span> <span class="n">prob</span>
         <span class="k">return</span> <span class="n">probabilities</span>
 
-    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_features</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_features</span><span class="p">):</span>
         <span class="n">likelihoods</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_likelihoods</span><span class="p">(</span><span class="n">input_features</span><span class="p">)</span>
         <span class="n">probabilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_posterior</span><span class="p">(</span><span class="n">input_features</span><span class="p">,</span> <span class="n">likelihoods</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">probabilities</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">get_predictions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_predictions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">accuracy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">predictions</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accuracy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">predictions</span><span class="p">):</span>
         <span class="n">correct</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">))</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">correct</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
 </pre></div>
@@ -2918,7 +2919,7 @@ Predicted = Iris-virginica
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data yang telah digabung dari dua database yang berbeda</span>
-<span class="k">def</span> <span class="nf">remove_outliers</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">feature_column</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_outliers</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">feature_column</span><span class="p">):</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">feature_column</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
     <span class="n">Q1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">Q3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>

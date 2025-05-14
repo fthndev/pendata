@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -185,6 +185,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Metode_LOF_Data_Outlier.html">Deteksi Oulier Menggunakan Metode LOF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Naive%20Bayes.html">Klasifikasi menggunakan Naive Bayes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Proyek_UTS_Penambangan_Data.html">Project Model Klasifikasi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="k-means.html">K-Means Clustering</a></li>
 </ul>
 
     </div>
@@ -512,11 +513,11 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 </pre></div>
 </div>
 </div>
@@ -528,7 +529,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 <h3>Koneksi ke PosgreSQL<a class="headerlink" href="#koneksi-ke-posgresql" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psycopg2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">psycopg2</span>
 
 <span class="c1"># koneksi ke database mysql melalui aiven.io</span>
 <span class="n">DB_HOST</span> <span class="o">=</span> <span class="s2">&quot;pg-38d2eca9-irisposgresql.g.aivencloud.com&quot;</span>
@@ -580,7 +581,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 <h3>Koneksi ke database MySQL<a class="headerlink" href="#koneksi-ke-database-mysql" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pymysql</span>
 
 <span class="c1"># koneksi ke database mysql melalui aiven.io</span>
 <span class="n">DB_HOST</span> <span class="o">=</span> <span class="s2">&quot;mysql-385e0f60-irismysql.g.aivencloud.com&quot;</span>
@@ -659,7 +660,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 <span class="n">summary</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&lt;lambda&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;modus&#39;</span><span class="p">)</span>
 
 <span class="c1">#Menampilkan hasil dalam bentuk tabel rapi</span>
-<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tabulate</span><span class="w"> </span><span class="kn">import</span> <span class="n">tabulate</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;pretty&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -879,7 +880,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 
 <span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/pyplot.py</span> in <span class="ni">gca</span><span class="nt">()</span>
 <span class="g g-Whitespace">   </span><span class="mi">2774</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">Figure</span><span class="o">.</span><span class="n">gca</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2775</span> <span class="k">def</span> <span class="nf">gca</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Axes</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2775</span> <span class="k">def</span><span class="w"> </span><span class="nf">gca</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Axes</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">2776</span>     <span class="k">return</span> <span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
 <span class="g g-Whitespace">   </span><span class="mi">2777</span> 
 <span class="g g-Whitespace">   </span><span class="mi">2778</span> 
