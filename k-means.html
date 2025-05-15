@@ -471,7 +471,7 @@ document.write(`
   Downloading PyMySQL-1.1.1-py3-none-any.whl.metadata (4.4 kB)
 Downloading PyMySQL-1.1.1-py3-none-any.whl (44 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/45.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">45.0/45.0 kB</span> <span class=" -Color -Color-Red">1.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">45.0/45.0 kB</span> <span class=" -Color -Color-Red">2.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -494,6 +494,7 @@ Successfully installed pymysql-1.1.1
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">KMeans</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">tabulate</span><span class="w"> </span><span class="kn">import</span> <span class="n">tabulate</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Patch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span>
 </pre></div>
 </div>
 </div>
@@ -739,9 +740,13 @@ Successfully installed pymysql-1.1.1
 <span class="c1"># Menghapus Kolom id</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
 
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">data_normalized</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
 <span class="c1"># visualisasi 2 dimensi</span>
 <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">X_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">X_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_normalized</span><span class="p">)</span>
 
 <span class="c1"># Plot hasil PCA</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -755,7 +760,7 @@ Successfully installed pymysql-1.1.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0564f1631c1392041a40f1b766cb78056a404ba840b8758d06bf8a9b38a3358c.png" src="_images/0564f1631c1392041a40f1b766cb78056a404ba840b8758d06bf8a9b38a3358c.png" />
+<img alt="_images/e3c9584d98dc96f4bb0afca91c0eb36f5e061379160bae655ae442727fc0c762.png" src="_images/e3c9584d98dc96f4bb0afca91c0eb36f5e061379160bae655ae442727fc0c762.png" />
 </div>
 </div>
 </section>
@@ -768,7 +773,7 @@ Successfully installed pymysql-1.1.1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengambil data dalam database dan menghapus kolom id</span>
-<span class="n">values_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data_remove_class</span><span class="p">])</span>
+<span class="n">values_x</span> <span class="o">=</span> <span class="n">data_normalized</span>
 <span class="n">k_means_C2</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span>
     <span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span>
@@ -793,56 +798,60 @@ Successfully installed pymysql-1.1.1
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialization complete
-Iteration 0, inertia 193.75000000000003.
-Iteration 1, inertia 152.36870647733915.
-Converged at iteration 1: strict convergence.
-Initialization complete
-Iteration 0, inertia 364.48000000000013.
-Iteration 1, inertia 153.40270400000003.
-Iteration 2, inertia 152.51310407984596.
-Iteration 3, inertia 152.36870647733915.
+Iteration 0, inertia 15.589550228134376.
+Iteration 1, inertia 12.207670008784614.
+Iteration 2, inertia 12.183031729295674.
+Iteration 3, inertia 12.143688281579719.
 Converged at iteration 3: strict convergence.
 Initialization complete
-Iteration 0, inertia 197.50999999999993.
-Iteration 1, inertia 152.95128996440948.
-Iteration 2, inertia 152.36870647733915.
+Iteration 0, inertia 29.161399814602028.
+Iteration 1, inertia 12.1584355024979.
+Iteration 2, inertia 12.143688281579719.
 Converged at iteration 2: strict convergence.
 Initialization complete
-Iteration 0, inertia 380.5199999999998.
-Iteration 1, inertia 153.40270400000003.
-Iteration 2, inertia 152.51310407984596.
-Iteration 3, inertia 152.36870647733915.
-Converged at iteration 3: strict convergence.
+Iteration 0, inertia 21.8809075102585.
+Iteration 1, inertia 12.373069772523253.
+Iteration 2, inertia 12.207670008784614.
+Iteration 3, inertia 12.183031729295674.
+Iteration 4, inertia 12.143688281579719.
+Converged at iteration 4: strict convergence.
 Initialization complete
-Iteration 0, inertia 259.6999999999999.
-Iteration 1, inertia 153.59063006970555.
-Iteration 2, inertia 152.36870647733915.
-Converged at iteration 2: strict convergence.
-Initialization complete
-Iteration 0, inertia 231.13000000000005.
-Iteration 1, inertia 152.36870647733915.
+Iteration 0, inertia 30.92606906407268.
+Iteration 1, inertia 12.143688281579719.
 Converged at iteration 1: strict convergence.
 Initialization complete
-Iteration 0, inertia 392.7000000000003.
-Iteration 1, inertia 153.40270400000003.
-Iteration 2, inertia 152.51310407984596.
-Iteration 3, inertia 152.36870647733915.
-Converged at iteration 3: strict convergence.
+Iteration 0, inertia 20.24095625148514.
+Iteration 1, inertia 12.373069772523253.
+Iteration 2, inertia 12.207670008784614.
+Iteration 3, inertia 12.183031729295674.
+Iteration 4, inertia 12.143688281579719.
+Converged at iteration 4: strict convergence.
 Initialization complete
-Iteration 0, inertia 200.63000000000014.
-Iteration 1, inertia 152.92040693207576.
-Iteration 2, inertia 152.36870647733915.
-Converged at iteration 2: strict convergence.
+Iteration 0, inertia 23.01048831886325.
+Iteration 1, inertia 12.23204177373662.
+Iteration 2, inertia 12.207670008784614.
+Iteration 3, inertia 12.183031729295674.
+Iteration 4, inertia 12.143688281579719.
+Converged at iteration 4: strict convergence.
 Initialization complete
-Iteration 0, inertia 232.2599999999999.
-Iteration 1, inertia 153.40270400000003.
-Iteration 2, inertia 152.51310407984596.
-Iteration 3, inertia 152.36870647733915.
-Converged at iteration 3: strict convergence.
-Initialization complete
-Iteration 0, inertia 177.96000000000006.
-Iteration 1, inertia 152.36870647733915.
+Iteration 0, inertia 23.06380309466557.
+Iteration 1, inertia 12.143688281579719.
 Converged at iteration 1: strict convergence.
+Initialization complete
+Iteration 0, inertia 14.920646771627995.
+Iteration 1, inertia 12.143688281579719.
+Converged at iteration 1: strict convergence.
+Initialization complete
+Iteration 0, inertia 26.514122021751238.
+Iteration 1, inertia 12.143688281579719.
+Converged at iteration 1: strict convergence.
+Initialization complete
+Iteration 0, inertia 14.393582855873687.
+Iteration 1, inertia 12.237748457999237.
+Iteration 2, inertia 12.207670008784614.
+Iteration 3, inertia 12.183031729295674.
+Iteration 4, inertia 12.143688281579719.
+Converged at iteration 4: strict convergence.
 </pre></div>
 </div>
 </div>
@@ -915,7 +924,7 @@ ID: 54, fitur: (5.5, 2.3, 4.0, 1.3), Cluster: 0
 ID: 55, fitur: (6.5, 2.8, 4.6, 1.5), Cluster: 0
 ID: 56, fitur: (5.7, 2.8, 4.5, 1.3), Cluster: 0
 ID: 57, fitur: (6.3, 3.3, 4.7, 1.6), Cluster: 0
-ID: 58, fitur: (4.9, 2.4, 3.3, 1.0), Cluster: 1
+ID: 58, fitur: (4.9, 2.4, 3.3, 1.0), Cluster: 0
 ID: 59, fitur: (6.6, 2.9, 4.6, 1.3), Cluster: 0
 ID: 60, fitur: (5.2, 2.7, 3.9, 1.4), Cluster: 0
 ID: 61, fitur: (5.0, 2.0, 3.5, 1.0), Cluster: 0
@@ -951,12 +960,12 @@ ID: 90, fitur: (5.5, 2.5, 4.0, 1.3), Cluster: 0
 ID: 91, fitur: (5.5, 2.6, 4.4, 1.2), Cluster: 0
 ID: 92, fitur: (6.1, 3.0, 4.6, 1.4), Cluster: 0
 ID: 93, fitur: (5.8, 2.6, 4.0, 1.2), Cluster: 0
-ID: 94, fitur: (5.0, 2.3, 3.3, 1.0), Cluster: 1
+ID: 94, fitur: (5.0, 2.3, 3.3, 1.0), Cluster: 0
 ID: 95, fitur: (5.6, 2.7, 4.2, 1.3), Cluster: 0
 ID: 96, fitur: (5.7, 3.0, 4.2, 1.2), Cluster: 0
 ID: 97, fitur: (5.7, 2.9, 4.2, 1.3), Cluster: 0
 ID: 98, fitur: (6.2, 2.9, 4.3, 1.3), Cluster: 0
-ID: 99, fitur: (5.1, 2.5, 3.0, 1.1), Cluster: 1
+ID: 99, fitur: (5.1, 2.5, 3.0, 1.1), Cluster: 0
 ID: 100, fitur: (5.7, 2.8, 4.1, 1.3), Cluster: 0
 ID: 101, fitur: (6.3, 3.3, 6.0, 2.5), Cluster: 0
 ID: 102, fitur: (5.8, 2.7, 5.1, 1.9), Cluster: 0
@@ -1022,7 +1031,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nilai inertia clustering sebanyak 2 yakni sebesar = 152.36870647733915
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nilai inertia clustering sebanyak 2 yakni sebesar = 12.143688281579719
 </pre></div>
 </div>
 </div>
@@ -1040,7 +1049,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Silhouette Score Cluster 2: 0.6808
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Silhouette Score Cluster 2: 0.6295
 </pre></div>
 </div>
 </div>
@@ -1077,11 +1086,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but PCA was fitted with feature names
-  warnings.warn(
-</pre></div>
-</div>
-<img alt="_images/c7757500cccb8cbd86cfd144c88a015f83f2ebc17216233226cdf3cc479dac22.png" src="_images/c7757500cccb8cbd86cfd144c88a015f83f2ebc17216233226cdf3cc479dac22.png" />
+<img alt="_images/68a51e01d1424dc8cd62d2d6791fa648b7023f972537ac613ef1be052271e903.png" src="_images/68a51e01d1424dc8cd62d2d6791fa648b7023f972537ac613ef1be052271e903.png" />
 </div>
 </div>
 </section>
@@ -1094,7 +1099,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengambil data dalam database dan menghapus kolom id</span>
 
-<span class="n">values_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data_remove_class</span><span class="p">])</span>
+<span class="n">values_x</span> <span class="o">=</span> <span class="n">data_normalized</span>
 <span class="n">k_means_C3</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span>
     <span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span>
@@ -1119,104 +1124,82 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialization complete
-Iteration 0, inertia 151.65999999999997.
-Iteration 1, inertia 95.27318380102044.
-Iteration 2, inertia 87.00356562736205.
-Iteration 3, inertia 84.80172984452899.
-Iteration 4, inertia 84.10217888865147.
-Iteration 5, inertia 83.13638186876975.
-Iteration 6, inertia 81.83900206772624.
-Iteration 7, inertia 80.89577599999998.
-Iteration 8, inertia 79.96297983461304.
-Iteration 9, inertia 79.43376414532673.
-Iteration 10, inertia 79.01070972222224.
-Iteration 11, inertia 78.94506582597728.
-Converged at iteration 11: strict convergence.
+Iteration 0, inertia 10.782005700699735.
+Iteration 1, inertia 7.159424311881558.
+Iteration 2, inertia 7.138647703985377.
+Converged at iteration 2: strict convergence.
 Initialization complete
-Iteration 0, inertia 106.30000000000007.
-Iteration 1, inertia 78.94506582597728.
-Converged at iteration 1: strict convergence.
-Initialization complete
-Iteration 0, inertia 137.54000000000002.
-Iteration 1, inertia 87.00356562736205.
-Iteration 2, inertia 84.80172984452899.
-Iteration 3, inertia 84.10217888865147.
-Iteration 4, inertia 83.13638186876975.
-Iteration 5, inertia 81.83900206772624.
-Iteration 6, inertia 80.89577599999998.
-Iteration 7, inertia 79.96297983461304.
-Iteration 8, inertia 79.43376414532673.
-Iteration 9, inertia 79.01070972222224.
-Iteration 10, inertia 78.94506582597728.
-Converged at iteration 10: strict convergence.
-Initialization complete
-Iteration 0, inertia 115.32000000000004.
-Iteration 1, inertia 85.04157943238872.
-Iteration 2, inertia 84.10217888865147.
-Iteration 3, inertia 83.13638186876975.
-Iteration 4, inertia 81.83900206772624.
-Iteration 5, inertia 80.89577599999998.
-Iteration 6, inertia 79.96297983461304.
-Iteration 7, inertia 79.43376414532673.
-Iteration 8, inertia 79.01070972222224.
-Iteration 9, inertia 78.94506582597728.
-Converged at iteration 9: strict convergence.
-Initialization complete
-Iteration 0, inertia 107.47999999999998.
-Iteration 1, inertia 82.07778181818182.
-Iteration 2, inertia 81.17033414092332.
-Iteration 3, inertia 79.96297983461304.
-Iteration 4, inertia 79.43376414532673.
-Iteration 5, inertia 79.01070972222224.
-Iteration 6, inertia 78.94506582597728.
-Converged at iteration 6: strict convergence.
-Initialization complete
-Iteration 0, inertia 130.66000000000005.
-Iteration 1, inertia 79.63481047167562.
-Iteration 2, inertia 78.99945673645698.
-Iteration 3, inertia 78.94084142614601.
-Converged at iteration 3: strict convergence.
-Initialization complete
-Iteration 0, inertia 136.04.
-Iteration 1, inertia 84.81304110116581.
-Iteration 2, inertia 84.10217888865147.
-Iteration 3, inertia 83.13638186876975.
-Iteration 4, inertia 81.83900206772624.
-Iteration 5, inertia 80.89577599999998.
-Iteration 6, inertia 79.96297983461304.
-Iteration 7, inertia 79.43376414532673.
-Iteration 8, inertia 79.01070972222224.
-Iteration 9, inertia 78.94506582597728.
-Converged at iteration 9: strict convergence.
-Initialization complete
-Iteration 0, inertia 91.26999999999998.
-Iteration 1, inertia 84.11354721965942.
-Iteration 2, inertia 83.13638186876975.
-Iteration 3, inertia 81.83900206772624.
-Iteration 4, inertia 80.89577599999998.
-Iteration 5, inertia 79.96297983461304.
-Iteration 6, inertia 79.43376414532673.
-Iteration 7, inertia 79.01070972222224.
-Iteration 8, inertia 78.94506582597728.
+Iteration 0, inertia 14.358071849918954.
+Iteration 1, inertia 7.499246861167659.
+Iteration 2, inertia 7.286304084159063.
+Iteration 3, inertia 7.217884802308979.
+Iteration 4, inertia 7.193121890494894.
+Iteration 5, inertia 7.182667132756725.
+Iteration 6, inertia 7.169111467307468.
+Iteration 7, inertia 7.151593675022098.
+Iteration 8, inertia 7.138647703985377.
 Converged at iteration 8: strict convergence.
 Initialization complete
-Iteration 0, inertia 177.25999999999993.
-Iteration 1, inertia 82.16100453473109.
-Iteration 2, inertia 79.96297983461304.
-Iteration 3, inertia 79.43376414532673.
-Iteration 4, inertia 79.01070972222224.
-Iteration 5, inertia 78.94506582597728.
+Iteration 0, inertia 12.482921230684385.
+Iteration 1, inertia 7.445024568737754.
+Iteration 2, inertia 7.151290363315535.
+Iteration 3, inertia 7.03622560540593.
+Iteration 4, inertia 7.003317600098681.
+Iteration 5, inertia 6.9981140048267605.
 Converged at iteration 5: strict convergence.
 Initialization complete
-Iteration 0, inertia 128.34000000000003.
-Iteration 1, inertia 83.21784080254827.
-Iteration 2, inertia 82.09358738904196.
-Iteration 3, inertia 81.17033414092332.
-Iteration 4, inertia 79.96297983461304.
-Iteration 5, inertia 79.43376414532673.
-Iteration 6, inertia 79.01070972222224.
-Iteration 7, inertia 78.94506582597728.
-Converged at iteration 7: strict convergence.
+Iteration 0, inertia 10.465126715219482.
+Iteration 1, inertia 7.309117013212818.
+Iteration 2, inertia 7.102847428077371.
+Iteration 3, inertia 7.024859893064042.
+Iteration 4, inertia 7.003317600098681.
+Iteration 5, inertia 6.9981140048267605.
+Converged at iteration 5: strict convergence.
+Initialization complete
+Iteration 0, inertia 10.192149911689922.
+Iteration 1, inertia 7.016263174302656.
+Iteration 2, inertia 6.9981140048267605.
+Converged at iteration 2: strict convergence.
+Initialization complete
+Iteration 0, inertia 13.117157104617302.
+Iteration 1, inertia 9.346305434881877.
+Iteration 2, inertia 7.200142515652518.
+Iteration 3, inertia 7.063650065821033.
+Iteration 4, inertia 7.009711071516299.
+Iteration 5, inertia 7.001592023801327.
+Iteration 6, inertia 6.9981140048267605.
+Converged at iteration 6: strict convergence.
+Initialization complete
+Iteration 0, inertia 14.707382902688673.
+Iteration 1, inertia 7.773206595476633.
+Iteration 2, inertia 7.183944587571673.
+Iteration 3, inertia 7.021290694096092.
+Iteration 4, inertia 6.9981140048267605.
+Converged at iteration 4: strict convergence.
+Initialization complete
+Iteration 0, inertia 7.943729086203411.
+Iteration 1, inertia 7.217884802308979.
+Iteration 2, inertia 7.193121890494894.
+Iteration 3, inertia 7.182667132756725.
+Iteration 4, inertia 7.169111467307468.
+Iteration 5, inertia 7.151593675022098.
+Iteration 6, inertia 7.138647703985377.
+Converged at iteration 6: strict convergence.
+Initialization complete
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 0, inertia 15.948563863885429.
+Iteration 1, inertia 11.142730178485476.
+Iteration 2, inertia 10.954814875073943.
+Iteration 3, inertia 10.925513018974724.
+Iteration 4, inertia 10.91743354270312.
+Iteration 5, inertia 10.908274989622528.
+Converged at iteration 5: strict convergence.
+Initialization complete
+Iteration 0, inertia 12.359463055174293.
+Iteration 1, inertia 7.159888226735977.
+Iteration 2, inertia 7.138647703985377.
+Converged at iteration 2: strict convergence.
 </pre></div>
 </div>
 </div>
@@ -1232,156 +1215,156 @@ Converged at iteration 7: strict convergence.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID: 1, fitur: (5.1, 3.5, 1.4, 0.2), Cluster: 1
-ID: 2, fitur: (4.9, 3.0, 1.4, 0.2), Cluster: 1
-ID: 3, fitur: (4.7, 3.2, 1.3, 0.2), Cluster: 1
-ID: 4, fitur: (4.6, 3.1, 1.5, 0.2), Cluster: 1
-ID: 5, fitur: (5.0, 3.6, 1.4, 0.2), Cluster: 1
-ID: 6, fitur: (5.4, 3.9, 1.7, 0.4), Cluster: 1
-ID: 7, fitur: (4.6, 3.4, 1.4, 0.3), Cluster: 1
-ID: 8, fitur: (5.0, 3.4, 1.5, 0.2), Cluster: 1
-ID: 9, fitur: (4.4, 2.9, 1.4, 0.2), Cluster: 1
-ID: 10, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 1
-ID: 11, fitur: (5.4, 3.7, 1.5, 0.2), Cluster: 1
-ID: 12, fitur: (4.8, 3.4, 1.6, 0.2), Cluster: 1
-ID: 13, fitur: (4.8, 3.0, 1.4, 0.1), Cluster: 1
-ID: 14, fitur: (4.3, 3.0, 1.1, 0.1), Cluster: 1
-ID: 15, fitur: (5.8, 4.0, 1.2, 0.2), Cluster: 1
-ID: 16, fitur: (5.7, 4.4, 1.5, 0.4), Cluster: 1
-ID: 17, fitur: (5.4, 3.9, 1.3, 0.4), Cluster: 1
-ID: 18, fitur: (5.1, 3.5, 1.4, 0.3), Cluster: 1
-ID: 19, fitur: (5.7, 3.8, 1.7, 0.3), Cluster: 1
-ID: 20, fitur: (5.1, 3.8, 1.5, 0.3), Cluster: 1
-ID: 21, fitur: (5.4, 3.4, 1.7, 0.2), Cluster: 1
-ID: 22, fitur: (5.1, 3.7, 1.5, 0.4), Cluster: 1
-ID: 23, fitur: (4.6, 3.6, 1.0, 0.2), Cluster: 1
-ID: 24, fitur: (5.1, 3.3, 1.7, 0.5), Cluster: 1
-ID: 25, fitur: (4.8, 3.4, 1.9, 0.2), Cluster: 1
-ID: 26, fitur: (5.0, 3.0, 1.6, 0.2), Cluster: 1
-ID: 27, fitur: (5.0, 3.4, 1.6, 0.4), Cluster: 1
-ID: 28, fitur: (5.2, 3.5, 1.5, 0.2), Cluster: 1
-ID: 29, fitur: (5.2, 3.4, 1.4, 0.2), Cluster: 1
-ID: 30, fitur: (4.7, 3.2, 1.6, 0.2), Cluster: 1
-ID: 31, fitur: (4.8, 3.1, 1.6, 0.2), Cluster: 1
-ID: 32, fitur: (5.4, 3.4, 1.5, 0.4), Cluster: 1
-ID: 33, fitur: (5.2, 4.1, 1.5, 0.1), Cluster: 1
-ID: 34, fitur: (5.5, 4.2, 1.4, 0.2), Cluster: 1
-ID: 35, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 1
-ID: 36, fitur: (5.0, 3.2, 1.2, 0.2), Cluster: 1
-ID: 37, fitur: (5.5, 3.5, 1.3, 0.2), Cluster: 1
-ID: 38, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 1
-ID: 39, fitur: (4.4, 3.0, 1.3, 0.2), Cluster: 1
-ID: 40, fitur: (5.1, 3.4, 1.5, 0.2), Cluster: 1
-ID: 41, fitur: (5.0, 3.5, 1.3, 0.3), Cluster: 1
-ID: 42, fitur: (4.5, 2.3, 1.3, 0.3), Cluster: 1
-ID: 43, fitur: (4.4, 3.2, 1.3, 0.2), Cluster: 1
-ID: 44, fitur: (5.0, 3.5, 1.6, 0.6), Cluster: 1
-ID: 45, fitur: (5.1, 3.8, 1.9, 0.4), Cluster: 1
-ID: 46, fitur: (4.8, 3.0, 1.4, 0.3), Cluster: 1
-ID: 47, fitur: (5.1, 3.8, 1.6, 0.2), Cluster: 1
-ID: 48, fitur: (4.6, 3.2, 1.4, 0.2), Cluster: 1
-ID: 49, fitur: (5.3, 3.7, 1.5, 0.2), Cluster: 1
-ID: 50, fitur: (5.0, 3.3, 1.4, 0.2), Cluster: 1
-ID: 51, fitur: (7.0, 3.2, 4.7, 1.4), Cluster: 0
-ID: 52, fitur: (6.4, 3.2, 4.5, 1.5), Cluster: 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID: 1, fitur: (5.1, 3.5, 1.4, 0.2), Cluster: 0
+ID: 2, fitur: (4.9, 3.0, 1.4, 0.2), Cluster: 0
+ID: 3, fitur: (4.7, 3.2, 1.3, 0.2), Cluster: 0
+ID: 4, fitur: (4.6, 3.1, 1.5, 0.2), Cluster: 0
+ID: 5, fitur: (5.0, 3.6, 1.4, 0.2), Cluster: 0
+ID: 6, fitur: (5.4, 3.9, 1.7, 0.4), Cluster: 0
+ID: 7, fitur: (4.6, 3.4, 1.4, 0.3), Cluster: 0
+ID: 8, fitur: (5.0, 3.4, 1.5, 0.2), Cluster: 0
+ID: 9, fitur: (4.4, 2.9, 1.4, 0.2), Cluster: 0
+ID: 10, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 0
+ID: 11, fitur: (5.4, 3.7, 1.5, 0.2), Cluster: 0
+ID: 12, fitur: (4.8, 3.4, 1.6, 0.2), Cluster: 0
+ID: 13, fitur: (4.8, 3.0, 1.4, 0.1), Cluster: 0
+ID: 14, fitur: (4.3, 3.0, 1.1, 0.1), Cluster: 0
+ID: 15, fitur: (5.8, 4.0, 1.2, 0.2), Cluster: 0
+ID: 16, fitur: (5.7, 4.4, 1.5, 0.4), Cluster: 0
+ID: 17, fitur: (5.4, 3.9, 1.3, 0.4), Cluster: 0
+ID: 18, fitur: (5.1, 3.5, 1.4, 0.3), Cluster: 0
+ID: 19, fitur: (5.7, 3.8, 1.7, 0.3), Cluster: 0
+ID: 20, fitur: (5.1, 3.8, 1.5, 0.3), Cluster: 0
+ID: 21, fitur: (5.4, 3.4, 1.7, 0.2), Cluster: 0
+ID: 22, fitur: (5.1, 3.7, 1.5, 0.4), Cluster: 0
+ID: 23, fitur: (4.6, 3.6, 1.0, 0.2), Cluster: 0
+ID: 24, fitur: (5.1, 3.3, 1.7, 0.5), Cluster: 0
+ID: 25, fitur: (4.8, 3.4, 1.9, 0.2), Cluster: 0
+ID: 26, fitur: (5.0, 3.0, 1.6, 0.2), Cluster: 0
+ID: 27, fitur: (5.0, 3.4, 1.6, 0.4), Cluster: 0
+ID: 28, fitur: (5.2, 3.5, 1.5, 0.2), Cluster: 0
+ID: 29, fitur: (5.2, 3.4, 1.4, 0.2), Cluster: 0
+ID: 30, fitur: (4.7, 3.2, 1.6, 0.2), Cluster: 0
+ID: 31, fitur: (4.8, 3.1, 1.6, 0.2), Cluster: 0
+ID: 32, fitur: (5.4, 3.4, 1.5, 0.4), Cluster: 0
+ID: 33, fitur: (5.2, 4.1, 1.5, 0.1), Cluster: 0
+ID: 34, fitur: (5.5, 4.2, 1.4, 0.2), Cluster: 0
+ID: 35, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 0
+ID: 36, fitur: (5.0, 3.2, 1.2, 0.2), Cluster: 0
+ID: 37, fitur: (5.5, 3.5, 1.3, 0.2), Cluster: 0
+ID: 38, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 0
+ID: 39, fitur: (4.4, 3.0, 1.3, 0.2), Cluster: 0
+ID: 40, fitur: (5.1, 3.4, 1.5, 0.2), Cluster: 0
+ID: 41, fitur: (5.0, 3.5, 1.3, 0.3), Cluster: 0
+ID: 42, fitur: (4.5, 2.3, 1.3, 0.3), Cluster: 0
+ID: 43, fitur: (4.4, 3.2, 1.3, 0.2), Cluster: 0
+ID: 44, fitur: (5.0, 3.5, 1.6, 0.6), Cluster: 0
+ID: 45, fitur: (5.1, 3.8, 1.9, 0.4), Cluster: 0
+ID: 46, fitur: (4.8, 3.0, 1.4, 0.3), Cluster: 0
+ID: 47, fitur: (5.1, 3.8, 1.6, 0.2), Cluster: 0
+ID: 48, fitur: (4.6, 3.2, 1.4, 0.2), Cluster: 0
+ID: 49, fitur: (5.3, 3.7, 1.5, 0.2), Cluster: 0
+ID: 50, fitur: (5.0, 3.3, 1.4, 0.2), Cluster: 0
+ID: 51, fitur: (7.0, 3.2, 4.7, 1.4), Cluster: 2
+ID: 52, fitur: (6.4, 3.2, 4.5, 1.5), Cluster: 1
 ID: 53, fitur: (6.9, 3.1, 4.9, 1.5), Cluster: 2
-ID: 54, fitur: (5.5, 2.3, 4.0, 1.3), Cluster: 0
-ID: 55, fitur: (6.5, 2.8, 4.6, 1.5), Cluster: 0
-ID: 56, fitur: (5.7, 2.8, 4.5, 1.3), Cluster: 0
-ID: 57, fitur: (6.3, 3.3, 4.7, 1.6), Cluster: 0
-ID: 58, fitur: (4.9, 2.4, 3.3, 1.0), Cluster: 0
-ID: 59, fitur: (6.6, 2.9, 4.6, 1.3), Cluster: 0
-ID: 60, fitur: (5.2, 2.7, 3.9, 1.4), Cluster: 0
-ID: 61, fitur: (5.0, 2.0, 3.5, 1.0), Cluster: 0
-ID: 62, fitur: (5.9, 3.0, 4.2, 1.5), Cluster: 0
-ID: 63, fitur: (6.0, 2.2, 4.0, 1.0), Cluster: 0
-ID: 64, fitur: (6.1, 2.9, 4.7, 1.4), Cluster: 0
-ID: 65, fitur: (5.6, 2.9, 3.6, 1.3), Cluster: 0
-ID: 66, fitur: (6.7, 3.1, 4.4, 1.4), Cluster: 0
-ID: 67, fitur: (5.6, 3.0, 4.5, 1.5), Cluster: 0
-ID: 68, fitur: (5.8, 2.7, 4.1, 1.0), Cluster: 0
-ID: 69, fitur: (6.2, 2.2, 4.5, 1.5), Cluster: 0
-ID: 70, fitur: (5.6, 2.5, 3.9, 1.1), Cluster: 0
-ID: 71, fitur: (5.9, 3.2, 4.8, 1.8), Cluster: 0
-ID: 72, fitur: (6.1, 2.8, 4.0, 1.3), Cluster: 0
-ID: 73, fitur: (6.3, 2.5, 4.9, 1.5), Cluster: 0
-ID: 74, fitur: (6.1, 2.8, 4.7, 1.2), Cluster: 0
-ID: 75, fitur: (6.4, 2.9, 4.3, 1.3), Cluster: 0
-ID: 76, fitur: (6.6, 3.0, 4.4, 1.4), Cluster: 0
-ID: 77, fitur: (6.8, 2.8, 4.8, 1.4), Cluster: 0
+ID: 54, fitur: (5.5, 2.3, 4.0, 1.3), Cluster: 1
+ID: 55, fitur: (6.5, 2.8, 4.6, 1.5), Cluster: 1
+ID: 56, fitur: (5.7, 2.8, 4.5, 1.3), Cluster: 1
+ID: 57, fitur: (6.3, 3.3, 4.7, 1.6), Cluster: 1
+ID: 58, fitur: (4.9, 2.4, 3.3, 1.0), Cluster: 1
+ID: 59, fitur: (6.6, 2.9, 4.6, 1.3), Cluster: 1
+ID: 60, fitur: (5.2, 2.7, 3.9, 1.4), Cluster: 1
+ID: 61, fitur: (5.0, 2.0, 3.5, 1.0), Cluster: 1
+ID: 62, fitur: (5.9, 3.0, 4.2, 1.5), Cluster: 1
+ID: 63, fitur: (6.0, 2.2, 4.0, 1.0), Cluster: 1
+ID: 64, fitur: (6.1, 2.9, 4.7, 1.4), Cluster: 1
+ID: 65, fitur: (5.6, 2.9, 3.6, 1.3), Cluster: 1
+ID: 66, fitur: (6.7, 3.1, 4.4, 1.4), Cluster: 1
+ID: 67, fitur: (5.6, 3.0, 4.5, 1.5), Cluster: 1
+ID: 68, fitur: (5.8, 2.7, 4.1, 1.0), Cluster: 1
+ID: 69, fitur: (6.2, 2.2, 4.5, 1.5), Cluster: 1
+ID: 70, fitur: (5.6, 2.5, 3.9, 1.1), Cluster: 1
+ID: 71, fitur: (5.9, 3.2, 4.8, 1.8), Cluster: 1
+ID: 72, fitur: (6.1, 2.8, 4.0, 1.3), Cluster: 1
+ID: 73, fitur: (6.3, 2.5, 4.9, 1.5), Cluster: 1
+ID: 74, fitur: (6.1, 2.8, 4.7, 1.2), Cluster: 1
+ID: 75, fitur: (6.4, 2.9, 4.3, 1.3), Cluster: 1
+ID: 76, fitur: (6.6, 3.0, 4.4, 1.4), Cluster: 1
+ID: 77, fitur: (6.8, 2.8, 4.8, 1.4), Cluster: 1
 ID: 78, fitur: (6.7, 3.0, 5.0, 1.7), Cluster: 2
-ID: 79, fitur: (6.0, 2.9, 4.5, 1.5), Cluster: 0
-ID: 80, fitur: (5.7, 2.6, 3.5, 1.0), Cluster: 0
-ID: 81, fitur: (5.5, 2.4, 3.8, 1.1), Cluster: 0
-ID: 82, fitur: (5.5, 2.4, 3.7, 1.0), Cluster: 0
-ID: 83, fitur: (5.8, 2.7, 3.9, 1.2), Cluster: 0
-ID: 84, fitur: (6.0, 2.7, 5.1, 1.6), Cluster: 0
-ID: 85, fitur: (5.4, 3.0, 4.5, 1.5), Cluster: 0
-ID: 86, fitur: (6.0, 3.4, 4.5, 1.6), Cluster: 0
-ID: 87, fitur: (6.7, 3.1, 4.7, 1.5), Cluster: 0
-ID: 88, fitur: (6.3, 2.3, 4.4, 1.3), Cluster: 0
-ID: 89, fitur: (5.6, 3.0, 4.1, 1.3), Cluster: 0
-ID: 90, fitur: (5.5, 2.5, 4.0, 1.3), Cluster: 0
-ID: 91, fitur: (5.5, 2.6, 4.4, 1.2), Cluster: 0
-ID: 92, fitur: (6.1, 3.0, 4.6, 1.4), Cluster: 0
-ID: 93, fitur: (5.8, 2.6, 4.0, 1.2), Cluster: 0
-ID: 94, fitur: (5.0, 2.3, 3.3, 1.0), Cluster: 0
-ID: 95, fitur: (5.6, 2.7, 4.2, 1.3), Cluster: 0
-ID: 96, fitur: (5.7, 3.0, 4.2, 1.2), Cluster: 0
-ID: 97, fitur: (5.7, 2.9, 4.2, 1.3), Cluster: 0
-ID: 98, fitur: (6.2, 2.9, 4.3, 1.3), Cluster: 0
-ID: 99, fitur: (5.1, 2.5, 3.0, 1.1), Cluster: 0
-ID: 100, fitur: (5.7, 2.8, 4.1, 1.3), Cluster: 0
+ID: 79, fitur: (6.0, 2.9, 4.5, 1.5), Cluster: 1
+ID: 80, fitur: (5.7, 2.6, 3.5, 1.0), Cluster: 1
+ID: 81, fitur: (5.5, 2.4, 3.8, 1.1), Cluster: 1
+ID: 82, fitur: (5.5, 2.4, 3.7, 1.0), Cluster: 1
+ID: 83, fitur: (5.8, 2.7, 3.9, 1.2), Cluster: 1
+ID: 84, fitur: (6.0, 2.7, 5.1, 1.6), Cluster: 1
+ID: 85, fitur: (5.4, 3.0, 4.5, 1.5), Cluster: 1
+ID: 86, fitur: (6.0, 3.4, 4.5, 1.6), Cluster: 1
+ID: 87, fitur: (6.7, 3.1, 4.7, 1.5), Cluster: 1
+ID: 88, fitur: (6.3, 2.3, 4.4, 1.3), Cluster: 1
+ID: 89, fitur: (5.6, 3.0, 4.1, 1.3), Cluster: 1
+ID: 90, fitur: (5.5, 2.5, 4.0, 1.3), Cluster: 1
+ID: 91, fitur: (5.5, 2.6, 4.4, 1.2), Cluster: 1
+ID: 92, fitur: (6.1, 3.0, 4.6, 1.4), Cluster: 1
+ID: 93, fitur: (5.8, 2.6, 4.0, 1.2), Cluster: 1
+ID: 94, fitur: (5.0, 2.3, 3.3, 1.0), Cluster: 1
+ID: 95, fitur: (5.6, 2.7, 4.2, 1.3), Cluster: 1
+ID: 96, fitur: (5.7, 3.0, 4.2, 1.2), Cluster: 1
+ID: 97, fitur: (5.7, 2.9, 4.2, 1.3), Cluster: 1
+ID: 98, fitur: (6.2, 2.9, 4.3, 1.3), Cluster: 1
+ID: 99, fitur: (5.1, 2.5, 3.0, 1.1), Cluster: 1
+ID: 100, fitur: (5.7, 2.8, 4.1, 1.3), Cluster: 1
 ID: 101, fitur: (6.3, 3.3, 6.0, 2.5), Cluster: 2
-ID: 102, fitur: (5.8, 2.7, 5.1, 1.9), Cluster: 0
+ID: 102, fitur: (5.8, 2.7, 5.1, 1.9), Cluster: 1
 ID: 103, fitur: (7.1, 3.0, 5.9, 2.1), Cluster: 2
 ID: 104, fitur: (6.3, 2.9, 5.6, 1.8), Cluster: 2
 ID: 105, fitur: (6.5, 3.0, 5.8, 2.2), Cluster: 2
 ID: 106, fitur: (7.6, 3.0, 6.6, 2.1), Cluster: 2
-ID: 107, fitur: (4.9, 2.5, 4.5, 1.7), Cluster: 0
+ID: 107, fitur: (4.9, 2.5, 4.5, 1.7), Cluster: 1
 ID: 108, fitur: (7.3, 2.9, 6.3, 1.8), Cluster: 2
 ID: 109, fitur: (6.7, 2.5, 5.8, 1.8), Cluster: 2
 ID: 110, fitur: (7.2, 3.6, 6.1, 2.5), Cluster: 2
 ID: 111, fitur: (6.5, 3.2, 5.1, 2.0), Cluster: 2
 ID: 112, fitur: (6.4, 2.7, 5.3, 1.9), Cluster: 2
 ID: 113, fitur: (6.8, 3.0, 5.5, 2.1), Cluster: 2
-ID: 114, fitur: (5.7, 2.5, 5.0, 2.0), Cluster: 0
-ID: 115, fitur: (5.8, 2.8, 5.1, 2.4), Cluster: 0
+ID: 114, fitur: (5.7, 2.5, 5.0, 2.0), Cluster: 1
+ID: 115, fitur: (5.8, 2.8, 5.1, 2.4), Cluster: 2
 ID: 116, fitur: (6.4, 3.2, 5.3, 2.3), Cluster: 2
 ID: 117, fitur: (6.5, 3.0, 5.5, 1.8), Cluster: 2
 ID: 118, fitur: (7.7, 3.8, 6.7, 2.2), Cluster: 2
 ID: 119, fitur: (7.7, 2.6, 6.9, 2.3), Cluster: 2
-ID: 120, fitur: (6.0, 2.2, 5.0, 1.5), Cluster: 0
+ID: 120, fitur: (6.0, 2.2, 5.0, 1.5), Cluster: 1
 ID: 121, fitur: (6.9, 3.2, 5.7, 2.3), Cluster: 2
-ID: 122, fitur: (5.6, 2.8, 4.9, 2.0), Cluster: 0
+ID: 122, fitur: (5.6, 2.8, 4.9, 2.0), Cluster: 1
 ID: 123, fitur: (7.7, 2.8, 6.7, 2.0), Cluster: 2
-ID: 124, fitur: (6.3, 2.7, 4.9, 1.8), Cluster: 0
+ID: 124, fitur: (6.3, 2.7, 4.9, 1.8), Cluster: 1
 ID: 125, fitur: (6.7, 3.3, 5.7, 2.1), Cluster: 2
 ID: 126, fitur: (7.2, 3.2, 6.0, 1.8), Cluster: 2
-ID: 127, fitur: (6.2, 2.8, 4.8, 1.8), Cluster: 0
-ID: 128, fitur: (6.1, 3.0, 4.9, 1.8), Cluster: 0
+ID: 127, fitur: (6.2, 2.8, 4.8, 1.8), Cluster: 1
+ID: 128, fitur: (6.1, 3.0, 4.9, 1.8), Cluster: 1
 ID: 129, fitur: (6.4, 2.8, 5.6, 2.1), Cluster: 2
 ID: 130, fitur: (7.2, 3.0, 5.8, 1.6), Cluster: 2
 ID: 131, fitur: (7.4, 2.8, 6.1, 1.9), Cluster: 2
 ID: 132, fitur: (7.9, 3.8, 6.4, 2.0), Cluster: 2
 ID: 133, fitur: (6.4, 2.8, 5.6, 2.2), Cluster: 2
-ID: 134, fitur: (6.3, 2.8, 5.1, 1.5), Cluster: 0
-ID: 135, fitur: (6.1, 2.6, 5.6, 1.4), Cluster: 2
+ID: 134, fitur: (6.3, 2.8, 5.1, 1.5), Cluster: 1
+ID: 135, fitur: (6.1, 2.6, 5.6, 1.4), Cluster: 1
 ID: 136, fitur: (7.7, 3.0, 6.1, 2.3), Cluster: 2
 ID: 137, fitur: (6.3, 3.4, 5.6, 2.4), Cluster: 2
 ID: 138, fitur: (6.4, 3.1, 5.5, 1.8), Cluster: 2
-ID: 139, fitur: (6.0, 3.0, 4.8, 1.8), Cluster: 0
+ID: 139, fitur: (6.0, 3.0, 4.8, 1.8), Cluster: 1
 ID: 140, fitur: (6.9, 3.1, 5.4, 2.1), Cluster: 2
 ID: 141, fitur: (6.7, 3.1, 5.6, 2.4), Cluster: 2
 ID: 142, fitur: (6.9, 3.1, 5.1, 2.3), Cluster: 2
-ID: 143, fitur: (5.8, 2.7, 5.1, 1.9), Cluster: 0
+ID: 143, fitur: (5.8, 2.7, 5.1, 1.9), Cluster: 1
 ID: 144, fitur: (6.8, 3.2, 5.9, 2.3), Cluster: 2
 ID: 145, fitur: (6.7, 3.3, 5.7, 2.5), Cluster: 2
 ID: 146, fitur: (6.7, 3.0, 5.2, 2.3), Cluster: 2
-ID: 147, fitur: (6.3, 2.5, 5.0, 1.9), Cluster: 0
+ID: 147, fitur: (6.3, 2.5, 5.0, 1.9), Cluster: 1
 ID: 148, fitur: (6.5, 3.0, 5.2, 2.0), Cluster: 2
 ID: 149, fitur: (6.2, 3.4, 5.4, 2.3), Cluster: 2
-ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
+ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 1
 </pre></div>
 </div>
 </div>
@@ -1396,7 +1379,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nilai inertia clustering sebanyak 3 yakni sebesar = 78.94084142614601
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nilai inertia clustering sebanyak 3 yakni sebesar = 6.9981140048267605
 </pre></div>
 </div>
 </div>
@@ -1414,7 +1397,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Silhouette Score Cluster 3: 0.5526
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Silhouette Score Cluster 3: 0.5043
 </pre></div>
 </div>
 </div>
@@ -1452,11 +1435,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but PCA was fitted with feature names
-  warnings.warn(
-</pre></div>
-</div>
-<img alt="_images/97abf1e3948b835b38082739eb2526b0d24395638986e4f1dc97bc2a7ec4c249.png" src="_images/97abf1e3948b835b38082739eb2526b0d24395638986e4f1dc97bc2a7ec4c249.png" />
+<img alt="_images/c314a034cd69bd6c9a2e6df12c5ea43f3d0400cf75a8f1b2907fa716f741e48f.png" src="_images/c314a034cd69bd6c9a2e6df12c5ea43f3d0400cf75a8f1b2907fa716f741e48f.png" />
 </div>
 </div>
 </section>
@@ -1469,7 +1448,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengambil data dalam database dan menghapus kolom id</span>
 
-<span class="n">values_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data_remove_class</span><span class="p">])</span>
+<span class="n">values_x</span> <span class="o">=</span> <span class="n">data_normalized</span>
 <span class="n">k_means_C4</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span>
     <span class="n">n_clusters</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
     <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span>
@@ -1494,88 +1473,108 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialization complete
-Iteration 0, inertia 104.79999999999995.
-Iteration 1, inertia 62.07328086734693.
-Iteration 2, inertia 58.018738690476184.
-Iteration 3, inertia 57.44028021295475.
-Converged at iteration 3: strict convergence.
+Iteration 0, inertia 7.939472513485902.
+Iteration 1, inertia 5.868733967674862.
+Iteration 2, inertia 5.705393552507056.
+Iteration 3, inertia 5.584555534745607.
+Iteration 4, inertia 5.557380066599768.
+Iteration 5, inertia 5.5416577630824975.
+Converged at iteration 5: strict convergence.
 Initialization complete
-Iteration 0, inertia 93.91000000000001.
-Iteration 1, inertia 63.09975821705885.
-Iteration 2, inertia 58.108847546645755.
-Iteration 3, inertia 57.37340990587695.
-Iteration 4, inertia 57.34540931571815.
-Converged at iteration 4: strict convergence.
+Iteration 0, inertia 9.581631247317889.
+Iteration 1, inertia 6.793218916486281.
+Iteration 2, inertia 6.600949166608553.
+Iteration 3, inertia 6.468313252694651.
+Iteration 4, inertia 6.226139994781539.
+Iteration 5, inertia 6.035519152979061.
+Iteration 6, inertia 5.9681010863600354.
+Iteration 7, inertia 5.798528389969719.
+Iteration 8, inertia 5.693133112023586.
+Iteration 9, inertia 5.644752638278805.
+Iteration 10, inertia 5.640491390897204.
+Iteration 11, inertia 5.627429497318774.
+Iteration 12, inertia 5.605400467193846.
+Iteration 13, inertia 5.579480437573414.
+Iteration 14, inertia 5.5602063018346675.
+Iteration 15, inertia 5.549759171192485.
+Converged at iteration 15: strict convergence.
 Initialization complete
-Iteration 0, inertia 82.37000000000005.
-Iteration 1, inertia 57.35501904761905.
-Converged at iteration 1: strict convergence.
-Initialization complete
-Iteration 0, inertia 97.24000000000001.
-Iteration 1, inertia 61.88403410158182.
-Iteration 2, inertia 59.587131566925244.
-Iteration 3, inertia 58.215718600663415.
-Iteration 4, inertia 57.537356239856265.
-Iteration 5, inertia 57.434856134937775.
-Iteration 6, inertia 57.37445420624858.
-Iteration 7, inertia 57.34540931571815.
-Converged at iteration 7: strict convergence.
-Initialization complete
-Iteration 0, inertia 96.83999999999997.
-Iteration 1, inertia 77.77266353705998.
-Iteration 2, inertia 76.81842773000619.
-Iteration 3, inertia 75.85263071012446.
-Iteration 4, inertia 74.55525090908095.
-Iteration 5, inertia 73.6120248413547.
-Iteration 6, inertia 72.67922867596779.
-Iteration 7, inertia 72.15001298668145.
-Iteration 8, inertia 71.72695856357693.
-Iteration 9, inertia 71.66131466733202.
+Iteration 0, inertia 8.172393577923899.
+Iteration 1, inertia 6.120313511039639.
+Iteration 2, inertia 5.9999283232559835.
+Iteration 3, inertia 5.963900886114037.
+Iteration 4, inertia 5.918107862208023.
+Iteration 5, inertia 5.861644727744938.
+Iteration 6, inertia 5.758875949675173.
+Iteration 7, inertia 5.63104131344716.
+Iteration 8, inertia 5.557380066599768.
+Iteration 9, inertia 5.5416577630824975.
 Converged at iteration 9: strict convergence.
 Initialization complete
-Iteration 0, inertia 93.78999999999999.
-Iteration 1, inertia 76.29707617219651.
-Iteration 2, inertia 75.34775971749292.
-Iteration 3, inertia 74.05177078471793.
-Iteration 4, inertia 73.29893369230767.
-Iteration 5, inertia 72.36613752692077.
-Iteration 6, inertia 71.83692183763442.
-Iteration 7, inertia 71.4138674145299.
-Iteration 8, inertia 71.34822351828498.
-Converged at iteration 8: strict convergence.
-Initialization complete
-Iteration 0, inertia 111.8000000000001.
-Iteration 1, inertia 60.71625714285713.
-Iteration 2, inertia 57.55854584457595.
-Iteration 3, inertia 57.317873214285726.
+Iteration 0, inertia 7.967120785321368.
+Iteration 1, inertia 6.103096730505276.
+Iteration 2, inertia 6.073892357895801.
+Iteration 3, inertia 6.068688762623882.
 Converged at iteration 3: strict convergence.
 Initialization complete
-Iteration 0, inertia 88.27.
-Iteration 1, inertia 63.568302134079815.
-Iteration 2, inertia 58.04805233374578.
-Iteration 3, inertia 57.345729421937804.
-Iteration 4, inertia 57.317873214285726.
+Iteration 0, inertia 10.708803201063269.
+Iteration 1, inertia 6.752673772446161.
+Iteration 2, inertia 6.239403588448896.
+Iteration 3, inertia 6.103911557852235.
+Iteration 4, inertia 6.043475821204581.
+Iteration 5, inertia 6.036463510500608.
+Converged at iteration 5: strict convergence.
+Initialization complete
+Iteration 0, inertia 8.339030431070254.
+Iteration 1, inertia 6.261711835207668.
+Iteration 2, inertia 6.102820306692419.
+Iteration 3, inertia 6.072166781598452.
+Iteration 4, inertia 6.068688762623882.
 Converged at iteration 4: strict convergence.
 Initialization complete
-Iteration 0, inertia 95.86000000000001.
-Iteration 1, inertia 62.167943055555554.
-Iteration 2, inertia 61.022316322314026.
-Iteration 3, inertia 60.32172602544926.
-Iteration 4, inertia 59.629903188481066.
-Iteration 5, inertia 59.238389315726295.
-Iteration 6, inertia 58.99198285274895.
-Iteration 7, inertia 58.45869541700741.
-Iteration 8, inertia 58.18958068421082.
-Iteration 9, inertia 57.70863212650636.
-Iteration 10, inertia 57.61964031422782.
-Iteration 11, inertia 57.4732732654949.
-Converged at iteration 11: strict convergence.
+Iteration 0, inertia 9.918692711492012.
+Iteration 1, inertia 6.552990866345904.
+Iteration 2, inertia 6.399763952418508.
+Iteration 3, inertia 6.352620617243306.
+Iteration 4, inertia 6.285645950580636.
+Iteration 5, inertia 6.191500525820992.
+Iteration 6, inertia 6.08553192847271.
+Iteration 7, inertia 6.012217279136792.
+Iteration 8, inertia 5.962830091471151.
+Iteration 9, inertia 5.912149353557876.
+Iteration 10, inertia 5.890787393477773.
+Iteration 11, inertia 5.811260334024779.
+Iteration 12, inertia 5.722339910024327.
+Iteration 13, inertia 5.614785530787988.
+Iteration 14, inertia 5.557380066599768.
+Iteration 15, inertia 5.5416577630824975.
+Converged at iteration 15: strict convergence.
 Initialization complete
-Iteration 0, inertia 78.74999999999999.
-Iteration 1, inertia 58.26914278889989.
-Iteration 2, inertia 57.348929767509716.
-Iteration 3, inertia 57.317873214285726.
-Converged at iteration 3: strict convergence.
+Iteration 0, inertia 8.176644719925799.
+Iteration 1, inertia 6.141370246265937.
+Iteration 2, inertia 6.037206614805417.
+Converged at iteration 2: strict convergence.
+Initialization complete
+Iteration 0, inertia 7.277544534084503.
+Iteration 1, inertia 6.08635439532123.
+Iteration 2, inertia 5.9003976097449735.
+Iteration 3, inertia 5.8393454963485905.
+Iteration 4, inertia 5.7401981133475415.
+Iteration 5, inertia 5.614785530787988.
+Iteration 6, inertia 5.557380066599768.
+Iteration 7, inertia 5.5416577630824975.
+Converged at iteration 7: strict convergence.
+Initialization complete
+Iteration 0, inertia 7.233859802419481.
+Iteration 1, inertia 5.990981361223781.
+Iteration 2, inertia 5.664738317511466.
+Iteration 3, inertia 5.627153207442672.
+Iteration 4, inertia 5.606804217015193.
+Iteration 5, inertia 5.562920368624159.
+Iteration 6, inertia 5.539120002262464.
+Iteration 7, inertia 5.534819675277526.
+Iteration 8, inertia 5.5328310030819.
+Converged at iteration 8: strict convergence.
 </pre></div>
 </div>
 </div>
@@ -1591,156 +1590,156 @@ Converged at iteration 3: strict convergence.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID: 1, fitur: (5.1, 3.5, 1.4, 0.2), Cluster: 1
-ID: 2, fitur: (4.9, 3.0, 1.4, 0.2), Cluster: 1
-ID: 3, fitur: (4.7, 3.2, 1.3, 0.2), Cluster: 1
-ID: 4, fitur: (4.6, 3.1, 1.5, 0.2), Cluster: 1
-ID: 5, fitur: (5.0, 3.6, 1.4, 0.2), Cluster: 1
-ID: 6, fitur: (5.4, 3.9, 1.7, 0.4), Cluster: 1
-ID: 7, fitur: (4.6, 3.4, 1.4, 0.3), Cluster: 1
-ID: 8, fitur: (5.0, 3.4, 1.5, 0.2), Cluster: 1
-ID: 9, fitur: (4.4, 2.9, 1.4, 0.2), Cluster: 1
-ID: 10, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 1
-ID: 11, fitur: (5.4, 3.7, 1.5, 0.2), Cluster: 1
-ID: 12, fitur: (4.8, 3.4, 1.6, 0.2), Cluster: 1
-ID: 13, fitur: (4.8, 3.0, 1.4, 0.1), Cluster: 1
-ID: 14, fitur: (4.3, 3.0, 1.1, 0.1), Cluster: 1
-ID: 15, fitur: (5.8, 4.0, 1.2, 0.2), Cluster: 1
-ID: 16, fitur: (5.7, 4.4, 1.5, 0.4), Cluster: 1
-ID: 17, fitur: (5.4, 3.9, 1.3, 0.4), Cluster: 1
-ID: 18, fitur: (5.1, 3.5, 1.4, 0.3), Cluster: 1
-ID: 19, fitur: (5.7, 3.8, 1.7, 0.3), Cluster: 1
-ID: 20, fitur: (5.1, 3.8, 1.5, 0.3), Cluster: 1
-ID: 21, fitur: (5.4, 3.4, 1.7, 0.2), Cluster: 1
-ID: 22, fitur: (5.1, 3.7, 1.5, 0.4), Cluster: 1
-ID: 23, fitur: (4.6, 3.6, 1.0, 0.2), Cluster: 1
-ID: 24, fitur: (5.1, 3.3, 1.7, 0.5), Cluster: 1
-ID: 25, fitur: (4.8, 3.4, 1.9, 0.2), Cluster: 1
-ID: 26, fitur: (5.0, 3.0, 1.6, 0.2), Cluster: 1
-ID: 27, fitur: (5.0, 3.4, 1.6, 0.4), Cluster: 1
-ID: 28, fitur: (5.2, 3.5, 1.5, 0.2), Cluster: 1
-ID: 29, fitur: (5.2, 3.4, 1.4, 0.2), Cluster: 1
-ID: 30, fitur: (4.7, 3.2, 1.6, 0.2), Cluster: 1
-ID: 31, fitur: (4.8, 3.1, 1.6, 0.2), Cluster: 1
-ID: 32, fitur: (5.4, 3.4, 1.5, 0.4), Cluster: 1
-ID: 33, fitur: (5.2, 4.1, 1.5, 0.1), Cluster: 1
-ID: 34, fitur: (5.5, 4.2, 1.4, 0.2), Cluster: 1
-ID: 35, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 1
-ID: 36, fitur: (5.0, 3.2, 1.2, 0.2), Cluster: 1
-ID: 37, fitur: (5.5, 3.5, 1.3, 0.2), Cluster: 1
-ID: 38, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 1
-ID: 39, fitur: (4.4, 3.0, 1.3, 0.2), Cluster: 1
-ID: 40, fitur: (5.1, 3.4, 1.5, 0.2), Cluster: 1
-ID: 41, fitur: (5.0, 3.5, 1.3, 0.3), Cluster: 1
-ID: 42, fitur: (4.5, 2.3, 1.3, 0.3), Cluster: 1
-ID: 43, fitur: (4.4, 3.2, 1.3, 0.2), Cluster: 1
-ID: 44, fitur: (5.0, 3.5, 1.6, 0.6), Cluster: 1
-ID: 45, fitur: (5.1, 3.8, 1.9, 0.4), Cluster: 1
-ID: 46, fitur: (4.8, 3.0, 1.4, 0.3), Cluster: 1
-ID: 47, fitur: (5.1, 3.8, 1.6, 0.2), Cluster: 1
-ID: 48, fitur: (4.6, 3.2, 1.4, 0.2), Cluster: 1
-ID: 49, fitur: (5.3, 3.7, 1.5, 0.2), Cluster: 1
-ID: 50, fitur: (5.0, 3.3, 1.4, 0.2), Cluster: 1
-ID: 51, fitur: (7.0, 3.2, 4.7, 1.4), Cluster: 0
-ID: 52, fitur: (6.4, 3.2, 4.5, 1.5), Cluster: 0
-ID: 53, fitur: (6.9, 3.1, 4.9, 1.5), Cluster: 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID: 1, fitur: (5.1, 3.5, 1.4, 0.2), Cluster: 0
+ID: 2, fitur: (4.9, 3.0, 1.4, 0.2), Cluster: 0
+ID: 3, fitur: (4.7, 3.2, 1.3, 0.2), Cluster: 0
+ID: 4, fitur: (4.6, 3.1, 1.5, 0.2), Cluster: 0
+ID: 5, fitur: (5.0, 3.6, 1.4, 0.2), Cluster: 0
+ID: 6, fitur: (5.4, 3.9, 1.7, 0.4), Cluster: 0
+ID: 7, fitur: (4.6, 3.4, 1.4, 0.3), Cluster: 0
+ID: 8, fitur: (5.0, 3.4, 1.5, 0.2), Cluster: 0
+ID: 9, fitur: (4.4, 2.9, 1.4, 0.2), Cluster: 0
+ID: 10, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 0
+ID: 11, fitur: (5.4, 3.7, 1.5, 0.2), Cluster: 0
+ID: 12, fitur: (4.8, 3.4, 1.6, 0.2), Cluster: 0
+ID: 13, fitur: (4.8, 3.0, 1.4, 0.1), Cluster: 0
+ID: 14, fitur: (4.3, 3.0, 1.1, 0.1), Cluster: 0
+ID: 15, fitur: (5.8, 4.0, 1.2, 0.2), Cluster: 0
+ID: 16, fitur: (5.7, 4.4, 1.5, 0.4), Cluster: 0
+ID: 17, fitur: (5.4, 3.9, 1.3, 0.4), Cluster: 0
+ID: 18, fitur: (5.1, 3.5, 1.4, 0.3), Cluster: 0
+ID: 19, fitur: (5.7, 3.8, 1.7, 0.3), Cluster: 0
+ID: 20, fitur: (5.1, 3.8, 1.5, 0.3), Cluster: 0
+ID: 21, fitur: (5.4, 3.4, 1.7, 0.2), Cluster: 0
+ID: 22, fitur: (5.1, 3.7, 1.5, 0.4), Cluster: 0
+ID: 23, fitur: (4.6, 3.6, 1.0, 0.2), Cluster: 0
+ID: 24, fitur: (5.1, 3.3, 1.7, 0.5), Cluster: 0
+ID: 25, fitur: (4.8, 3.4, 1.9, 0.2), Cluster: 0
+ID: 26, fitur: (5.0, 3.0, 1.6, 0.2), Cluster: 0
+ID: 27, fitur: (5.0, 3.4, 1.6, 0.4), Cluster: 0
+ID: 28, fitur: (5.2, 3.5, 1.5, 0.2), Cluster: 0
+ID: 29, fitur: (5.2, 3.4, 1.4, 0.2), Cluster: 0
+ID: 30, fitur: (4.7, 3.2, 1.6, 0.2), Cluster: 0
+ID: 31, fitur: (4.8, 3.1, 1.6, 0.2), Cluster: 0
+ID: 32, fitur: (5.4, 3.4, 1.5, 0.4), Cluster: 0
+ID: 33, fitur: (5.2, 4.1, 1.5, 0.1), Cluster: 0
+ID: 34, fitur: (5.5, 4.2, 1.4, 0.2), Cluster: 0
+ID: 35, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 0
+ID: 36, fitur: (5.0, 3.2, 1.2, 0.2), Cluster: 0
+ID: 37, fitur: (5.5, 3.5, 1.3, 0.2), Cluster: 0
+ID: 38, fitur: (4.9, 3.1, 1.5, 0.1), Cluster: 0
+ID: 39, fitur: (4.4, 3.0, 1.3, 0.2), Cluster: 0
+ID: 40, fitur: (5.1, 3.4, 1.5, 0.2), Cluster: 0
+ID: 41, fitur: (5.0, 3.5, 1.3, 0.3), Cluster: 0
+ID: 42, fitur: (4.5, 2.3, 1.3, 0.3), Cluster: 0
+ID: 43, fitur: (4.4, 3.2, 1.3, 0.2), Cluster: 0
+ID: 44, fitur: (5.0, 3.5, 1.6, 0.6), Cluster: 0
+ID: 45, fitur: (5.1, 3.8, 1.9, 0.4), Cluster: 0
+ID: 46, fitur: (4.8, 3.0, 1.4, 0.3), Cluster: 0
+ID: 47, fitur: (5.1, 3.8, 1.6, 0.2), Cluster: 0
+ID: 48, fitur: (4.6, 3.2, 1.4, 0.2), Cluster: 0
+ID: 49, fitur: (5.3, 3.7, 1.5, 0.2), Cluster: 0
+ID: 50, fitur: (5.0, 3.3, 1.4, 0.2), Cluster: 0
+ID: 51, fitur: (7.0, 3.2, 4.7, 1.4), Cluster: 3
+ID: 52, fitur: (6.4, 3.2, 4.5, 1.5), Cluster: 3
+ID: 53, fitur: (6.9, 3.1, 4.9, 1.5), Cluster: 3
 ID: 54, fitur: (5.5, 2.3, 4.0, 1.3), Cluster: 2
-ID: 55, fitur: (6.5, 2.8, 4.6, 1.5), Cluster: 0
+ID: 55, fitur: (6.5, 2.8, 4.6, 1.5), Cluster: 3
 ID: 56, fitur: (5.7, 2.8, 4.5, 1.3), Cluster: 2
-ID: 57, fitur: (6.3, 3.3, 4.7, 1.6), Cluster: 0
+ID: 57, fitur: (6.3, 3.3, 4.7, 1.6), Cluster: 3
 ID: 58, fitur: (4.9, 2.4, 3.3, 1.0), Cluster: 2
-ID: 59, fitur: (6.6, 2.9, 4.6, 1.3), Cluster: 0
+ID: 59, fitur: (6.6, 2.9, 4.6, 1.3), Cluster: 3
 ID: 60, fitur: (5.2, 2.7, 3.9, 1.4), Cluster: 2
 ID: 61, fitur: (5.0, 2.0, 3.5, 1.0), Cluster: 2
-ID: 62, fitur: (5.9, 3.0, 4.2, 1.5), Cluster: 2
+ID: 62, fitur: (5.9, 3.0, 4.2, 1.5), Cluster: 3
 ID: 63, fitur: (6.0, 2.2, 4.0, 1.0), Cluster: 2
-ID: 64, fitur: (6.1, 2.9, 4.7, 1.4), Cluster: 0
+ID: 64, fitur: (6.1, 2.9, 4.7, 1.4), Cluster: 3
 ID: 65, fitur: (5.6, 2.9, 3.6, 1.3), Cluster: 2
-ID: 66, fitur: (6.7, 3.1, 4.4, 1.4), Cluster: 0
-ID: 67, fitur: (5.6, 3.0, 4.5, 1.5), Cluster: 2
+ID: 66, fitur: (6.7, 3.1, 4.4, 1.4), Cluster: 3
+ID: 67, fitur: (5.6, 3.0, 4.5, 1.5), Cluster: 3
 ID: 68, fitur: (5.8, 2.7, 4.1, 1.0), Cluster: 2
-ID: 69, fitur: (6.2, 2.2, 4.5, 1.5), Cluster: 0
+ID: 69, fitur: (6.2, 2.2, 4.5, 1.5), Cluster: 2
 ID: 70, fitur: (5.6, 2.5, 3.9, 1.1), Cluster: 2
-ID: 71, fitur: (5.9, 3.2, 4.8, 1.8), Cluster: 0
+ID: 71, fitur: (5.9, 3.2, 4.8, 1.8), Cluster: 3
 ID: 72, fitur: (6.1, 2.8, 4.0, 1.3), Cluster: 2
-ID: 73, fitur: (6.3, 2.5, 4.9, 1.5), Cluster: 0
-ID: 74, fitur: (6.1, 2.8, 4.7, 1.2), Cluster: 0
-ID: 75, fitur: (6.4, 2.9, 4.3, 1.3), Cluster: 0
-ID: 76, fitur: (6.6, 3.0, 4.4, 1.4), Cluster: 0
-ID: 77, fitur: (6.8, 2.8, 4.8, 1.4), Cluster: 0
-ID: 78, fitur: (6.7, 3.0, 5.0, 1.7), Cluster: 0
-ID: 79, fitur: (6.0, 2.9, 4.5, 1.5), Cluster: 0
+ID: 73, fitur: (6.3, 2.5, 4.9, 1.5), Cluster: 3
+ID: 74, fitur: (6.1, 2.8, 4.7, 1.2), Cluster: 3
+ID: 75, fitur: (6.4, 2.9, 4.3, 1.3), Cluster: 3
+ID: 76, fitur: (6.6, 3.0, 4.4, 1.4), Cluster: 3
+ID: 77, fitur: (6.8, 2.8, 4.8, 1.4), Cluster: 3
+ID: 78, fitur: (6.7, 3.0, 5.0, 1.7), Cluster: 3
+ID: 79, fitur: (6.0, 2.9, 4.5, 1.5), Cluster: 3
 ID: 80, fitur: (5.7, 2.6, 3.5, 1.0), Cluster: 2
 ID: 81, fitur: (5.5, 2.4, 3.8, 1.1), Cluster: 2
 ID: 82, fitur: (5.5, 2.4, 3.7, 1.0), Cluster: 2
 ID: 83, fitur: (5.8, 2.7, 3.9, 1.2), Cluster: 2
-ID: 84, fitur: (6.0, 2.7, 5.1, 1.6), Cluster: 0
+ID: 84, fitur: (6.0, 2.7, 5.1, 1.6), Cluster: 3
 ID: 85, fitur: (5.4, 3.0, 4.5, 1.5), Cluster: 2
-ID: 86, fitur: (6.0, 3.4, 4.5, 1.6), Cluster: 0
-ID: 87, fitur: (6.7, 3.1, 4.7, 1.5), Cluster: 0
-ID: 88, fitur: (6.3, 2.3, 4.4, 1.3), Cluster: 0
+ID: 86, fitur: (6.0, 3.4, 4.5, 1.6), Cluster: 3
+ID: 87, fitur: (6.7, 3.1, 4.7, 1.5), Cluster: 3
+ID: 88, fitur: (6.3, 2.3, 4.4, 1.3), Cluster: 2
 ID: 89, fitur: (5.6, 3.0, 4.1, 1.3), Cluster: 2
 ID: 90, fitur: (5.5, 2.5, 4.0, 1.3), Cluster: 2
 ID: 91, fitur: (5.5, 2.6, 4.4, 1.2), Cluster: 2
-ID: 92, fitur: (6.1, 3.0, 4.6, 1.4), Cluster: 0
+ID: 92, fitur: (6.1, 3.0, 4.6, 1.4), Cluster: 3
 ID: 93, fitur: (5.8, 2.6, 4.0, 1.2), Cluster: 2
 ID: 94, fitur: (5.0, 2.3, 3.3, 1.0), Cluster: 2
 ID: 95, fitur: (5.6, 2.7, 4.2, 1.3), Cluster: 2
 ID: 96, fitur: (5.7, 3.0, 4.2, 1.2), Cluster: 2
 ID: 97, fitur: (5.7, 2.9, 4.2, 1.3), Cluster: 2
-ID: 98, fitur: (6.2, 2.9, 4.3, 1.3), Cluster: 0
+ID: 98, fitur: (6.2, 2.9, 4.3, 1.3), Cluster: 3
 ID: 99, fitur: (5.1, 2.5, 3.0, 1.1), Cluster: 2
 ID: 100, fitur: (5.7, 2.8, 4.1, 1.3), Cluster: 2
-ID: 101, fitur: (6.3, 3.3, 6.0, 2.5), Cluster: 3
-ID: 102, fitur: (5.8, 2.7, 5.1, 1.9), Cluster: 0
-ID: 103, fitur: (7.1, 3.0, 5.9, 2.1), Cluster: 3
+ID: 101, fitur: (6.3, 3.3, 6.0, 2.5), Cluster: 1
+ID: 102, fitur: (5.8, 2.7, 5.1, 1.9), Cluster: 3
+ID: 103, fitur: (7.1, 3.0, 5.9, 2.1), Cluster: 1
 ID: 104, fitur: (6.3, 2.9, 5.6, 1.8), Cluster: 3
-ID: 105, fitur: (6.5, 3.0, 5.8, 2.2), Cluster: 3
-ID: 106, fitur: (7.6, 3.0, 6.6, 2.1), Cluster: 3
+ID: 105, fitur: (6.5, 3.0, 5.8, 2.2), Cluster: 1
+ID: 106, fitur: (7.6, 3.0, 6.6, 2.1), Cluster: 1
 ID: 107, fitur: (4.9, 2.5, 4.5, 1.7), Cluster: 2
-ID: 108, fitur: (7.3, 2.9, 6.3, 1.8), Cluster: 3
+ID: 108, fitur: (7.3, 2.9, 6.3, 1.8), Cluster: 1
 ID: 109, fitur: (6.7, 2.5, 5.8, 1.8), Cluster: 3
-ID: 110, fitur: (7.2, 3.6, 6.1, 2.5), Cluster: 3
-ID: 111, fitur: (6.5, 3.2, 5.1, 2.0), Cluster: 0
-ID: 112, fitur: (6.4, 2.7, 5.3, 1.9), Cluster: 0
-ID: 113, fitur: (6.8, 3.0, 5.5, 2.1), Cluster: 3
-ID: 114, fitur: (5.7, 2.5, 5.0, 2.0), Cluster: 0
-ID: 115, fitur: (5.8, 2.8, 5.1, 2.4), Cluster: 0
-ID: 116, fitur: (6.4, 3.2, 5.3, 2.3), Cluster: 3
+ID: 110, fitur: (7.2, 3.6, 6.1, 2.5), Cluster: 1
+ID: 111, fitur: (6.5, 3.2, 5.1, 2.0), Cluster: 1
+ID: 112, fitur: (6.4, 2.7, 5.3, 1.9), Cluster: 3
+ID: 113, fitur: (6.8, 3.0, 5.5, 2.1), Cluster: 1
+ID: 114, fitur: (5.7, 2.5, 5.0, 2.0), Cluster: 3
+ID: 115, fitur: (5.8, 2.8, 5.1, 2.4), Cluster: 3
+ID: 116, fitur: (6.4, 3.2, 5.3, 2.3), Cluster: 1
 ID: 117, fitur: (6.5, 3.0, 5.5, 1.8), Cluster: 3
-ID: 118, fitur: (7.7, 3.8, 6.7, 2.2), Cluster: 3
-ID: 119, fitur: (7.7, 2.6, 6.9, 2.3), Cluster: 3
-ID: 120, fitur: (6.0, 2.2, 5.0, 1.5), Cluster: 0
-ID: 121, fitur: (6.9, 3.2, 5.7, 2.3), Cluster: 3
-ID: 122, fitur: (5.6, 2.8, 4.9, 2.0), Cluster: 0
-ID: 123, fitur: (7.7, 2.8, 6.7, 2.0), Cluster: 3
-ID: 124, fitur: (6.3, 2.7, 4.9, 1.8), Cluster: 0
-ID: 125, fitur: (6.7, 3.3, 5.7, 2.1), Cluster: 3
-ID: 126, fitur: (7.2, 3.2, 6.0, 1.8), Cluster: 3
-ID: 127, fitur: (6.2, 2.8, 4.8, 1.8), Cluster: 0
-ID: 128, fitur: (6.1, 3.0, 4.9, 1.8), Cluster: 0
-ID: 129, fitur: (6.4, 2.8, 5.6, 2.1), Cluster: 3
-ID: 130, fitur: (7.2, 3.0, 5.8, 1.6), Cluster: 3
-ID: 131, fitur: (7.4, 2.8, 6.1, 1.9), Cluster: 3
-ID: 132, fitur: (7.9, 3.8, 6.4, 2.0), Cluster: 3
-ID: 133, fitur: (6.4, 2.8, 5.6, 2.2), Cluster: 3
-ID: 134, fitur: (6.3, 2.8, 5.1, 1.5), Cluster: 0
-ID: 135, fitur: (6.1, 2.6, 5.6, 1.4), Cluster: 0
-ID: 136, fitur: (7.7, 3.0, 6.1, 2.3), Cluster: 3
-ID: 137, fitur: (6.3, 3.4, 5.6, 2.4), Cluster: 3
+ID: 118, fitur: (7.7, 3.8, 6.7, 2.2), Cluster: 1
+ID: 119, fitur: (7.7, 2.6, 6.9, 2.3), Cluster: 1
+ID: 120, fitur: (6.0, 2.2, 5.0, 1.5), Cluster: 2
+ID: 121, fitur: (6.9, 3.2, 5.7, 2.3), Cluster: 1
+ID: 122, fitur: (5.6, 2.8, 4.9, 2.0), Cluster: 3
+ID: 123, fitur: (7.7, 2.8, 6.7, 2.0), Cluster: 1
+ID: 124, fitur: (6.3, 2.7, 4.9, 1.8), Cluster: 3
+ID: 125, fitur: (6.7, 3.3, 5.7, 2.1), Cluster: 1
+ID: 126, fitur: (7.2, 3.2, 6.0, 1.8), Cluster: 1
+ID: 127, fitur: (6.2, 2.8, 4.8, 1.8), Cluster: 3
+ID: 128, fitur: (6.1, 3.0, 4.9, 1.8), Cluster: 3
+ID: 129, fitur: (6.4, 2.8, 5.6, 2.1), Cluster: 1
+ID: 130, fitur: (7.2, 3.0, 5.8, 1.6), Cluster: 1
+ID: 131, fitur: (7.4, 2.8, 6.1, 1.9), Cluster: 1
+ID: 132, fitur: (7.9, 3.8, 6.4, 2.0), Cluster: 1
+ID: 133, fitur: (6.4, 2.8, 5.6, 2.2), Cluster: 1
+ID: 134, fitur: (6.3, 2.8, 5.1, 1.5), Cluster: 3
+ID: 135, fitur: (6.1, 2.6, 5.6, 1.4), Cluster: 3
+ID: 136, fitur: (7.7, 3.0, 6.1, 2.3), Cluster: 1
+ID: 137, fitur: (6.3, 3.4, 5.6, 2.4), Cluster: 1
 ID: 138, fitur: (6.4, 3.1, 5.5, 1.8), Cluster: 3
-ID: 139, fitur: (6.0, 3.0, 4.8, 1.8), Cluster: 0
-ID: 140, fitur: (6.9, 3.1, 5.4, 2.1), Cluster: 3
-ID: 141, fitur: (6.7, 3.1, 5.6, 2.4), Cluster: 3
-ID: 142, fitur: (6.9, 3.1, 5.1, 2.3), Cluster: 3
-ID: 143, fitur: (5.8, 2.7, 5.1, 1.9), Cluster: 0
-ID: 144, fitur: (6.8, 3.2, 5.9, 2.3), Cluster: 3
-ID: 145, fitur: (6.7, 3.3, 5.7, 2.5), Cluster: 3
-ID: 146, fitur: (6.7, 3.0, 5.2, 2.3), Cluster: 3
-ID: 147, fitur: (6.3, 2.5, 5.0, 1.9), Cluster: 0
-ID: 148, fitur: (6.5, 3.0, 5.2, 2.0), Cluster: 0
-ID: 149, fitur: (6.2, 3.4, 5.4, 2.3), Cluster: 3
-ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
+ID: 139, fitur: (6.0, 3.0, 4.8, 1.8), Cluster: 3
+ID: 140, fitur: (6.9, 3.1, 5.4, 2.1), Cluster: 1
+ID: 141, fitur: (6.7, 3.1, 5.6, 2.4), Cluster: 1
+ID: 142, fitur: (6.9, 3.1, 5.1, 2.3), Cluster: 1
+ID: 143, fitur: (5.8, 2.7, 5.1, 1.9), Cluster: 3
+ID: 144, fitur: (6.8, 3.2, 5.9, 2.3), Cluster: 1
+ID: 145, fitur: (6.7, 3.3, 5.7, 2.5), Cluster: 1
+ID: 146, fitur: (6.7, 3.0, 5.2, 2.3), Cluster: 1
+ID: 147, fitur: (6.3, 2.5, 5.0, 1.9), Cluster: 3
+ID: 148, fitur: (6.5, 3.0, 5.2, 2.0), Cluster: 3
+ID: 149, fitur: (6.2, 3.4, 5.4, 2.3), Cluster: 1
+ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 3
 </pre></div>
 </div>
 </div>
@@ -1755,7 +1754,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nilai inertia clustering sebanyak 4 yakni sebesar = 57.317873214285726
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nilai inertia clustering sebanyak 4 yakni sebesar = 5.5328310030819
 </pre></div>
 </div>
 </div>
@@ -1773,7 +1772,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Silhouette Score Cluster 4: 0.4978
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Silhouette Score Cluster 4: 0.4446
 </pre></div>
 </div>
 </div>
@@ -1812,11 +1811,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but PCA was fitted with feature names
-  warnings.warn(
-</pre></div>
-</div>
-<img alt="_images/2836821bfd6b734eb1c4d8295a5148c7fb8ad59899151b6fbfa577d65bf3e665.png" src="_images/2836821bfd6b734eb1c4d8295a5148c7fb8ad59899151b6fbfa577d65bf3e665.png" />
+<img alt="_images/52c16f4e6091f45e3aa32b0ecc2c04a56b09df2ae8ed1f7389bbdb71174d41d2.png" src="_images/52c16f4e6091f45e3aa32b0ecc2c04a56b09df2ae8ed1f7389bbdb71174d41d2.png" />
 </div>
 </div>
 </section>
@@ -1841,7 +1836,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1b9702cba3137e12b2ffdd352226994753c6c9483b914339037485bcaad8d999.png" src="_images/1b9702cba3137e12b2ffdd352226994753c6c9483b914339037485bcaad8d999.png" />
+<img alt="_images/6cc7fdaa2b3c9efd7fecf12baf44321f68f9a7a59a4a6fd4d7f262f1dfd38d86.png" src="_images/6cc7fdaa2b3c9efd7fecf12baf44321f68f9a7a59a4a6fd4d7f262f1dfd38d86.png" />
 </div>
 </div>
 <p>Bedasarkan visualisasi elbow di atas dapat disimpulkan bahwa kluster ke 3 merupakan kliuster terbaik sebab pada kluster tersebut memberikan penurunan terbesar pertama, setelah itu untuk nilai k selanjutnya pada grafik terlihat landai atau penurunannya tidak signifikan.</p>
@@ -1869,7 +1864,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/27db34f6f722806d6365d3560486462ecf78ca18a62fe5c84149bc7cc28ea8b7.png" src="_images/27db34f6f722806d6365d3560486462ecf78ca18a62fe5c84149bc7cc28ea8b7.png" />
+<img alt="_images/315f8483e1dc8ccc9e2d160c7bb2f3f47ea3063fe029b109a781d9fa09282c85.png" src="_images/315f8483e1dc8ccc9e2d160c7bb2f3f47ea3063fe029b109a781d9fa09282c85.png" />
 </div>
 </div>
 <p>Berdasarkan visualisasi di atas dapat disimpulkan bahwa cluster silhouette score terbaik terdapat pada cluster 3, sebab scorenya paling mendekati dengan 1.</p>
