@@ -385,6 +385,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-algoritma-clustering-k-means">Langkah-Langkah Algoritma Clustering K-Means</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-inertia">Menghitung Inertia</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-silhouette-score">Menghitung Silhouette Score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-min-max-scaler">Normalisasi Min-Max Scaler</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-library-pendukung">Install Library Pendukung</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql-dbeaver-melalui-aiven-io">Koneksi Ke Database MySQL DBeaver melalui aiven.io</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-menyeleksi-kolom-species-dalam-database">Menghapus / Menyeleksi Kolom Species dalam Database</a></li>
@@ -436,16 +437,20 @@ document.write(`
 <li><p>Tentukan jumlah cluster yang akan digunakan</p></li>
 <li><p>Kemudian pilih K centroid awal secara acak tergantung jumlah k yang digunakan</p></li>
 <li><p>Hitung jarak setiap data ke tiap centroid menggunakan rumus Encludian Distance</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[
-d(A, B) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
-\]</div>
-<ol class="arabic simple" start="4">
 <li><p>Kelompokkan data berdasarkan letak centroid terdekat</p></li>
 <li><p>Hitung ulang centroid dari rata-rata setiap anggota clusternya</p></li>
 <li><p>Lakukanlah urutan langkah-langkah hingga pada iterasi mencapai konvergen</p></li>
 </ol>
+<p><strong>Rumus Encludian Distance:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+d(A, B) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+\]</div>
+<p><strong>Keterangan:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((x_2 - x_1)\)</span> adalah selisih koordinat <span class="math notranslate nohighlight">\(x\)</span> antara titik <span class="math notranslate nohighlight">\(B\)</span> dan <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\((y_2 - y_1)\)</span> adalah selisih koordinat <span class="math notranslate nohighlight">\(y\)</span> antara titik <span class="math notranslate nohighlight">\(B\)</span> dan <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+</ul>
 </section>
 <section id="menghitung-inertia">
 <h2>Menghitung Inertia<a class="headerlink" href="#menghitung-inertia" title="Link to this heading">#</a></h2>
@@ -455,6 +460,14 @@ d(A, B) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 \[
 \text{Inertia} = \sum_{i=1}^{n} \left\| x_i - \mu_{c_i} \right\|^2
 \]</div>
+<p><strong>Keterangan:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n \)</span>: Jumlah total data (observasi).</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span>: Titik data ke-i.</p></li>
+<li><p><span class="math notranslate nohighlight">\(mu_{c_i}\)</span>: Titik pusat (centroid) dari klaster tempat ( x_i ) berada.</p></li>
+<li><p><span class="math notranslate nohighlight">\(c_i\)</span>: Indeks klaster dari data ke-i.</p></li>
+<li><p><span class="math notranslate nohighlight">\(left\)</span>| <span class="math notranslate nohighlight">\(x_i\)</span> - <span class="math notranslate nohighlight">\(mu_{c_i}\)</span> <span class="math notranslate nohighlight">\(right\)</span>|<span class="math notranslate nohighlight">\(^2\)</span> : Jarak Euclidean kuadrat antara data ( x_i ) dan centroid klasternya.</p></li>
+</ul>
 </section>
 <section id="menghitung-silhouette-score">
 <h2>Menghitung Silhouette Score<a class="headerlink" href="#menghitung-silhouette-score" title="Link to this heading">#</a></h2>
@@ -464,10 +477,27 @@ d(A, B) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 \[
 s(i) = \frac{b(i) - a(i)}{\max\{a(i), b(i)\}}
 \]</div>
-<p>keterangan:</p>
+<p><strong>keterangan:</strong></p>
 <ul class="simple">
-<li><p>b(i) : merupakan rata-rata titik ke semua titik cluster tetangga.</p></li>
-<li><p>a(i) : merupakan rata-rata titik ke semua titik dalam cluster yang sama.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a(i)\)</span> = rata-rata jarak antara data <span class="math notranslate nohighlight">\(i\)</span> dengan semua data lain dalam \textbf{klaster yang sama} (intra-cluster distance).</p></li>
+<li><p><span class="math notranslate nohighlight">\(b(i)\)</span> = rata-rata jarak antara data <span class="math notranslate nohighlight">\(i\)</span> dengan semua data dalam \textbf{klaster terdekat lainnya} yang bukan klaster <span class="math notranslate nohighlight">\(i\)</span> (nearest-cluster distance).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\max\{a(i), b(i)\}\)</span> = nilai maksimum antara <span class="math notranslate nohighlight">\(a(i)\)</span> dan <span class="math notranslate nohighlight">\(b(i)\)</span> digunakan sebagai normalisasi agar nilai <span class="math notranslate nohighlight">\(s(i)\)</span> berada dalam rentang <span class="math notranslate nohighlight">\([-1, 1]\)</span>.</p></li>
+</ul>
+</section>
+<section id="normalisasi-min-max-scaler">
+<h2>Normalisasi Min-Max Scaler<a class="headerlink" href="#normalisasi-min-max-scaler" title="Link to this heading">#</a></h2>
+<p>Dalam K-means clustering, normalisasi digunakan agar semua fitur memiliki skala yang sama dengan range diantara 0 hingga 1.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{x - x_{\text{min}}}{x_{\text{max}} - x_{\text{min}}}
+\]</div>
+<p><strong>Keterangan:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> = nilai asli (data mentah) yang ingin dinormalisasi.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x'\)</span> = nilai hasil normalisasi.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{\text{min}}\)</span> = nilai minimum dari seluruh data dalam fitur/atribut tersebut.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{\text{max}}\)</span> = nilai maksimum dari seluruh data dalam fitur/atribut tersebut.</p></li>
 </ul>
 </section>
 <section id="install-library-pendukung">
@@ -479,7 +509,16 @@ s(i) = \frac{b(i) - a(i)}{\max\{a(i), b(i)\}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pymysql in /usr/local/lib/python3.11/dist-packages (1.1.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pymysql
+  Downloading PyMySQL-1.1.1-py3-none-any.whl.metadata (4.4 kB)
+Downloading PyMySQL-1.1.1-py3-none-any.whl (44 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/45.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">45.0/45.0 kB</span> <span class=" -Color -Color-Red">1.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: pymysql
+Successfully installed pymysql-1.1.1
 </pre></div>
 </div>
 </div>
@@ -1518,7 +1557,9 @@ Iteration 4, inertia 5.557380066599768.
 Iteration 5, inertia 5.5416577630824975.
 Converged at iteration 5: strict convergence.
 Initialization complete
-Iteration 0, inertia 9.581631247317889.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 0, inertia 9.581631247317889.
 Iteration 1, inertia 6.793218916486281.
 Iteration 2, inertia 6.600949166608553.
 Iteration 3, inertia 6.468313252694651.
@@ -1967,6 +2008,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 3
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-algoritma-clustering-k-means">Langkah-Langkah Algoritma Clustering K-Means</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-inertia">Menghitung Inertia</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-silhouette-score">Menghitung Silhouette Score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-min-max-scaler">Normalisasi Min-Max Scaler</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-library-pendukung">Install Library Pendukung</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql-dbeaver-melalui-aiven-io">Koneksi Ke Database MySQL DBeaver melalui aiven.io</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-menyeleksi-kolom-species-dalam-database">Menghapus / Menyeleksi Kolom Species dalam Database</a></li>
