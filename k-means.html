@@ -459,10 +459,11 @@ d(A, B) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 <section id="menghitung-silhouette-score">
 <h2>Menghitung Silhouette Score<a class="headerlink" href="#menghitung-silhouette-score" title="Link to this heading">#</a></h2>
 <p>Menghitung Silhouette digunakan untuk menentukan kemiripan objek terhadap kluster sendiri dibandingkan cluster lainnya.</p>
-<p>Rumus menentukan Silhouette
-$<span class="math notranslate nohighlight">\(
+<p>Rumus menentukan Silhouette</p>
+<div class="math notranslate nohighlight">
+\[
 s(i) = \frac{b(i) - a(i)}{\max\{a(i), b(i)\}}
-\)</span>$</p>
+\]</div>
 <p>keterangan:</p>
 <ul class="simple">
 <li><p>b(i) : merupakan rata-rata titik ke semua titik cluster tetangga.</p></li>
@@ -478,16 +479,7 @@ s(i) = \frac{b(i) - a(i)}{\max\{a(i), b(i)\}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pymysql
-  Downloading PyMySQL-1.1.1-py3-none-any.whl.metadata (4.4 kB)
-Downloading PyMySQL-1.1.1-py3-none-any.whl (44 kB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/45.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">45.0/45.0 kB</span> <span class=" -Color -Color-Red">2.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: pymysql
-Successfully installed pymysql-1.1.1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pymysql in /usr/local/lib/python3.11/dist-packages (1.1.1)
 </pre></div>
 </div>
 </div>
@@ -1151,9 +1143,7 @@ Iteration 7, inertia 7.151593675022098.
 Iteration 8, inertia 7.138647703985377.
 Converged at iteration 8: strict convergence.
 Initialization complete
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 0, inertia 12.482921230684385.
+Iteration 0, inertia 12.482921230684385.
 Iteration 1, inertia 7.445024568737754.
 Iteration 2, inertia 7.151290363315535.
 Iteration 3, inertia 7.03622560540593.
