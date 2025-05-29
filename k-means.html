@@ -187,6 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Naive%20Bayes.html">Klasifikasi menggunakan Naive Bayes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Proyek_UTS_Penambangan_Data.html">Project Model Klasifikasi</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">K-Means Clustering</a></li>
+
 </ul>
 
     </div>
@@ -382,6 +383,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">K-Means Clustering</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-algoritma-clustering-k-means">Langkah-Langkah Algoritma Clustering K-Means</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-inertia">Menghitung Inertia</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-silhouette-score">Menghitung Silhouette Score</a></li>
@@ -418,6 +420,24 @@ document.write(`
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fuzzy-c-means">Fuzzy C-Means</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-clustering-menggunakan-fcm">Langkah-Langkah Clustering menggunakan FCM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-pada-data-iris">Implementasi pada Data Iris</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql-menggunakan-aiven-io">Koneksi ke Database MySQL menggunakan aiven.io</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-kolom-id-dan-species">Menghapus Kolom Id dan Species</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data-iris-menggunakan-min-max-scaler">Normalisasi Data Iris Menggunakan Min Max Scaler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-perhitungan-untuk-fuzzy-c-means">Code Perhitungan untuk Fuzzy C-Means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-data-setelah-proses-perhitungan">Clustering Data Setelah Proses Perhitungan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-nilai-akurasi-pengelompokkan-setelah-proses-perhitungan">Hitung Nilai Akurasi Pengelompokkan Setelah Proses Perhitungan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-nilai-silhouette-score-fcm">Hitung Nilai Silhouette Score FCM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-silhouette-score-dan-nilai-akurasi-dari-metode-fcm-dan-k-means">Perbandingan Silhouette Score dan Nilai Akurasi dari Metode FCM dan K-Means</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -513,7 +533,7 @@ x' = \frac{x - x_{\text{min}}}{x_{\text{max}} - x_{\text{min}}}
   Downloading PyMySQL-1.1.1-py3-none-any.whl.metadata (4.4 kB)
 Downloading PyMySQL-1.1.1-py3-none-any.whl (44 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/45.0 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">45.0/45.0 kB</span> <span class=" -Color -Color-Red">1.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">45.0/45.0 kB</span> <span class=" -Color -Color-Red">2.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -1557,9 +1577,7 @@ Iteration 4, inertia 5.557380066599768.
 Iteration 5, inertia 5.5416577630824975.
 Converged at iteration 5: strict convergence.
 Initialization complete
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 0, inertia 9.581631247317889.
+Iteration 0, inertia 9.581631247317889.
 Iteration 1, inertia 6.793218916486281.
 Iteration 2, inertia 6.600949166608553.
 Iteration 3, inertia 6.468313252694651.
@@ -1949,6 +1967,1113 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 3
 </section>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="fuzzy-c-means">
+<h1>Fuzzy C-Means<a class="headerlink" href="#fuzzy-c-means" title="Link to this heading">#</a></h1>
+<p>Fuzzy C-Means atau biasa disebut FCM merupakan algoritma pengelompokkan yang memungkinkan pada setiap anggotanya menjadi bagian suatu kelompok dengan tingkat kecenderungan terhadap suatu kelompok atau derajat keanggotaan. Untuk metode clusteringnya membandingkan nilai derajat keanggotaannya pada setap fitur dan diambil nilai derajat keanggotaan paling tinggi pada setiap fitur, jika nilai derajat keanggotaan suatu data pada satu fitur lebih besar dari nilai derajat keanggotaannya pada fitur lain, maka akan langsung melakukan clustering pada fitur tersebut.</p>
+<section id="langkah-langkah-clustering-menggunakan-fcm">
+<h2>Langkah-Langkah Clustering menggunakan FCM<a class="headerlink" href="#langkah-langkah-clustering-menggunakan-fcm" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Inisialisasi Parameter:</strong></p>
+<ul class="simple">
+<li><p>Jumlah cluster: <span class="math notranslate nohighlight">\(C\)</span></p></li>
+<li><p>Parameter fuzziness: <span class="math notranslate nohighlight">\(( m &gt; 1 )\)</span> (biasanya <span class="math notranslate nohighlight">\(( m = 2 ))\)</span></p></li>
+<li><p>Toleransi konvergensi: ( <span class="math notranslate nohighlight">\(\varepsilon\)</span> )</p></li>
+<li><p>Jumlah iterasi maksimum</p></li>
+</ul>
+</li>
+<li><p><strong>Inisialisasi Matriks Keanggotaan ( <span class="math notranslate nohighlight">\(U \)</span>):</strong></p>
+<p>Matriks keanggotaan <span class="math notranslate nohighlight">\(( U = [u_{ij}] \)</span>) diinisialisasi secara acak, dengan syarat:
+$<span class="math notranslate nohighlight">\(
+\sum_{j=1}^{C} u_{ij} = 1, \quad \forall i = 1, 2, \dots, n
+\)</span>$</p>
+</li>
+</ol>
+<p><strong>Penjelasan:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(( u_{ij} \)</span>): derajat keanggotaan data ke-<span class="math notranslate nohighlight">\(( i \)</span>) terhadap cluster ke-<span class="math notranslate nohighlight">\(( j \)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( C \)</span>): jumlah total cluster</p></li>
+<li><p><span class="math notranslate nohighlight">\(( n \)</span>): jumlah data</p></li>
+</ul>
+<ol class="arabic" start="3">
+<li><p><strong>Hitung Pusat Cluster <span class="math notranslate nohighlight">\(( v_j \)</span>):</strong></p>
+<p>Untuk setiap cluster <span class="math notranslate nohighlight">\(( j \)</span>), hitung centroid:</p>
+<div class="math notranslate nohighlight">
+\[
+   v_j = \frac{ \sum_{i=1}^{n} (u_{ij})^m \cdot x_i }{ \sum_{i=1}^{n} (u_{ij})^m }
+   \]</div>
+</li>
+</ol>
+<p><strong>Penjelasan:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(( v_j \)</span>): pusat cluster ke-<span class="math notranslate nohighlight">\(( j \)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( u_{ij} \)</span>): derajat keanggotaan data ke-<span class="math notranslate nohighlight">\(( i \)</span>) terhadap cluster ke-<span class="math notranslate nohighlight">\(( j \)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( m \)</span>): parameter fuzziness (biasanya <span class="math notranslate nohighlight">\(( m &gt; 1 \)</span>))</p></li>
+<li><p><span class="math notranslate nohighlight">\(( x_i \)</span>): data ke-<span class="math notranslate nohighlight">\(( i \)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( n \)</span>): jumlah total data</p></li>
+</ul>
+<ol class="arabic" start="4">
+<li><p><strong>Update Matriks Keanggotaan <span class="math notranslate nohighlight">\(( U \)</span>):</strong></p>
+<p>Perbarui nilai keanggotaan untuk setiap data <span class="math notranslate nohighlight">\(( i \)</span>) dan cluster <span class="math notranslate nohighlight">\(( j \)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+   u_{ij} = \frac{1}{\sum_{k=1}^{C} \left( \frac{ \|x_i - v_j\| }{ \|x_i - v_k\| } \right)^{\frac{2}{m-1}} }
+   \]</div>
+<p><strong>Penjelasan:</strong></p>
+</li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(( u_{ij} \)</span>): derajat keanggotaan data ke-<span class="math notranslate nohighlight">\((i\)</span>) pada cluster ke-<span class="math notranslate nohighlight">\((j\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( x_i \)</span>): titik data ke-<span class="math notranslate nohighlight">\((i\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( v_j \)</span>): centroid cluster ke-<span class="math notranslate nohighlight">\((j\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( C \)</span>): jumlah cluster</p></li>
+<li><p><span class="math notranslate nohighlight">\(( m &gt; 1 \)</span>): parameter fuzziness (biasanya bernilai 2)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( \)</span>|<span class="math notranslate nohighlight">\(cdot\)</span>|): jarak antara titik data dan centroid (biasanya menggunakan Euclidean distance)</p></li>
+</ul>
+<ol class="arabic" start="5">
+<li><p><strong>Cek Konvergensi:</strong></p>
+<p>Hitung perubahan nilai keanggotaan menggunakan fungsi objectif:</p>
+<div class="math notranslate nohighlight">
+\[
+  J_m = \sum_{i=1}^{n} \sum_{j=1}^{C} (u_{ij})^m \cdot \| x_i - v_j \|^2
+  \]</div>
+</li>
+</ol>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(( u_{ij} \)</span>): derajat keanggotaan data ke-<span class="math notranslate nohighlight">\(( i \)</span>) terhadap cluster ke-<span class="math notranslate nohighlight">\(( j \)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( C \)</span>): jumlah total cluster</p></li>
+<li><p><span class="math notranslate nohighlight">\(( n \)</span>): jumlah data</p>
+<p>Artinya, setiap data <span class="math notranslate nohighlight">\(( x_i \)</span>) memiliki sejumlah derajat keanggotaan terhadap semua cluster, dan <strong>jumlah total nilai keanggotaan tersebut harus sama dengan 1</strong>.</p>
+<p>Jika terpenuhi atau iterasi maksimum tercapai, proses berhenti.</p>
+</li>
+</ul>
+<ol class="arabic" start="6">
+<li><p><strong>Penentuan Hasil:</strong></p>
+<p>Setiap data <span class="math notranslate nohighlight">\(( x_i \)</span>) diklasifikasikan ke cluster dengan nilai keanggotaan <span class="math notranslate nohighlight">\(( u_{ij} \)</span>) terbesar.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>openpyxl
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: openpyxl in /usr/local/lib/python3.11/dist-packages (3.1.5)
+Requirement already satisfied: et-xmlfile in /usr/local/lib/python3.11/dist-packages (from openpyxl) (2.0.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Data manual</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1"># Derajat keanggotaan awal</span>
+<span class="n">miu</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1"># Parameter</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-4</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">n_clusters</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">miu</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">n_features</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Manual fungsi hitung centroid</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_centroids</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">miu</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">centroids</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_clusters</span><span class="p">):</span>
+        <span class="n">numerator</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_features</span>
+        <span class="n">denominator</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">miu</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">**</span> <span class="n">m</span>
+            <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_features</span><span class="p">):</span>
+                <span class="n">numerator</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">+=</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">f</span><span class="p">]</span>
+            <span class="n">denominator</span> <span class="o">+=</span> <span class="n">weight</span>
+        <span class="n">centroid</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="o">/</span> <span class="n">denominator</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numerator</span><span class="p">]</span>
+        <span class="n">centroids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">centroid</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">centroids</span>
+
+<span class="c1"># Hitung manual Euclidean distance</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">euclidean_distance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+<span class="c1"># Update miu manual</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">update_miu</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">new_miu</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_clusters</span><span class="p">):</span>
+            <span class="n">d_ij</span> <span class="o">=</span> <span class="n">euclidean_distance</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">centroids</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">+</span> <span class="mf">1e-10</span>  <span class="c1"># avoid /0</span>
+            <span class="n">total</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_clusters</span><span class="p">):</span>
+                <span class="n">d_ik</span> <span class="o">=</span> <span class="n">euclidean_distance</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">centroids</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">+</span> <span class="mf">1e-10</span>
+                <span class="n">total</span> <span class="o">+=</span> <span class="p">(</span><span class="n">d_ij</span> <span class="o">/</span> <span class="n">d_ik</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="n">mu</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">total</span>
+            <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+        <span class="n">new_miu</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_miu</span>
+
+<span class="c1"># Iterasi FCM manual</span>
+<span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
+    <span class="n">centroids</span> <span class="o">=</span> <span class="n">calculate_centroids</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">miu</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+    <span class="n">new_miu</span> <span class="o">=</span> <span class="n">update_miu</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Iterasi </span><span class="si">{</span><span class="n">iteration</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pusat Centroids:&quot;</span><span class="p">)</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="n">centroids</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Updated Membership Degrees:&quot;</span><span class="p">)</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="n">new_miu</span><span class="p">)</span>
+
+    <span class="c1"># Hitung selisih total perubahan miu</span>
+    <span class="n">max_change</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_clusters</span><span class="p">):</span>
+            <span class="n">change</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">new_miu</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">miu</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">max_change</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_change</span><span class="p">,</span> <span class="n">change</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fungsi J = &quot;</span><span class="p">,</span> <span class="n">max_change</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">max_change</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Konvergen pada iterasi = &quot;</span><span class="p">,</span> <span class="n">iteration</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">break</span>
+
+    <span class="n">miu</span> <span class="o">=</span> <span class="n">new_miu</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Maksimal iterasi tercapai tanpa konvergensi&quot;</span><span class="p">)</span>
+
+<span class="c1"># fuzzy objectif untuk konvergensi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iterasi 1
+Pusat Centroids:
+[[3.8609865470852016, 4.860986547085202],
+ [3.507936507936508, 4.507936507936509]]
+
+
+Updated Membership Degrees:
+[[0.4345250479074028, 0.5654749520925972],
+ [0.3963422800238885, 0.6036577199761114],
+ [0.2581809120060003, 0.7418190879939998],
+ [0.5757944756897294, 0.42420552431027064],
+ [0.5530912378562453, 0.4469087621437547]]
+Fungsi J =  0.5418190879939997
+
+Iterasi 2
+Pusat Centroids:
+[[4.603368541578456, 5.6033685415784555],
+ [3.2074384494266592, 4.207438449426659]]
+
+
+Updated Membership Degrees:
+[[0.2728773612804249, 0.7271226387195752],
+ [0.1770286018039973, 0.8229713981960027],
+ [0.016462758504963267, 0.9835372414950367],
+ [0.7999196283203301, 0.20008037167966988],
+ [0.7146252271157961, 0.2853747728842038]]
+Fungsi J =  0.24171815350103704
+
+Iterasi 3
+Pusat Centroids:
+[[6.009715943087444, 7.009715943087444],
+ [2.4383641760683887, 3.438364176068389]]
+
+
+Updated Membership Degrees:
+[[0.07615697691882663, 0.9238430230811734],
+ [0.011810899013819024, 0.988189100986181],
+ [0.03365059659259706, 0.966349403407403],
+ [0.9999925583767857, 7.44162321439884e-06],
+ [0.9549931508302125, 0.04500684916978751]]
+Fungsi J =  0.2403679237144164
+
+Iterasi 4
+Pusat Centroids:
+[[6.458064569807751, 7.458064569807751],
+ [2.0327107326926734, 3.032710732692673]]
+
+
+Updated Membership Degrees:
+[[0.03456242763286985, 0.9654375723671301],
+ [5.3834967630909785e-05, 0.9999461650323691],
+ [0.07256543753127116, 0.9274345624687288],
+ [0.9868442897206019, 0.01315571027939805],
+ [0.988237021424117, 0.011762978575883012]]
+Fungsi J =  0.04159454928595678
+
+Iterasi 5
+Pusat Centroids:
+[[6.487927637490579, 7.48792763749058], [1.9747348164991292, 2.974734816499128]]
+
+
+Updated Membership Degrees:
+[[0.030582095621259537, 0.9694179043787405],
+ [3.169125667789622e-05, 0.9999683087433221],
+ [0.07953272109857465, 0.9204672789014254],
+ [0.9855193847583743, 0.014480615241625748],
+ [0.9897231871007084, 0.01027681289929166]]
+Fungsi J =  0.006967283567303487
+
+Iterasi 6
+Pusat Centroids:
+[[6.488186639183616, 7.488186639183616],
+ [1.9672999676141933, 2.9672999676141933]]
+
+
+Updated Membership Degrees:
+[[0.030128586772566374, 0.9698714132274336],
+ [5.308007126975715e-05, 0.9999469199287302],
+ [0.08058607946507527, 0.9194139205349247],
+ [0.9855568598157672, 0.014443140184232735],
+ [0.989763474571231, 0.01023652542876888]]
+Fungsi J =  0.0010533583665007784
+
+Iterasi 7
+Pusat Centroids:
+[[6.48796580437209, 7.48796580437209], [1.966272724686252, 2.966272724686252]]
+
+
+Updated Membership Degrees:
+[[0.030068899488279073, 0.9699311005117209],
+ [5.647274684892071e-05, 0.9999435272531512],
+ [0.08074292788392569, 0.9192570721160743],
+ [0.9855769780595063, 0.014423021940493632],
+ [0.9897588678726443, 0.010241132127355671]]
+Fungsi J =  0.00015684841885041378
+
+Iterasi 8
+Pusat Centroids:
+[[6.487918539772043, 7.487918539772043], [1.966124809244193, 2.966124809244193]]
+
+
+Updated Membership Degrees:
+[[0.03006047332144809, 0.9699395266785519],
+ [5.6970342084656065e-05, 0.9999430296579154],
+ [0.08076618220046375, 0.9192338177995362],
+ [0.9855807739430572, 0.014419226056942753],
+ [0.9897575922723982, 0.010242407727601733]]
+Fungsi J =  2.3254316538157127e-05
+
+Konvergen pada iterasi =  8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="implementasi-pada-data-iris">
+<h2>Implementasi pada Data Iris<a class="headerlink" href="#implementasi-pada-data-iris" title="Link to this heading">#</a></h2>
+<section id="koneksi-ke-database-mysql-menggunakan-aiven-io">
+<h3>Koneksi ke Database MySQL menggunakan <a class="reference external" href="http://aiven.io">aiven.io</a><a class="headerlink" href="#koneksi-ke-database-mysql-menggunakan-aiven-io" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pymysql</span>
+
+<span class="c1"># koneksi ke database mysql melalui aiven.io</span>
+<span class="n">DB_HOST</span> <span class="o">=</span> <span class="s2">&quot;mysql-131f3e28-fathanlearn-5ad0.i.aivencloud.com&quot;</span>
+<span class="n">DB_PORT</span> <span class="o">=</span> <span class="mi">25962</span>
+<span class="n">DB_NAME</span> <span class="o">=</span> <span class="s2">&quot;defaultdb&quot;</span>
+<span class="n">DB_USER</span> <span class="o">=</span> <span class="s2">&quot;avnadmin&quot;</span>
+<span class="n">DB_PASS</span> <span class="o">=</span> <span class="s2">&quot;AVNS_hCKUXEhLqojSjCxujVo&quot;</span>
+
+<span class="n">connect_2</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="n">DB_HOST</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="n">DB_PORT</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="n">DB_NAME</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="n">DB_USER</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="n">DB_PASS</span><span class="p">,</span>
+    <span class="n">ssl</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ssl&#39;</span><span class="p">:</span> <span class="p">{}}</span>
+<span class="p">)</span>
+
+<span class="n">data_mysql</span> <span class="o">=</span> <span class="n">connect_2</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># ambil data ke database</span>
+<span class="n">data_mysql</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM iris_mysql.data_Iris LIMIT 10;&quot;</span><span class="p">)</span>
+<span class="n">data_db_sql</span> <span class="o">=</span> <span class="n">data_mysql</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10 data dalam tabel data_iris&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">data2</span> <span class="ow">in</span> <span class="n">data_db_sql</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 data dalam tabel data_iris
+(1, 5.1, 3.5, 1.4, 0.2, &#39;Iris-setosa&#39;)
+(2, 4.9, 3.0, 1.4, 0.2, &#39;Iris-setosa&#39;)
+(3, 4.7, 3.2, 1.3, 0.2, &#39;Iris-setosa&#39;)
+(4, 4.6, 3.1, 1.5, 0.2, &#39;Iris-setosa&#39;)
+(5, 5.0, 3.6, 1.4, 0.2, &#39;Iris-setosa&#39;)
+(6, 5.4, 3.9, 1.7, 0.4, &#39;Iris-setosa&#39;)
+(7, 4.6, 3.4, 1.4, 0.3, &#39;Iris-setosa&#39;)
+(8, 5.0, 3.4, 1.5, 0.2, &#39;Iris-setosa&#39;)
+(9, 4.4, 2.9, 1.4, 0.2, &#39;Iris-setosa&#39;)
+(10, 4.9, 3.1, 1.5, 0.1, &#39;Iris-setosa&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menghapus-kolom-id-dan-species">
+<h3>Menghapus Kolom Id dan Species<a class="headerlink" href="#menghapus-kolom-id-dan-species" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data dari database diambil dan dimasukkan ke DataFrame</span>
+<span class="n">data_mysql</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM iris_mysql.data_Iris;&quot;</span><span class="p">)</span>
+<span class="n">save_data_iris</span> <span class="o">=</span> <span class="n">data_mysql</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">data_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">save_data_iris</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;SepalLengthCM&quot;</span><span class="p">,</span> <span class="s2">&quot;SepalWidthCM&quot;</span><span class="p">,</span> <span class="s2">&quot;PetalLengthCM&quot;</span><span class="p">,</span> <span class="s2">&quot;PetalWidthCM&quot;</span><span class="p">,</span> <span class="s2">&quot;Species&quot;</span><span class="p">])</span>
+
+<span class="c1"># Menghapus Kolom id</span>
+<span class="n">data_final</span> <span class="o">=</span> <span class="n">data_final</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s2">&quot;Species&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">data_final</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s2">&quot;keys&quot;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;pretty&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----+---------------+--------------+---------------+--------------+
+|     | SepalLengthCM | SepalWidthCM | PetalLengthCM | PetalWidthCM |
++-----+---------------+--------------+---------------+--------------+
+|  0  |      5.1      |     3.5      |      1.4      |     0.2      |
+|  1  |      4.9      |     3.0      |      1.4      |     0.2      |
+|  2  |      4.7      |     3.2      |      1.3      |     0.2      |
+|  3  |      4.6      |     3.1      |      1.5      |     0.2      |
+|  4  |      5.0      |     3.6      |      1.4      |     0.2      |
+|  5  |      5.4      |     3.9      |      1.7      |     0.4      |
+|  6  |      4.6      |     3.4      |      1.4      |     0.3      |
+|  7  |      5.0      |     3.4      |      1.5      |     0.2      |
+|  8  |      4.4      |     2.9      |      1.4      |     0.2      |
+|  9  |      4.9      |     3.1      |      1.5      |     0.1      |
+| 10  |      5.4      |     3.7      |      1.5      |     0.2      |
+| 11  |      4.8      |     3.4      |      1.6      |     0.2      |
+| 12  |      4.8      |     3.0      |      1.4      |     0.1      |
+| 13  |      4.3      |     3.0      |      1.1      |     0.1      |
+| 14  |      5.8      |     4.0      |      1.2      |     0.2      |
+| 15  |      5.7      |     4.4      |      1.5      |     0.4      |
+| 16  |      5.4      |     3.9      |      1.3      |     0.4      |
+| 17  |      5.1      |     3.5      |      1.4      |     0.3      |
+| 18  |      5.7      |     3.8      |      1.7      |     0.3      |
+| 19  |      5.1      |     3.8      |      1.5      |     0.3      |
+| 20  |      5.4      |     3.4      |      1.7      |     0.2      |
+| 21  |      5.1      |     3.7      |      1.5      |     0.4      |
+| 22  |      4.6      |     3.6      |      1.0      |     0.2      |
+| 23  |      5.1      |     3.3      |      1.7      |     0.5      |
+| 24  |      4.8      |     3.4      |      1.9      |     0.2      |
+| 25  |      5.0      |     3.0      |      1.6      |     0.2      |
+| 26  |      5.0      |     3.4      |      1.6      |     0.4      |
+| 27  |      5.2      |     3.5      |      1.5      |     0.2      |
+| 28  |      5.2      |     3.4      |      1.4      |     0.2      |
+| 29  |      4.7      |     3.2      |      1.6      |     0.2      |
+| 30  |      4.8      |     3.1      |      1.6      |     0.2      |
+| 31  |      5.4      |     3.4      |      1.5      |     0.4      |
+| 32  |      5.2      |     4.1      |      1.5      |     0.1      |
+| 33  |      5.5      |     4.2      |      1.4      |     0.2      |
+| 34  |      4.9      |     3.1      |      1.5      |     0.1      |
+| 35  |      5.0      |     3.2      |      1.2      |     0.2      |
+| 36  |      5.5      |     3.5      |      1.3      |     0.2      |
+| 37  |      4.9      |     3.1      |      1.5      |     0.1      |
+| 38  |      4.4      |     3.0      |      1.3      |     0.2      |
+| 39  |      5.1      |     3.4      |      1.5      |     0.2      |
+| 40  |      5.0      |     3.5      |      1.3      |     0.3      |
+| 41  |      4.5      |     2.3      |      1.3      |     0.3      |
+| 42  |      4.4      |     3.2      |      1.3      |     0.2      |
+| 43  |      5.0      |     3.5      |      1.6      |     0.6      |
+| 44  |      5.1      |     3.8      |      1.9      |     0.4      |
+| 45  |      4.8      |     3.0      |      1.4      |     0.3      |
+| 46  |      5.1      |     3.8      |      1.6      |     0.2      |
+| 47  |      4.6      |     3.2      |      1.4      |     0.2      |
+| 48  |      5.3      |     3.7      |      1.5      |     0.2      |
+| 49  |      5.0      |     3.3      |      1.4      |     0.2      |
+| 50  |      7.0      |     3.2      |      4.7      |     1.4      |
+| 51  |      6.4      |     3.2      |      4.5      |     1.5      |
+| 52  |      6.9      |     3.1      |      4.9      |     1.5      |
+| 53  |      5.5      |     2.3      |      4.0      |     1.3      |
+| 54  |      6.5      |     2.8      |      4.6      |     1.5      |
+| 55  |      5.7      |     2.8      |      4.5      |     1.3      |
+| 56  |      6.3      |     3.3      |      4.7      |     1.6      |
+| 57  |      4.9      |     2.4      |      3.3      |     1.0      |
+| 58  |      6.6      |     2.9      |      4.6      |     1.3      |
+| 59  |      5.2      |     2.7      |      3.9      |     1.4      |
+| 60  |      5.0      |     2.0      |      3.5      |     1.0      |
+| 61  |      5.9      |     3.0      |      4.2      |     1.5      |
+| 62  |      6.0      |     2.2      |      4.0      |     1.0      |
+| 63  |      6.1      |     2.9      |      4.7      |     1.4      |
+| 64  |      5.6      |     2.9      |      3.6      |     1.3      |
+| 65  |      6.7      |     3.1      |      4.4      |     1.4      |
+| 66  |      5.6      |     3.0      |      4.5      |     1.5      |
+| 67  |      5.8      |     2.7      |      4.1      |     1.0      |
+| 68  |      6.2      |     2.2      |      4.5      |     1.5      |
+| 69  |      5.6      |     2.5      |      3.9      |     1.1      |
+| 70  |      5.9      |     3.2      |      4.8      |     1.8      |
+| 71  |      6.1      |     2.8      |      4.0      |     1.3      |
+| 72  |      6.3      |     2.5      |      4.9      |     1.5      |
+| 73  |      6.1      |     2.8      |      4.7      |     1.2      |
+| 74  |      6.4      |     2.9      |      4.3      |     1.3      |
+| 75  |      6.6      |     3.0      |      4.4      |     1.4      |
+| 76  |      6.8      |     2.8      |      4.8      |     1.4      |
+| 77  |      6.7      |     3.0      |      5.0      |     1.7      |
+| 78  |      6.0      |     2.9      |      4.5      |     1.5      |
+| 79  |      5.7      |     2.6      |      3.5      |     1.0      |
+| 80  |      5.5      |     2.4      |      3.8      |     1.1      |
+| 81  |      5.5      |     2.4      |      3.7      |     1.0      |
+| 82  |      5.8      |     2.7      |      3.9      |     1.2      |
+| 83  |      6.0      |     2.7      |      5.1      |     1.6      |
+| 84  |      5.4      |     3.0      |      4.5      |     1.5      |
+| 85  |      6.0      |     3.4      |      4.5      |     1.6      |
+| 86  |      6.7      |     3.1      |      4.7      |     1.5      |
+| 87  |      6.3      |     2.3      |      4.4      |     1.3      |
+| 88  |      5.6      |     3.0      |      4.1      |     1.3      |
+| 89  |      5.5      |     2.5      |      4.0      |     1.3      |
+| 90  |      5.5      |     2.6      |      4.4      |     1.2      |
+| 91  |      6.1      |     3.0      |      4.6      |     1.4      |
+| 92  |      5.8      |     2.6      |      4.0      |     1.2      |
+| 93  |      5.0      |     2.3      |      3.3      |     1.0      |
+| 94  |      5.6      |     2.7      |      4.2      |     1.3      |
+| 95  |      5.7      |     3.0      |      4.2      |     1.2      |
+| 96  |      5.7      |     2.9      |      4.2      |     1.3      |
+| 97  |      6.2      |     2.9      |      4.3      |     1.3      |
+| 98  |      5.1      |     2.5      |      3.0      |     1.1      |
+| 99  |      5.7      |     2.8      |      4.1      |     1.3      |
+| 100 |      6.3      |     3.3      |      6.0      |     2.5      |
+| 101 |      5.8      |     2.7      |      5.1      |     1.9      |
+| 102 |      7.1      |     3.0      |      5.9      |     2.1      |
+| 103 |      6.3      |     2.9      |      5.6      |     1.8      |
+| 104 |      6.5      |     3.0      |      5.8      |     2.2      |
+| 105 |      7.6      |     3.0      |      6.6      |     2.1      |
+| 106 |      4.9      |     2.5      |      4.5      |     1.7      |
+| 107 |      7.3      |     2.9      |      6.3      |     1.8      |
+| 108 |      6.7      |     2.5      |      5.8      |     1.8      |
+| 109 |      7.2      |     3.6      |      6.1      |     2.5      |
+| 110 |      6.5      |     3.2      |      5.1      |     2.0      |
+| 111 |      6.4      |     2.7      |      5.3      |     1.9      |
+| 112 |      6.8      |     3.0      |      5.5      |     2.1      |
+| 113 |      5.7      |     2.5      |      5.0      |     2.0      |
+| 114 |      5.8      |     2.8      |      5.1      |     2.4      |
+| 115 |      6.4      |     3.2      |      5.3      |     2.3      |
+| 116 |      6.5      |     3.0      |      5.5      |     1.8      |
+| 117 |      7.7      |     3.8      |      6.7      |     2.2      |
+| 118 |      7.7      |     2.6      |      6.9      |     2.3      |
+| 119 |      6.0      |     2.2      |      5.0      |     1.5      |
+| 120 |      6.9      |     3.2      |      5.7      |     2.3      |
+| 121 |      5.6      |     2.8      |      4.9      |     2.0      |
+| 122 |      7.7      |     2.8      |      6.7      |     2.0      |
+| 123 |      6.3      |     2.7      |      4.9      |     1.8      |
+| 124 |      6.7      |     3.3      |      5.7      |     2.1      |
+| 125 |      7.2      |     3.2      |      6.0      |     1.8      |
+| 126 |      6.2      |     2.8      |      4.8      |     1.8      |
+| 127 |      6.1      |     3.0      |      4.9      |     1.8      |
+| 128 |      6.4      |     2.8      |      5.6      |     2.1      |
+| 129 |      7.2      |     3.0      |      5.8      |     1.6      |
+| 130 |      7.4      |     2.8      |      6.1      |     1.9      |
+| 131 |      7.9      |     3.8      |      6.4      |     2.0      |
+| 132 |      6.4      |     2.8      |      5.6      |     2.2      |
+| 133 |      6.3      |     2.8      |      5.1      |     1.5      |
+| 134 |      6.1      |     2.6      |      5.6      |     1.4      |
+| 135 |      7.7      |     3.0      |      6.1      |     2.3      |
+| 136 |      6.3      |     3.4      |      5.6      |     2.4      |
+| 137 |      6.4      |     3.1      |      5.5      |     1.8      |
+| 138 |      6.0      |     3.0      |      4.8      |     1.8      |
+| 139 |      6.9      |     3.1      |      5.4      |     2.1      |
+| 140 |      6.7      |     3.1      |      5.6      |     2.4      |
+| 141 |      6.9      |     3.1      |      5.1      |     2.3      |
+| 142 |      5.8      |     2.7      |      5.1      |     1.9      |
+| 143 |      6.8      |     3.2      |      5.9      |     2.3      |
+| 144 |      6.7      |     3.3      |      5.7      |     2.5      |
+| 145 |      6.7      |     3.0      |      5.2      |     2.3      |
+| 146 |      6.3      |     2.5      |      5.0      |     1.9      |
+| 147 |      6.5      |     3.0      |      5.2      |     2.0      |
+| 148 |      6.2      |     3.4      |      5.4      |     2.3      |
+| 149 |      5.9      |     3.0      |      5.1      |     1.8      |
++-----+---------------+--------------+---------------+--------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="normalisasi-data-iris-menggunakan-min-max-scaler">
+<h3>Normalisasi Data Iris Menggunakan Min Max Scaler<a class="headerlink" href="#normalisasi-data-iris-menggunakan-min-max-scaler" title="Link to this heading">#</a></h3>
+<p>Dalam data science dan machine learning, normalisasi Min-Max (Min-Max Scaling) adalah teknik untuk mengubah nilai fitur ke dalam skala tertentu, biasanya antara 0 dan 1.</p>
+<p>Rumus normalisasi Min-Max adalah:</p>
+<p><span class="math notranslate nohighlight">\(X_{\text{norm}} = \frac{X - X_{\text{min}}}{X_{\text{max}} - X_{\text{min}}}\)</span></p>
+<p><strong>Keterangan:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(( X \)</span>) : Nilai asli (nilai mentah pada data)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( X_{\text{min}} \)</span>) : Nilai minimum dari fitur/kolom</p></li>
+<li><p><span class="math notranslate nohighlight">\(( X_{\text{max}} \)</span>) : Nilai maksimum dari fitur/kolom</p></li>
+<li><p><span class="math notranslate nohighlight">\(( X_{\text{norm}} \)</span>) : Nilai setelah dinormalisasi (biasanya dalam rentang [0, 1])</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># gunakan min max scaler</span>
+<span class="n">scaler_iris</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="c1"># training data Normalisasi</span>
+<span class="n">data_normalisasi</span> <span class="o">=</span> <span class="n">scaler_iris</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_final</span><span class="p">)</span>
+<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SepalLengthCM&quot;</span><span class="p">,</span> <span class="s2">&quot;SepalWidthCM&quot;</span><span class="p">,</span> <span class="s2">&quot;PetalLengthCM&quot;</span><span class="p">,</span> <span class="s2">&quot;PetalWidthCM&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">data_normalisasi</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;pretty&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---------------------+---------------------+----------------------+---------------------+
+|    SepalLengthCM    |    SepalWidthCM     |    PetalLengthCM     |    PetalWidthCM     |
++---------------------+---------------------+----------------------+---------------------+
+| 0.2222222222222221  |        0.625        | 0.06779661016949151  | 0.04166666666666667 |
+| 0.16666666666666674 | 0.41666666666666674 | 0.06779661016949151  | 0.04166666666666667 |
+| 0.11111111111111116 |         0.5         | 0.05084745762711865  | 0.04166666666666667 |
+| 0.08333333333333326 | 0.45833333333333326 |  0.0847457627118644  | 0.04166666666666667 |
+| 0.19444444444444442 | 0.6666666666666667  | 0.06779661016949151  | 0.04166666666666667 |
+| 0.3055555555555556  | 0.7916666666666665  | 0.11864406779661013  |        0.125        |
+| 0.08333333333333326 | 0.5833333333333333  | 0.06779661016949151  | 0.08333333333333333 |
+| 0.19444444444444442 | 0.5833333333333333  |  0.0847457627118644  | 0.04166666666666667 |
+| 0.0277777777777779  |        0.375        | 0.06779661016949151  | 0.04166666666666667 |
+| 0.16666666666666674 | 0.45833333333333326 |  0.0847457627118644  |         0.0         |
+| 0.3055555555555556  | 0.7083333333333333  |  0.0847457627118644  | 0.04166666666666667 |
+| 0.13888888888888884 | 0.5833333333333333  |  0.1016949152542373  | 0.04166666666666667 |
+| 0.13888888888888884 | 0.41666666666666674 | 0.06779661016949151  |         0.0         |
+|         0.0         | 0.41666666666666674 | 0.01694915254237289  |         0.0         |
+| 0.4166666666666665  | 0.8333333333333333  | 0.033898305084745756 | 0.04166666666666667 |
+| 0.38888888888888884 |         1.0         |  0.0847457627118644  |        0.125        |
+| 0.3055555555555556  | 0.7916666666666665  | 0.05084745762711865  |        0.125        |
+| 0.2222222222222221  |        0.625        | 0.06779661016949151  | 0.08333333333333333 |
+| 0.38888888888888884 | 0.7499999999999998  | 0.11864406779661013  | 0.08333333333333333 |
+| 0.2222222222222221  | 0.7499999999999998  |  0.0847457627118644  | 0.08333333333333333 |
+| 0.3055555555555556  | 0.5833333333333333  | 0.11864406779661013  | 0.04166666666666667 |
+| 0.2222222222222221  | 0.7083333333333333  |  0.0847457627118644  |        0.125        |
+| 0.08333333333333326 | 0.6666666666666667  |         0.0          | 0.04166666666666667 |
+| 0.2222222222222221  | 0.5416666666666665  | 0.11864406779661013  | 0.16666666666666669 |
+| 0.13888888888888884 | 0.5833333333333333  | 0.15254237288135591  | 0.04166666666666667 |
+| 0.19444444444444442 | 0.41666666666666674 |  0.1016949152542373  | 0.04166666666666667 |
+| 0.19444444444444442 | 0.5833333333333333  |  0.1016949152542373  |        0.125        |
+|        0.25         |        0.625        |  0.0847457627118644  | 0.04166666666666667 |
+|        0.25         | 0.5833333333333333  | 0.06779661016949151  | 0.04166666666666667 |
+| 0.11111111111111116 |         0.5         |  0.1016949152542373  | 0.04166666666666667 |
+| 0.13888888888888884 | 0.45833333333333326 |  0.1016949152542373  | 0.04166666666666667 |
+| 0.3055555555555556  | 0.5833333333333333  |  0.0847457627118644  |        0.125        |
+|        0.25         | 0.8749999999999998  |  0.0847457627118644  |         0.0         |
+| 0.33333333333333326 | 0.9166666666666667  | 0.06779661016949151  | 0.04166666666666667 |
+| 0.16666666666666674 | 0.45833333333333326 |  0.0847457627118644  |         0.0         |
+| 0.19444444444444442 |         0.5         | 0.033898305084745756 | 0.04166666666666667 |
+| 0.33333333333333326 |        0.625        | 0.05084745762711865  | 0.04166666666666667 |
+| 0.16666666666666674 | 0.45833333333333326 |  0.0847457627118644  |         0.0         |
+| 0.0277777777777779  | 0.41666666666666674 | 0.05084745762711865  | 0.04166666666666667 |
+| 0.2222222222222221  | 0.5833333333333333  |  0.0847457627118644  | 0.04166666666666667 |
+| 0.19444444444444442 |        0.625        | 0.05084745762711865  | 0.08333333333333333 |
+| 0.05555555555555558 | 0.12499999999999989 | 0.05084745762711865  | 0.08333333333333333 |
+| 0.0277777777777779  |         0.5         | 0.05084745762711865  | 0.04166666666666667 |
+| 0.19444444444444442 |        0.625        |  0.1016949152542373  | 0.20833333333333331 |
+| 0.2222222222222221  | 0.7499999999999998  | 0.15254237288135591  |        0.125        |
+| 0.13888888888888884 | 0.41666666666666674 | 0.06779661016949151  | 0.08333333333333333 |
+| 0.2222222222222221  | 0.7499999999999998  |  0.1016949152542373  | 0.04166666666666667 |
+| 0.08333333333333326 |         0.5         | 0.06779661016949151  | 0.04166666666666667 |
+| 0.2777777777777777  | 0.7083333333333333  |  0.0847457627118644  | 0.04166666666666667 |
+| 0.19444444444444442 | 0.5416666666666665  | 0.06779661016949151  | 0.04166666666666667 |
+|        0.75         |         0.5         |  0.6271186440677966  | 0.5416666666666667  |
+| 0.5833333333333335  |         0.5         |  0.5932203389830508  | 0.5833333333333334  |
+| 0.7222222222222223  | 0.45833333333333326 |  0.6610169491525424  | 0.5833333333333334  |
+| 0.33333333333333326 | 0.12499999999999989 |  0.5084745762711864  | 0.5000000000000001  |
+| 0.6111111111111112  | 0.33333333333333326 |  0.6101694915254237  | 0.5833333333333334  |
+| 0.38888888888888884 | 0.33333333333333326 |  0.5932203389830508  | 0.5000000000000001  |
+| 0.5555555555555556  | 0.5416666666666665  |  0.6271186440677966  | 0.6250000000000001  |
+| 0.16666666666666674 | 0.16666666666666663 | 0.38983050847457623  |        0.375        |
+| 0.6388888888888888  |        0.375        |  0.6101694915254237  | 0.5000000000000001  |
+|        0.25         | 0.29166666666666674 | 0.49152542372881347  | 0.5416666666666667  |
+| 0.19444444444444442 |         0.0         |  0.423728813559322   |        0.375        |
+| 0.44444444444444464 | 0.41666666666666674 |  0.5423728813559322  | 0.5833333333333334  |
+| 0.4722222222222223  | 0.08333333333333337 |  0.5084745762711864  |        0.375        |
+| 0.4999999999999998  |        0.375        |  0.6271186440677966  | 0.5416666666666667  |
+| 0.36111111111111094 |        0.375        | 0.44067796610169496  | 0.5000000000000001  |
+| 0.6666666666666667  | 0.45833333333333326 |  0.576271186440678   | 0.5416666666666667  |
+| 0.36111111111111094 | 0.41666666666666674 |  0.5932203389830508  | 0.5833333333333334  |
+| 0.4166666666666665  | 0.29166666666666674 |  0.5254237288135593  |        0.375        |
+| 0.5277777777777779  | 0.08333333333333337 |  0.5932203389830508  | 0.5833333333333334  |
+| 0.36111111111111094 | 0.20833333333333326 | 0.49152542372881347  | 0.4166666666666667  |
+| 0.44444444444444464 |         0.5         |  0.6440677966101694  | 0.7083333333333334  |
+| 0.4999999999999998  | 0.33333333333333326 |  0.5084745762711864  | 0.5000000000000001  |
+| 0.5555555555555556  | 0.20833333333333326 |  0.6610169491525424  | 0.5833333333333334  |
+| 0.4999999999999998  | 0.33333333333333326 |  0.6271186440677966  | 0.4583333333333333  |
+| 0.5833333333333335  |        0.375        |  0.559322033898305   | 0.5000000000000001  |
+| 0.6388888888888888  | 0.41666666666666674 |  0.576271186440678   | 0.5416666666666667  |
+| 0.6944444444444444  | 0.33333333333333326 |  0.6440677966101694  | 0.5416666666666667  |
+| 0.6666666666666667  | 0.41666666666666674 |  0.6779661016949152  | 0.6666666666666667  |
+| 0.4722222222222223  |        0.375        |  0.5932203389830508  | 0.5833333333333334  |
+| 0.38888888888888884 |        0.25         |  0.423728813559322   |        0.375        |
+| 0.33333333333333326 | 0.16666666666666663 | 0.47457627118644063  | 0.4166666666666667  |
+| 0.33333333333333326 | 0.16666666666666663 |  0.4576271186440678  |        0.375        |
+| 0.4166666666666665  | 0.29166666666666674 | 0.49152542372881347  | 0.4583333333333333  |
+| 0.4722222222222223  | 0.29166666666666674 |  0.6949152542372881  | 0.6250000000000001  |
+| 0.3055555555555556  | 0.41666666666666674 |  0.5932203389830508  | 0.5833333333333334  |
+| 0.4722222222222223  | 0.5833333333333333  |  0.5932203389830508  | 0.6250000000000001  |
+| 0.6666666666666667  | 0.45833333333333326 |  0.6271186440677966  | 0.5833333333333334  |
+| 0.5555555555555556  | 0.12499999999999989 |  0.576271186440678   | 0.5000000000000001  |
+| 0.36111111111111094 | 0.41666666666666674 |  0.5254237288135593  | 0.5000000000000001  |
+| 0.33333333333333326 | 0.20833333333333326 |  0.5084745762711864  | 0.5000000000000001  |
+| 0.33333333333333326 |        0.25         |  0.576271186440678   | 0.4583333333333333  |
+| 0.4999999999999998  | 0.41666666666666674 |  0.6101694915254237  | 0.5416666666666667  |
+| 0.4166666666666665  |        0.25         |  0.5084745762711864  | 0.4583333333333333  |
+| 0.19444444444444442 | 0.12499999999999989 | 0.38983050847457623  |        0.375        |
+| 0.36111111111111094 | 0.29166666666666674 |  0.5423728813559322  | 0.5000000000000001  |
+| 0.38888888888888884 | 0.41666666666666674 |  0.5423728813559322  | 0.4583333333333333  |
+| 0.38888888888888884 |        0.375        |  0.5423728813559322  | 0.5000000000000001  |
+| 0.5277777777777779  |        0.375        |  0.559322033898305   | 0.5000000000000001  |
+| 0.2222222222222221  | 0.20833333333333326 |  0.3389830508474576  | 0.4166666666666667  |
+| 0.38888888888888884 | 0.33333333333333326 |  0.5254237288135593  | 0.5000000000000001  |
+| 0.5555555555555556  | 0.5416666666666665  |  0.847457627118644   |         1.0         |
+| 0.4166666666666665  | 0.29166666666666674 |  0.6949152542372881  |        0.75         |
+| 0.7777777777777777  | 0.41666666666666674 |  0.8305084745762712  | 0.8333333333333335  |
+| 0.5555555555555556  |        0.375        |  0.7796610169491525  | 0.7083333333333334  |
+| 0.6111111111111112  | 0.41666666666666674 |  0.8135593220338982  | 0.8750000000000001  |
+| 0.9166666666666665  | 0.41666666666666674 |  0.9491525423728813  | 0.8333333333333335  |
+| 0.16666666666666674 | 0.20833333333333326 |  0.5932203389830508  | 0.6666666666666667  |
+|  0.833333333333333  |        0.375        |  0.8983050847457625  | 0.7083333333333334  |
+| 0.6666666666666667  | 0.20833333333333326 |  0.8135593220338982  | 0.7083333333333334  |
+| 0.8055555555555556  | 0.6666666666666667  |  0.8644067796610169  |         1.0         |
+| 0.6111111111111112  |         0.5         |  0.6949152542372881  | 0.7916666666666667  |
+| 0.5833333333333335  | 0.29166666666666674 |  0.7288135593220338  |        0.75         |
+| 0.6944444444444444  | 0.41666666666666674 |  0.7627118644067796  | 0.8333333333333335  |
+| 0.38888888888888884 | 0.20833333333333326 |  0.6779661016949152  | 0.7916666666666667  |
+| 0.4166666666666665  | 0.33333333333333326 |  0.6949152542372881  | 0.9583333333333334  |
+| 0.5833333333333335  |         0.5         |  0.7288135593220338  | 0.9166666666666666  |
+| 0.6111111111111112  | 0.41666666666666674 |  0.7627118644067796  | 0.7083333333333334  |
+| 0.9444444444444442  | 0.7499999999999998  |  0.9661016949152543  | 0.8750000000000001  |
+| 0.9444444444444442  |        0.25         |         1.0          | 0.9166666666666666  |
+| 0.4722222222222223  | 0.08333333333333337 |  0.6779661016949152  | 0.5833333333333334  |
+| 0.7222222222222223  |         0.5         |  0.7966101694915254  | 0.9166666666666666  |
+| 0.36111111111111094 | 0.33333333333333326 |  0.6610169491525424  | 0.7916666666666667  |
+| 0.9444444444444442  | 0.33333333333333326 |  0.9661016949152543  | 0.7916666666666667  |
+| 0.5555555555555556  | 0.29166666666666674 |  0.6610169491525424  | 0.7083333333333334  |
+| 0.6666666666666667  | 0.5416666666666665  |  0.7966101694915254  | 0.8333333333333335  |
+| 0.8055555555555556  |         0.5         |  0.847457627118644   | 0.7083333333333334  |
+| 0.5277777777777779  | 0.33333333333333326 |  0.6440677966101694  | 0.7083333333333334  |
+| 0.4999999999999998  | 0.41666666666666674 |  0.6610169491525424  | 0.7083333333333334  |
+| 0.5833333333333335  | 0.33333333333333326 |  0.7796610169491525  | 0.8333333333333335  |
+| 0.8055555555555556  | 0.41666666666666674 |  0.8135593220338982  | 0.6250000000000001  |
+| 0.8611111111111112  | 0.33333333333333326 |  0.8644067796610169  |        0.75         |
+|         1.0         | 0.7499999999999998  |  0.9152542372881356  | 0.7916666666666667  |
+| 0.5833333333333335  | 0.33333333333333326 |  0.7796610169491525  | 0.8750000000000001  |
+| 0.5555555555555556  | 0.33333333333333326 |  0.6949152542372881  | 0.5833333333333334  |
+| 0.4999999999999998  |        0.25         |  0.7796610169491525  | 0.5416666666666667  |
+| 0.9444444444444442  | 0.41666666666666674 |  0.8644067796610169  | 0.9166666666666666  |
+| 0.5555555555555556  | 0.5833333333333333  |  0.7796610169491525  | 0.9583333333333334  |
+| 0.5833333333333335  | 0.45833333333333326 |  0.7627118644067796  | 0.7083333333333334  |
+| 0.4722222222222223  | 0.41666666666666674 |  0.6440677966101694  | 0.7083333333333334  |
+| 0.7222222222222223  | 0.45833333333333326 |  0.7457627118644068  | 0.8333333333333335  |
+| 0.6666666666666667  | 0.45833333333333326 |  0.7796610169491525  | 0.9583333333333334  |
+| 0.7222222222222223  | 0.45833333333333326 |  0.6949152542372881  | 0.9166666666666666  |
+| 0.4166666666666665  | 0.29166666666666674 |  0.6949152542372881  |        0.75         |
+| 0.6944444444444444  |         0.5         |  0.8305084745762712  | 0.9166666666666666  |
+| 0.6666666666666667  | 0.5416666666666665  |  0.7966101694915254  |         1.0         |
+| 0.6666666666666667  | 0.41666666666666674 |  0.711864406779661   | 0.9166666666666666  |
+| 0.5555555555555556  | 0.20833333333333326 |  0.6779661016949152  |        0.75         |
+| 0.6111111111111112  | 0.41666666666666674 |  0.711864406779661   | 0.7916666666666667  |
+| 0.5277777777777779  | 0.5833333333333333  |  0.7457627118644068  | 0.9166666666666666  |
+| 0.44444444444444464 | 0.41666666666666674 |  0.6949152542372881  | 0.7083333333333334  |
++---------------------+---------------------+----------------------+---------------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="code-perhitungan-untuk-fuzzy-c-means">
+<h3>Code Perhitungan untuk Fuzzy C-Means<a class="headerlink" href="#code-perhitungan-untuk-fuzzy-c-means" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">initialize_membership</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="c1"># Inisialisasi matriks keanggotaan dengan nilai acak dan normalisasi per data</span>
+    <span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+    <span class="n">U</span> <span class="o">=</span> <span class="n">U</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">U</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_centroids</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">um</span> <span class="o">=</span> <span class="n">U</span> <span class="o">**</span> <span class="n">m</span>  <span class="c1"># pangkat fuzziness</span>
+    <span class="n">centroids</span> <span class="o">=</span> <span class="p">(</span><span class="n">um</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">um</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">centroids</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">update_membership</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">centroids</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+        <span class="n">dist</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">centroids</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fmax</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="mf">1e-10</span><span class="p">)</span>  <span class="c1"># cegah pembagian dengan nol</span>
+
+    <span class="n">exponent</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">denom</span> <span class="o">=</span> <span class="p">(</span><span class="n">dist</span><span class="p">[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">/</span> <span class="n">dist</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:])</span> <span class="o">**</span> <span class="n">exponent</span>
+    <span class="n">U_new</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">denom</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">U_new</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_objective</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">dist_squared</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">centroids</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">dist_squared</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">centroids</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">U</span> <span class="o">**</span> <span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">dist_squared</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">J</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fuzzy_c_means</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">n_samples</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Inisialisasi keanggotaan</span>
+    <span class="n">U</span> <span class="o">=</span> <span class="n">initialize_membership</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
+        <span class="n">centroids</span> <span class="o">=</span> <span class="n">compute_centroids</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+        <span class="n">U_new</span> <span class="o">=</span> <span class="n">update_membership</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+
+        <span class="n">J_old</span> <span class="o">=</span> <span class="n">compute_objective</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+        <span class="n">J_new</span> <span class="o">=</span> <span class="n">compute_objective</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">U_new</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+
+        <span class="n">diff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">J_new</span> <span class="o">-</span> <span class="n">J_old</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iterasi </span><span class="si">{</span><span class="n">iteration</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: fungsi objektif = </span><span class="si">{</span><span class="n">J_new</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">, perubahan = </span><span class="si">{</span><span class="n">diff</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">diff</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Konvergen! Iterasi dihentikan.&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+
+        <span class="n">U</span> <span class="o">=</span> <span class="n">U_new</span>
+
+    <span class="k">return</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">U</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-6</span>
+
+<span class="n">centroids</span><span class="p">,</span> <span class="n">U</span> <span class="o">=</span> <span class="n">fuzzy_c_means</span><span class="p">(</span><span class="n">data_normalized</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">,</span> <span class="n">tol</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan derajat keanggotaan 10 data pertama</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tabulate</span><span class="w"> </span><span class="kn">import</span> <span class="n">tabulate</span>
+<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Cluster </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">10 Membership Degree Setiap Data: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">U</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;pretty&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iterasi 1: fungsi objektif = 13.628835, perubahan = 3.483304
+Iterasi 2: fungsi objektif = 13.049784, perubahan = 0.411507
+Iterasi 3: fungsi objektif = 10.863893, perubahan = 1.348108
+Iterasi 4: fungsi objektif = 8.466057, perubahan = 0.954368
+Iterasi 5: fungsi objektif = 7.898655, perubahan = 0.167361
+Iterasi 6: fungsi objektif = 7.476753, perubahan = 0.270257
+Iterasi 7: fungsi objektif = 6.209611, perubahan = 0.774222
+Iterasi 8: fungsi objektif = 5.533913, perubahan = 0.240582
+Iterasi 9: fungsi objektif = 5.353590, perubahan = 0.068472
+Iterasi 10: fungsi objektif = 5.282551, perubahan = 0.027746
+Iterasi 11: fungsi objektif = 5.253200, perubahan = 0.011470
+Iterasi 12: fungsi objektif = 5.241152, perubahan = 0.004692
+Iterasi 13: fungsi objektif = 5.236272, perubahan = 0.001893
+Iterasi 14: fungsi objektif = 5.234319, perubahan = 0.000755
+Iterasi 15: fungsi objektif = 5.233544, perubahan = 0.000299
+Iterasi 16: fungsi objektif = 5.233239, perubahan = 0.000118
+Iterasi 17: fungsi objektif = 5.233120, perubahan = 0.000046
+Iterasi 18: fungsi objektif = 5.233073, perubahan = 0.000018
+Iterasi 19: fungsi objektif = 5.233054, perubahan = 0.000007
+Iterasi 20: fungsi objektif = 5.233047, perubahan = 0.000003
+Iterasi 21: fungsi objektif = 5.233045, perubahan = 0.000001
+Iterasi 22: fungsi objektif = 5.233043, perubahan = 0.000000
+Konvergen! Iterasi dihentikan.
+
+10 Membership Degree Setiap Data: 
++-----------------------+-----------------------+--------------------+
+|       Cluster 1       |       Cluster 2       |     Cluster 3      |
++-----------------------+-----------------------+--------------------+
+| 0.0022634819920502106 | 0.004766552651916162  | 0.9929699653560337 |
+|  0.0204203856231014   |  0.04837383820889973  | 0.9312057761679989 |
+| 0.010547293436040264  | 0.023496578225916158  | 0.9659561283380436 |
+| 0.019069503044382447  |  0.04390913976694774  | 0.9370213571886699 |
+| 0.005306510195345507  | 0.010837848170622744  | 0.9838556416340318 |
+| 0.044986777577346676  |  0.08503051916238896  | 0.8699827032602643 |
+| 0.009131611446753233  | 0.019761967665642446  | 0.9711064208876042 |
+| 0.0003481827211841976 | 0.0007614640606255609 | 0.9988903532181902 |
+|  0.04131109363344241  |  0.09529545320992598  | 0.8633934531566316 |
+|  0.0141560291447447   | 0.032493930777884095  | 0.9533500400773711 |
++-----------------------+-----------------------+--------------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="clustering-data-setelah-proses-perhitungan">
+<h3>Clustering Data Setelah Proses Perhitungan<a class="headerlink" href="#clustering-data-setelah-proses-perhitungan" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mendapatkan nilai maximal dalam setiap baris data</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># menambahkan ke data ke dataframe</span>
+<span class="n">df_result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_normalized</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;SepalLength&quot;</span><span class="p">,</span> <span class="s2">&quot;SepalWidth&quot;</span><span class="p">,</span> <span class="s2">&quot;PetalLength&quot;</span><span class="p">,</span> <span class="s2">&quot;PetalWidth&quot;</span><span class="p">])</span>
+<span class="n">df_result</span><span class="p">[</span><span class="s2">&quot;Cluster&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">df_result</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s2">&quot;keys&quot;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;pretty&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----+---------------------+---------------------+----------------------+---------------------+---------+
+|     |     SepalLength     |     SepalWidth      |     PetalLength      |     PetalWidth      | Cluster |
++-----+---------------------+---------------------+----------------------+---------------------+---------+
+|  0  | 0.2222222222222221  |        0.625        | 0.06779661016949151  | 0.04166666666666667 |   2.0   |
+|  1  | 0.16666666666666674 | 0.41666666666666674 | 0.06779661016949151  | 0.04166666666666667 |   2.0   |
+|  2  | 0.11111111111111116 |         0.5         | 0.05084745762711865  | 0.04166666666666667 |   2.0   |
+|  3  | 0.08333333333333326 | 0.45833333333333326 |  0.0847457627118644  | 0.04166666666666667 |   2.0   |
+|  4  | 0.19444444444444442 | 0.6666666666666667  | 0.06779661016949151  | 0.04166666666666667 |   2.0   |
+|  5  | 0.3055555555555556  | 0.7916666666666665  | 0.11864406779661013  |        0.125        |   2.0   |
+|  6  | 0.08333333333333326 | 0.5833333333333333  | 0.06779661016949151  | 0.08333333333333333 |   2.0   |
+|  7  | 0.19444444444444442 | 0.5833333333333333  |  0.0847457627118644  | 0.04166666666666667 |   2.0   |
+|  8  | 0.0277777777777779  |        0.375        | 0.06779661016949151  | 0.04166666666666667 |   2.0   |
+|  9  | 0.16666666666666674 | 0.45833333333333326 |  0.0847457627118644  |         0.0         |   2.0   |
+| 10  | 0.3055555555555556  | 0.7083333333333333  |  0.0847457627118644  | 0.04166666666666667 |   2.0   |
+| 11  | 0.13888888888888884 | 0.5833333333333333  |  0.1016949152542373  | 0.04166666666666667 |   2.0   |
+| 12  | 0.13888888888888884 | 0.41666666666666674 | 0.06779661016949151  |         0.0         |   2.0   |
+| 13  |         0.0         | 0.41666666666666674 | 0.01694915254237289  |         0.0         |   2.0   |
+| 14  | 0.4166666666666665  | 0.8333333333333333  | 0.033898305084745756 | 0.04166666666666667 |   2.0   |
+| 15  | 0.38888888888888884 |         1.0         |  0.0847457627118644  |        0.125        |   2.0   |
+| 16  | 0.3055555555555556  | 0.7916666666666665  | 0.05084745762711865  |        0.125        |   2.0   |
+| 17  | 0.2222222222222221  |        0.625        | 0.06779661016949151  | 0.08333333333333333 |   2.0   |
+| 18  | 0.38888888888888884 | 0.7499999999999998  | 0.11864406779661013  | 0.08333333333333333 |   2.0   |
+| 19  | 0.2222222222222221  | 0.7499999999999998  |  0.0847457627118644  | 0.08333333333333333 |   2.0   |
+| 20  | 0.3055555555555556  | 0.5833333333333333  | 0.11864406779661013  | 0.04166666666666667 |   2.0   |
+| 21  | 0.2222222222222221  | 0.7083333333333333  |  0.0847457627118644  |        0.125        |   2.0   |
+| 22  | 0.08333333333333326 | 0.6666666666666667  |         0.0          | 0.04166666666666667 |   2.0   |
+| 23  | 0.2222222222222221  | 0.5416666666666665  | 0.11864406779661013  | 0.16666666666666669 |   2.0   |
+| 24  | 0.13888888888888884 | 0.5833333333333333  | 0.15254237288135591  | 0.04166666666666667 |   2.0   |
+| 25  | 0.19444444444444442 | 0.41666666666666674 |  0.1016949152542373  | 0.04166666666666667 |   2.0   |
+| 26  | 0.19444444444444442 | 0.5833333333333333  |  0.1016949152542373  |        0.125        |   2.0   |
+| 27  |        0.25         |        0.625        |  0.0847457627118644  | 0.04166666666666667 |   2.0   |
+| 28  |        0.25         | 0.5833333333333333  | 0.06779661016949151  | 0.04166666666666667 |   2.0   |
+| 29  | 0.11111111111111116 |         0.5         |  0.1016949152542373  | 0.04166666666666667 |   2.0   |
+| 30  | 0.13888888888888884 | 0.45833333333333326 |  0.1016949152542373  | 0.04166666666666667 |   2.0   |
+| 31  | 0.3055555555555556  | 0.5833333333333333  |  0.0847457627118644  |        0.125        |   2.0   |
+| 32  |        0.25         | 0.8749999999999998  |  0.0847457627118644  |         0.0         |   2.0   |
+| 33  | 0.33333333333333326 | 0.9166666666666667  | 0.06779661016949151  | 0.04166666666666667 |   2.0   |
+| 34  | 0.16666666666666674 | 0.45833333333333326 |  0.0847457627118644  |         0.0         |   2.0   |
+| 35  | 0.19444444444444442 |         0.5         | 0.033898305084745756 | 0.04166666666666667 |   2.0   |
+| 36  | 0.33333333333333326 |        0.625        | 0.05084745762711865  | 0.04166666666666667 |   2.0   |
+| 37  | 0.16666666666666674 | 0.45833333333333326 |  0.0847457627118644  |         0.0         |   2.0   |
+| 38  | 0.0277777777777779  | 0.41666666666666674 | 0.05084745762711865  | 0.04166666666666667 |   2.0   |
+| 39  | 0.2222222222222221  | 0.5833333333333333  |  0.0847457627118644  | 0.04166666666666667 |   2.0   |
+| 40  | 0.19444444444444442 |        0.625        | 0.05084745762711865  | 0.08333333333333333 |   2.0   |
+| 41  | 0.05555555555555558 | 0.12499999999999989 | 0.05084745762711865  | 0.08333333333333333 |   2.0   |
+| 42  | 0.0277777777777779  |         0.5         | 0.05084745762711865  | 0.04166666666666667 |   2.0   |
+| 43  | 0.19444444444444442 |        0.625        |  0.1016949152542373  | 0.20833333333333331 |   2.0   |
+| 44  | 0.2222222222222221  | 0.7499999999999998  | 0.15254237288135591  |        0.125        |   2.0   |
+| 45  | 0.13888888888888884 | 0.41666666666666674 | 0.06779661016949151  | 0.08333333333333333 |   2.0   |
+| 46  | 0.2222222222222221  | 0.7499999999999998  |  0.1016949152542373  | 0.04166666666666667 |   2.0   |
+| 47  | 0.08333333333333326 |         0.5         | 0.06779661016949151  | 0.04166666666666667 |   2.0   |
+| 48  | 0.2777777777777777  | 0.7083333333333333  |  0.0847457627118644  | 0.04166666666666667 |   2.0   |
+| 49  | 0.19444444444444442 | 0.5416666666666665  | 0.06779661016949151  | 0.04166666666666667 |   2.0   |
+| 50  |        0.75         |         0.5         |  0.6271186440677966  | 0.5416666666666667  |   0.0   |
+| 51  | 0.5833333333333335  |         0.5         |  0.5932203389830508  | 0.5833333333333334  |   1.0   |
+| 52  | 0.7222222222222223  | 0.45833333333333326 |  0.6610169491525424  | 0.5833333333333334  |   0.0   |
+| 53  | 0.33333333333333326 | 0.12499999999999989 |  0.5084745762711864  | 0.5000000000000001  |   1.0   |
+| 54  | 0.6111111111111112  | 0.33333333333333326 |  0.6101694915254237  | 0.5833333333333334  |   1.0   |
+| 55  | 0.38888888888888884 | 0.33333333333333326 |  0.5932203389830508  | 0.5000000000000001  |   1.0   |
+| 56  | 0.5555555555555556  | 0.5416666666666665  |  0.6271186440677966  | 0.6250000000000001  |   1.0   |
+| 57  | 0.16666666666666674 | 0.16666666666666663 | 0.38983050847457623  |        0.375        |   1.0   |
+| 58  | 0.6388888888888888  |        0.375        |  0.6101694915254237  | 0.5000000000000001  |   1.0   |
+| 59  |        0.25         | 0.29166666666666674 | 0.49152542372881347  | 0.5416666666666667  |   1.0   |
+| 60  | 0.19444444444444442 |         0.0         |  0.423728813559322   |        0.375        |   1.0   |
+| 61  | 0.44444444444444464 | 0.41666666666666674 |  0.5423728813559322  | 0.5833333333333334  |   1.0   |
+| 62  | 0.4722222222222223  | 0.08333333333333337 |  0.5084745762711864  |        0.375        |   1.0   |
+| 63  | 0.4999999999999998  |        0.375        |  0.6271186440677966  | 0.5416666666666667  |   1.0   |
+| 64  | 0.36111111111111094 |        0.375        | 0.44067796610169496  | 0.5000000000000001  |   1.0   |
+| 65  | 0.6666666666666667  | 0.45833333333333326 |  0.576271186440678   | 0.5416666666666667  |   1.0   |
+| 66  | 0.36111111111111094 | 0.41666666666666674 |  0.5932203389830508  | 0.5833333333333334  |   1.0   |
+| 67  | 0.4166666666666665  | 0.29166666666666674 |  0.5254237288135593  |        0.375        |   1.0   |
+| 68  | 0.5277777777777779  | 0.08333333333333337 |  0.5932203389830508  | 0.5833333333333334  |   1.0   |
+| 69  | 0.36111111111111094 | 0.20833333333333326 | 0.49152542372881347  | 0.4166666666666667  |   1.0   |
+| 70  | 0.44444444444444464 |         0.5         |  0.6440677966101694  | 0.7083333333333334  |   1.0   |
+| 71  | 0.4999999999999998  | 0.33333333333333326 |  0.5084745762711864  | 0.5000000000000001  |   1.0   |
+| 72  | 0.5555555555555556  | 0.20833333333333326 |  0.6610169491525424  | 0.5833333333333334  |   1.0   |
+| 73  | 0.4999999999999998  | 0.33333333333333326 |  0.6271186440677966  | 0.4583333333333333  |   1.0   |
+| 74  | 0.5833333333333335  |        0.375        |  0.559322033898305   | 0.5000000000000001  |   1.0   |
+| 75  | 0.6388888888888888  | 0.41666666666666674 |  0.576271186440678   | 0.5416666666666667  |   1.0   |
+| 76  | 0.6944444444444444  | 0.33333333333333326 |  0.6440677966101694  | 0.5416666666666667  |   1.0   |
+| 77  | 0.6666666666666667  | 0.41666666666666674 |  0.6779661016949152  | 0.6666666666666667  |   0.0   |
+| 78  | 0.4722222222222223  |        0.375        |  0.5932203389830508  | 0.5833333333333334  |   1.0   |
+| 79  | 0.38888888888888884 |        0.25         |  0.423728813559322   |        0.375        |   1.0   |
+| 80  | 0.33333333333333326 | 0.16666666666666663 | 0.47457627118644063  | 0.4166666666666667  |   1.0   |
+| 81  | 0.33333333333333326 | 0.16666666666666663 |  0.4576271186440678  |        0.375        |   1.0   |
+| 82  | 0.4166666666666665  | 0.29166666666666674 | 0.49152542372881347  | 0.4583333333333333  |   1.0   |
+| 83  | 0.4722222222222223  | 0.29166666666666674 |  0.6949152542372881  | 0.6250000000000001  |   1.0   |
+| 84  | 0.3055555555555556  | 0.41666666666666674 |  0.5932203389830508  | 0.5833333333333334  |   1.0   |
+| 85  | 0.4722222222222223  | 0.5833333333333333  |  0.5932203389830508  | 0.6250000000000001  |   1.0   |
+| 86  | 0.6666666666666667  | 0.45833333333333326 |  0.6271186440677966  | 0.5833333333333334  |   0.0   |
+| 87  | 0.5555555555555556  | 0.12499999999999989 |  0.576271186440678   | 0.5000000000000001  |   1.0   |
+| 88  | 0.36111111111111094 | 0.41666666666666674 |  0.5254237288135593  | 0.5000000000000001  |   1.0   |
+| 89  | 0.33333333333333326 | 0.20833333333333326 |  0.5084745762711864  | 0.5000000000000001  |   1.0   |
+| 90  | 0.33333333333333326 |        0.25         |  0.576271186440678   | 0.4583333333333333  |   1.0   |
+| 91  | 0.4999999999999998  | 0.41666666666666674 |  0.6101694915254237  | 0.5416666666666667  |   1.0   |
+| 92  | 0.4166666666666665  |        0.25         |  0.5084745762711864  | 0.4583333333333333  |   1.0   |
+| 93  | 0.19444444444444442 | 0.12499999999999989 | 0.38983050847457623  |        0.375        |   1.0   |
+| 94  | 0.36111111111111094 | 0.29166666666666674 |  0.5423728813559322  | 0.5000000000000001  |   1.0   |
+| 95  | 0.38888888888888884 | 0.41666666666666674 |  0.5423728813559322  | 0.4583333333333333  |   1.0   |
+| 96  | 0.38888888888888884 |        0.375        |  0.5423728813559322  | 0.5000000000000001  |   1.0   |
+| 97  | 0.5277777777777779  |        0.375        |  0.559322033898305   | 0.5000000000000001  |   1.0   |
+| 98  | 0.2222222222222221  | 0.20833333333333326 |  0.3389830508474576  | 0.4166666666666667  |   1.0   |
+| 99  | 0.38888888888888884 | 0.33333333333333326 |  0.5254237288135593  | 0.5000000000000001  |   1.0   |
+| 100 | 0.5555555555555556  | 0.5416666666666665  |  0.847457627118644   |         1.0         |   0.0   |
+| 101 | 0.4166666666666665  | 0.29166666666666674 |  0.6949152542372881  |        0.75         |   1.0   |
+| 102 | 0.7777777777777777  | 0.41666666666666674 |  0.8305084745762712  | 0.8333333333333335  |   0.0   |
+| 103 | 0.5555555555555556  |        0.375        |  0.7796610169491525  | 0.7083333333333334  |   0.0   |
+| 104 | 0.6111111111111112  | 0.41666666666666674 |  0.8135593220338982  | 0.8750000000000001  |   0.0   |
+| 105 | 0.9166666666666665  | 0.41666666666666674 |  0.9491525423728813  | 0.8333333333333335  |   0.0   |
+| 106 | 0.16666666666666674 | 0.20833333333333326 |  0.5932203389830508  | 0.6666666666666667  |   1.0   |
+| 107 |  0.833333333333333  |        0.375        |  0.8983050847457625  | 0.7083333333333334  |   0.0   |
+| 108 | 0.6666666666666667  | 0.20833333333333326 |  0.8135593220338982  | 0.7083333333333334  |   0.0   |
+| 109 | 0.8055555555555556  | 0.6666666666666667  |  0.8644067796610169  |         1.0         |   0.0   |
+| 110 | 0.6111111111111112  |         0.5         |  0.6949152542372881  | 0.7916666666666667  |   0.0   |
+| 111 | 0.5833333333333335  | 0.29166666666666674 |  0.7288135593220338  |        0.75         |   0.0   |
+| 112 | 0.6944444444444444  | 0.41666666666666674 |  0.7627118644067796  | 0.8333333333333335  |   0.0   |
+| 113 | 0.38888888888888884 | 0.20833333333333326 |  0.6779661016949152  | 0.7916666666666667  |   1.0   |
+| 114 | 0.4166666666666665  | 0.33333333333333326 |  0.6949152542372881  | 0.9583333333333334  |   0.0   |
+| 115 | 0.5833333333333335  |         0.5         |  0.7288135593220338  | 0.9166666666666666  |   0.0   |
+| 116 | 0.6111111111111112  | 0.41666666666666674 |  0.7627118644067796  | 0.7083333333333334  |   0.0   |
+| 117 | 0.9444444444444442  | 0.7499999999999998  |  0.9661016949152543  | 0.8750000000000001  |   0.0   |
+| 118 | 0.9444444444444442  |        0.25         |         1.0          | 0.9166666666666666  |   0.0   |
+| 119 | 0.4722222222222223  | 0.08333333333333337 |  0.6779661016949152  | 0.5833333333333334  |   1.0   |
+| 120 | 0.7222222222222223  |         0.5         |  0.7966101694915254  | 0.9166666666666666  |   0.0   |
+| 121 | 0.36111111111111094 | 0.33333333333333326 |  0.6610169491525424  | 0.7916666666666667  |   1.0   |
+| 122 | 0.9444444444444442  | 0.33333333333333326 |  0.9661016949152543  | 0.7916666666666667  |   0.0   |
+| 123 | 0.5555555555555556  | 0.29166666666666674 |  0.6610169491525424  | 0.7083333333333334  |   1.0   |
+| 124 | 0.6666666666666667  | 0.5416666666666665  |  0.7966101694915254  | 0.8333333333333335  |   0.0   |
+| 125 | 0.8055555555555556  |         0.5         |  0.847457627118644   | 0.7083333333333334  |   0.0   |
+| 126 | 0.5277777777777779  | 0.33333333333333326 |  0.6440677966101694  | 0.7083333333333334  |   1.0   |
+| 127 | 0.4999999999999998  | 0.41666666666666674 |  0.6610169491525424  | 0.7083333333333334  |   0.0   |
+| 128 | 0.5833333333333335  | 0.33333333333333326 |  0.7796610169491525  | 0.8333333333333335  |   0.0   |
+| 129 | 0.8055555555555556  | 0.41666666666666674 |  0.8135593220338982  | 0.6250000000000001  |   0.0   |
+| 130 | 0.8611111111111112  | 0.33333333333333326 |  0.8644067796610169  |        0.75         |   0.0   |
+| 131 |         1.0         | 0.7499999999999998  |  0.9152542372881356  | 0.7916666666666667  |   0.0   |
+| 132 | 0.5833333333333335  | 0.33333333333333326 |  0.7796610169491525  | 0.8750000000000001  |   0.0   |
+| 133 | 0.5555555555555556  | 0.33333333333333326 |  0.6949152542372881  | 0.5833333333333334  |   1.0   |
+| 134 | 0.4999999999999998  |        0.25         |  0.7796610169491525  | 0.5416666666666667  |   1.0   |
+| 135 | 0.9444444444444442  | 0.41666666666666674 |  0.8644067796610169  | 0.9166666666666666  |   0.0   |
+| 136 | 0.5555555555555556  | 0.5833333333333333  |  0.7796610169491525  | 0.9583333333333334  |   0.0   |
+| 137 | 0.5833333333333335  | 0.45833333333333326 |  0.7627118644067796  | 0.7083333333333334  |   0.0   |
+| 138 | 0.4722222222222223  | 0.41666666666666674 |  0.6440677966101694  | 0.7083333333333334  |   1.0   |
+| 139 | 0.7222222222222223  | 0.45833333333333326 |  0.7457627118644068  | 0.8333333333333335  |   0.0   |
+| 140 | 0.6666666666666667  | 0.45833333333333326 |  0.7796610169491525  | 0.9583333333333334  |   0.0   |
+| 141 | 0.7222222222222223  | 0.45833333333333326 |  0.6949152542372881  | 0.9166666666666666  |   0.0   |
+| 142 | 0.4166666666666665  | 0.29166666666666674 |  0.6949152542372881  |        0.75         |   1.0   |
+| 143 | 0.6944444444444444  |         0.5         |  0.8305084745762712  | 0.9166666666666666  |   0.0   |
+| 144 | 0.6666666666666667  | 0.5416666666666665  |  0.7966101694915254  |         1.0         |   0.0   |
+| 145 | 0.6666666666666667  | 0.41666666666666674 |  0.711864406779661   | 0.9166666666666666  |   0.0   |
+| 146 | 0.5555555555555556  | 0.20833333333333326 |  0.6779661016949152  |        0.75         |   0.0   |
+| 147 | 0.6111111111111112  | 0.41666666666666674 |  0.711864406779661   | 0.7916666666666667  |   0.0   |
+| 148 | 0.5277777777777779  | 0.5833333333333333  |  0.7457627118644068  | 0.9166666666666666  |   0.0   |
+| 149 | 0.44444444444444464 | 0.41666666666666674 |  0.6949152542372881  | 0.7083333333333334  |   1.0   |
++-----+---------------------+---------------------+----------------------+---------------------+---------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hitung-nilai-akurasi-pengelompokkan-setelah-proses-perhitungan">
+<h3>Hitung Nilai Akurasi Pengelompokkan Setelah Proses Perhitungan<a class="headerlink" href="#hitung-nilai-akurasi-pengelompokkan-setelah-proses-perhitungan" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">mode</span>
+
+<span class="n">predicted_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">true_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># fungsi untuk mapping cluster</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">best_cluster_mapping</span><span class="p">(</span><span class="n">true_labels</span><span class="p">,</span> <span class="n">predicted_labels</span><span class="p">):</span>
+    <span class="n">label_map</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">predicted_labels</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">predicted_labels</span><span class="p">):</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">predicted_labels</span> <span class="o">==</span> <span class="n">cluster</span>
+        <span class="n">most_common</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">true_labels</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span>
+        <span class="n">label_map</span><span class="p">[</span><span class="n">cluster</span><span class="p">]</span> <span class="o">=</span> <span class="n">most_common</span>
+    <span class="k">return</span> <span class="n">label_map</span>
+
+<span class="c1"># proses menyimpan data</span>
+<span class="n">label_map</span> <span class="o">=</span> <span class="n">best_cluster_mapping</span><span class="p">(</span><span class="n">true_labels</span><span class="p">,</span> <span class="n">predicted_labels</span><span class="p">)</span>
+<span class="n">mapped_preds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">label_map</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">predicted_labels</span><span class="p">])</span>
+
+<span class="c1"># Hitung akurasi</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">true_labels</span><span class="p">,</span> <span class="n">mapped_preds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi FCM setelah pemetaan label: </span><span class="si">{</span><span class="n">accuracy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi FCM setelah pemetaan label: 89.33%
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hitung-nilai-silhouette-score-fcm">
+<h3>Hitung Nilai Silhouette Score FCM<a class="headerlink" href="#hitung-nilai-silhouette-score-fcm" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">silhouette_score</span>
+
+<span class="n">Silhouette_scoreFCM</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">data_normalisasi</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Silhouette Score Cluster 3: </span><span class="si">{</span><span class="n">Silhouette_scoreFCM</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Silhouette Score Cluster 3: 0.4955
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="perbandingan-silhouette-score-dan-nilai-akurasi-dari-metode-fcm-dan-k-means">
+<h3>Perbandingan Silhouette Score dan Nilai Akurasi dari Metode FCM dan K-Means<a class="headerlink" href="#perbandingan-silhouette-score-dan-nilai-akurasi-dari-metode-fcm-dan-k-means" title="Link to this heading">#</a></h3>
+<p>Berdasarkan hasil Training untuk 3 Cluster pada data IRIS menggunakan dua metode yakni K-Means dan FCM dapat dibandingkan untuk nilai akurasi dan silhouettenya. Untuk nilai akurasi metode K-Means yakni sebesar 88% dengan nilai Silhouette Scorenya sebesar 0.5043, sedangkan jika menggunakan metode FCM untuk nilai akurasi nya yakni 89% dengan nilai Silhouette sebesar 0.4955. Dapat disimpulakan bahwa untuk akurasi menggunakan metode FCM lebih baik dibandingkan dengan menggunakan metode K-Means, sedangkan untuk Silhouette Score lebih baik menggunakan K-Means jadi kemiripan data antar cluster itu dapat didefinisikan dengan baik.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_counts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;C3_K-Means&quot;</span><span class="p">,</span> <span class="s2">&quot;C3_FCM&quot;</span><span class="p">]</span>
+<span class="n">silhouette_scores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">silhouette_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Silhouette_scoreC3</span><span class="p">)</span>
+<span class="n">silhouette_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Silhouette_scoreFCM</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cluster_counts</span><span class="p">,</span> <span class="n">silhouette_scores</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;nilai x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Silhouette Score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;K-Means vs FCM&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">cluster_counts</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ba34d5e61ad2273926c086599be5984dcdac9023c47a2164e880a1fe0b804f0f.png" src="_images/ba34d5e61ad2273926c086599be5984dcdac9023c47a2164e880a1fe0b804f0f.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2005,6 +3130,7 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 3
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">K-Means Clustering</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-algoritma-clustering-k-means">Langkah-Langkah Algoritma Clustering K-Means</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-inertia">Menghitung Inertia</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-silhouette-score">Menghitung Silhouette Score</a></li>
@@ -2041,6 +3167,24 @@ ID: 150, fitur: (5.9, 3.0, 5.1, 1.8), Cluster: 3
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fuzzy-c-means">Fuzzy C-Means</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-clustering-menggunakan-fcm">Langkah-Langkah Clustering menggunakan FCM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-pada-data-iris">Implementasi pada Data Iris</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql-menggunakan-aiven-io">Koneksi ke Database MySQL menggunakan aiven.io</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-kolom-id-dan-species">Menghapus Kolom Id dan Species</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data-iris-menggunakan-min-max-scaler">Normalisasi Data Iris Menggunakan Min Max Scaler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-perhitungan-untuk-fuzzy-c-means">Code Perhitungan untuk Fuzzy C-Means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-data-setelah-proses-perhitungan">Clustering Data Setelah Proses Perhitungan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-nilai-akurasi-pengelompokkan-setelah-proses-perhitungan">Hitung Nilai Akurasi Pengelompokkan Setelah Proses Perhitungan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-nilai-silhouette-score-fcm">Hitung Nilai Silhouette Score FCM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-silhouette-score-dan-nilai-akurasi-dari-metode-fcm-dan-k-means">Perbandingan Silhouette Score dan Nilai Akurasi dari Metode FCM dan K-Means</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
