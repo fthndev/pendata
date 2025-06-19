@@ -58,7 +58,7 @@ for data in data_db:
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mOperationalError[0m                          Traceback (most recent call last)
-[0;32m/tmp/ipython-input-5-2924301928.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[0;32m/tmp/ipython-input-3-2924301928.py[0m in [0;36m<cell line: 0>[0;34m()[0m
 [1;32m      8[0m [0mDB_PASS[0m [0;34m=[0m [0;34m"AVNS_cy1i2eXC9KoFrhmUO63"[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      9[0m [0;34m[0m[0m
 [0;32m---> 10[0;31m connect_1 = psycopg2.connect(

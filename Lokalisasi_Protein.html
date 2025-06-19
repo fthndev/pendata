@@ -1,0 +1,2626 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lokalisasi_Protein';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Metode Bining (Diskritisasi)" href="Bining%28Diskritisasi%29_K-Means.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Website Penambangan Data
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Data_Mining_Data_Understanding.html">Data Understanding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Mining_Outlier.html">Data Understanding - Tipe data dan Deteksi Outlier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Metode_LOF_Data_Outlier.html">Deteksi Oulier Menggunakan Metode LOF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Naive%20Bayes.html">Klasifikasi menggunakan Naive Bayes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Proyek_UTS_Penambangan_Data.html">Project Model Klasifikasi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="k-means.html">K-Means Clustering</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Decision_Tree.html">Decision Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bining%28Diskritisasi%29_K-Means.html">Metode Bining (Diskritisasi)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLokalisasi_Protein.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lokalisasi_Protein.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">Sumber Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengambilan-data">Pengambilan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">Struktur Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-dan-label">Fitur dan Label</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-dari-dataset">Identifikasi Kualitas dari Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-data-outlier">Deteksi Data Outlier</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepocessing-data">Prepocessing Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengahapus-outlier-pada-data">Mengahapus Outlier Pada Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-scaler">Min-Max Scaler</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-naive-bayes">Modelling Klasifikasi Menggunakan Naive Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latih-model">Latih Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-klasifikasi">Proses Klasifikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi">Evaluasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-knn-k-nearest-neighbours">Modelling Klasifikasi Menggunakan KNN (K Nearest Neighbours)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Latih Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Proses Klasifikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Evaluasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-mennggunakan-decision-tree">Modelling Klasifikasi Mennggunakan Decision Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Latih Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Proses Klasifikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Evaluasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Evaluasi</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pediksi-lokasi-lokalisasi-protein-pada-bakteri-gram-negatif">
+<h1>Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif<a class="headerlink" href="#pediksi-lokasi-lokalisasi-protein-pada-bakteri-gram-negatif" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pendahuluan">
+<h1>Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h1>
+<p>Prediksi lokasi lokalisasi protein pada bakteri Gram-negatif merupakan suatu pendekatan penting dalam bidang bioinformatika dan mikrobiologi struktural. Lokalisasi protein merujuk pada penentuan di mana sebuah protein berada atau berfungsi dalam struktur sel. Pada bakteri Gram-negatif, yang memiliki struktur dinding sel kompleks dengan dua lapisan membran (membran dalam dan membran luar) serta ruang periplasmik di antaranya, pengetahuan tentang lokasi protein menjadi sangat penting untuk memahami fungsinya secara menyeluruh.</p>
+<p>Protein dalam bakteri Gram-negatif dapat terlokalisasi di beberapa kompartemen, seperti sitoplasma, membran dalam, periplasma, membran luar, dan lingkungan ekstraseluler. Masing-masing lokasi ini berperan dalam berbagai proses biologis seperti transportasi, sintesis energi, pertahanan terhadap lingkungan, dan interaksi patogen inang. Oleh karena itu, mengetahui lokasi protein tidak hanya membantu mengungkap fungsinya, tetapi juga membuka peluang untuk pengembangan antibiotik baru dan studi patogenisitas mikroba.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
+<h1>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
+<section id="sumber-data">
+<h2>Sumber Data<a class="headerlink" href="#sumber-data" title="Link to this heading">#</a></h2>
+<p>Dataset diambil dari link dibawh ini:</p>
+<p><a class="reference external" href="https://archive.ics.uci.edu/dataset/110/yeast">https://archive.ics.uci.edu/dataset/110/yeast</a></p>
+<p>“Sistem Pakar untuk Memprediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif”, Kenta Nakai &amp; Minoru Kanehisa, PROTEINS: Struktur, Fungsi, dan Genetika 11:95-110, 1991. Referensi: “Basis Pengetahuan untuk Memprediksi Lokasi Lokalisasi Protein pada Sel Eukariotik”, Kenta Nakai &amp; Minoru Kanehisa, Genomics 14:897-911, 1992.</p>
+</section>
+<section id="pengambilan-data">
+<h2>Pengambilan Data<a class="headerlink" href="#pengambilan-data" title="Link to this heading">#</a></h2>
+<p>Mengambil data pada site UCI, perlu untuk menginstall package yang telah disediakan oleh UCI Dataset. Instalasi dilakukan berguna untuk menarik data yang berasal dari UCI dataset agar dapat diolah. peritah untuk mengambil data dari UCI dataset dapat di lihat ketika menekan tombol import in python pada datase yang diinginkan dan ikuti perintah tersebut agar data dapat diambil dari UCI dataset. Contoh pengambilan data dari UCI dataset dapat dilihat pada gambar dan perintah berikut:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#install librari ucimlrepo</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>ucimlrepo
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ucimlrepo in /usr/local/lib/python3.11/dist-packages (0.0.7)
+Requirement already satisfied: pandas&gt;=1.0.0 in /usr/local/lib/python3.11/dist-packages (from ucimlrepo) (2.2.2)
+Requirement already satisfied: certifi&gt;=2020.12.5 in /usr/local/lib/python3.11/dist-packages (from ucimlrepo) (2025.6.15)
+Requirement already satisfied: numpy&gt;=1.23.2 in /usr/local/lib/python3.11/dist-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2.0.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.11/dist-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.11/dist-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2025.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /usr/local/lib/python3.11/dist-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2025.2)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=1.0.0-&gt;ucimlrepo) (1.17.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ucimlrepo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_ucirepo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Mengambil dataset Yeast (ID 110 dari UCI ML Repository)</span>
+<span class="n">yeast</span> <span class="o">=</span> <span class="n">fetch_ucirepo</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">110</span><span class="p">)</span>
+
+<span class="c1"># Memisahkan fitur dan target dalam bentuk dataframe</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">yeast</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">features</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">yeast</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">targets</span>
+
+<span class="c1"># Menggabungkan fitur dan target menjadi satu dataframe</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">yeast</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">original</span>
+
+<span class="c1"># Menyimpan dataset asli ke dalam file CSV</span>
+<span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;yeast_dataset.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan informasi tentang kolom dan tipe datanya</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+
+<span class="c1"># Menampilkan 5 baris pertama dari dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Menampilkan metadata (informasi deskriptif dataset)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Metadata:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">yeast</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan informasi tentang variabel (fitur dan target)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Informasi Variabel:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">yeast</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1484 entries, 0 to 1483
+Data columns (total 10 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   Sequence_Name      1484 non-null   object 
+ 1   mcg                1484 non-null   float64
+ 2   gvh                1484 non-null   float64
+ 3   alm                1484 non-null   float64
+ 4   mit                1484 non-null   float64
+ 5   erl                1484 non-null   float64
+ 6   pox                1484 non-null   float64
+ 7   vac                1484 non-null   float64
+ 8   nuc                1484 non-null   float64
+ 9   localization_site  1484 non-null   object 
+dtypes: float64(8), object(2)
+memory usage: 116.1+ KB
+None
+  Sequence_Name   mcg   gvh   alm   mit  erl  pox   vac   nuc  \
+0    ADT1_YEAST  0.58  0.61  0.47  0.13  0.5  0.0  0.48  0.22   
+1    ADT2_YEAST  0.43  0.67  0.48  0.27  0.5  0.0  0.53  0.22   
+2    ADT3_YEAST  0.64  0.62  0.49  0.15  0.5  0.0  0.53  0.22   
+3    AAR2_YEAST  0.58  0.44  0.57  0.13  0.5  0.0  0.54  0.22   
+4    AATM_YEAST  0.42  0.44  0.48  0.54  0.5  0.0  0.48  0.22   
+
+  localization_site  
+0               MIT  
+1               MIT  
+2               MIT  
+3               NUC  
+4               MIT  
+
+Metadata:
+{&#39;uci_id&#39;: 110, &#39;name&#39;: &#39;Yeast&#39;, &#39;repository_url&#39;: &#39;https://archive.ics.uci.edu/dataset/110/yeast&#39;, &#39;data_url&#39;: &#39;https://archive.ics.uci.edu/static/public/110/data.csv&#39;, &#39;abstract&#39;: &#39;Predicting the Cellular Localization Sites of Proteins&#39;, &#39;area&#39;: &#39;Biology&#39;, &#39;tasks&#39;: [&#39;Classification&#39;], &#39;characteristics&#39;: [&#39;Multivariate&#39;], &#39;num_instances&#39;: 1484, &#39;num_features&#39;: 8, &#39;feature_types&#39;: [&#39;Real&#39;], &#39;demographics&#39;: [], &#39;target_col&#39;: [&#39;localization_site&#39;], &#39;index_col&#39;: [&#39;Sequence_Name&#39;], &#39;has_missing_values&#39;: &#39;no&#39;, &#39;missing_values_symbol&#39;: None, &#39;year_of_dataset_creation&#39;: 1991, &#39;last_updated&#39;: &#39;Sat Oct 28 2023&#39;, &#39;dataset_doi&#39;: &#39;10.24432/C5KG68&#39;, &#39;creators&#39;: [&#39;Kenta Nakai&#39;], &#39;intro_paper&#39;: None, &#39;additional_info&#39;: {&#39;summary&#39;: &#39;Predicted Attribute: Localization site of protein. ( non-numeric ).\r\n\r\nThe references below describe a predecessor to this dataset and its development. They also give results (not cross-validated) for classification by a rule-based expert system with that version of the dataset.\r\n\r\nReference: &quot;Expert Sytem for Predicting Protein Localization Sites in Gram-Negative Bacteria&quot;, Kenta Nakai &amp; Minoru Kanehisa,  PROTEINS: Structure, Function, and Genetics 11:95-110, 1991.\r\n\r\nReference: &quot;A Knowledge Base for Predicting Protein Localization Sites in Eukaryotic Cells&quot;, Kenta Nakai &amp; Minoru Kanehisa, Genomics 14:897-911, 1992.&#39;, &#39;purpose&#39;: None, &#39;funded_by&#39;: None, &#39;instances_represent&#39;: None, &#39;recommended_data_splits&#39;: None, &#39;sensitive_data&#39;: None, &#39;preprocessing_description&#39;: None, &#39;variable_info&#39;: None, &#39;citation&#39;: None}}
+
+Informasi Variabel:
+                name     role         type demographic  \
+0      Sequence_Name       ID  Categorical        None   
+1                mcg  Feature   Continuous        None   
+2                gvh  Feature   Continuous        None   
+3                alm  Feature   Continuous        None   
+4                mit  Feature   Continuous        None   
+5                erl  Feature   Continuous        None   
+6                pox  Feature   Continuous        None   
+7                vac  Feature   Continuous        None   
+8                nuc  Feature   Continuous        None   
+9  localization_site   Target  Categorical        None   
+
+                                         description units missing_values  
+0       Accession number for the SWISS-PROT database  None             no  
+1  McGeoch&#39;s method for signal sequence recognition.  None             no  
+2  von Heijne&#39;s method for signal sequence recogn...  None             no  
+3  Score of the ALOM membrane spanning region pre...  None             no  
+4  Score of discriminant analysis of the amino ac...  None             no  
+5  Presence of HDEL substring (thought to act as ...  None             no  
+6    Peroxisomal targeting signal in the C-terminus.  None             no  
+7  Score of discriminant analysis of the amino ac...  None             no  
+8  Score of discriminant analysis of nuclear loca...  None             no  
+9                                               None  None             no  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eksplorasi-data">
+<h2>Eksplorasi Data<a class="headerlink" href="#eksplorasi-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-9daf2a01-fedd-4249-8c66-93685b04d3c6" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sequence_Name</th>
+      <th>mcg</th>
+      <th>gvh</th>
+      <th>alm</th>
+      <th>mit</th>
+      <th>erl</th>
+      <th>pox</th>
+      <th>vac</th>
+      <th>nuc</th>
+      <th>localization_site</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ADT1_YEAST</td>
+      <td>0.58</td>
+      <td>0.61</td>
+      <td>0.47</td>
+      <td>0.13</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.48</td>
+      <td>0.22</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ADT2_YEAST</td>
+      <td>0.43</td>
+      <td>0.67</td>
+      <td>0.48</td>
+      <td>0.27</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.53</td>
+      <td>0.22</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ADT3_YEAST</td>
+      <td>0.64</td>
+      <td>0.62</td>
+      <td>0.49</td>
+      <td>0.15</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.53</td>
+      <td>0.22</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AAR2_YEAST</td>
+      <td>0.58</td>
+      <td>0.44</td>
+      <td>0.57</td>
+      <td>0.13</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.54</td>
+      <td>0.22</td>
+      <td>NUC</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AATM_YEAST</td>
+      <td>0.42</td>
+      <td>0.44</td>
+      <td>0.48</td>
+      <td>0.54</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.48</td>
+      <td>0.22</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1479</th>
+      <td>YUR1_YEAST</td>
+      <td>0.81</td>
+      <td>0.62</td>
+      <td>0.43</td>
+      <td>0.17</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.53</td>
+      <td>0.22</td>
+      <td>ME2</td>
+    </tr>
+    <tr>
+      <th>1480</th>
+      <td>ZIP1_YEAST</td>
+      <td>0.47</td>
+      <td>0.43</td>
+      <td>0.61</td>
+      <td>0.40</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.48</td>
+      <td>0.47</td>
+      <td>NUC</td>
+    </tr>
+    <tr>
+      <th>1481</th>
+      <td>ZNRP_YEAST</td>
+      <td>0.67</td>
+      <td>0.57</td>
+      <td>0.36</td>
+      <td>0.19</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.56</td>
+      <td>0.22</td>
+      <td>ME2</td>
+    </tr>
+    <tr>
+      <th>1482</th>
+      <td>ZUO1_YEAST</td>
+      <td>0.43</td>
+      <td>0.40</td>
+      <td>0.60</td>
+      <td>0.16</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.53</td>
+      <td>0.39</td>
+      <td>NUC</td>
+    </tr>
+    <tr>
+      <th>1483</th>
+      <td>G6PD_YEAST</td>
+      <td>0.65</td>
+      <td>0.54</td>
+      <td>0.54</td>
+      <td>0.13</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>0.53</td>
+      <td>0.22</td>
+      <td>CYT</td>
+    </tr>
+  </tbody>
+</table>
+<p>1484 rows × 10 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-9daf2a01-fedd-4249-8c66-93685b04d3c6')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-9daf2a01-fedd-4249-8c66-93685b04d3c6 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-9daf2a01-fedd-4249-8c66-93685b04d3c6');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<section id="struktur-dataset">
+<h3>Struktur Dataset<a class="headerlink" href="#struktur-dataset" title="Link to this heading">#</a></h3>
+<section id="fitur-dan-label">
+<h4>Fitur dan Label<a class="headerlink" href="#fitur-dan-label" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ukuran fitur</span>
+<span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1484, 10)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Bedasarkan ukurannya datanya terdapat 1484 data dan terdapat 10 kolom</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># jumlah kolom</span>
+<span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Sequence_Name&#39;, &#39;mcg&#39;, &#39;gvh&#39;, &#39;alm&#39;, &#39;mit&#39;, &#39;erl&#39;, &#39;pox&#39;, &#39;vac&#39;, &#39;nuc&#39;,
+       &#39;localization_site&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fitur merupakan sebuah atribut atau variabel yang dapat menentukan hasil prediksi atau clustering nantinya.</p>
+<p>Fitur yang terdapat pada dataset:</p>
+<ul class="simple">
+<li><p>msg : Skor dari metode McGeoch untuk pengenalan sinyal sekuens.</p></li>
+<li><p>gvh : Skor dari metode von Heijne untuk pengenalan sinyal sekuens.</p></li>
+<li><p>alm : Skor dari ALOM (membrane-spanning region prediction).</p></li>
+<li><p>mit : Skor dari analisis diskriminan terhadap asam amino untuk prediksi mitokondria.</p></li>
+<li><p>erl : Apakah ada substring HDEL (sinyal retensi ER).</p></li>
+<li><p>pox : Adanya sinyal target peroksisomal di bagian C-terminus.</p></li>
+<li><p>vac : Skor dari analisis diskriminan untuk vakuola.</p></li>
+<li><p>nuc : Skor dari analisis diskriminan untuk nukleus.</p></li>
+<li><p>localization_site : Target atau label klasifikasi, yaitu lokasi akhir protein dalam sel.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tipe data</span>
+<span class="n">data</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Sequence_Name</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>mcg</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>gvh</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>alm</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>mit</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>erl</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>pox</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>vac</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>nuc</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>localization_site</th>
+      <td>object</td>
+    </tr>
+  </tbody>
+</table>
+</div><br><label><b>dtype:</b> object</label></div></div>
+</div>
+<p>Tipe Data fitur yang terdapat pada dataset:</p>
+<ul class="simple">
+<li><p>msg : Float (Numerik).</p></li>
+<li><p>gvh : Float (Numerik).</p></li>
+<li><p>alm : Float (Numerik).</p></li>
+<li><p>mit : Float (Numerik).</p></li>
+<li><p>erl : Float (Numerik).</p></li>
+<li><p>pox : Float (Numerik).</p></li>
+<li><p>vac : Float (Numerik).</p></li>
+<li><p>nuc : Float (Numerik).</p></li>
+<li><p>localization_site : Object berisi string Label.</p></li>
+</ul>
+</section>
+<section id="identifikasi-kualitas-dari-dataset">
+<h4>Identifikasi Kualitas dari Dataset<a class="headerlink" href="#identifikasi-kualitas-dari-dataset" title="Link to this heading">#</a></h4>
+<section id="deteksi-missing-value">
+<h5>Deteksi Missing Value<a class="headerlink" href="#deteksi-missing-value" title="Link to this heading">#</a></h5>
+<p>Dalam proses analisis data, langkah awal yang sangat penting adalah melakukan deteksi terhadap missing value, yaitu nilai-nilai yang tidak tercatat atau tidak tersedia dalam dataset. Deteksi ini bertujuan untuk mengidentifikasi data yang tidak lengkap, yang dapat memengaruhi akurasi hasil analisis statistik maupun performa model machine learning.</p>
+<p>Cara Penanganan jika terdapat Missing Value:</p>
+<ul class="simple">
+<li><p>Mengabaikan dan membuang Missing Data</p></li>
+<li><p>Estimasi Parameter</p></li>
+<li><p>Imputasi</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Detect rows with missing values</span>
+<span class="n">rows_with_missing</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Detect Missing Values:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rows_with_missing</span><span class="p">)</span>
+
+<span class="c1"># Detect missing values atau null</span>
+<span class="n">missing_values</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+
+<span class="c1"># Hitung nilai yang hilang di setiap kolom</span>
+<span class="n">missing_counts</span> <span class="o">=</span> <span class="n">missing_values</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Display missing value counts</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missing Value Counts:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">missing_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Detect Missing Values:
+Empty DataFrame
+Columns: [Sequence_Name, mcg, gvh, alm, mit, erl, pox, vac, nuc, localization_site]
+Index: []
+Missing Value Counts:
+Sequence_Name        0
+mcg                  0
+gvh                  0
+alm                  0
+mit                  0
+erl                  0
+pox                  0
+vac                  0
+nuc                  0
+localization_site    0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Berdasarkan hasil identifikasi bashwa setiap fitur pada dataset ini sudah terbebas atau sudah besih dari nilai null atau missing value sehingga tidak perlu diadakannya proses prepocessing untuk penanganan data yang mmissing.</p>
+</section>
+<section id="deteksi-data-outlier">
+<h5>Deteksi Data Outlier<a class="headerlink" href="#deteksi-data-outlier" title="Link to this heading">#</a></h5>
+<p>Deteksi outlier adalah proses untuk mengidentifikasi data yang memiliki perilaku atau karakteristik yang sangat berbeda dari sebagian besar data lainnya dalam suatu dataset. Outlier, atau pencilan, merupakan titik data yang jauh menyimpang dari pola umum dan dapat muncul karena berbagai alasan, seperti kesalahan pencatatan, kondisi khusus, atau memang fenomena nyata yang jarang terjadi.</p>
+<p>Dalam konteks analisis data, keberadaan outlier sangat penting untuk diperhatikan karena dapat mempengaruhi hasil analisis statistik dan performa model machine learning. Misalnya, dalam regresi linear, satu outlier yang ekstrem dapat menyebabkan garis prediksi menjadi sangat miring dan tidak akurat.</p>
+<p><strong>Salah satu metode untuk deteksi Outlier data yakni metode LOF:</strong></p>
+<p>Local Outlier Factor (LOF) adalah sebuah metode deteksi outlier berbasis kepadatan lokal yang dirancang untuk mengidentifikasi titik data yang memiliki perilaku menyimpang dibandingkan dengan lingkungan sekitarnya. Metode ini diperkenalkan untuk mengatasi keterbatasan pendekatan tradisional yang hanya mengandalkan jarak global tanpa mempertimbangkan variasi lokal dalam distribusi data.</p>
+<p>Proses LOF dimulai dengan memilih parameter k yang merepresentasikan jumlah tetangga terdekat yang akan dipertimbangkan. Kemudian, untuk setiap titik data, algoritma menghitung jarak ke tetangga-tetangganya dan menentukan tingkat kepadatan lokal berdasarkan seberapa dekat atau jauh tetangga-tetangga tersebut.</p>
+<div class="math notranslate nohighlight">
+\[
+\text{LOF}_k(p) = \frac{1}{|\mathcal{N}_k(p)|} \sum_{o \in \mathcal{N}_k(p)} \frac{\text{lrd}_k(o)}{\text{lrd}_k(p)}
+\]</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p>( <span class="math notranslate nohighlight">\(mathcal{N}_k(p) \)</span>) adalah himpunan <strong>k tetangga terdekat</strong> dari <span class="math notranslate nohighlight">\(( p \)</span>)</p></li>
+<li><p>( <span class="math notranslate nohighlight">\(text{lrd}_k(p) \)</span>) adalah <strong>local reachability density</strong> dari <span class="math notranslate nohighlight">\(( p \)</span>)</p></li>
+</ul>
+<p>di mana:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{lrd}_k(p) = \left( \frac{1}{|\mathcal{N}_k(p)|} \sum_{o \in \mathcal{N}_k(p)} \max \left\{ \text{dist}(p, o),\ \text{k-dist}(o) \right\} \right)^{-1}
+\]</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p>( <span class="math notranslate nohighlight">\(text{dist}(p, o) \)</span>) = jarak antara titik <span class="math notranslate nohighlight">\(( p \)</span>) dan tetangganya <span class="math notranslate nohighlight">\(( o \)</span>)</p></li>
+<li><p>( <span class="math notranslate nohighlight">\(text{k-dist}(o) \)</span>) = jarak dari <span class="math notranslate nohighlight">\(( o \)</span>) ke tetangga ke-k</p></li>
+<li><p>Fungsi <code class="docutils literal notranslate"><span class="pre">max{}</span></code> digunakan agar tidak terlalu sensitif terhadap outlier yang jauh</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># select data numerik</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">])</span>
+
+<span class="n">lof</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">contamination</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">lof</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;outlier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pred</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;outlier&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outlier
+ 1    1409
+-1      75
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Berdasarkan hasil analisis outlier menggunakan metode LOF terdapat sebnyak 75 data dari total 1484 yang merupakan outlier</p>
+</section>
+</section>
+<section id="visualisasi-data">
+<h4>Visualisasi Data<a class="headerlink" href="#visualisasi-data" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;localization_site&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Jumlah Sampel per Lokasi Protein&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Lokasi&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Jumlah Sampel&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipython-input-9-1461880475.py:6: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.countplot(x=&#39;localization_site&#39;, data=data, palette=&#39;viridis&#39;)
+</pre></div>
+</div>
+<img alt="_images/4d416501b5ecaeac286856846213573756aa3b2f1f3274d49689bec782511b5a.png" src="_images/4d416501b5ecaeac286856846213573756aa3b2f1f3274d49689bec782511b5a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">data</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Distribusi Setiap Fitur&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1200x1000 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/19e88b7a7dba853c8bb251a463179afeb5936b35680fb59cfbc61dcd841c7f2e.png" src="_images/19e88b7a7dba853c8bb251a463179afeb5936b35680fb59cfbc61dcd841c7f2e.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="prepocessing-data">
+<h2>Prepocessing Data<a class="headerlink" href="#prepocessing-data" title="Link to this heading">#</a></h2>
+<section id="mengahapus-outlier-pada-data">
+<h3>Mengahapus Outlier Pada Data<a class="headerlink" href="#mengahapus-outlier-pada-data" title="Link to this heading">#</a></h3>
+<p>Setelah ditemukan 75 outlier menggunakan metode LOF maka diperlukan adanya penghapusan pada data tersbut agar tidak mempengaruhi pada proses perhitungan akurasi ataupun klasifikasi pada akhirnya.</p>
+<p>Keterangan Outlier:</p>
+<ul class="simple">
+<li><p>Data Outlier disimbolkan dengan (-1)</p></li>
+<li><p>Non Outlier (1)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengambil data yang bukan -1</span>
+<span class="n">data_clean</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;outlier&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># menghapus column outlier</span>
+<span class="n">data_clean</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;outlier&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data awal:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data setelah outlier dihapus:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_clean</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah data awal: 1484
+Jumlah data setelah outlier dihapus: 1409
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="min-max-scaler">
+<h3>Min-Max Scaler<a class="headerlink" href="#min-max-scaler" title="Link to this heading">#</a></h3>
+<p>Min-Max Scaler adalah salah satu metode normalisasi data yang bertujuan untuk mengubah skala fitur numerik agar berada dalam rentang tertentu, umumnya antara 0 dan 1. Teknik ini digunakan agar semua fitur memiliki kontribusi yang seimbang saat digunakan oleh algoritma pembelajaran mesin.</p>
+<div class="math notranslate nohighlight">
+\[
+X_{\text{scaled}} = \frac{X - X_{\min}}{X_{\max} - X_{\min}}
+\]</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((X\)</span>) = nilai asli</p></li>
+<li><p><span class="math notranslate nohighlight">\((X_{\min}\)</span>) = nilai minimum dari fitur</p></li>
+<li><p><span class="math notranslate nohighlight">\((X_{\max}\)</span>) = nilai maksimum dari fitur</p></li>
+<li><p><span class="math notranslate nohighlight">\((X_{\text{scaled}}\)</span>) = nilai hasil normalisasi (antara 0 dan 1)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span>
+
+<span class="c1"># 1. Ambil hanya fitur numerik</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data_clean</span><span class="p">[[</span><span class="s1">&#39;mcg&#39;</span><span class="p">,</span> <span class="s1">&#39;gvh&#39;</span><span class="p">,</span> <span class="s1">&#39;alm&#39;</span><span class="p">,</span> <span class="s1">&#39;mit&#39;</span><span class="p">,</span> <span class="s1">&#39;erl&#39;</span><span class="p">,</span> <span class="s1">&#39;pox&#39;</span><span class="p">,</span> <span class="s1">&#39;vac&#39;</span><span class="p">,</span> <span class="s1">&#39;nuc&#39;</span><span class="p">]]</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+
+<span class="c1"># 3. Fit dan transform data</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">X_scaled_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># 5. (Opsional) gabungkan dengan label jika ingin lihat datanya lengkap</span>
+<span class="n">data_scaled</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_scaled_df</span><span class="p">,</span> <span class="n">data_clean</span><span class="p">[</span><span class="s1">&#39;localization_site&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data_scaled</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        mcg       gvh       alm       mit  erl  pox       vac    nuc  \
+0  0.493976  0.571429  0.481481  0.151163  0.0  0.0  0.466667  0.125   
+1  0.313253  0.649351  0.500000  0.313953  0.0  0.0  0.577778  0.125   
+2  0.566265  0.584416  0.518519  0.174419  0.0  0.0  0.577778  0.125   
+3  0.493976  0.350649  0.666667  0.151163  0.0  0.0  0.600000  0.125   
+4  0.301205  0.350649  0.500000  0.627907  0.0  0.0  0.466667  0.125   
+
+  localization_site  
+0               MIT  
+1               MIT  
+2               MIT  
+3               NUC  
+4               MIT  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Setalah proses penghapusan terdapat sebanyak 1409 data yang bersih dari outlier.</p>
+</section>
+</section>
+<section id="modelling-klasifikasi-menggunakan-naive-bayes">
+<h2>Modelling Klasifikasi Menggunakan Naive Bayes<a class="headerlink" href="#modelling-klasifikasi-menggunakan-naive-bayes" title="Link to this heading">#</a></h2>
+<p>Proses modeling adalah merupakan suatu tahapan dalam analisis data, di mana kita membangun sebuah model matematis atau algoritma pembelajaran mesin yang dapat mengenali pola dari data, dan menggunakannya untuk membuat prediksi atau keputusan otomatis.</p>
+<p>Tujuan dari proses ini adalah untuk mengubah data mentah yang telah diprepocessing menjadi sebuah model yang dapat belajar dari data, lalu digunakan untuk memecahkan masalah tertentu, seperti klasifikasi, regresi, deteksi outlier, dsb.</p>
+<p>Pada saat ini, proses modelling akan menggunakan metode Naive Bayes untuk proses Klasifikasinya.</p>
+<p><strong>Naive Bayes</strong> adalah salah satu metode klasifikasi yang sederhana namun sangat efektif dalam dunia pembelajaran mesin (machine learning). Metode ini bekerja berdasarkan prinsip probabilitas, khususnya Teorema Bayes, yang digunakan untuk memperkirakan kemungkinan suatu data termasuk ke dalam sebuah kelas tertentu.</p>
+<p>Ciri khas dari metode ini adalah anggapan bahwa setiap fitur (atau atribut) pada data bersifat saling independen, artinya kemunculan satu fitur tidak dipengaruhi oleh fitur lainnya. Meskipun anggapan ini sering kali tidak sepenuhnya benar dalam kenyataan, pendekatan “naive” ini justru membuat perhitungan menjadi lebih sederhana dan efisien, serta tetap menghasilkan performa yang kompetitif dalam banyak kasus.</p>
+<p>Teorema Bayes:</p>
+<div class="math notranslate nohighlight">
+\[
+P(C \mid X) = \frac{P(X \mid C) \cdot P(C)}{P(X)}
+\]</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(( P(C \mid X) \)</span>): <strong>Posterior</strong> – probabilitas kelas <span class="math notranslate nohighlight">\(( C \)</span>) diberikan data <span class="math notranslate nohighlight">\(( X \)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( P(X \mid C) \)</span>): <strong>Likelihood</strong> – probabilitas data <span class="math notranslate nohighlight">\(( X \)</span>) muncul jika kelasnya ( C )</p></li>
+<li><p><span class="math notranslate nohighlight">\(( P(C) \)</span>): <strong>Prior</strong> – probabilitas awal kelas <span class="math notranslate nohighlight">\(( C \)</span>) sebelum melihat data</p></li>
+<li><p><span class="math notranslate nohighlight">\(( P(X) \)</span>): Probabilitas keseluruhan data <span class="math notranslate nohighlight">\(( X \)</span>) (konstanta untuk semua kelas)</p></li>
+</ul>
+<section id="latih-model">
+<h3>Latih Model<a class="headerlink" href="#latih-model" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.naive_bayes</span><span class="w"> </span><span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ucimlrepo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_ucirepo</span>
+
+<span class="c1"># memisahkan atribut dan label</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[[</span><span class="s1">&#39;mcg&#39;</span><span class="p">,</span> <span class="s1">&#39;gvh&#39;</span><span class="p">,</span> <span class="s1">&#39;alm&#39;</span><span class="p">,</span> <span class="s1">&#39;mit&#39;</span><span class="p">,</span> <span class="s1">&#39;erl&#39;</span><span class="p">,</span> <span class="s1">&#39;pox&#39;</span><span class="p">,</span> <span class="s1">&#39;vac&#39;</span><span class="p">,</span> <span class="s1">&#39;nuc&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[</span><span class="s1">&#39;localization_site&#39;</span><span class="p">]</span>
+
+<span class="c1"># Membagi dataset menjadi data latih &amp; data uji</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># membuat model Gaussian naive bayes</span>
+<span class="n">model_gnb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+
+<span class="c1"># Melatih model dengan menggunakan data latih</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">model_gnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pada Proses diatas membagi data menjadi dua yakni data untuk testing sebesar 30% dan data untuk untuk trainng sebesar 70%.</p>
+</section>
+<section id="proses-klasifikasi">
+<h3>Proses Klasifikasi<a class="headerlink" href="#proses-klasifikasi" title="Link to this heading">#</a></h3>
+<p>Proses Klasifikasi dilakukan dengan prediksi menggunakan data testing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">model_gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">hasil_klasifikasi</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># ambil fitur data uji</span>
+<span class="n">hasil_klasifikasi</span><span class="p">[</span><span class="s1">&#39;label_aktual&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># label asli</span>
+<span class="n">hasil_klasifikasi</span><span class="p">[</span><span class="s1">&#39;label_prediksi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pred</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil_klasifikasi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           mcg       gvh       alm       mit  erl  pox       vac       nuc  \
+317   0.216867  0.506494  0.277778  0.348837  0.0  0.0  0.577778  0.159091   
+587   0.518072  0.376623  0.703704  0.186047  0.0  0.0  0.488889  0.125000   
+1156  0.734940  0.727273  0.111111  0.325581  0.0  0.0  0.644444  0.125000   
+610   0.433735  0.298701  0.666667  0.139535  0.0  0.0  0.577778  0.238636   
+1239  0.421687  0.441558  0.500000  0.139535  0.0  0.0  0.600000  0.227273   
+...        ...       ...       ...       ...  ...  ...       ...       ...   
+1098  0.433735  0.103896  0.703704  0.313953  0.0  0.0  0.400000  0.170455   
+1127  0.156627  0.363636  0.629630  0.220930  0.0  0.0  0.577778  0.329545   
+900   0.120482  0.181818  0.629630  0.151163  0.0  0.0  0.511111  0.125000   
+165   0.590361  0.363636  0.537037  0.267442  0.0  0.0  0.488889  0.125000   
+862   0.361446  0.389610  0.611111  0.220930  0.0  0.0  0.533333  0.250000   
+
+     label_aktual label_prediksi  
+317           ME3            ME3  
+587           MIT            POX  
+1156          ME1            ME1  
+610           NUC            CYT  
+1239          CYT            CYT  
+...           ...            ...  
+1098          NUC            NUC  
+1127          CYT            NUC  
+900           NUC            POX  
+165           CYT            POX  
+862           NUC            CYT  
+
+[423 rows x 10 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluasi">
+<h3>Evaluasi<a class="headerlink" href="#evaluasi" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc_gnb</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">prec_gnb</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">rec_gnb</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">f1_gnb</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan hasil evaluasi</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi     : </span><span class="si">{</span><span class="n">acc_gnb</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Presisi     : </span><span class="si">{</span><span class="n">prec_gnb</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recall      : </span><span class="si">{</span><span class="n">rec_gnb</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;F1 Score    : </span><span class="si">{</span><span class="n">f1_gnb</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi     : 0.29
+Presisi     : 0.57
+Recall      : 0.29
+F1 Score    : 0.37
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="modelling-klasifikasi-menggunakan-knn-k-nearest-neighbours">
+<h2>Modelling Klasifikasi Menggunakan KNN (K Nearest Neighbours)<a class="headerlink" href="#modelling-klasifikasi-menggunakan-knn-k-nearest-neighbours" title="Link to this heading">#</a></h2>
+<p>K-Nearest Neighbors (KNN) adalah salah satu algoritma pembelajaran mesin yang digunakan untuk menyelesaikan masalah klasifikasi maupun regresi. KNN bekerja berdasarkan prinsip kesamaan atau kedekatan antara data. Algoritma ini mengklasifikasikan suatu data baru dengan melihat sejumlah tetangga terdekat (dalam hal ini sebanyak K data) dari data tersebut di ruang fitur.</p>
+<p>Dalam proses klasifikasi, ketika sebuah data baru diberikan, KNN akan menghitung jarak antara data baru tersebut dengan seluruh data yang ada dalam dataset pelatihan. Setelah itu, KNN akan memilih K data terdekat berdasarkan jarak tersebut, lalu menentukan kelas mayoritas dari K tetangga itu sebagai prediksi label data baru.</p>
+<p>Ketika sebuah data baru diberikan, KNN akan menghitung jarak antara data tersebut dengan semua data pelatihan, menggunakan rumus jarak seperti <strong>Euclidean Distance</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+d(x, y) = \sqrt{ \sum_{i=1}^{n} (x_i - y_i)^2 }
+\]</div>
+<p>Kemudian, algoritma akan memilih <span class="math notranslate nohighlight">\(( K \)</span>) data dengan jarak terdekat, lalu menentukan <strong>kelas mayoritas</strong> dari tetangga tersebut sebagai prediksi.</p>
+<p>Pada kasus ini, sebelum melakukan proses training, data akan di pisah menjadi dua bagian yakni 30% untuk testing dan 70% untuk training. NIlai K yang digunakan sebanyak 5.</p>
+<section id="id1">
+<h3>Latih Model<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span>
+
+
+<span class="c1"># Memisahkan fitur dan label</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[[</span><span class="s1">&#39;mcg&#39;</span><span class="p">,</span> <span class="s1">&#39;gvh&#39;</span><span class="p">,</span> <span class="s1">&#39;alm&#39;</span><span class="p">,</span> <span class="s1">&#39;mit&#39;</span><span class="p">,</span> <span class="s1">&#39;erl&#39;</span><span class="p">,</span> <span class="s1">&#39;pox&#39;</span><span class="p">,</span> <span class="s1">&#39;vac&#39;</span><span class="p">,</span> <span class="s1">&#39;nuc&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[</span><span class="s1">&#39;localization_site&#39;</span><span class="p">]</span>
+
+<span class="c1"># Split data menjadi training dan testing</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Buat model KNN dengan nilai k = 5</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>KNeighborsClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">?<span>Documentation for KNeighborsClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>KNeighborsClassifier()</pre></div> </div></div></div></div></div></div>
+</div>
+</section>
+<section id="id2">
+<h3>Proses Klasifikasi<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Proses Klasifikasi dilakukan dengan prediksi menggunakan data testing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_knn</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">hasil_klasifikasi</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># ambil fitur data uji</span>
+<span class="n">hasil_klasifikasi</span><span class="p">[</span><span class="s1">&#39;label_aktual&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># label asli</span>
+<span class="n">hasil_klasifikasi</span><span class="p">[</span><span class="s1">&#39;label_prediksi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pred</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil_klasifikasi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           mcg       gvh       alm       mit  erl  pox       vac       nuc  \
+317   0.216867  0.506494  0.277778  0.348837  0.0  0.0  0.577778  0.159091   
+587   0.518072  0.376623  0.703704  0.186047  0.0  0.0  0.488889  0.125000   
+1156  0.734940  0.727273  0.111111  0.325581  0.0  0.0  0.644444  0.125000   
+610   0.433735  0.298701  0.666667  0.139535  0.0  0.0  0.577778  0.238636   
+1239  0.421687  0.441558  0.500000  0.139535  0.0  0.0  0.600000  0.227273   
+...        ...       ...       ...       ...  ...  ...       ...       ...   
+1098  0.433735  0.103896  0.703704  0.313953  0.0  0.0  0.400000  0.170455   
+1127  0.156627  0.363636  0.629630  0.220930  0.0  0.0  0.577778  0.329545   
+900   0.120482  0.181818  0.629630  0.151163  0.0  0.0  0.511111  0.125000   
+165   0.590361  0.363636  0.537037  0.267442  0.0  0.0  0.488889  0.125000   
+862   0.361446  0.389610  0.611111  0.220930  0.0  0.0  0.533333  0.250000   
+
+     label_aktual label_prediksi  
+317           ME3            ME3  
+587           MIT            POX  
+1156          ME1            ME1  
+610           NUC            CYT  
+1239          CYT            CYT  
+...           ...            ...  
+1098          NUC            NUC  
+1127          CYT            NUC  
+900           NUC            POX  
+165           CYT            POX  
+862           NUC            CYT  
+
+[423 rows x 10 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>Evaluasi<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc_knn</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">)</span>
+<span class="n">prec_knn</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">rec_knn</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">f1_knn</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan hasil evaluasi</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi     : </span><span class="si">{</span><span class="n">acc_knn</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Presisi     : </span><span class="si">{</span><span class="n">prec_knn</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recall      : </span><span class="si">{</span><span class="n">rec_knn</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;F1 Score    : </span><span class="si">{</span><span class="n">f1_knn</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi     : 0.58
+Presisi     : 0.60
+Recall      : 0.58
+F1 Score    : 0.57
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="modelling-klasifikasi-mennggunakan-decision-tree">
+<h2>Modelling Klasifikasi Mennggunakan Decision Tree<a class="headerlink" href="#modelling-klasifikasi-mennggunakan-decision-tree" title="Link to this heading">#</a></h2>
+<p>Decision Tree adalah salah satu algoritma dalam pembelajaran mesin yang digunakan untuk klasifikasi maupun regresi. Algoritma ini bekerja dengan cara membagi data menjadi kelompok-kelompok berdasarkan fitur tertentu melalui serangkaian pertanyaan atau kondisi. Hasil dari proses ini membentuk struktur pohon bercabang, di mana setiap simpul internal mewakili pengujian terhadap suatu fitur, setiap cabang mewakili hasil dari pengujian tersebut, dan setiap daun (leaf) menunjukkan label kelas (pada kasus klasifikasi).</p>
+<p>Proses pembentukan pohon dimulai dari akar (root), di mana algoritma akan memilih fitur yang paling baik dalam membagi data. Pemilihan ini biasanya didasarkan pada metrik seperti Gini Impurity atau Entropy (dalam metode ID3/C4.5). Fitur terbaik akan dipilih sebagai pemisah pada level pertama, kemudian data dibagi, dan proses ini diulang secara rekursif sampai mencapai kondisi tertentu (misalnya semua data dalam satu kelompok memiliki label yang sama, atau kedalaman maksimum pohon tercapai).</p>
+<p><strong>Proses yang terdapat pada Decision Tree:</strong></p>
+<ol class="arabic simple">
+<li><p>Entropy (Pengukuran Ketidakteraturan)</p></li>
+</ol>
+<p>Entropy digunakan untuk mengukur impuritas (ketidakteraturan) dalam satu set data:</p>
+<div class="math notranslate nohighlight">
+\[
+H(S) = - \sum_{i=1}^{n} p_i \log_2(p_i)
+\]</div>
+<p>di mana:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(( p_i \)</span>): proporsi dari kelas ke-<span class="math notranslate nohighlight">\((i\)</span>) dalam himpunan <span class="math notranslate nohighlight">\((S\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( H(S) \)</span>): entropy dari himpunan <span class="math notranslate nohighlight">\((S\)</span>)</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Information Gain (Keuntungan Informasi)</p></li>
+</ol>
+<p>Digunakan untuk memilih fitur terbaik dalam pemisahan data:</p>
+<div class="math notranslate nohighlight">
+\[
+IG(S, A) = H(S) - \sum_{v \in \text{Values}(A)} \frac{|S_v|}{|S|} \cdot H(S_v)
+\]</div>
+<p>di mana:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(( IG(S, A) \)</span>): information gain dari atribut <span class="math notranslate nohighlight">\((A\)</span>) terhadap set <span class="math notranslate nohighlight">\((S\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(( S_v \)</span>): subset dari <span class="math notranslate nohighlight">\((S\)</span>) dengan nilai <span class="math notranslate nohighlight">\((A = v\)</span>)</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Gini Index (Alternatif untuk Entropy)</p></li>
+</ol>
+<p>Digunakan dalam algoritma CART untuk mengukur impuritas:</p>
+<div class="math notranslate nohighlight">
+\[
+Gini(S) = 1 - \sum_{i=1}^{n} p_i^2
+\]</div>
+<p>di mana:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(( p_i \)</span>): proporsi kelas ke-<span class="math notranslate nohighlight">\((i\)</span>) dalam <span class="math notranslate nohighlight">\((S\)</span>)</p></li>
+</ul>
+<section id="id4">
+<h3>Latih Model<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Proses melatih model ini membagi data menjadi dua bagian yang akan digunakan testing dan training</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+
+<span class="c1"># Memisahkan fitur dan label</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[[</span><span class="s1">&#39;mcg&#39;</span><span class="p">,</span> <span class="s1">&#39;gvh&#39;</span><span class="p">,</span> <span class="s1">&#39;alm&#39;</span><span class="p">,</span> <span class="s1">&#39;mit&#39;</span><span class="p">,</span> <span class="s1">&#39;erl&#39;</span><span class="p">,</span> <span class="s1">&#39;pox&#39;</span><span class="p">,</span> <span class="s1">&#39;vac&#39;</span><span class="p">,</span> <span class="s1">&#39;nuc&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[</span><span class="s1">&#39;localization_site&#39;</span><span class="p">]</span>
+
+<span class="c1"># proses memisahkan data</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># menggunakan metode entropy untuk menentukan kemurnian daerah</span>
+<span class="n">dec_tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">dec_tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-2 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-2 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-2 pre {
+  padding: 0;
+}
+
+#sk-container-id-2 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-2 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-2 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-2 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-2 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-2 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-2 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-2 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-2 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-2 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-2 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label label.sk-toggleable__label,
+#sk-container-id-2 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-2 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-2 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-2 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-2 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-2 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-2 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-2 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>DecisionTreeClassifier(criterion=&#x27;entropy&#x27;, random_state=0)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>DecisionTreeClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.tree.DecisionTreeClassifier.html">?<span>Documentation for DecisionTreeClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>DecisionTreeClassifier(criterion=&#x27;entropy&#x27;, random_state=0)</pre></div> </div></div></div></div></div></div>
+</div>
+</section>
+<section id="id5">
+<h3>Proses Klasifikasi<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Proses Klasifikasi dilakukan dengan prediksi menggunakan data testing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_dec_tree</span> <span class="o">=</span> <span class="n">dec_tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">hasil_klasifikasi</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># ambil fitur data uji</span>
+<span class="n">hasil_klasifikasi</span><span class="p">[</span><span class="s1">&#39;label_aktual&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># label asli</span>
+<span class="n">hasil_klasifikasi</span><span class="p">[</span><span class="s1">&#39;label_prediksi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pred</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil_klasifikasi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           mcg       gvh       alm       mit  erl  pox       vac       nuc  \
+317   0.216867  0.506494  0.277778  0.348837  0.0  0.0  0.577778  0.159091   
+587   0.518072  0.376623  0.703704  0.186047  0.0  0.0  0.488889  0.125000   
+1156  0.734940  0.727273  0.111111  0.325581  0.0  0.0  0.644444  0.125000   
+610   0.433735  0.298701  0.666667  0.139535  0.0  0.0  0.577778  0.238636   
+1239  0.421687  0.441558  0.500000  0.139535  0.0  0.0  0.600000  0.227273   
+...        ...       ...       ...       ...  ...  ...       ...       ...   
+1098  0.433735  0.103896  0.703704  0.313953  0.0  0.0  0.400000  0.170455   
+1127  0.156627  0.363636  0.629630  0.220930  0.0  0.0  0.577778  0.329545   
+900   0.120482  0.181818  0.629630  0.151163  0.0  0.0  0.511111  0.125000   
+165   0.590361  0.363636  0.537037  0.267442  0.0  0.0  0.488889  0.125000   
+862   0.361446  0.389610  0.611111  0.220930  0.0  0.0  0.533333  0.250000   
+
+     label_aktual label_prediksi  
+317           ME3            ME3  
+587           MIT            POX  
+1156          ME1            ME1  
+610           NUC            CYT  
+1239          CYT            CYT  
+...           ...            ...  
+1098          NUC            NUC  
+1127          CYT            NUC  
+900           NUC            POX  
+165           CYT            POX  
+862           NUC            CYT  
+
+[423 rows x 10 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h3>Evaluasi<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc_dec_tree</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_dec_tree</span><span class="p">)</span>
+<span class="n">prec_dec_trer</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_dec_tree</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">rec_dec_tree</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_dec_tree</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">f1_dec_tree</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_dec_tree</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan hasil evaluasi</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi     : </span><span class="si">{</span><span class="n">acc_dec_tree</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Presisi     : </span><span class="si">{</span><span class="n">prec_dec_trer</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recall      : </span><span class="si">{</span><span class="n">rec_dec_tree</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;F1 Score    : </span><span class="si">{</span><span class="n">f1_dec_tree</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi     : 0.53
+Presisi     : 0.54
+Recall      : 0.53
+F1 Score    : 0.53
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id7">
+<h2>Evaluasi<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>Berdasarkan Hasil Modelling dari ketiga Metode yakni Naive Bayes, KNN, dan Decision Tree hasil akurasi dari masing - masing model yakni:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;akurasi model NB </span><span class="si">{</span><span class="n">acc_gnb</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;akurasi model knn </span><span class="si">{</span><span class="n">acc_knn</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;akurasi model Dec Tree </span><span class="si">{</span><span class="n">acc_dec_tree</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi model NB 0.29
+akurasi model knn 0.58
+akurasi model Dec Tree 0.53
+</pre></div>
+</div>
+</div>
+</div>
+<p>bahwa model yang paling terbaik untuk melakukan klasifikasi yakni menggunakan model knn</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Bining%28Diskritisasi%29_K-Means.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Metode Bining (Diskritisasi)</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">Sumber Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengambilan-data">Pengambilan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">Struktur Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-dan-label">Fitur dan Label</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-dari-dataset">Identifikasi Kualitas dari Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-data-outlier">Deteksi Data Outlier</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepocessing-data">Prepocessing Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengahapus-outlier-pada-data">Mengahapus Outlier Pada Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-scaler">Min-Max Scaler</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-naive-bayes">Modelling Klasifikasi Menggunakan Naive Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latih-model">Latih Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-klasifikasi">Proses Klasifikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi">Evaluasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-knn-k-nearest-neighbours">Modelling Klasifikasi Menggunakan KNN (K Nearest Neighbours)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Latih Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Proses Klasifikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Evaluasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-mennggunakan-decision-tree">Modelling Klasifikasi Mennggunakan Decision Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Latih Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Proses Klasifikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Evaluasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Evaluasi</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Muhammad Fathan Alizain
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

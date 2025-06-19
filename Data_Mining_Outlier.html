@@ -188,7 +188,10 @@
 <li class="toctree-l1"><a class="reference internal" href="k-means.html">K-Means Clustering</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Decision_Tree.html">Decision Tree</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Bining%28Discritisasi%29_K-Means.html">Metode Bining (Diskritisasi)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bining%28Diskritisasi%29_K-Means.html">Metode Bining (Diskritisasi)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lokalisasi_Protein.html">Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</a></li>
+
+
 </ul>
 
     </div>
@@ -602,17 +605,23 @@ Mengetahui outlier dalam data membantu pengambilan keputusan yang lebih baik den
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 Data dalam tabel data_irisposgresql:
-(1, &#39;Iris-setosa&#39;, 20.1, 30.5)
-(2, &#39;Iris-setosa&#39;, 4.9, 3.0)
-(3, &#39;Iris-setosa&#39;, 4.7, 3.2)
-(4, &#39;Iris-setosa&#39;, 4.6, 3.1)
-(5, &#39;Iris-setosa&#39;, 5.0, 3.6)
-(6, &#39;Iris-setosa&#39;, 5.4, 3.9)
-(7, &#39;Iris-setosa&#39;, 4.6, 3.4)
-(8, &#39;Iris-setosa&#39;, 5.0, 3.4)
-(9, &#39;Iris-setosa&#39;, 4.4, 2.9)
-(10, &#39;Iris-setosa&#39;, 4.9, 3.1)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OperationalError</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
+<span class="nn">/tmp/ipython-input-3-2924301928.py</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">DB_PASS</span> <span class="o">=</span> <span class="s2">&quot;AVNS_cy1i2eXC9KoFrhmUO63&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">connect_1</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">host</span><span class="o">=</span><span class="n">DB_HOST</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">port</span><span class="o">=</span><span class="n">DB_PORT</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/psycopg2/__init__.py</span> in <span class="ni">connect</span><span class="nt">(dsn, connection_factory, cursor_factory, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span> 
+<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="n">dsn</span> <span class="o">=</span> <span class="n">_ext</span><span class="o">.</span><span class="n">make_dsn</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">122</span>     <span class="n">conn</span> <span class="o">=</span> <span class="n">_connect</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="n">connection_factory</span><span class="o">=</span><span class="n">connection_factory</span><span class="p">,</span> <span class="o">**</span><span class="n">kwasync</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="k">if</span> <span class="n">cursor_factory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="n">conn</span><span class="o">.</span><span class="n">cursor_factory</span> <span class="o">=</span> <span class="n">cursor_factory</span>
+
+<span class="ne">OperationalError</span>: could not translate host name &quot;pg-38d2eca9-irisposgresql.g.aivencloud.com&quot; to address: Name or service not known
 </pre></div>
 </div>
 </div>

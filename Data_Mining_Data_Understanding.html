@@ -188,7 +188,10 @@
 <li class="toctree-l1"><a class="reference internal" href="k-means.html">K-Means Clustering</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Decision_Tree.html">Decision Tree</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Bining%28Discritisasi%29_K-Means.html">Metode Bining (Diskritisasi)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bining%28Diskritisasi%29_K-Means.html">Metode Bining (Diskritisasi)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lokalisasi_Protein.html">Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</a></li>
+
+
 </ul>
 
     </div>
@@ -492,7 +495,20 @@ Tipe data Rasio merupakan data numerik yang lengkap dengan nilai nol. jadi, untu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: psycopg2-binary in /usr/local/lib/python3.11/dist-packages (2.9.10)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary
+  Downloading psycopg2_binary-2.9.10-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Downloading psycopg2_binary-2.9.10-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.3/3.0 MB</span> <span class=" -Color -Color-Red">9.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">48.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">36.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: psycopg2-binary
+Successfully installed psycopg2-binary-2.9.10
 </pre></div>
 </div>
 </div>
@@ -505,10 +521,10 @@ Tipe data Rasio merupakan data numerik yang lengkap dengan nilai nol. jadi, untu
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /usr/local/lib/python3.11/dist-packages (2.2.2)
-Requirement already satisfied: numpy&gt;=1.23.2 in /usr/local/lib/python3.11/dist-packages (from pandas) (1.26.4)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.11/dist-packages (from pandas) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.11/dist-packages (from pandas) (2025.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /usr/local/lib/python3.11/dist-packages (from pandas) (2025.1)
+Requirement already satisfied: numpy&gt;=1.23.2 in /usr/local/lib/python3.11/dist-packages (from pandas) (2.0.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.11/dist-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.11/dist-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /usr/local/lib/python3.11/dist-packages (from pandas) (2025.2)
 Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.17.0)
 </pre></div>
 </div>
@@ -564,17 +580,23 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-pac
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 Data dalam tabel data_irisposgresql:
-(1, &#39;Iris-setosa&#39;, 20.1, 30.5)
-(2, &#39;Iris-setosa&#39;, 4.9, 3.0)
-(3, &#39;Iris-setosa&#39;, 4.7, 3.2)
-(4, &#39;Iris-setosa&#39;, 4.6, 3.1)
-(5, &#39;Iris-setosa&#39;, 5.0, 3.6)
-(6, &#39;Iris-setosa&#39;, 5.4, 3.9)
-(7, &#39;Iris-setosa&#39;, 4.6, 3.4)
-(8, &#39;Iris-setosa&#39;, 5.0, 3.4)
-(9, &#39;Iris-setosa&#39;, 4.4, 2.9)
-(10, &#39;Iris-setosa&#39;, 4.9, 3.1)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OperationalError</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
+<span class="nn">/tmp/ipython-input-5-2924301928.py</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">DB_PASS</span> <span class="o">=</span> <span class="s2">&quot;AVNS_cy1i2eXC9KoFrhmUO63&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">connect_1</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">host</span><span class="o">=</span><span class="n">DB_HOST</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">port</span><span class="o">=</span><span class="n">DB_PORT</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.11/dist-packages/psycopg2/__init__.py</span> in <span class="ni">connect</span><span class="nt">(dsn, connection_factory, cursor_factory, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span> 
+<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="n">dsn</span> <span class="o">=</span> <span class="n">_ext</span><span class="o">.</span><span class="n">make_dsn</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">122</span>     <span class="n">conn</span> <span class="o">=</span> <span class="n">_connect</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="n">connection_factory</span><span class="o">=</span><span class="n">connection_factory</span><span class="p">,</span> <span class="o">**</span><span class="n">kwasync</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="k">if</span> <span class="n">cursor_factory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="n">conn</span><span class="o">.</span><span class="n">cursor_factory</span> <span class="o">=</span> <span class="n">cursor_factory</span>
+
+<span class="ne">OperationalError</span>: could not translate host name &quot;pg-38d2eca9-irisposgresql.g.aivencloud.com&quot; to address: Name or service not known
 </pre></div>
 </div>
 </div>
@@ -865,133 +887,14 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-15-e5833332c9e3&gt;</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">color</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">merged_db</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">class_col</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">kolom</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> 
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Class&quot;</span><span class="p">)</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-15-e5833332c9e3&gt;:8: FutureWarning: 
 
-<span class="nn">/usr/local/lib/python3.11/dist-packages/seaborn/categorical.py</span> in <span class="ni">boxplot</span><span class="nt">(data, x, y, hue, order, hue_order, orient, color, palette, saturation, fill, dodge, width, gap, whis, linecolor, linewidth, fliersize, hue_norm, native_scale, log_scale, formatter, legend, ax, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1605</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1606</span>     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1607</span>         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1608</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1609</span>     <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">plot_data</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/pyplot.py</span> in <span class="ni">gca</span><span class="nt">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">2774</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">Figure</span><span class="o">.</span><span class="n">gca</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2775</span> <span class="k">def</span><span class="w"> </span><span class="nf">gca</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Axes</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2776</span>     <span class="k">return</span> <span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">2777</span> 
-<span class="g g-Whitespace">   </span><span class="mi">2778</span> 
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/figure.py</span> in <span class="ni">gca</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1717</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1718</span><span class="s2">         ax = self._axstack.current()</span>
-<span class="ne">-&gt; </span><span class="mi">1719</span><span class="s2">         return ax if ax is not None else self.add_subplot()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1720</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1721</span><span class="s2">     def _gci(self):</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/figure.py</span> in <span class="ni">add_subplot</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">766</span><span class="s2">                 args = tuple(map(int, str(args[0])))</span>
-<span class="g g-Whitespace">    </span><span class="mi">767</span><span class="s2">             projection_class, pkw = self._process_projection_requirements(**kwargs)</span>
-<span class="ne">--&gt; </span><span class="mi">768</span><span class="s2">             ax = projection_class(self, *args, **pkw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">769</span><span class="s2">             key = (projection_class, pkw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">770</span><span class="s2">         return self._add_axes_internal(ax, key)</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, fig, facecolor, frameon, sharex, sharey, label, xscale, yscale, box_aspect, forward_navigation_events, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">694</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">695</span><span class="s2">         self._rasterization_zorder = None</span>
-<span class="ne">--&gt; </span><span class="mi">696</span><span class="s2">         self.clear()</span>
-<span class="g g-Whitespace">    </span><span class="mi">697</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">698</span><span class="s2">         # funcs used to format x and y - fall back on major formatters</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">clear</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1414</span><span class="s2">             self.cla()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1415</span><span class="s2">         else:</span>
-<span class="ne">-&gt; </span><span class="mi">1416</span><span class="s2">             self.__clear()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1417</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1418</span><span class="s2">     def cla(self):</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">__clear</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1381</span><span class="s2">         self.set_axis_on()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1382</span><span class="s2"> </span>
-<span class="ne">-&gt; </span><span class="mi">1383</span><span class="s2">         self.xaxis.set_clip_path(self.patch)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1384</span><span class="s2">         self.yaxis.set_clip_path(self.patch)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1385</span><span class="s2"> </span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py</span> in <span class="ni">set_clip_path</span><span class="nt">(self, path, transform)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1126</span><span class="s2">     def set_clip_path(self, path, transform=None):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1127</span><span class="s2">         super().set_clip_path(path, transform)</span>
-<span class="ne">-&gt; </span><span class="mi">1128</span><span class="s2">         for child in self.majorTicks + self.minorTicks:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1129</span><span class="s2">             child.set_clip_path(path, transform)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1130</span><span class="s2">         self.stale = True</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py</span> in <span class="ni">__get__</span><span class="nt">(self, instance, owner)</span>
-<span class="g g-Whitespace">    </span><span class="mi">550</span><span class="s2">             else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">551</span><span class="s2">                 instance.minorTicks = []</span>
-<span class="ne">--&gt; </span><span class="mi">552</span><span class="s2">                 tick = instance._get_tick(major=False)</span>
-<span class="g g-Whitespace">    </span><span class="mi">553</span><span class="s2">                 instance.minorTicks = [tick]</span>
-<span class="g g-Whitespace">    </span><span class="mi">554</span><span class="s2">                 return instance.minorTicks</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py</span> in <span class="ni">_get_tick</span><span class="nt">(self, major)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1601</span><span class="s2">                 &quot;_tick_class or reimplement _get_tick()&quot;)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1602</span><span class="s2">         tick_kw = self._major_tick_kw if major else self._minor_tick_kw</span>
-<span class="ne">-&gt; </span><span class="mi">1603</span><span class="s2">         return self._tick_class(self.axes, 0, major=major, **tick_kw)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1604</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1605</span><span class="s2">     def _get_tick_label_size(self, axis_name):</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py</span> in <span class="ni">__init__</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">367</span><span class="s2">     def __init__(self, *args, **kwargs):</span>
-<span class="ne">--&gt; </span><span class="mi">368</span><span class="s2">         super().__init__(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">369</span><span class="s2">         # x in data coords, y in axes coords</span>
-<span class="g g-Whitespace">    </span><span class="mi">370</span><span class="s2">         ax = self.axes</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/axis.py</span> in <span class="ni">__init__</span><span class="nt">(self, axes, loc, size, width, color, tickdir, pad, labelsize, labelcolor, labelfontfamily, zorder, gridOn, tick1On, tick2On, label1On, label2On, major, labelrotation, grid_color, grid_linestyle, grid_linewidth, grid_alpha, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span><span class="s2">         self.gridline.get_path()._interpolation_steps = </span><span class="se">\</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span><span class="s2">             GRIDLINE_INTERPOLATION_STEPS</span>
-<span class="ne">--&gt; </span><span class="mi">172</span><span class="s2">         self.label1 = mtext.Text(</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span><span class="s2">             np.nan, np.nan,</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span><span class="s2">             fontsize=labelsize, color=labelcolor, visible=label1On,</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/text.py</span> in <span class="ni">__init__</span><span class="nt">(self, x, y, text, color, verticalalignment, horizontalalignment, multialignment, fontproperties, rotation, linespacing, rotation_mode, usetex, wrap, transform_rotates_text, parse_math, antialiased, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span><span class="s2">             antialiased=antialiased</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span><span class="s2">         )</span>
-<span class="ne">--&gt; </span><span class="mi">155</span><span class="s2">         self.update(kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="s2">     def _reset_visual_defaults(</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/text.py</span> in <span class="ni">update</span><span class="nt">(self, kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="s2">         # docstring inherited</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span><span class="s2">         ret = []</span>
-<span class="ne">--&gt; </span><span class="mi">197</span><span class="s2">         kwargs = cbook.normalize_kwargs(kwargs, Text)</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="s2">         sentinel = object()  # bbox can be None, so use another sentinel.</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span><span class="s2">         # Update fontproperties first, as it has lowest priority.</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/cbook.py</span> in <span class="ni">normalize_kwargs</span><span class="nt">(kw, alias_mapping)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1779</span><span class="s2">         alias_mapping = getattr(alias_mapping, &quot;_alias_map&quot;, </span><span class="si">{}</span><span class="s2">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1780</span><span class="s2"> </span>
-<span class="ne">-&gt; </span><span class="mi">1781</span><span class="s2">     to_canonical = {alias: canonical</span>
-<span class="nn">   1782                     for canonical, alias_list</span> in <span class="ni">alias_mapping.items</span><span class="nt">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1783</span><span class="s2">                     for alias in alias_list}</span>
-
-<span class="nn">/usr/local/lib/python3.11/dist-packages/matplotlib/cbook.py</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1779</span><span class="s2">         alias_mapping = getattr(alias_mapping, &quot;_alias_map&quot;, </span><span class="si">{}</span><span class="s2">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1780</span><span class="s2"> </span>
-<span class="ne">-&gt; </span><span class="mi">1781</span><span class="s2">     to_canonical = {alias: canonical</span>
-<span class="nn">   1782                     for canonical, alias_list</span> in <span class="ni">alias_mapping.items</span><span class="nt">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1783</span><span class="s2">                     for alias in alias_list}</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+  sns.boxplot(data=merged_db, x=class_col, y=kolom, palette=color)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 600x300 with 0 Axes&gt;
-</pre></div>
-</div>
+<img alt="_images/d1f95b16d7d13b45060f2b1e97d75a23c66a5bd10db8f9eea8438d6255914640.png" src="_images/d1f95b16d7d13b45060f2b1e97d75a23c66a5bd10db8f9eea8438d6255914640.png" />
 </div>
 </div>
 </section>
