@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif &#8212; My sample book</title>
+    <title>Prediksi Risiko Kesehatan Ibu &#8212; My sample book</title>
   
   
   
@@ -59,11 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Lokalisasi_Protein';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'UAS_Prediksi Risiko Kesehatan Ibu_230411100181_Muhammad Fathan Alizain';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Prediksi Risiko Kesehatan Ibu" href="UAS_Prediksi%20Risiko%20Kesehatan%20Ibu_230411100181_Muhammad%20Fathan%20Alizain.html" />
-    <link rel="prev" title="Metode Bining (Diskritisasi)" href="Bining%28Diskritisasi%29_K-Means.html" />
+    <link rel="prev" title="Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif" href="Lokalisasi_Protein.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -191,10 +190,10 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Decision_Tree.html">Decision Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bining%28Diskritisasi%29_K-Means.html">Metode Bining (Diskritisasi)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lokalisasi_Protein.html">Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="UAS_Prediksi%20Risiko%20Kesehatan%20Ibu_230411100181_Muhammad%20Fathan%20Alizain.html">Prediksi Risiko Kesehatan Ibu</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Prediksi Risiko Kesehatan Ibu</a></li>
 </ul>
 
     </div>
@@ -266,7 +265,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLokalisasi_Protein.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUAS_Prediksi Risiko Kesehatan Ibu_230411100181_Muhammad Fathan Alizain.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -296,7 +295,7 @@
       
       
       
-      <li><a href="_sources/Lokalisasi_Protein.ipynb" target="_blank"
+      <li><a href="_sources/UAS_Prediksi Risiko Kesehatan Ibu_230411100181_Muhammad Fathan Alizain.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -380,7 +379,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</h1>
+    <h1>Prediksi Risiko Kesehatan Ibu</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -390,17 +389,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">Sumber Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengambilan-data">Pengambilan Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">Struktur Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-dan-label">Fitur dan Label</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-dan-label">Fitur dan Label</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ukuran-dataset">Ukuran Dataset</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlah-kolom-dataset">Jumlah Kolom Dataset</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#tipe-data-dari-masing-masing-fitur-dataset">Tipe data dari masing - masing Fitur Dataset</a></li>
+</ul>
+</li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-dari-dataset">Identifikasi Kualitas dari Dataset</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-data-outlier">Deteksi Data Outlier</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-data-outlier">Deteksi Data Outlier</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-code">Implementasi Code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a></li>
@@ -413,29 +418,33 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-scaler">Min-Max Scaler</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-naive-bayes">Modelling Klasifikasi Menggunakan Naive Bayes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latih-model">Latih Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-klasifikasi">Proses Klasifikasi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi">Evaluasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling">Modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-naive-bayes">Modelling Klasifikasi Menggunakan Naive Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#latih-model">Latih Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-klasifikasi">Proses Klasifikasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi">Evaluasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uji-coba-prediksi">Uji Coba Prediksi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-knn-k-nearest-neighbours">Modelling Klasifikasi Menggunakan KNN (K Nearest Neighbours)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Latih Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Proses Klasifikasi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Evaluasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-knn-k-nearest-neighbours">Modelling Klasifikasi Menggunakan KNN (K Nearest Neighbours)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Latih Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Proses Klasifikasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Evaluasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Uji Coba Prediksi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-mennggunakan-decision-tree">Modelling Klasifikasi Mennggunakan Decision Tree</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Latih Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Proses Klasifikasi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Evaluasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-mennggunakan-decision-tree">Modelling Klasifikasi Mennggunakan Decision Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Latih Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Proses Klasifikasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Evaluasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-menggunakan-confussion-matrix">Visualisasi menggunakan Confussion Matrix</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Uji Coba Prediksi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Evaluasi</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Evaluasi</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -446,21 +455,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pediksi-lokasi-lokalisasi-protein-pada-bakteri-gram-negatif">
-<h1>Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif<a class="headerlink" href="#pediksi-lokasi-lokalisasi-protein-pada-bakteri-gram-negatif" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="prediksi-risiko-kesehatan-ibu">
+<h1>Prediksi Risiko Kesehatan Ibu<a class="headerlink" href="#prediksi-risiko-kesehatan-ibu" title="Link to this heading">#</a></h1>
+<section id="pendahuluan">
+<h2>Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h2>
+<p>Risiko kematian Ibu terdiri dari banyak faktor Usia, Tekanan Darah Sistolik (TD Sistolik), TD Diastolik (TD Diastolik), Gula Darah (GD), Suhu Tubuh (BodyTemp), Denyut Jantung, dan Tingkat Risiko. Semua ini merupakan faktor risiko yang bertanggung jawab dan signifikan terhadap kematian ibu, yang merupakan salah satu perhatian utama SDG PBB.Data Oleh karena itu, perlu ditemukannya sebuah prediksi yang memiliki tingkat akurasi yang tinggi sebagai landasan informasi terkait dengan risiko kematian yang dialami oleh Ibu.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="pendahuluan">
-<h1>Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h1>
-<p>Prediksi lokasi lokalisasi protein pada bakteri Gram-negatif merupakan suatu pendekatan penting dalam bidang bioinformatika dan mikrobiologi struktural. Lokalisasi protein merujuk pada penentuan di mana sebuah protein berada atau berfungsi dalam struktur sel. Pada bakteri Gram-negatif, yang memiliki struktur dinding sel kompleks dengan dua lapisan membran (membran dalam dan membran luar) serta ruang periplasmik di antaranya, pengetahuan tentang lokasi protein menjadi sangat penting untuk memahami fungsinya secara menyeluruh.</p>
-<p>Protein dalam bakteri Gram-negatif dapat terlokalisasi di beberapa kompartemen, seperti sitoplasma, membran dalam, periplasma, membran luar, dan lingkungan ekstraseluler. Masing-masing lokasi ini berperan dalam berbagai proses biologis seperti transportasi, sintesis energi, pertahanan terhadap lingkungan, dan interaksi patogen inang. Oleh karena itu, mengetahui lokasi protein tidak hanya membantu mengungkap fungsinya, tetapi juga membuka peluang untuk pengembangan antibiotik baru dan studi patogenisitas mikroba.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
-<h1>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
-<section id="sumber-data">
-<h2>Sumber Data<a class="headerlink" href="#sumber-data" title="Link to this heading">#</a></h2>
+<section id="data-understanding">
+<h2>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h2>
 <p>Dataset diambil dari link dibawh ini:</p>
-<p><a class="reference external" href="https://archive.ics.uci.edu/dataset/110/yeast">https://archive.ics.uci.edu/dataset/110/yeast</a></p>
-<p>“Sistem Pakar untuk Memprediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif”, Kenta Nakai &amp; Minoru Kanehisa, PROTEINS: Struktur, Fungsi, dan Genetika 11:95-110, 1991. Referensi: “Basis Pengetahuan untuk Memprediksi Lokasi Lokalisasi Protein pada Sel Eukariotik”, Kenta Nakai &amp; Minoru Kanehisa, Genomics 14:897-911, 1992.</p>
+<p><a class="reference external" href="https://archive.ics.uci.edu/dataset/863/maternal+health+risk">https://archive.ics.uci.edu/dataset/863/maternal+health+risk</a></p>
+<p>Data telah dikumpulkan dari berbagai rumah sakit, klinik masyarakat, perawatan kesehatan ibu dari daerah pedesaan Bangladesh melalui sistem pemantauan risiko berbasis IoT.</p>
 </section>
 <section id="pengambilan-data">
 <h2>Pengambilan Data<a class="headerlink" href="#pengambilan-data" title="Link to this heading">#</a></h2>
@@ -473,8 +478,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ucimlrepo
-  Downloading ucimlrepo-0.0.7-py3-none-any.whl.metadata (5.5 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ucimlrepo in /usr/local/lib/python3.11/dist-packages (0.0.7)
 Requirement already satisfied: pandas&gt;=1.0.0 in /usr/local/lib/python3.11/dist-packages (from ucimlrepo) (2.2.2)
 Requirement already satisfied: certifi&gt;=2020.12.5 in /usr/local/lib/python3.11/dist-packages (from ucimlrepo) (2025.6.15)
 Requirement already satisfied: numpy&gt;=1.23.2 in /usr/local/lib/python3.11/dist-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2.0.2)
@@ -482,11 +486,6 @@ Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/pytho
 Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.11/dist-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2025.2)
 Requirement already satisfied: tzdata&gt;=2022.7 in /usr/local/lib/python3.11/dist-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2025.2)
 Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.11/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=1.0.0-&gt;ucimlrepo) (1.17.0)
-Downloading ucimlrepo-0.0.7-py3-none-any.whl (8.0 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: ucimlrepo
-Successfully installed ucimlrepo-0.0.7
 </pre></div>
 </div>
 </div>
@@ -494,17 +493,16 @@ Successfully installed ucimlrepo-0.0.7
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ucimlrepo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_ucirepo</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="c1"># Mengambil dataset Yeast (ID 110 dari UCI ML Repository)</span>
-<span class="n">yeast</span> <span class="o">=</span> <span class="n">fetch_ucirepo</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">110</span><span class="p">)</span>
+<span class="c1"># fetch dataset</span>
+<span class="n">maternal_health_risk</span> <span class="o">=</span> <span class="n">fetch_ucirepo</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">863</span><span class="p">)</span>
 
-<span class="c1"># Memisahkan fitur dan target dalam bentuk dataframe</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">yeast</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">features</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">yeast</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">targets</span>
+<span class="c1"># data (as pandas dataframes)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">maternal_health_risk</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">features</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">maternal_health_risk</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">targets</span>
 
 <span class="c1"># Menggabungkan fitur dan target menjadi satu dataframe</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">yeast</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">original</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">maternal_health_risk</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">original</span>
 
 <span class="c1"># Menyimpan dataset asli ke dalam file CSV</span>
 <span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;yeast_dataset.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -517,74 +515,58 @@ Successfully installed ucimlrepo-0.0.7
 
 <span class="c1"># Menampilkan metadata (informasi deskriptif dataset)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Metadata:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">yeast</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maternal_health_risk</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
 
 <span class="c1"># Menampilkan informasi tentang variabel (fitur dan target)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Informasi Variabel:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">yeast</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maternal_health_risk</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 1484 entries, 0 to 1483
-Data columns (total 10 columns):
- #   Column             Non-Null Count  Dtype  
----  ------             --------------  -----  
- 0   Sequence_Name      1484 non-null   object 
- 1   mcg                1484 non-null   float64
- 2   gvh                1484 non-null   float64
- 3   alm                1484 non-null   float64
- 4   mit                1484 non-null   float64
- 5   erl                1484 non-null   float64
- 6   pox                1484 non-null   float64
- 7   vac                1484 non-null   float64
- 8   nuc                1484 non-null   float64
- 9   localization_site  1484 non-null   object 
-dtypes: float64(8), object(2)
-memory usage: 116.1+ KB
+RangeIndex: 1014 entries, 0 to 1013
+Data columns (total 7 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   Age          1014 non-null   int64  
+ 1   SystolicBP   1014 non-null   int64  
+ 2   DiastolicBP  1014 non-null   int64  
+ 3   BS           1014 non-null   float64
+ 4   BodyTemp     1014 non-null   float64
+ 5   HeartRate    1014 non-null   int64  
+ 6   RiskLevel    1014 non-null   object 
+dtypes: float64(2), int64(4), object(1)
+memory usage: 55.6+ KB
 None
-  Sequence_Name   mcg   gvh   alm   mit  erl  pox   vac   nuc  \
-0    ADT1_YEAST  0.58  0.61  0.47  0.13  0.5  0.0  0.48  0.22   
-1    ADT2_YEAST  0.43  0.67  0.48  0.27  0.5  0.0  0.53  0.22   
-2    ADT3_YEAST  0.64  0.62  0.49  0.15  0.5  0.0  0.53  0.22   
-3    AAR2_YEAST  0.58  0.44  0.57  0.13  0.5  0.0  0.54  0.22   
-4    AATM_YEAST  0.42  0.44  0.48  0.54  0.5  0.0  0.48  0.22   
-
-  localization_site  
-0               MIT  
-1               MIT  
-2               MIT  
-3               NUC  
-4               MIT  
+   Age  SystolicBP  DiastolicBP    BS  BodyTemp  HeartRate  RiskLevel
+0   25         130           80  15.0      98.0         86  high risk
+1   35         140           90  13.0      98.0         70  high risk
+2   29          90           70   8.0     100.0         80  high risk
+3   30         140           85   7.0      98.0         70  high risk
+4   35         120           60   6.1      98.0         76   low risk
 
 Metadata:
-{&#39;uci_id&#39;: 110, &#39;name&#39;: &#39;Yeast&#39;, &#39;repository_url&#39;: &#39;https://archive.ics.uci.edu/dataset/110/yeast&#39;, &#39;data_url&#39;: &#39;https://archive.ics.uci.edu/static/public/110/data.csv&#39;, &#39;abstract&#39;: &#39;Predicting the Cellular Localization Sites of Proteins&#39;, &#39;area&#39;: &#39;Biology&#39;, &#39;tasks&#39;: [&#39;Classification&#39;], &#39;characteristics&#39;: [&#39;Multivariate&#39;], &#39;num_instances&#39;: 1484, &#39;num_features&#39;: 8, &#39;feature_types&#39;: [&#39;Real&#39;], &#39;demographics&#39;: [], &#39;target_col&#39;: [&#39;localization_site&#39;], &#39;index_col&#39;: [&#39;Sequence_Name&#39;], &#39;has_missing_values&#39;: &#39;no&#39;, &#39;missing_values_symbol&#39;: None, &#39;year_of_dataset_creation&#39;: 1991, &#39;last_updated&#39;: &#39;Sat Oct 28 2023&#39;, &#39;dataset_doi&#39;: &#39;10.24432/C5KG68&#39;, &#39;creators&#39;: [&#39;Kenta Nakai&#39;], &#39;intro_paper&#39;: None, &#39;additional_info&#39;: {&#39;summary&#39;: &#39;Predicted Attribute: Localization site of protein. ( non-numeric ).\r\n\r\nThe references below describe a predecessor to this dataset and its development. They also give results (not cross-validated) for classification by a rule-based expert system with that version of the dataset.\r\n\r\nReference: &quot;Expert Sytem for Predicting Protein Localization Sites in Gram-Negative Bacteria&quot;, Kenta Nakai &amp; Minoru Kanehisa,  PROTEINS: Structure, Function, and Genetics 11:95-110, 1991.\r\n\r\nReference: &quot;A Knowledge Base for Predicting Protein Localization Sites in Eukaryotic Cells&quot;, Kenta Nakai &amp; Minoru Kanehisa, Genomics 14:897-911, 1992.&#39;, &#39;purpose&#39;: None, &#39;funded_by&#39;: None, &#39;instances_represent&#39;: None, &#39;recommended_data_splits&#39;: None, &#39;sensitive_data&#39;: None, &#39;preprocessing_description&#39;: None, &#39;variable_info&#39;: None, &#39;citation&#39;: None}}
+{&#39;uci_id&#39;: 863, &#39;name&#39;: &#39;Maternal Health Risk&#39;, &#39;repository_url&#39;: &#39;https://archive.ics.uci.edu/dataset/863/maternal+health+risk&#39;, &#39;data_url&#39;: &#39;https://archive.ics.uci.edu/static/public/863/data.csv&#39;, &#39;abstract&#39;: &#39;Data has been collected from different hospitals, community clinics, maternal health cares from the rural areas of Bangladesh through the IoT based risk monitoring system.&#39;, &#39;area&#39;: &#39;Health and Medicine&#39;, &#39;tasks&#39;: [&#39;Classification&#39;], &#39;characteristics&#39;: [&#39;Multivariate&#39;], &#39;num_instances&#39;: 1013, &#39;num_features&#39;: 6, &#39;feature_types&#39;: [&#39;Real&#39;, &#39;Integer&#39;], &#39;demographics&#39;: [&#39;Age&#39;], &#39;target_col&#39;: [&#39;RiskLevel&#39;], &#39;index_col&#39;: None, &#39;has_missing_values&#39;: &#39;no&#39;, &#39;missing_values_symbol&#39;: None, &#39;year_of_dataset_creation&#39;: 2020, &#39;last_updated&#39;: &#39;Fri Nov 03 2023&#39;, &#39;dataset_doi&#39;: &#39;10.24432/C5DP5D&#39;, &#39;creators&#39;: [&#39;Marzia Ahmed&#39;], &#39;intro_paper&#39;: {&#39;ID&#39;: 274, &#39;type&#39;: &#39;NATIVE&#39;, &#39;title&#39;: &#39;Review and Analysis of Risk Factor of Maternal Health in Remote Area Using the Internet of Things (IoT)&#39;, &#39;authors&#39;: &#39;Marzia Ahmed, M. A. Kashem, Mostafijur Rahman, S. Khatun&#39;, &#39;venue&#39;: &#39; Lecture Notes in Electrical Engineering, vol 632&#39;, &#39;year&#39;: 2020, &#39;journal&#39;: None, &#39;DOI&#39;: None, &#39;URL&#39;: &#39;https://www.semanticscholar.org/paper/f175092a3b2217c9abca5bf5d91bab3c245c6b10&#39;, &#39;sha&#39;: None, &#39;corpus&#39;: None, &#39;arxiv&#39;: None, &#39;mag&#39;: None, &#39;acl&#39;: None, &#39;pmid&#39;: None, &#39;pmcid&#39;: None}, &#39;additional_info&#39;: {&#39;summary&#39;: &#39;Age, Systolic Blood Pressure as SystolicBP, Diastolic BP as DiastolicBP, Blood Sugar as BS, Body Temperature as BodyTemp, HeartRate and RiskLevel. All these are the responsible and significant risk factors for maternal mortality, that is one of the main concern of SDG of UN.&#39;, &#39;purpose&#39;: None, &#39;funded_by&#39;: None, &#39;instances_represent&#39;: None, &#39;recommended_data_splits&#39;: None, &#39;sensitive_data&#39;: None, &#39;preprocessing_description&#39;: None, &#39;variable_info&#39;: None, &#39;citation&#39;: None}}
 
 Informasi Variabel:
-                name     role         type demographic  \
-0      Sequence_Name       ID  Categorical        None   
-1                mcg  Feature   Continuous        None   
-2                gvh  Feature   Continuous        None   
-3                alm  Feature   Continuous        None   
-4                mit  Feature   Continuous        None   
-5                erl  Feature   Continuous        None   
-6                pox  Feature   Continuous        None   
-7                vac  Feature   Continuous        None   
-8                nuc  Feature   Continuous        None   
-9  localization_site   Target  Categorical        None   
+          name     role         type demographic  \
+0          Age  Feature      Integer         Age   
+1   SystolicBP  Feature      Integer        None   
+2  DiastolicBP  Feature      Integer        None   
+3           BS  Feature      Integer        None   
+4     BodyTemp  Feature      Integer        None   
+5    HeartRate  Feature      Integer        None   
+6    RiskLevel   Target  Categorical        None   
 
-                                         description units missing_values  
-0       Accession number for the SWISS-PROT database  None             no  
-1  McGeoch&#39;s method for signal sequence recognition.  None             no  
-2  von Heijne&#39;s method for signal sequence recogn...  None             no  
-3  Score of the ALOM membrane spanning region pre...  None             no  
-4  Score of discriminant analysis of the amino ac...  None             no  
-5  Presence of HDEL substring (thought to act as ...  None             no  
-6    Peroxisomal targeting signal in the C-terminus.  None             no  
-7  Score of discriminant analysis of the amino ac...  None             no  
-8  Score of discriminant analysis of nuclear loca...  None             no  
-9                                               None  None             no  
+                                         description   units missing_values  
+0    Any ages in years when a women during pregnant.    None             no  
+1  Upper value of Blood Pressure in mmHg, another...    None             no  
+2  Lower value of Blood Pressure in mmHg, another...    None             no  
+3  Blood glucose levels is in terms of a molar co...  mmol/L             no  
+4                                               None       F             no  
+5                        A normal resting heart rate     bpm             no  
+6  Predicted Risk Intensity Level during pregnanc...    None             no  
 </pre></div>
 </div>
 </div>
@@ -600,7 +582,7 @@ Informasi Variabel:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-54bc5079-e955-40c0-a642-d073c117430f" class="colab-df-container">
+  <div id="df-01415d6d-b193-41f0-8ecc-6308d5bb5766" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -619,83 +601,65 @@ Informasi Variabel:
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Sequence_Name</th>
-      <th>mcg</th>
-      <th>gvh</th>
-      <th>alm</th>
-      <th>mit</th>
-      <th>erl</th>
-      <th>pox</th>
-      <th>vac</th>
-      <th>nuc</th>
-      <th>localization_site</th>
+      <th>Age</th>
+      <th>SystolicBP</th>
+      <th>DiastolicBP</th>
+      <th>BS</th>
+      <th>BodyTemp</th>
+      <th>HeartRate</th>
+      <th>RiskLevel</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>ADT1_YEAST</td>
-      <td>0.58</td>
-      <td>0.61</td>
-      <td>0.47</td>
-      <td>0.13</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.48</td>
-      <td>0.22</td>
-      <td>MIT</td>
+      <td>25</td>
+      <td>130</td>
+      <td>80</td>
+      <td>15.0</td>
+      <td>98.0</td>
+      <td>86</td>
+      <td>high risk</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>ADT2_YEAST</td>
-      <td>0.43</td>
-      <td>0.67</td>
-      <td>0.48</td>
-      <td>0.27</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.53</td>
-      <td>0.22</td>
-      <td>MIT</td>
+      <td>35</td>
+      <td>140</td>
+      <td>90</td>
+      <td>13.0</td>
+      <td>98.0</td>
+      <td>70</td>
+      <td>high risk</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>ADT3_YEAST</td>
-      <td>0.64</td>
-      <td>0.62</td>
-      <td>0.49</td>
-      <td>0.15</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.53</td>
-      <td>0.22</td>
-      <td>MIT</td>
+      <td>29</td>
+      <td>90</td>
+      <td>70</td>
+      <td>8.0</td>
+      <td>100.0</td>
+      <td>80</td>
+      <td>high risk</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>AAR2_YEAST</td>
-      <td>0.58</td>
-      <td>0.44</td>
-      <td>0.57</td>
-      <td>0.13</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.54</td>
-      <td>0.22</td>
-      <td>NUC</td>
+      <td>30</td>
+      <td>140</td>
+      <td>85</td>
+      <td>7.0</td>
+      <td>98.0</td>
+      <td>70</td>
+      <td>high risk</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>AATM_YEAST</td>
-      <td>0.42</td>
-      <td>0.44</td>
-      <td>0.48</td>
-      <td>0.54</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.48</td>
-      <td>0.22</td>
-      <td>MIT</td>
+      <td>35</td>
+      <td>120</td>
+      <td>60</td>
+      <td>6.1</td>
+      <td>98.0</td>
+      <td>76</td>
+      <td>low risk</td>
     </tr>
     <tr>
       <th>...</th>
@@ -706,83 +670,65 @@ Informasi Variabel:
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>1479</th>
-      <td>YUR1_YEAST</td>
-      <td>0.81</td>
-      <td>0.62</td>
-      <td>0.43</td>
-      <td>0.17</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.53</td>
-      <td>0.22</td>
-      <td>ME2</td>
+      <th>1009</th>
+      <td>22</td>
+      <td>120</td>
+      <td>60</td>
+      <td>15.0</td>
+      <td>98.0</td>
+      <td>80</td>
+      <td>high risk</td>
     </tr>
     <tr>
-      <th>1480</th>
-      <td>ZIP1_YEAST</td>
-      <td>0.47</td>
-      <td>0.43</td>
-      <td>0.61</td>
-      <td>0.40</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.48</td>
-      <td>0.47</td>
-      <td>NUC</td>
+      <th>1010</th>
+      <td>55</td>
+      <td>120</td>
+      <td>90</td>
+      <td>18.0</td>
+      <td>98.0</td>
+      <td>60</td>
+      <td>high risk</td>
     </tr>
     <tr>
-      <th>1481</th>
-      <td>ZNRP_YEAST</td>
-      <td>0.67</td>
-      <td>0.57</td>
-      <td>0.36</td>
-      <td>0.19</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.56</td>
-      <td>0.22</td>
-      <td>ME2</td>
+      <th>1011</th>
+      <td>35</td>
+      <td>85</td>
+      <td>60</td>
+      <td>19.0</td>
+      <td>98.0</td>
+      <td>86</td>
+      <td>high risk</td>
     </tr>
     <tr>
-      <th>1482</th>
-      <td>ZUO1_YEAST</td>
-      <td>0.43</td>
-      <td>0.40</td>
-      <td>0.60</td>
-      <td>0.16</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.53</td>
-      <td>0.39</td>
-      <td>NUC</td>
+      <th>1012</th>
+      <td>43</td>
+      <td>120</td>
+      <td>90</td>
+      <td>18.0</td>
+      <td>98.0</td>
+      <td>70</td>
+      <td>high risk</td>
     </tr>
     <tr>
-      <th>1483</th>
-      <td>G6PD_YEAST</td>
-      <td>0.65</td>
-      <td>0.54</td>
-      <td>0.54</td>
-      <td>0.13</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.53</td>
-      <td>0.22</td>
-      <td>CYT</td>
+      <th>1013</th>
+      <td>32</td>
+      <td>120</td>
+      <td>65</td>
+      <td>6.0</td>
+      <td>101.0</td>
+      <td>76</td>
+      <td>mid risk</td>
     </tr>
   </tbody>
 </table>
-<p>1484 rows × 10 columns</p>
+<p>1014 rows × 7 columns</p>
 </div>
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-54bc5079-e955-40c0-a642-d073c117430f')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-01415d6d-b193-41f0-8ecc-6308d5bb5766')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -834,12 +780,12 @@ Informasi Variabel:
 
     <script>
       const buttonEl =
-        document.querySelector('#df-54bc5079-e955-40c0-a642-d073c117430f button.colab-df-convert');
+        document.querySelector('#df-01415d6d-b193-41f0-8ecc-6308d5bb5766 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-54bc5079-e955-40c0-a642-d073c117430f');
+        const element = document.querySelector('#df-01415d6d-b193-41f0-8ecc-6308d5bb5766');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -866,6 +812,8 @@ Informasi Variabel:
 <h3>Struktur Dataset<a class="headerlink" href="#struktur-dataset" title="Link to this heading">#</a></h3>
 <section id="fitur-dan-label">
 <h4>Fitur dan Label<a class="headerlink" href="#fitur-dan-label" title="Link to this heading">#</a></h4>
+<section id="ukuran-dataset">
+<h5>Ukuran Dataset<a class="headerlink" href="#ukuran-dataset" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ukuran fitur</span>
@@ -874,12 +822,15 @@ Informasi Variabel:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1484, 10)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1014, 7)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Bedasarkan ukurannya datanya terdapat 1484 data dan terdapat 10 kolom</p>
+<p>Berdasarkan hasil display tersebut dapat disimpulkan bahwa dataset Risiko Kesehatan Ibu memiliki 1014 data dan memiliki 7 kolom atau fitur</p>
+</section>
+<section id="jumlah-kolom-dataset">
+<h5>Jumlah Kolom Dataset<a class="headerlink" href="#jumlah-kolom-dataset" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># jumlah kolom</span>
@@ -888,8 +839,8 @@ Informasi Variabel:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Sequence_Name&#39;, &#39;mcg&#39;, &#39;gvh&#39;, &#39;alm&#39;, &#39;mit&#39;, &#39;erl&#39;, &#39;pox&#39;, &#39;vac&#39;, &#39;nuc&#39;,
-       &#39;localization_site&#39;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Age&#39;, &#39;SystolicBP&#39;, &#39;DiastolicBP&#39;, &#39;BS&#39;, &#39;BodyTemp&#39;, &#39;HeartRate&#39;,
+       &#39;RiskLevel&#39;],
       dtype=&#39;object&#39;)
 </pre></div>
 </div>
@@ -898,16 +849,17 @@ Informasi Variabel:
 <p>Fitur merupakan sebuah atribut atau variabel yang dapat menentukan hasil prediksi atau clustering nantinya.</p>
 <p>Fitur yang terdapat pada dataset:</p>
 <ul class="simple">
-<li><p>msg : Skor dari metode McGeoch untuk pengenalan sinyal sekuens.</p></li>
-<li><p>gvh : Skor dari metode von Heijne untuk pengenalan sinyal sekuens.</p></li>
-<li><p>alm : Skor dari ALOM (membrane-spanning region prediction).</p></li>
-<li><p>mit : Skor dari analisis diskriminan terhadap asam amino untuk prediksi mitokondria.</p></li>
-<li><p>erl : Apakah ada substring HDEL (sinyal retensi ER).</p></li>
-<li><p>pox : Adanya sinyal target peroksisomal di bagian C-terminus.</p></li>
-<li><p>vac : Skor dari analisis diskriminan untuk vakuola.</p></li>
-<li><p>nuc : Skor dari analisis diskriminan untuk nukleus.</p></li>
-<li><p>localization_site : Target atau label klasifikasi, yaitu lokasi akhir protein dalam sel.</p></li>
+<li><p>Age : 	Segala usia dalam tahun ketika seorang wanita sedang hamil.</p></li>
+<li><p>SystolicBP : Nilai atas Tekanan Darah dalam mmHg, atribut penting lainnya selama kehamilan.</p></li>
+<li><p>DiastolicBP : 	Nilai Tekanan Darah yang lebih rendah dalam mmHg, atribut penting lainnya selama kehamilan</p></li>
+<li><p>BS : Kadar glukosa darah dinyatakan dalam konsentrasi molar</p></li>
+<li><p>BodyTemp : Nilai suhu tubuh dari Ibu.</p></li>
+<li><p>HeartRate : Denyut jantung istirahat normal.</p></li>
+<li><p>RiskLevel : Tingkat Intensitas Risiko yang Diprediksi selama kehamilan dengan mempertimbangkan atribut sebelumnya.</p></li>
 </ul>
+</section>
+<section id="tipe-data-dari-masing-masing-fitur-dataset">
+<h5>Tipe data dari masing - masing Fitur Dataset<a class="headerlink" href="#tipe-data-dari-masing-masing-fitur-dataset" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tipe data</span>
@@ -939,43 +891,31 @@ Informasi Variabel:
   </thead>
   <tbody>
     <tr>
-      <th>Sequence_Name</th>
-      <td>object</td>
+      <th>Age</th>
+      <td>int64</td>
     </tr>
     <tr>
-      <th>mcg</th>
+      <th>SystolicBP</th>
+      <td>int64</td>
+    </tr>
+    <tr>
+      <th>DiastolicBP</th>
+      <td>int64</td>
+    </tr>
+    <tr>
+      <th>BS</th>
       <td>float64</td>
     </tr>
     <tr>
-      <th>gvh</th>
+      <th>BodyTemp</th>
       <td>float64</td>
     </tr>
     <tr>
-      <th>alm</th>
-      <td>float64</td>
+      <th>HeartRate</th>
+      <td>int64</td>
     </tr>
     <tr>
-      <th>mit</th>
-      <td>float64</td>
-    </tr>
-    <tr>
-      <th>erl</th>
-      <td>float64</td>
-    </tr>
-    <tr>
-      <th>pox</th>
-      <td>float64</td>
-    </tr>
-    <tr>
-      <th>vac</th>
-      <td>float64</td>
-    </tr>
-    <tr>
-      <th>nuc</th>
-      <td>float64</td>
-    </tr>
-    <tr>
-      <th>localization_site</th>
+      <th>RiskLevel</th>
       <td>object</td>
     </tr>
   </tbody>
@@ -984,16 +924,15 @@ Informasi Variabel:
 </div>
 <p>Tipe Data fitur yang terdapat pada dataset:</p>
 <ul class="simple">
-<li><p>msg : Float (Numerik).</p></li>
-<li><p>gvh : Float (Numerik).</p></li>
-<li><p>alm : Float (Numerik).</p></li>
-<li><p>mit : Float (Numerik).</p></li>
-<li><p>erl : Float (Numerik).</p></li>
-<li><p>pox : Float (Numerik).</p></li>
-<li><p>vac : Float (Numerik).</p></li>
-<li><p>nuc : Float (Numerik).</p></li>
-<li><p>localization_site : Object berisi string Label.</p></li>
+<li><p>Age : Integer (Numerik).</p></li>
+<li><p>SystolicBP : Integer (Numerik).</p></li>
+<li><p>DiastolicBP : Integer (Numerik).</p></li>
+<li><p>BS : Float (Numerik).</p></li>
+<li><p>BodyTemp : Float (Numerik).</p></li>
+<li><p>HeartRate : Integer (Numerik).</p></li>
+<li><p>RiskLevel : Object berisi string Label.</p></li>
 </ul>
+</section>
 </section>
 <section id="identifikasi-kualitas-dari-dataset">
 <h4>Identifikasi Kualitas dari Dataset<a class="headerlink" href="#identifikasi-kualitas-dari-dataset" title="Link to this heading">#</a></h4>
@@ -1030,25 +969,22 @@ Informasi Variabel:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Detect Missing Values:
 Empty DataFrame
-Columns: [Sequence_Name, mcg, gvh, alm, mit, erl, pox, vac, nuc, localization_site]
+Columns: [Age, SystolicBP, DiastolicBP, BS, BodyTemp, HeartRate, RiskLevel]
 Index: []
 Missing Value Counts:
-Sequence_Name        0
-mcg                  0
-gvh                  0
-alm                  0
-mit                  0
-erl                  0
-pox                  0
-vac                  0
-nuc                  0
-localization_site    0
+Age            0
+SystolicBP     0
+DiastolicBP    0
+BS             0
+BodyTemp       0
+HeartRate      0
+RiskLevel      0
 dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
-<p>Berdasarkan hasil identifikasi bashwa setiap fitur pada dataset ini sudah terbebas atau sudah besih dari nilai null atau missing value sehingga tidak perlu diadakannya proses prepocessing untuk penanganan data yang mmissing.</p>
+<p>Berdasarkan hasil pencarian missing value setiap fitur di dataset disimpulkan bahwa setiap fitur terbebas dari missing value dalam artian dataset sudah dalam keadaan bersih</p>
 </section>
 <section id="deteksi-data-outlier">
 <h5>Deteksi Data Outlier<a class="headerlink" href="#deteksi-data-outlier" title="Link to this heading">#</a></h5>
@@ -1075,8 +1011,10 @@ dtype: int64
 <ul class="simple">
 <li><p>( <span class="math notranslate nohighlight">\(text{dist}(p, o) \)</span>) = jarak antara titik <span class="math notranslate nohighlight">\(( p \)</span>) dan tetangganya <span class="math notranslate nohighlight">\(( o \)</span>)</p></li>
 <li><p>( <span class="math notranslate nohighlight">\(text{k-dist}(o) \)</span>) = jarak dari <span class="math notranslate nohighlight">\(( o \)</span>) ke tetangga ke-k</p></li>
-<li><p>Fungsi <code class="docutils literal notranslate"><span class="pre">max{}</span></code> digunakan agar tidak terlalu sensitif terhadap outlier yang jauh</p></li>
+<li><p>Fungsi <code class="docutils literal notranslate"><span class="pre">max{}</span></code> digunakan agar tidak terlalu sensitif terhadap outlier yang jauh.</p></li>
 </ul>
+<section id="implementasi-code">
+<h6>Implementasi Code<a class="headerlink" href="#implementasi-code" title="Link to this heading">#</a></h6>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
@@ -1085,7 +1023,7 @@ dtype: int64
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># select data numerik</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">])</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">])</span>
 
 <span class="n">lof</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">contamination</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
 
@@ -1097,14 +1035,19 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outlier
- 1    1409
--1      75
+ 1    965
+-1     49
 Name: count, dtype: int64
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/dist-packages/sklearn/neighbors/_lof.py:322: UserWarning: Duplicate values are leading to incorrect results. Increase the number of neighbors for more accurate results.
+  warnings.warn(
 </pre></div>
 </div>
 </div>
 </div>
-<p>Berdasarkan hasil analisis outlier menggunakan metode LOF terdapat sebnyak 75 data dari total 1484 yang merupakan outlier</p>
+<p>Hasil Pengujian Outlier terhadap dataset disimpulkan bahwa tedapat 49 data yang teindikasi Outlier yang disimbolkan dengan angka (-1) dari total 1014 data.</p>
+</section>
 </section>
 </section>
 <section id="visualisasi-data">
@@ -1116,9 +1059,9 @@ Name: count, dtype: int64
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;localization_site&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Jumlah Sampel per Lokasi Protein&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Lokasi&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;RiskLevel&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Jumlah Sampel Class Level Risiko&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Class&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Jumlah Sampel&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
@@ -1127,14 +1070,14 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipython-input-9-1461880475.py:6: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipython-input-9-240362579.py:6: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
-  sns.countplot(x=&#39;localization_site&#39;, data=data, palette=&#39;viridis&#39;)
+  sns.countplot(x=&#39;RiskLevel&#39;, data=data, palette=&#39;viridis&#39;)
 </pre></div>
 </div>
-<img alt="_images/4d416501b5ecaeac286856846213573756aa3b2f1f3274d49689bec782511b5a.png" src="_images/4d416501b5ecaeac286856846213573756aa3b2f1f3274d49689bec782511b5a.png" />
+<img alt="_images/af0f84dddf0b11649021e01b143660343289c929519aface76d277f3b57f2b41.png" src="_images/af0f84dddf0b11649021e01b143660343289c929519aface76d277f3b57f2b41.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1150,7 +1093,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1200x1000 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="_images/19e88b7a7dba853c8bb251a463179afeb5936b35680fb59cfbc61dcd841c7f2e.png" src="_images/19e88b7a7dba853c8bb251a463179afeb5936b35680fb59cfbc61dcd841c7f2e.png" />
+<img alt="_images/2a1b27ec2a1713984ab8ba32f1e7a8a187761d21ea983aca22a8f3362e64cb4c.png" src="_images/2a1b27ec2a1713984ab8ba32f1e7a8a187761d21ea983aca22a8f3362e64cb4c.png" />
 </div>
 </div>
 </section>
@@ -1160,8 +1103,8 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <h2>Prepocessing Data<a class="headerlink" href="#prepocessing-data" title="Link to this heading">#</a></h2>
 <section id="mengahapus-outlier-pada-data">
 <h3>Mengahapus Outlier Pada Data<a class="headerlink" href="#mengahapus-outlier-pada-data" title="Link to this heading">#</a></h3>
-<p>Setelah ditemukan 75 outlier menggunakan metode LOF maka diperlukan adanya penghapusan pada data tersbut agar tidak mempengaruhi pada proses perhitungan akurasi ataupun klasifikasi pada akhirnya.</p>
-<p>Keterangan Outlier:</p>
+<p>Setelah ditemukan 49 outlier menggunakan metode LOF, Diperlukan adnaya cleaning Data agar tidak mempengaruhi nilai akurasi dari hasil Klasifikasi pada setiap Modelling-nya.</p>
+<p>Keterangan Outlier</p>
 <ul class="simple">
 <li><p>Data Outlier disimbolkan dengan (-1)</p></li>
 <li><p>Non Outlier (1)</p></li>
@@ -1180,16 +1123,17 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah data awal: 1484
-Jumlah data setelah outlier dihapus: 1409
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah data awal: 1014
+Jumlah data setelah outlier dihapus: 965
 </pre></div>
 </div>
 </div>
 </div>
+<p>Setelah dilakukannya Cleaning Data terdapat 965 sisa data yang bersih dari outliernya.</p>
 </section>
 <section id="min-max-scaler">
 <h3>Min-Max Scaler<a class="headerlink" href="#min-max-scaler" title="Link to this heading">#</a></h3>
-<p>Min-Max Scaler adalah salah satu metode normalisasi data yang bertujuan untuk mengubah skala fitur numerik agar berada dalam rentang tertentu, umumnya antara 0 dan 1. Teknik ini digunakan agar semua fitur memiliki kontribusi yang seimbang saat digunakan oleh algoritma pembelajaran mesin.</p>
+<p>Berdasarkan proses data understanding sebelumnya terdapat fitur yang memiliki tipe data yang berdeda yakni integer dan float, oleh karena itu perlu dilakukannya proses normalisasi agar data memiliki range yang sama dan tidak memiliki interval yang telalu tinggi. Normalisasinya dapat menggunakan Min-Max Scaler. Min-Max Scaler adalah salah satu metode normalisasi data yang bertujuan untuk mengubah skala fitur numerik agar berada dalam rentang tertentu, umumnya antara 0 dan 1. Teknik ini digunakan agar semua fitur memiliki kontribusi yang seimbang saat digunakan oleh algoritma pembelajaran mesin.</p>
 <div class="math notranslate nohighlight">
 \[
 X_{\text{scaled}} = \frac{X - X_{\min}}{X_{\max} - X_{\min}}
@@ -1207,7 +1151,7 @@ X_{\text{scaled}} = \frac{X - X_{\min}}{X_{\max} - X_{\min}}
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span>
 
 <span class="c1"># 1. Ambil hanya fitur numerik</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">data_clean</span><span class="p">[[</span><span class="s1">&#39;mcg&#39;</span><span class="p">,</span> <span class="s1">&#39;gvh&#39;</span><span class="p">,</span> <span class="s1">&#39;alm&#39;</span><span class="p">,</span> <span class="s1">&#39;mit&#39;</span><span class="p">,</span> <span class="s1">&#39;erl&#39;</span><span class="p">,</span> <span class="s1">&#39;pox&#39;</span><span class="p">,</span> <span class="s1">&#39;vac&#39;</span><span class="p">,</span> <span class="s1">&#39;nuc&#39;</span><span class="p">]]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data_clean</span><span class="p">[[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;SystolicBP&#39;</span><span class="p">,</span> <span class="s1">&#39;DiastolicBP&#39;</span><span class="p">,</span> <span class="s1">&#39;BS&#39;</span><span class="p">,</span> <span class="s1">&#39;BodyTemp&#39;</span><span class="p">,</span> <span class="s1">&#39;HeartRate&#39;</span><span class="p">]]</span>
 
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
 
@@ -1216,38 +1160,32 @@ X_{\text{scaled}} = \frac{X - X_{\min}}{X_{\max} - X_{\min}}
 
 <span class="n">X_scaled_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 
-<span class="c1"># 5. (Opsional) gabungkan dengan label jika ingin lihat datanya lengkap</span>
-<span class="n">data_scaled</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_scaled_df</span><span class="p">,</span> <span class="n">data_clean</span><span class="p">[</span><span class="s1">&#39;localization_site&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 4. Menggabungkan class ke fitur yang telah di normalisasi</span>
+<span class="n">data_scaled</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_scaled_df</span><span class="p">,</span> <span class="n">data_clean</span><span class="p">[</span><span class="s1">&#39;RiskLevel&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">data_scaled</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        mcg       gvh       alm       mit  erl  pox       vac    nuc  \
-0  0.493976  0.571429  0.481481  0.151163  0.0  0.0  0.466667  0.125   
-1  0.313253  0.649351  0.500000  0.313953  0.0  0.0  0.577778  0.125   
-2  0.566265  0.584416  0.518519  0.174419  0.0  0.0  0.577778  0.125   
-3  0.493976  0.350649  0.666667  0.151163  0.0  0.0  0.600000  0.125   
-4  0.301205  0.350649  0.500000  0.627907  0.0  0.0  0.466667  0.125   
-
-  localization_site  
-0               MIT  
-1               MIT  
-2               MIT  
-3               NUC  
-4               MIT  
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        Age  SystolicBP  DiastolicBP        BS  BodyTemp  HeartRate  RiskLevel
+0  0.416667    0.777778     0.803922  0.538462       0.0   0.333333  high risk
+1  0.316667    0.222222     0.411765  0.153846       0.4   0.666667  high risk
+2  0.333333    0.777778     0.705882  0.076923       0.0   0.333333  high risk
+3  0.416667    0.555556     0.215686  0.007692       0.0   0.533333   low risk
+4  0.216667    0.777778     0.607843  0.077692       0.0   0.333333  high risk
 </pre></div>
 </div>
 </div>
 </div>
-<p>Setalah proses penghapusan terdapat sebanyak 1409 data yang bersih dari outlier.</p>
 </section>
 </section>
-<section id="modelling-klasifikasi-menggunakan-naive-bayes">
-<h2>Modelling Klasifikasi Menggunakan Naive Bayes<a class="headerlink" href="#modelling-klasifikasi-menggunakan-naive-bayes" title="Link to this heading">#</a></h2>
+<section id="modelling">
+<h2>Modelling<a class="headerlink" href="#modelling" title="Link to this heading">#</a></h2>
 <p>Proses modeling adalah merupakan suatu tahapan dalam analisis data, di mana kita membangun sebuah model matematis atau algoritma pembelajaran mesin yang dapat mengenali pola dari data, dan menggunakannya untuk membuat prediksi atau keputusan otomatis.</p>
 <p>Tujuan dari proses ini adalah untuk mengubah data mentah yang telah diprepocessing menjadi sebuah model yang dapat belajar dari data, lalu digunakan untuk memecahkan masalah tertentu, seperti klasifikasi, regresi, deteksi outlier, dsb.</p>
+<section id="modelling-klasifikasi-menggunakan-naive-bayes">
+<h3>Modelling Klasifikasi Menggunakan Naive Bayes<a class="headerlink" href="#modelling-klasifikasi-menggunakan-naive-bayes" title="Link to this heading">#</a></h3>
 <p>Pada saat ini, proses modelling akan menggunakan metode Naive Bayes untuk proses Klasifikasinya.</p>
 <p><strong>Naive Bayes</strong> adalah salah satu metode klasifikasi yang sederhana namun sangat efektif dalam dunia pembelajaran mesin (machine learning). Metode ini bekerja berdasarkan prinsip probabilitas, khususnya Teorema Bayes, yang digunakan untuk memperkirakan kemungkinan suatu data termasuk ke dalam sebuah kelas tertentu.</p>
 <p>Ciri khas dari metode ini adalah anggapan bahwa setiap fitur (atau atribut) pada data bersifat saling independen, artinya kemunculan satu fitur tidak dipengaruhi oleh fitur lainnya. Meskipun anggapan ini sering kali tidak sepenuhnya benar dalam kenyataan, pendekatan “naive” ini justru membuat perhitungan menjadi lebih sederhana dan efisien, serta tetap menghasilkan performa yang kompetitif dalam banyak kasus.</p>
@@ -1263,8 +1201,16 @@ P(C \mid X) = \frac{P(X \mid C) \cdot P(C)}{P(X)}
 <li><p><span class="math notranslate nohighlight">\(( P(C) \)</span>): <strong>Prior</strong> – probabilitas awal kelas <span class="math notranslate nohighlight">\(( C \)</span>) sebelum melihat data</p></li>
 <li><p><span class="math notranslate nohighlight">\(( P(X) \)</span>): Probabilitas keseluruhan data <span class="math notranslate nohighlight">\(( X \)</span>) (konstanta untuk semua kelas)</p></li>
 </ul>
+<p>Langkah - Langkah Pada Modelling:</p>
+<ol class="arabic simple">
+<li><p>Pada saat Training Model akan membagi dataset menjadi dua bagian yakni 30% datset yang digunakan untuk testing dan 70% data digunakan untuk training.</p></li>
+<li><p>Menghitung Probabilitas Awal</p></li>
+<li><p>Menghitung Persebaran data / Standar Deviasi.</p></li>
+<li><p>Menghitung Distribusi Gaussian.</p></li>
+<li><p>Mnenghitung Posterior.</p></li>
+</ol>
 <section id="latih-model">
-<h3>Latih Model<a class="headerlink" href="#latih-model" title="Link to this heading">#</a></h3>
+<h4>Latih Model<a class="headerlink" href="#latih-model" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1274,8 +1220,8 @@ P(C \mid X) = \frac{P(X \mid C) \cdot P(C)}{P(X)}
 <span class="kn">from</span><span class="w"> </span><span class="nn">ucimlrepo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_ucirepo</span>
 
 <span class="c1"># memisahkan atribut dan label</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[[</span><span class="s1">&#39;mcg&#39;</span><span class="p">,</span> <span class="s1">&#39;gvh&#39;</span><span class="p">,</span> <span class="s1">&#39;alm&#39;</span><span class="p">,</span> <span class="s1">&#39;mit&#39;</span><span class="p">,</span> <span class="s1">&#39;erl&#39;</span><span class="p">,</span> <span class="s1">&#39;pox&#39;</span><span class="p">,</span> <span class="s1">&#39;vac&#39;</span><span class="p">,</span> <span class="s1">&#39;nuc&#39;</span><span class="p">]]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[</span><span class="s1">&#39;localization_site&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;SystolicBP&#39;</span><span class="p">,</span> <span class="s1">&#39;DiastolicBP&#39;</span><span class="p">,</span> <span class="s1">&#39;BS&#39;</span><span class="p">,</span> <span class="s1">&#39;BodyTemp&#39;</span><span class="p">,</span> <span class="s1">&#39;HeartRate&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[</span><span class="s1">&#39;RiskLevel&#39;</span><span class="p">]</span>
 
 <span class="c1"># Membagi dataset menjadi data latih &amp; data uji</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -1289,16 +1235,15 @@ P(C \mid X) = \frac{P(X \mid C) \cdot P(C)}{P(X)}
 </div>
 </div>
 </div>
-<p>Pada Proses diatas membagi data menjadi dua yakni data untuk testing sebesar 30% dan data untuk untuk trainng sebesar 70%.</p>
 </section>
 <section id="proses-klasifikasi">
-<h3>Proses Klasifikasi<a class="headerlink" href="#proses-klasifikasi" title="Link to this heading">#</a></h3>
-<p>Proses Klasifikasi dilakukan dengan prediksi menggunakan data testing.</p>
+<h4>Proses Klasifikasi<a class="headerlink" href="#proses-klasifikasi" title="Link to this heading">#</a></h4>
+<p>Proses Klasifikasinya menggunakan data testing yang telah dipisah sebesar 30%.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">model_gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">hasil_klasifikasi</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># ambil fitur data uji</span>
-<span class="n">hasil_klasifikasi</span><span class="p">[</span><span class="s1">&#39;label_aktual&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># label asli</span>
+<span class="n">hasil_klasifikasi</span><span class="p">[</span><span class="s1">&#39;label_Data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># label asli</span>
 <span class="n">hasil_klasifikasi</span><span class="p">[</span><span class="s1">&#39;label_prediksi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pred</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">hasil_klasifikasi</span><span class="p">)</span>
@@ -1306,40 +1251,40 @@ P(C \mid X) = \frac{P(X \mid C) \cdot P(C)}{P(X)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           mcg       gvh       alm       mit  erl  pox       vac       nuc  \
-317   0.216867  0.506494  0.277778  0.348837  0.0  0.0  0.577778  0.159091   
-587   0.518072  0.376623  0.703704  0.186047  0.0  0.0  0.488889  0.125000   
-1156  0.734940  0.727273  0.111111  0.325581  0.0  0.0  0.644444  0.125000   
-610   0.433735  0.298701  0.666667  0.139535  0.0  0.0  0.577778  0.238636   
-1239  0.421687  0.441558  0.500000  0.139535  0.0  0.0  0.600000  0.227273   
-...        ...       ...       ...       ...  ...  ...       ...       ...   
-1098  0.433735  0.103896  0.703704  0.313953  0.0  0.0  0.400000  0.170455   
-1127  0.156627  0.363636  0.629630  0.220930  0.0  0.0  0.577778  0.329545   
-900   0.120482  0.181818  0.629630  0.151163  0.0  0.0  0.511111  0.125000   
-165   0.590361  0.363636  0.537037  0.267442  0.0  0.0  0.488889  0.125000   
-862   0.361446  0.389610  0.611111  0.220930  0.0  0.0  0.533333  0.250000   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          Age  SystolicBP  DiastolicBP        BS  BodyTemp  HeartRate  \
+953  0.833333    0.555556     0.705882  0.692308       0.0   0.000000   
+278  0.116667    0.222222     0.313725  0.130769       1.0   0.233333   
+14   0.666667    0.777778     0.803922  0.692308       0.0   1.000000   
+680  0.050000    0.222222     0.313725  0.146154       0.6   0.666667   
+338  0.033333    0.277778     0.215686  0.069231       0.0   0.166667   
+..        ...         ...          ...       ...       ...        ...   
+519  0.366667    0.777778     0.803922  0.923077       0.0   0.933333   
+20   0.183333    0.222222     0.313725  0.115385       0.0   0.533333   
+873  0.150000    0.222222     0.411765  0.115385       0.0   0.666667   
+746  0.150000    0.555556     0.803922  0.061538       0.0   0.000000   
+385  0.200000    0.333333     0.313725  0.138462       0.0   0.666667   
 
-     label_aktual label_prediksi  
-317           ME3            ME3  
-587           MIT            POX  
-1156          ME1            ME1  
-610           NUC            CYT  
-1239          CYT            CYT  
-...           ...            ...  
-1098          NUC            NUC  
-1127          CYT            NUC  
-900           NUC            POX  
-165           CYT            POX  
-862           NUC            CYT  
+    label_Data label_prediksi  
+953  high risk      high risk  
+278  high risk       mid risk  
+14   high risk      high risk  
+680   mid risk       low risk  
+338   mid risk       low risk  
+..         ...            ...  
+519  high risk      high risk  
+20    low risk       low risk  
+873   low risk       low risk  
+746   mid risk       low risk  
+385   low risk       low risk  
 
-[423 rows x 10 columns]
+[290 rows x 8 columns]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="evaluasi">
-<h3>Evaluasi<a class="headerlink" href="#evaluasi" title="Link to this heading">#</a></h3>
+<h4>Evaluasi<a class="headerlink" href="#evaluasi" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc_gnb</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
@@ -1356,18 +1301,49 @@ P(C \mid X) = \frac{P(X \mid C) \cdot P(C)}{P(X)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi     : 0.29
-Presisi     : 0.57
-Recall      : 0.29
-F1 Score    : 0.37
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi     : 0.62
+Presisi     : 0.61
+Recall      : 0.62
+F1 Score    : 0.58
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<section id="uji-coba-prediksi">
+<h4>Uji Coba Prediksi<a class="headerlink" href="#uji-coba-prediksi" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data yang digunakan</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_scaled</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">500</span><span class="p">])</span>
+<span class="c1"># # prediksi data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Uji Coba Prediksi = &quot;</span><span class="p">,</span> <span class="n">model_gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.555556</span><span class="p">,</span> <span class="mf">0.215686</span><span class="p">,</span> <span class="mf">0.007692</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.533333</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age                0.35
+SystolicBP     0.555556
+DiastolicBP    0.215686
+BS             0.007692
+BodyTemp            0.0
+HeartRate      0.533333
+RiskLevel      low risk
+Name: 500, dtype: object
+Hasil Uji Coba Prediksi =  [&#39;low risk&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but GaussianNB was fitted with feature names
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dapat disimpulkan pada prediksi uji coba menggunakan Model Gaussian Naive Bayes pada data ke 500 itu belabel “low_risk”</p>
+</section>
 </section>
 <section id="modelling-klasifikasi-menggunakan-knn-k-nearest-neighbours">
-<h2>Modelling Klasifikasi Menggunakan KNN (K Nearest Neighbours)<a class="headerlink" href="#modelling-klasifikasi-menggunakan-knn-k-nearest-neighbours" title="Link to this heading">#</a></h2>
+<h3>Modelling Klasifikasi Menggunakan KNN (K Nearest Neighbours)<a class="headerlink" href="#modelling-klasifikasi-menggunakan-knn-k-nearest-neighbours" title="Link to this heading">#</a></h3>
 <p>K-Nearest Neighbors (KNN) adalah salah satu algoritma pembelajaran mesin yang digunakan untuk menyelesaikan masalah klasifikasi maupun regresi. KNN bekerja berdasarkan prinsip kesamaan atau kedekatan antara data. Algoritma ini mengklasifikasikan suatu data baru dengan melihat sejumlah tetangga terdekat (dalam hal ini sebanyak K data) dari data tersebut di ruang fitur.</p>
 <p>Dalam proses klasifikasi, ketika sebuah data baru diberikan, KNN akan menghitung jarak antara data baru tersebut dengan seluruh data yang ada dalam dataset pelatihan. Setelah itu, KNN akan memilih K data terdekat berdasarkan jarak tersebut, lalu menentukan kelas mayoritas dari K tetangga itu sebagai prediksi label data baru.</p>
 <p>Ketika sebuah data baru diberikan, KNN akan menghitung jarak antara data tersebut dengan semua data pelatihan, menggunakan rumus jarak seperti <strong>Euclidean Distance</strong>:</p>
@@ -1376,9 +1352,14 @@ F1 Score    : 0.37
 d(x, y) = \sqrt{ \sum_{i=1}^{n} (x_i - y_i)^2 }
 \]</div>
 <p>Kemudian, algoritma akan memilih <span class="math notranslate nohighlight">\(( K \)</span>) data dengan jarak terdekat, lalu menentukan <strong>kelas mayoritas</strong> dari tetangga tersebut sebagai prediksi.</p>
-<p>Pada kasus ini, sebelum melakukan proses training, data akan di pisah menjadi dua bagian yakni 30% untuk testing dan 70% untuk training. NIlai K yang digunakan sebanyak 5.</p>
+<p>Langkah - Langkah Modelling dengan KNN:</p>
+<ol class="arabic simple">
+<li><p>Pengumpulan dan persiapan data : Pada kasus ini, sebelum melakukan proses training, data akan di pisah menjadi dua bagian yakni 30% untuk testing dan 70% untuk training. NIlai K yang digunakan sebanyak 6.</p></li>
+<li><p>Pemilihan Parameter K : Jumlah tetangga terdekat yang akan dipertimbangkan saat membuat prediksi. Pemilihan K yang tepat sangat memengaruhi kinerja model.NIlai K yang digunakan sebanyak 6.</p></li>
+<li><p>Proses Prediksi: Hitung jarak (misalnya jarak Euclidean) antara data baru ini dengan SETIAP titik data di set pelatihan. Pilih K titik data dari set pelatihan yang memiliki jarak paling kecil ke data baru tersebut. Lihat kelas dari K tetangga terdekat ini. Kelas yang paling banyak muncul di antara K tetangga tersebut akan menjadi kelas yang diprediksi untuk data baru.</p></li>
+</ol>
 <section id="id1">
-<h3>Latih Model<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h4>Latih Model<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1388,14 +1369,14 @@ d(x, y) = \sqrt{ \sum_{i=1}^{n} (x_i - y_i)^2 }
 
 
 <span class="c1"># Memisahkan fitur dan label</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[[</span><span class="s1">&#39;mcg&#39;</span><span class="p">,</span> <span class="s1">&#39;gvh&#39;</span><span class="p">,</span> <span class="s1">&#39;alm&#39;</span><span class="p">,</span> <span class="s1">&#39;mit&#39;</span><span class="p">,</span> <span class="s1">&#39;erl&#39;</span><span class="p">,</span> <span class="s1">&#39;pox&#39;</span><span class="p">,</span> <span class="s1">&#39;vac&#39;</span><span class="p">,</span> <span class="s1">&#39;nuc&#39;</span><span class="p">]]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[</span><span class="s1">&#39;localization_site&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;SystolicBP&#39;</span><span class="p">,</span> <span class="s1">&#39;DiastolicBP&#39;</span><span class="p">,</span> <span class="s1">&#39;BS&#39;</span><span class="p">,</span> <span class="s1">&#39;BodyTemp&#39;</span><span class="p">,</span> <span class="s1">&#39;HeartRate&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[</span><span class="s1">&#39;RiskLevel&#39;</span><span class="p">]</span>
 
 <span class="c1"># Split data menjadi training dan testing</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="c1"># Buat model KNN dengan nilai k = 5</span>
-<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1"># Buat model KNN dengan nilai k = 6</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1816,12 +1797,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
 }
-</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>KNeighborsClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">?<span>Documentation for KNeighborsClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>KNeighborsClassifier()</pre></div> </div></div></div></div></div></div>
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier(n_neighbors=6)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>KNeighborsClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">?<span>Documentation for KNeighborsClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>KNeighborsClassifier(n_neighbors=6)</pre></div> </div></div></div></div></div></div>
 </div>
 </section>
 <section id="id2">
-<h3>Proses Klasifikasi<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<p>Proses Klasifikasi dilakukan dengan prediksi menggunakan data testing.</p>
+<h4>Proses Klasifikasi<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Proses Klasifikasinya menggunakan data testing yang telah dipisah sebesar 30%.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_knn</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -1834,40 +1815,40 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           mcg       gvh       alm       mit  erl  pox       vac       nuc  \
-317   0.216867  0.506494  0.277778  0.348837  0.0  0.0  0.577778  0.159091   
-587   0.518072  0.376623  0.703704  0.186047  0.0  0.0  0.488889  0.125000   
-1156  0.734940  0.727273  0.111111  0.325581  0.0  0.0  0.644444  0.125000   
-610   0.433735  0.298701  0.666667  0.139535  0.0  0.0  0.577778  0.238636   
-1239  0.421687  0.441558  0.500000  0.139535  0.0  0.0  0.600000  0.227273   
-...        ...       ...       ...       ...  ...  ...       ...       ...   
-1098  0.433735  0.103896  0.703704  0.313953  0.0  0.0  0.400000  0.170455   
-1127  0.156627  0.363636  0.629630  0.220930  0.0  0.0  0.577778  0.329545   
-900   0.120482  0.181818  0.629630  0.151163  0.0  0.0  0.511111  0.125000   
-165   0.590361  0.363636  0.537037  0.267442  0.0  0.0  0.488889  0.125000   
-862   0.361446  0.389610  0.611111  0.220930  0.0  0.0  0.533333  0.250000   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          Age  SystolicBP  DiastolicBP        BS  BodyTemp  HeartRate  \
+953  0.833333    0.555556     0.705882  0.692308       0.0   0.000000   
+278  0.116667    0.222222     0.313725  0.130769       1.0   0.233333   
+14   0.666667    0.777778     0.803922  0.692308       0.0   1.000000   
+680  0.050000    0.222222     0.313725  0.146154       0.6   0.666667   
+338  0.033333    0.277778     0.215686  0.069231       0.0   0.166667   
+..        ...         ...          ...       ...       ...        ...   
+519  0.366667    0.777778     0.803922  0.923077       0.0   0.933333   
+20   0.183333    0.222222     0.313725  0.115385       0.0   0.533333   
+873  0.150000    0.222222     0.411765  0.115385       0.0   0.666667   
+746  0.150000    0.555556     0.803922  0.061538       0.0   0.000000   
+385  0.200000    0.333333     0.313725  0.138462       0.0   0.666667   
 
-     label_aktual label_prediksi  
-317           ME3            ME3  
-587           MIT            POX  
-1156          ME1            ME1  
-610           NUC            CYT  
-1239          CYT            CYT  
-...           ...            ...  
-1098          NUC            NUC  
-1127          CYT            NUC  
-900           NUC            POX  
-165           CYT            POX  
-862           NUC            CYT  
+    label_aktual label_prediksi  
+953    high risk      high risk  
+278    high risk       mid risk  
+14     high risk      high risk  
+680     mid risk       low risk  
+338     mid risk       low risk  
+..           ...            ...  
+519    high risk      high risk  
+20      low risk       low risk  
+873     low risk       low risk  
+746     mid risk       low risk  
+385     low risk       low risk  
 
-[423 rows x 10 columns]
+[290 rows x 8 columns]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="id3">
-<h3>Evaluasi<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h4>Evaluasi<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc_knn</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">)</span>
@@ -1884,18 +1865,49 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi     : 0.58
-Presisi     : 0.60
-Recall      : 0.58
-F1 Score    : 0.57
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi     : 0.67
+Presisi     : 0.65
+Recall      : 0.67
+F1 Score    : 0.66
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<section id="id4">
+<h4>Uji Coba Prediksi<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data yang digunakan</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_scaled</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">500</span><span class="p">])</span>
+<span class="c1"># # prediksi data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Uji Coba Prediksi = &quot;</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.555556</span><span class="p">,</span> <span class="mf">0.215686</span><span class="p">,</span> <span class="mf">0.007692</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.533333</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age                0.35
+SystolicBP     0.555556
+DiastolicBP    0.215686
+BS             0.007692
+BodyTemp            0.0
+HeartRate      0.533333
+RiskLevel      low risk
+Name: 500, dtype: object
+Hasil Uji Coba Prediksi =  [&#39;mid risk&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dapat disimpulkan pada prediksi uji coba menggunakan Model KNN pada data ke 500 itu belabel “mid_risk”</p>
+</section>
 </section>
 <section id="modelling-klasifikasi-mennggunakan-decision-tree">
-<h2>Modelling Klasifikasi Mennggunakan Decision Tree<a class="headerlink" href="#modelling-klasifikasi-mennggunakan-decision-tree" title="Link to this heading">#</a></h2>
+<h3>Modelling Klasifikasi Mennggunakan Decision Tree<a class="headerlink" href="#modelling-klasifikasi-mennggunakan-decision-tree" title="Link to this heading">#</a></h3>
 <p>Decision Tree adalah salah satu algoritma dalam pembelajaran mesin yang digunakan untuk klasifikasi maupun regresi. Algoritma ini bekerja dengan cara membagi data menjadi kelompok-kelompok berdasarkan fitur tertentu melalui serangkaian pertanyaan atau kondisi. Hasil dari proses ini membentuk struktur pohon bercabang, di mana setiap simpul internal mewakili pengujian terhadap suatu fitur, setiap cabang mewakili hasil dari pengujian tersebut, dan setiap daun (leaf) menunjukkan label kelas (pada kasus klasifikasi).</p>
 <p>Proses pembentukan pohon dimulai dari akar (root), di mana algoritma akan memilih fitur yang paling baik dalam membagi data. Pemilihan ini biasanya didasarkan pada metrik seperti Gini Impurity atau Entropy (dalam metode ID3/C4.5). Fitur terbaik akan dipilih sebagai pemisah pada level pertama, kemudian data dibagi, dan proses ini diulang secara rekursif sampai mencapai kondisi tertentu (misalnya semua data dalam satu kelompok memiliki label yang sama, atau kedalaman maksimum pohon tercapai).</p>
 <p><strong>Proses yang terdapat pada Decision Tree:</strong></p>
@@ -1937,9 +1949,8 @@ Gini(S) = 1 - \sum_{i=1}^{n} p_i^2
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(( p_i \)</span>): proporsi kelas ke-<span class="math notranslate nohighlight">\((i\)</span>) dalam <span class="math notranslate nohighlight">\((S\)</span>)</p></li>
 </ul>
-<section id="id4">
-<h3>Latih Model<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<p>Proses melatih model ini membagi data menjadi dua bagian yang akan digunakan testing dan training</p>
+<section id="id5">
+<h4>Latih Model<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1948,8 +1959,8 @@ Gini(S) = 1 - \sum_{i=1}^{n} p_i^2
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
 
 <span class="c1"># Memisahkan fitur dan label</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[[</span><span class="s1">&#39;mcg&#39;</span><span class="p">,</span> <span class="s1">&#39;gvh&#39;</span><span class="p">,</span> <span class="s1">&#39;alm&#39;</span><span class="p">,</span> <span class="s1">&#39;mit&#39;</span><span class="p">,</span> <span class="s1">&#39;erl&#39;</span><span class="p">,</span> <span class="s1">&#39;pox&#39;</span><span class="p">,</span> <span class="s1">&#39;vac&#39;</span><span class="p">,</span> <span class="s1">&#39;nuc&#39;</span><span class="p">]]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[</span><span class="s1">&#39;localization_site&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;SystolicBP&#39;</span><span class="p">,</span> <span class="s1">&#39;DiastolicBP&#39;</span><span class="p">,</span> <span class="s1">&#39;BS&#39;</span><span class="p">,</span> <span class="s1">&#39;BodyTemp&#39;</span><span class="p">,</span> <span class="s1">&#39;HeartRate&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[</span><span class="s1">&#39;RiskLevel&#39;</span><span class="p">]</span>
 
 <span class="c1"># proses memisahkan data</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -2379,9 +2390,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>DecisionTreeClassifier(criterion=&#x27;entropy&#x27;, random_state=0)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>DecisionTreeClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.tree.DecisionTreeClassifier.html">?<span>Documentation for DecisionTreeClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>DecisionTreeClassifier(criterion=&#x27;entropy&#x27;, random_state=0)</pre></div> </div></div></div></div></div></div>
 </div>
 </section>
-<section id="id5">
-<h3>Proses Klasifikasi<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
-<p>Proses Klasifikasi dilakukan dengan prediksi menggunakan data testing.</p>
+<section id="id6">
+<h4>Proses Klasifikasi<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_dec_tree</span> <span class="o">=</span> <span class="n">dec_tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -2394,40 +2404,40 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           mcg       gvh       alm       mit  erl  pox       vac       nuc  \
-317   0.216867  0.506494  0.277778  0.348837  0.0  0.0  0.577778  0.159091   
-587   0.518072  0.376623  0.703704  0.186047  0.0  0.0  0.488889  0.125000   
-1156  0.734940  0.727273  0.111111  0.325581  0.0  0.0  0.644444  0.125000   
-610   0.433735  0.298701  0.666667  0.139535  0.0  0.0  0.577778  0.238636   
-1239  0.421687  0.441558  0.500000  0.139535  0.0  0.0  0.600000  0.227273   
-...        ...       ...       ...       ...  ...  ...       ...       ...   
-1098  0.433735  0.103896  0.703704  0.313953  0.0  0.0  0.400000  0.170455   
-1127  0.156627  0.363636  0.629630  0.220930  0.0  0.0  0.577778  0.329545   
-900   0.120482  0.181818  0.629630  0.151163  0.0  0.0  0.511111  0.125000   
-165   0.590361  0.363636  0.537037  0.267442  0.0  0.0  0.488889  0.125000   
-862   0.361446  0.389610  0.611111  0.220930  0.0  0.0  0.533333  0.250000   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          Age  SystolicBP  DiastolicBP        BS  BodyTemp  HeartRate  \
+953  0.833333    0.555556     0.705882  0.692308       0.0   0.000000   
+278  0.116667    0.222222     0.313725  0.130769       1.0   0.233333   
+14   0.666667    0.777778     0.803922  0.692308       0.0   1.000000   
+680  0.050000    0.222222     0.313725  0.146154       0.6   0.666667   
+338  0.033333    0.277778     0.215686  0.069231       0.0   0.166667   
+..        ...         ...          ...       ...       ...        ...   
+519  0.366667    0.777778     0.803922  0.923077       0.0   0.933333   
+20   0.183333    0.222222     0.313725  0.115385       0.0   0.533333   
+873  0.150000    0.222222     0.411765  0.115385       0.0   0.666667   
+746  0.150000    0.555556     0.803922  0.061538       0.0   0.000000   
+385  0.200000    0.333333     0.313725  0.138462       0.0   0.666667   
 
-     label_aktual label_prediksi  
-317           ME3            ME3  
-587           MIT            POX  
-1156          ME1            ME1  
-610           NUC            CYT  
-1239          CYT            CYT  
-...           ...            ...  
-1098          NUC            NUC  
-1127          CYT            NUC  
-900           NUC            POX  
-165           CYT            POX  
-862           NUC            CYT  
+    label_aktual label_prediksi  
+953    high risk      high risk  
+278    high risk       mid risk  
+14     high risk      high risk  
+680     mid risk       low risk  
+338     mid risk       low risk  
+..           ...            ...  
+519    high risk      high risk  
+20      low risk       low risk  
+873     low risk       low risk  
+746     mid risk       low risk  
+385     low risk       low risk  
 
-[423 rows x 10 columns]
+[290 rows x 8 columns]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id6">
-<h3>Evaluasi<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="id7">
+<h4>Evaluasi<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc_dec_tree</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_dec_tree</span><span class="p">)</span>
@@ -2444,36 +2454,83 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi     : 0.53
-Presisi     : 0.54
-Recall      : 0.53
-F1 Score    : 0.53
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi     : 0.82
+Presisi     : 0.82
+Recall      : 0.82
+F1 Score    : 0.82
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-</section>
-<section id="id7">
-<h2>Evaluasi<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
-<p>Berdasarkan Hasil Modelling dari ketiga Metode yakni Naive Bayes, KNN, dan Decision Tree hasil akurasi dari masing - masing model yakni:</p>
+<section id="visualisasi-menggunakan-confussion-matrix">
+<h4>Visualisasi menggunakan Confussion Matrix<a class="headerlink" href="#visualisasi-menggunakan-confussion-matrix" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;akurasi model NB </span><span class="si">{</span><span class="n">acc_gnb</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;akurasi model knn </span><span class="si">{</span><span class="n">acc_knn</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;akurasi model Dec Tree </span><span class="si">{</span><span class="n">acc_dec_tree</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">confusion_matrix</span>
+
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_dec_tree</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span>
+            <span class="n">xticklabels</span><span class="o">=</span><span class="n">dec_tree</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span>
+            <span class="n">yticklabels</span><span class="o">=</span><span class="n">dec_tree</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Confusion Matrix for Decision Tree&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted Label&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Label&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akurasi model NB 0.29
-akurasi model knn 0.58
-akurasi model Dec Tree 0.53
+<img alt="_images/28b55fec265f076289bd2d16ed36dcb381b0dd155c47698149097fc759eccac8.png" src="_images/28b55fec265f076289bd2d16ed36dcb381b0dd155c47698149097fc759eccac8.png" />
+</div>
+</div>
+</section>
+<section id="id8">
+<h4>Uji Coba Prediksi<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data yang digunakan</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_scaled</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">500</span><span class="p">])</span>
+<span class="c1"># # prediksi data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Uji Coba Prediksi = &quot;</span><span class="p">,</span> <span class="n">dec_tree</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.555556</span><span class="p">,</span> <span class="mf">0.215686</span><span class="p">,</span> <span class="mf">0.007692</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.533333</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age                0.35
+SystolicBP     0.555556
+DiastolicBP    0.215686
+BS             0.007692
+BodyTemp            0.0
+HeartRate      0.533333
+RiskLevel      low risk
+Name: 500, dtype: object
+Hasil Uji Coba Prediksi =  [&#39;mid risk&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
+  warnings.warn(
 </pre></div>
 </div>
 </div>
 </div>
-<p>bahwa model yang paling terbaik untuk melakukan klasifikasi yakni menggunakan model knn</p>
+<p>Dapat disimpulkan pada prediksi uji coba menggunakan Model KNN pada data ke 500 itu belabel “mid_risk”</p>
+</section>
+</section>
+</section>
+<section id="id9">
+<h2>Evaluasi<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<p>Hasil Akurasi setiap Model:</p>
+<ul class="simple">
+<li><p>Gaussian Naive Bayes : Menghasilkan Akurasi Sebesar 62%</p></li>
+<li><p>KNN (K - Nearest Neighbours) : Menghasilkan Akurasi Sebesar 67%</p></li>
+<li><p>Decision Tree : Menghasilkan Akurasi Sebesar 82%</p></li>
+</ul>
+<p>Berdasarkan hasil analisis setiap model dapat disimpulkan bahwa Model Decision Tree memiliki tingkat akurasi yang sangat tinggi dibandingkan dengan model klasifikasi KNN atau Naive Bayes. Oleh karena itu, model Decision Tree dalam prediksi Risiko Kesehatan Ibu cocok digunakan sebagai prediksi kasus.</p>
 </section>
 </section>
 
@@ -2508,22 +2565,13 @@ akurasi model Dec Tree 0.53
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Bining%28Diskritisasi%29_K-Means.html"
+       href="Lokalisasi_Protein.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Metode Bining (Diskritisasi)</p>
+        <p class="prev-next-title">Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="UAS_Prediksi%20Risiko%20Kesehatan%20Ibu_230411100181_Muhammad%20Fathan%20Alizain.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Prediksi Risiko Kesehatan Ibu</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -2541,17 +2589,23 @@ akurasi model Dec Tree 0.53
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pediksi Lokasi Lokalisasi Protein pada Bakteri Gram-Negatif</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">Sumber Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengambilan-data">Pengambilan Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">Struktur Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-dan-label">Fitur dan Label</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-dan-label">Fitur dan Label</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ukuran-dataset">Ukuran Dataset</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlah-kolom-dataset">Jumlah Kolom Dataset</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#tipe-data-dari-masing-masing-fitur-dataset">Tipe data dari masing - masing Fitur Dataset</a></li>
+</ul>
+</li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-dari-dataset">Identifikasi Kualitas dari Dataset</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-data-outlier">Deteksi Data Outlier</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-data-outlier">Deteksi Data Outlier</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-code">Implementasi Code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a></li>
@@ -2564,29 +2618,33 @@ akurasi model Dec Tree 0.53
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-scaler">Min-Max Scaler</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-naive-bayes">Modelling Klasifikasi Menggunakan Naive Bayes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latih-model">Latih Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-klasifikasi">Proses Klasifikasi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi">Evaluasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling">Modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-naive-bayes">Modelling Klasifikasi Menggunakan Naive Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#latih-model">Latih Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-klasifikasi">Proses Klasifikasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi">Evaluasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uji-coba-prediksi">Uji Coba Prediksi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-knn-k-nearest-neighbours">Modelling Klasifikasi Menggunakan KNN (K Nearest Neighbours)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Latih Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Proses Klasifikasi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Evaluasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-menggunakan-knn-k-nearest-neighbours">Modelling Klasifikasi Menggunakan KNN (K Nearest Neighbours)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Latih Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Proses Klasifikasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Evaluasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Uji Coba Prediksi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-mennggunakan-decision-tree">Modelling Klasifikasi Mennggunakan Decision Tree</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Latih Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Proses Klasifikasi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Evaluasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-klasifikasi-mennggunakan-decision-tree">Modelling Klasifikasi Mennggunakan Decision Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Latih Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Proses Klasifikasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Evaluasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-menggunakan-confussion-matrix">Visualisasi menggunakan Confussion Matrix</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Uji Coba Prediksi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Evaluasi</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Evaluasi</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
